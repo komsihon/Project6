@@ -1,0 +1,290 @@
+{% extends "core/base_bs.html" %}
+{% load i18n humanize static %}
+{% block page_title %}<title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">ikwen - {% trans 'About' %} </title>{% endblock %}
+
+{% block meta %}
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="IKWEN" />
+    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+    <meta property="og:description" content="Web Apps to empower your small or big business" />
+    <meta property="description" content="Web Apps to empower your small or big business" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <link rel='stylesheet' href="{% static 'ikwen/css/animate.min.css' %}" />
+    <style type="text/css">
+        a {color: #2c3e50}
+        a:hover, a:focus,a:active {color: #4263ac; text-decoration: none}
+        .navbar-brand strong, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover {color: #ffffff}
+        a.btn {background: #08a506;border: #08a506; font-size: 20px; margin: auto; padding: 10px 20px; text-align: center; width: 300px}
+        a.btn:hover {background: #089306}
+        .grp-eg {padding-left: 0}
+        .grp-eg li {line-height: 22px; padding: 2px 0}
+        .grp-eg li a {color: #1b6d85; font-size: 18px}
+        #navbar {top: 0}
+        section {float: left;padding: 100px 0; width: 100%}
+        section.colored {background: rgb(238, 238, 238)}
+        section .title {color: #2c3e50; font-size: 35px; padding: 12px 0; text-align: center; width: 100%}
+        section .app {margin-top: 0;}
+        section .app:first-child {margin-top: 20px;}
+        section .app .title {font-size: 25px; padding: 12px 0; text-align: left; width: 100%}
+        section .app a {font-size: 15px}
+        section .desc {font-weight: 300;font-size: 22px;line-height: 35px; padding: 0 25px; text-align: justify; }
+        section .desc .action {}
+        .section-header {padding-bottom: 60px}
+        .few-deployments {width: 100%;}
+        section li {list-style-type: none}
+        .lead {font-size: 20px; text-align: center}
+        .eg-img {border-radius: 150px; min-height: 350px;}
+        .app-logo {float: left;text-align: center;padding-bottom: 85px; width: 100%}
+        .app-logo img {width: 25%}
+        .app-logo a {color: #1b6d85; clear:both; float: left; font-size: 20px; text-align: center; width: 100%}
+        .contact-img {float: left}
+        p i {color: #dc1e0b }
+
+        footer {float: left}
+        #bottom-menu {bottom: 20px; position: absolute; right: 20px; }
+        #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+        #bottom-menu li a {color: #fff; font-size: 12px}
+        footer {display: none}
+
+        div.footer {color: #FFF; font-size: 12px; position: absolute; bottom: 20px; left: 20px}
+        div.footer .company-name {color: #FFF; font-size: 12px; text-decoration: none;}
+        .section-header img {float: left; width: 80%}
+        section.logos {background-image: url("{% static 'website/img/SHTT-Lead-Image-Costumes.jpg' %}"); background-size: cover; background-attachment: fixed; background-position: center; height: 500px}
+        section.logos .cover {background: rgba(0, 0, 0, 0.8); color: #FFFFFF; height: 500px; margin-top: -100px; position: absolute; padding-top: 105px; width: 100%}
+        section.logos .title, section.logos .lead {color: #FFFFFF; text-shadow: 1px 2px 3px rgba(0,0,0, 0.5);}
+        section.logos .row {margin-top: 65px}
+        .navbar-default { border: none}
+        section.address {background-image: url("{% static 'website/img/map.svg' %}"); background-size: 100% auto; color: #FFF; font-size: 22px; font-weight: 300;height: 600px;}
+        section.address a {color: #FFF; font-size: 22px; font-weight: 300}
+        section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; margin-top: -100px; padding-top: 75px; position: absolute; width: 100%}
+        @media (max-width: 425px) {
+            #bottom-menu {margin-top: 0; width: 100%;}
+            #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+            #bottom-menu li a {float: left; width: 100%}
+            div.container {margin-top: 0}
+            .app-logo img {width: 75%}
+            section {margin-top: 20px; padding-bottom: 10px}
+            .contact-img {text-align: center}
+            .contact-address {text-align: center}
+            footer div {float: left; padding-bottom: 25px; width: 100%}
+    {#        footer ul {background: #fff; bottom: 0; padding-bottom: 15px; position: fixed; width: 100%}#}
+            #bottom-menu li {float: left; clear: both; width: 100%}
+            #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
+            .section-header img {float: left;clear: both; margin-top: 30px; width: 80%}
+        }
+        body {font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
+    </style>
+{% endblock %}
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="company">
+                <div class="title animated wow fadeInLeft">{% trans "ABOUT THE COMPANY" %}</div>
+                <div class="img col-sm-6"><img src="{% static "website/img/software-engineering.jpg" %}" width="97%"></div>
+                <div class="desc col-sm-6">
+                    <p>
+                        <strong>ikwen</strong> is a software engineering company involved into helping
+                        classic businesses go digital. Our purpose is to provide people
+                        and businesses with very simple, yet powerful web/mobile apps
+                        that let them kick off their online business in no time.
+                    </p>
+                    <p>
+                        We guide them into turning internet into more than just a
+                        communication tool, but also a business tool. So said, our
+                        solutions always integrate online Mobile Money payments out of the box.
+                    </p>
+                    <p>
+                       Our solutions are Cloud based, one can deploy and run his own website from our apps library on www.ikwen.com
+                    </p>
+                </div>
+            </div>
+            </div>
+    </section>
+    <section class="app logos">
+        <div class="cover">
+            <div class="container section-header">
+                <div class="title animated wow fadeInLeft">{% trans "WONDERFUL ACHIEVEMENTS" %}</div>
+                <p class="lead animated wow fadeInDown">Great Products created by us, for our Cloud Platform ... Even better products created for our custom applications clients</p>
+                <div class="row">
+                    <div class="col-sm-4"><a href="http://www.ikwen.com/kakocase" target="_blank"><img src="{% static "website/img/kakocase-04.png" %}"></a></div>
+                    <div class="col-sm-4"><a href="http://www.ikwen.com/webnode" target="_blank"><img src="{% static "website/img/webnode-02.png" %}"></a></div>
+                    <div class="col-sm-4"><a href="http://www.ikwen.com/shavida" target="_blank"><img src="{% static "website/img/shavida-01.png" %}"></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="app colored">
+        <div class="container">
+            <div class="row">
+                <div class="app-logo animated wow fadeInDown">
+                    <a href="http://www.ikwen.com/kakocase" target="_blank"><img src="{% static "website/img/kakocase-04.png" %}"></a>
+                    <a href="http://www.ikwen.com/kakocase" target="_blank">www.ikwen.com/kakocase</a>
+                </div>
+                <div class="eg-img col-sm-6">
+                    <img src="{% static "website/img/Maisonnouss.png" %}" width="100%">
+                </div>
+                <div class="desc col-sm-6">
+                    <div class="animated wow fadeInDown">
+                        <p>
+                            <strong>KAKOCASE</strong> lets you create a full-working e-commerce website with integrated Mobile Money online payment.
+                        </p>
+                        <b class="action">See it in action on</b>
+                        <ul class="few-deployments grp-eg">
+                            <li><a href="http://www.maisonnouss.com" target="_blank">www.maisonnouss.com</a></li>
+                            <li><a href="http://www.deboyshop.com" target="_blank">www.deboyshop.com</a></li>
+                            <li><a href="http://www.thedifferenceshop.com" target="_blank">www.thedifferenceshop.com</a></li>
+                        </ul>
+                        <div class="form-group col-xs-12 col-sm-4 col-md-3" style="clear: both;  padding: 15px 0">
+                            <a class="btn btn-sm btn-primary btn-block cta" target="_blank" href="http://ikwen.com/kakocase/deployCloud/">{% trans "DEPLOY YOUR e-COMMERCE" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="app">
+        <div class="container">
+            <div class="row">
+                <div class="app-logo">
+                    <a href="http://www.ikwen.com/webnode" target="_blank"><img src="{% static "website/img/webnode-02.png" %}"></a>
+                    <a href="http://www.ikwen.com/webnode" target="_blank">www.ikwen.com/webnode</a>
+                </div>
+                <div class="desc col-sm-6">
+                    <div class="animated wow fadeInDown">
+                        <p>
+                            <strong>WEBNODE</strong>: Create a Corporate, Personal or Business Website. Extend capabilities with pluggable modules (Blog, Subscriptions ...)
+                        </p>
+
+                        <b class="action">See it in action on</b>
+                        <ul class="grp-eg">
+                            <li><a href="http://www.assoadd.org" target="_blank">www.assoadd.org</a></li>
+                            <li><a href="http://www.coachimprove.com" target="_blank">www.coachimprove.com</a></li>
+                            <li><a href="http://www.aladjiacademy.com" target="_blank">www.welixire.com</a></li>
+                        </ul>
+                        <div class="form-group col-xs-12 col-sm-4 col-md-3" style="clear: both; padding: 15px 0">
+                            <a class="btn btn-sm btn-primary btn-block cta" target="_blank" href="http://ikwen.com/webnode/deployCloud/">{% trans "DEPLOY YOUR WEBSITE" %}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="eg-img"><img src="{% static "website/img/ADD.png" %}" width="100%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="app colored">
+        <div class="container">
+            <div class="row">
+                <div class="app-logo">
+                    <a href="http://www.ikwen.com/shavida" target="_blank"><img src="{% static "website/img/shavida-01.png" %}"></a>
+                    <a href="http://www.ikwen.com/shavida" target="_blank">www.ikwen.com/shavida</a>
+                </div>
+                <div class="col-sm-6">
+                    <div class="eg-img"><img src="{% static "website/img/Cinoche.png" %}" width="100%"></div>
+                </div>
+                <div class="desc col-sm-6">
+                    <div class="animated wow fadeInDown">
+                        <p>
+                            <strong>SHAVIDA</strong>: lets you deploy a VOD website in minutes. Get paid with Mobile Money online.
+                        </p>
+                        <b class="action">See it in action on</b>
+                        <ul class="grp-eg">
+                            <li><a href="http://www.cinoche.club" target="_blank">www.cinoche.club</a></li>
+                            <li><a href="http://vodcrelink.ikwen.com" target="_blank">http://vodcrelink.ikwen.com</a></li>
+                        </ul>
+                        <div class="form-group col-xs-12 col-sm-4 col-md-3" style="clear: both;  padding: 15px 0">
+                            <a class="btn btn-sm btn-primary btn-block cta" target="_blank" href="http://ikwen.com/shavida/deployCloud/">{% trans "DEPLOY YOUR VoD" %}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="app">
+        <div class="container">
+            <h1 class="title animated wow fadeInLeft">{% trans "CUSTOM APP DEV" %}</h1>
+            <p class="lead">Rock-solid applications made by our teams to solve business-critical issues for our customers.</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="app-logo">
+                    <img src="{% static "website/img/cyberlink.jpg" %}">
+                    <a href="https://www.cyberlink.cm" target="_blank">www.cyberlink.cm</a>
+                </div>
+                <div class="col-sm-6 desc">
+                    <div class="animated wow fadeInDown">
+                        <p>Buy your WiFi internet bundles access online.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="eg-img"><img src="{% static "website/img/ikwen-cyberlink.png" %}" width="100%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="app colored">
+        <div class="container">
+            <div class="row">
+                <div class="app-logo">
+                    <img src="{% static "website/img/creolink.jpg" %}">
+                </div>
+                <div class="col-sm-6">
+                    <div class="eg-img"><img src="{% static "website/img/ikwen-creolink.png" %}" width="100%"></div>
+                </div>
+                <div class="col-sm-6 desc">
+                    <div class="animated wow fadeInDown">
+                        <p>Network assets visualization of CREOLINK COMMUNICATIONS. <i>- Private access</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="address">
+        <div class="cover">
+            <div class="container">
+                <div class="achievements">
+                    <h1 class="title animated wow fadeInLeft" style="color: #fff">{% trans "Contact Us Now" %}</h1>
+                    <p class="lead animated wow fadeInDown">
+                        And let us bring to reality your world-changing project.
+                    </p>
+                    <div class="app">
+                        <div class="col-sm-2 hidden-xs"> </div>
+                        <div class="contact-img col-sm-4 col-xs-12"><img src="{% static "website/img/rocket.png" %}" width="50%"> </div>
+                        <div class="col-sm-4 col-xs-12 contact-address ">
+                            <a href="http://www.ikwen.com/"><img src="{% static 'website/img/logo_ikwen-344x150.png' %}" width="200"></a>
+                            <div class="address">
+                                <p>195 Route Montée Jouvence</p>
+                                <p>Yaoundé, Cameroon</p>
+                                <p></p>
+                                <p>E-mail: <a href="mailto:contact@ikwen.com">contact@ikwen.com</a> </p>
+                                <p>Tel: (+237) 675.18.77.05</p>
+                                <p>Web: <a href="http://www.ikwen.com/{% url 'home' %}">www.ikwen.com</a> </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 hidden-xs"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                {% trans "All rights reserved." %}
+                {% if config.legal_mentions_url %}
+                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                {% endif %}
+            </div>
+            <div id="bottom-menu">
+                <ul>
+                    <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                    <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+                    <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>
+                    <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

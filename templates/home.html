@@ -1,0 +1,215 @@
+{% extends "core/base_bs.html" %}
+{% load i18n humanize static auth_tokens  %}
+{% block page_title %}<title>ikwen - {% trans 'Home' %} </title>{% endblock %}
+
+{% block meta %}
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="IKWEN" />
+    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+    <meta property="og:description" content="Web Apps to empower your small or big business" />
+    <meta property="description" content="Web Apps to empower your small or big business" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <style type="text/css">
+        body {overflow: hidden}
+        .no-display {display: none}
+        #v-carousel {bottom: 20%}
+        #banner p {color: #fff; font-family: lato, sans-serif;  font-size: 1.5em; margin-top: 25%; text-align: center; text-indent: 0; position: absolute; width: 100%}
+        #banner .carousel h3  {color: #FFF; font-size: 1.3rem;line-height: 3rem;font-weight: 700;text-align: center;}
+
+        /* Smartphones (portrait and landscape) ----------- */
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px) {
+            #v-carousel {bottom: 35%}
+            #banner img.mobile {display: block}
+            #banner p {font-size: 2em; margin-top: 30%;  text-indent: 14px;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
+            #banner .carousel h3  {font-size: 1.5rem; line-height: 3rem;}
+        }
+
+        /* Smartphones (landscape) ----------- */
+        @media only screen
+        and (min-width : 481px) {
+            #v-carousel {bottom: 20%}
+            #banner img.normal {display: block}
+            #banner p {font-size: 2em; margin-top: 13%;  text-indent: 14px;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
+            #banner .carousel h3  {font-size: 2rem; line-height: 3rem;}
+        }
+
+
+
+        /* iPhone 5 (portrait & landscape)----------- */
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px) {
+            #v-carousel {bottom: 35%}
+            #banner img.mobile {display: block}
+            #banner p {font-size: 2em; margin-top: 30%;  text-indent: 0;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 10px 15px;}
+            #banner .carousel h3  {font-size: 1.3rem; line-height: 3rem;}
+        }
+
+        /* iPhone 5 (landscape)----------- */
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 568px)
+        and (orientation : landscape) {
+            #v-carousel {bottom: 20%}
+            #banner img.normal {display: block}
+            #banner p {font-size: 2em; margin-top: 13%;  text-indent: 14px;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px}
+            #banner .carousel h3  {font-size: 2rem;line-height: 3rem;}
+        }
+
+
+        /* iPads (portrait and landscape) ----------- */
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1024px) {
+            #v-carousel {margin-top: 74%; }
+            #banner img.ipad-lc {display: block}
+            #banner p {font-size: 3em; margin-top: 30%;  text-indent: 14px;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 10px 15px;}
+            #banner .carousel h3  {font-size: 3rem;line-height: 3rem;}
+        }
+
+        /* iPads (landscape) ----------- */
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1024px)
+        and (orientation : landscape) {
+            #v-carousel {bottom: 20%}
+            #banner img.ipad{display: block}
+            #banner p {font-size: 4em; margin-top: 13%;  text-indent: 14px;}
+            #banner .carousel h3  {font-size: 4rem;line-height: 3rem;}
+        }
+
+        /* Desktops and laptops ----------- */
+        @media only screen
+        and (min-width : 1224px) {
+            #v-carousel {bottom: 20%}
+            #banner img.normal {display: block}
+            #banner p {font-size: 4em; margin-top: 13%;  text-indent: 14px;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
+            #banner .carousel h3  {font-size: 2rem;line-height: 3rem;}
+        }
+
+        /* Large screens ----------- */
+        @media only screen
+        and (min-width : 1824px) {
+            #v-carousel {bottom: 20%}
+{#            #banner img {content:url("{% static 'img/ikwen_making_the_web_a_business_lg.jpg' %}")}#}
+            #banner img.large {display: block}
+            #banner p {font-size: 4em; margin-top: 13%;  text-indent: 14px;}
+            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
+            #banner .carousel h3  {font-size: 2rem;line-height: 3rem;}
+        }
+
+
+        #banner {}
+        #banner img {}
+        #v-carousel {font-size: 16px;height: 75px;text-align: center; width: 100%;overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: absolute}
+        #v-carousel h3 {height: 72px; margin-top: inherit}
+        #banner .carousel h1  {font-size: 3rem;margin-bottom: 3rem;}
+        #banner .carousel h2  {font-size: 2rem;margin-bottom: 1rem;}
+        #navbar {display: block}
+        #navbar .navbar-brand{font-weight: 700;}
+        footer {bottom: -20px; color: #fff; background: transparent; position: fixed;  left: 0; text-align: center}
+        footer a, footer .company-name {color: #fff}
+        #bottom-menu {}
+        #presentation {display: none}
+
+        footer {float: left}
+        #bottom-menu {bottom: -20px; position: absolute; right: 0; margin: 30px;}
+        #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+        #bottom-menu li a {color: #FFF; font-size: 12px}
+        @media (max-width: 425px) {
+            div.container {margin-top: 0}
+            .app-logo img {width: 75%}
+            section {margin-top: 20px; padding-bottom: 10px}
+            .contact-img {text-align: center}
+            .contact-address {text-align: center}
+            footer div {float: left; padding-bottom: 25px; width: 100%}
+    {#        footer ul {background: #fff; bottom: 0; padding-bottom: 15px; position: fixed; width: 100%}#}
+            #bottom-menu li {float: left; clear: both; width: 100%}
+            #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
+        }
+
+    </style>
+{% endblock %}
+{% block content %}
+    <div id="presentation">
+        <h1>ikwen is a software engineering company involved into helping classic businesses go digital.</h1>
+        <p>
+            Our purpose is to provide people
+            and businesses with very simple, yet powerful web/mobile apps
+            that let them kick off their online business in no time. We guide them into turning internet into more than just a
+            communication tool, but also a business tool. So said, our
+            solutions always integrate online Mobile Money payments out
+            of the box. Our solutions are Cloud based, one can deploy and run his own
+            website from our apps library on www.ikwen.com
+        </p>
+    </div>
+    <div id="banner" class="container-fluid" style="padding: 0">
+        <img  class="img-responsive mobile no-display" src="{% static 'ikwen/img/banner_mob.jpg' %}">
+        <img  class="img-responsive normal no-display" src="{% static 'ikwen/img/ikwen_making_the_web_a_business.jpg' %}">
+        <img  class="img-responsive ipad-lc no-display" src="{% static 'ikwen/img/ikwen_making_the_web_a_business_ipad_lc.jpg' %}">
+        <img  class="img-responsive ipad no-display" src="{% static 'ikwen/img/ikwen_making_the_web_a_business_ipad.jpg' %}">
+        <img  class="img-responsive large no-display" src="{% static 'ikwen/img/ikwen_making_the_web_a_business_lg.jpg' %}">
+{#        <img  class="img-responsive">#}
+        <div class="overlay" style="background-color: rgba(0, 0, 0, 0.30); height: 100%; position: fixed; top: 0; width: 100%">
+            <p class="text-has-shade" style="">MAKING THE WEB A BUSINESS</p>
+            <div id="v-carousel" class="text-has-shade" style="color: #fff;">
+                <div class="carousel-inner">
+                    <h3>{% trans 'You can do so much more with internet' %}</h3>
+                    <h3>{% trans 'Right tools for your small or big company' %}</h3>
+                    <h3>{% trans 'Better interaction with your customers' %}</h3>
+                    <h3>{% trans 'Empower your business with simple web/mobile apps' %}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block footer %}
+    {{ block.super }}
+    <div id="bottom-menu">
+        <ul>
+            <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+            <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+            <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>
+            <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+        </ul>
+    </div>
+{#    <ul id="bottom-menu">#}
+{#        <li><a href="#">Blog</a> </li>#}
+{#        <li><a href="#">Support</a> </li>#}
+{#        <li><a href="#">Terms & Conditions</a> </li>#}
+{#        <li><a href="#">About</a> </li>#}
+{#    </ul>#}
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+    
+    
+    <script type="text/javascript">
+        (function() {
+            var switchFeatures = function(){
+                $('#v-carousel h3:first').animate({marginTop: '-75'},'slow','swing',function(){
+                    $(this).appendTo('.carousel-inner').css('margin-top',0)
+                })
+            }
+            setInterval(switchFeatures, 6000)
+
+            $("footer, footer a").css('color', '#fff')
+            var documentH = screen.height
+            $('body').css('height', documentH)
+        })()
+    </script>
+
+{% endblock %}
