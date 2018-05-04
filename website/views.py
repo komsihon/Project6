@@ -11,20 +11,19 @@ class Home(TemplateView):
             next_url = reverse('ikwen:console')
             return HttpResponseRedirect(next_url)
         return super(Home, self).get(request, *args, **kwargs)
-    
 
 
 class About(TemplateView):
     template_name = 'about.html'
 
-#
-# class Webnode(TemplateView):
-#     template_name = 'apps/webnode.html'
-#
-#
-# class Kakocase(TemplateView):
-#     template_name = 'apps/kakocase.html'
-#
-#
-# class Shavida(TemplateView):
-#     template_name = 'apps/shavida.html'
+
+class Webnode(TemplateView):
+    template_name = 'apps/webnode.html'
+
+
+class Kakocase(TemplateView):
+    template_name = 'apps/kakocase.html'
+
+
+class Shavida(TemplateView):
+    template_name = 'apps/shavida.html'
