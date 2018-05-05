@@ -48,10 +48,10 @@
             footer div {float: left; padding-bottom: 25px; width: 100%}
             #bottom-menu li {float: left; clear: both; width: 100%}
             #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
-            #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #FFF;}
+            #navbar-search input {rgba(90, 125, 193, 0.48);; color: #FFF;}
         }
         #navbar {background-color: transparent}
-        #navbar-search input {background: rgba(3, 59, 111, 0.48); color: #FFF}
+        #navbar-search input {background: rgba(90, 125, 193, 0.48); color: #FFF}
         #navbar .glyphicon.glyphicon-search {color: #FFF}
         #bottom-menu li a {color: #203e96}
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
@@ -69,7 +69,7 @@
             #bottom-menu {bottom: 2px; left: 0; margin-left: 0; text-align: center}
             #bottom-menu li a {padding-top: 0}
             #nav-xs li {margin-top: -5px}
-            #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #1f356a;}
+            #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
         }
 
         /* Smartphones (landscape) ----------- */
@@ -82,7 +82,7 @@
             #bottom-menu {bottom: 2px; left: 0; margin-left: 0; text-align: center}
             #bottom-menu li a {padding-top: 0}
             #nav-xs li.show-search {margin-top: -5px}
-            #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #1f356a;}
+            #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
         }
 
 
@@ -99,7 +99,7 @@
             #bottom-menu {bottom: 2px; left: 0; margin-left: 0; text-align: center}
             #bottom-menu li a {padding-top: 0}
             #nav-xs li.show-search {margin-top: -5px}
-            #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #1f356a;}
+            #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
         }
 
         /* iPhone 5 (landscape)----------- */
@@ -213,7 +213,7 @@
     <div id="site-menu" class="collapse navbar-collapse hidden-sm-up">
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-right" style="margin: 0 -15px 0 0">
-                <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
+                <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
                 <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
                 {% if user.is_authenticated %}
                     <li id="user-home">

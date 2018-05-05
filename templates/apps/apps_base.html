@@ -9,7 +9,7 @@
     <link rel='stylesheet' href="{% static 'ikwen/css/apps.css' %}" />
     <style type="text/css">
         #navbar {background-color: rgba(255, 255, 255, 0.36)}
-        #navbar-search input {background: rgba(3, 59, 111, 0.48); color: #FFF}
+        #navbar-search input {background: rgba(92, 120, 177, 0.48); color: #FFF}
         #navbar .glyphicon.glyphicon-search {color: #FFF}
         #bottom-menu li a {color: #203e96}
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
@@ -68,7 +68,7 @@
     <div id="site-menu" class="collapse navbar-collapse hidden-sm-up">
         <div class="container-fluid">
             <ul class="nav navbar-nav navbar-right" style="margin: 0 -15px 0 0">
-                <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
+                <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
                 <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
                 {% if user.is_authenticated %}
                     <li id="user-home">

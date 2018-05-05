@@ -1,0 +1,371 @@
+{% extends "tsunami/base.html" %}
+{% load i18n humanize auth_tokens static %}
+{% block page_title %}
+    <title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">ikwen - {% trans 'Checkout' %} </title>
+{% endblock %}
+{% block head_style %}
+    {{ block.super }}
+{#    <link href="{% static 'ikwen/css/admin.css' %}" media="screen" rel="stylesheet" type="text/css" />#}
+    <link href="{% static 'ikwen/ajaxuploader/css/fileuploader.css' %}" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{% static 'website/css/bootstrap-slider.css' %}" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+    body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
+        a {color: #2c3e50}
+        a:hover, a:focus,a:active {color: #4263ac; text-decoration: none}
+        .navbar-brand strong, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover {}
+
+        .navbar-brand strong {font-size: 1.8em}
+        #navbar {background-color: #FFF}
+        #navbar-search input {background:rgba(90, 125, 193, 0.48); color: #FFF}
+        #navbar .glyphicon.glyphicon-search {color: #FFF}
+        #bottom-menu li a {color: #203e96}
+        .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
+        .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
+        #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #1f356a;}
+        .navbar-default { border: none}
+        li {list-style-type: none;}
+        #navbar {top: 0}
+        section {float: left;padding: 100px 0; width: 100%}
+        .bundle {border: solid 1px #9fc7d4}
+        .contact-img {float: left}
+        p i {color: #dc1e0b }
+
+        .final-details li {float: left; clear: both; padding: 7px 0; width: 100%}
+{#        .title {font-size: 20px; float: left; }#}
+        .num {float: right; font-weight: 700; font-size: 18px; margin-right: 12px}
+        .unit {float: right}
+
+        footer {float: left}
+        #bottom-menu {bottom: 20px; position: absolute; right: 20px; }
+        #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+        #bottom-menu li a {color: #fff; font-size: 12px}
+        footer {display: none}
+
+        div.footer {color: #FFF; font-size: 12px; position: absolute; bottom: 20px; left: 20px}
+        div.footer .company-name {color: #FFF; font-size: 12px; text-decoration: none;}
+
+        section.address {background-image: url("{% static 'website/img/map.svg' %}"); background-size: 100% auto; color: #FFF; font-size: 22px; font-weight: 300;height: 600px;}
+        section.address a {color: #FFF; font-size: 22px; font-weight: 300}
+        section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; margin-top: -100px; padding-top: 75px; position: absolute; width: 100%}
+
+        .tpl {display: none}
+        .slider.slider-horizontal {width: 300px}
+        .slider-selection {background-image: linear-gradient(to bottom, #5edb18 0%, #5edb18 100%)}
+        .images-uploader .frame {height: 230px;float: left;margin: 0 10px 10px 0;overflow: hidden;width: 100%;}
+        .images-uploader .image {background: no-repeat center;border: solid 1px #DBE6FF;margin-right: 10px;}
+        .images-uploader .image .delete {background: #FFF; border-bottom-left-radius: 10px; color: #ef0202; cursor: pointer; font-size: 15px; font-weight: bold; float: right; padding: 2px  9px}
+        .images-uploader .image.loading .delete {display: none}
+        .images-uploader .image .progress {background: #3C63FF; height: 100%}
+        .images-uploader .uploader {background: url('{% static 'ikwen/img/no_photo.png' %}') center no-repeat; background-size: cover;
+            border: solid 1px #eee; font: bold 48px Arial; text-align: center}
+        .images-uploader .qq-upload-button {background: none;border: none;box-shadow: none;color: #666;text-shadow: none;line-height: 200px;width: 100%;}
+        .images-uploader .qq-upload-button-hover {box-shadow: none; color: #fff}
+        .qq-upload-button {background: #00aac9; border: 1px solid #37B7CC; border-radius: 2px; color: #fff; padding: 15px 25px; float: left; clear: both; margin-top: 20px;}
+        .qq-upload-button { margin-top: -10px; }
+        .cntr-notice {background: #fff; border: solid 2px #62b01e; float: left; padding: 15px}
+        .cntr-notice img {float: left}
+        .cntr-notice p {float: left;font-size: 22px; line-height: 87px; margin-left: 50px}
+        .campaign-info {background: #fff; float: left; padding: 25px; width: 100%}
+        .notice {background: #d5ebff; border: solid 2px #00aac9; float: left;margin-top: 83px; text-align: center; padding: 15px 45px; width: 100%}
+        .notice p {float: left; width: 100%}
+        .notice a {color: #2548d3;}
+        .form-input label {font-weight: 300; margin-left: 10px}
+        @media (min-width: 768px) {
+            .images-uploader .frame {width: 235px;height: 230px;}
+            .images-uploader .qq-upload-button {line-height: 190px}
+        }
+    </style>
+{% endblock %}
+{% block site_menu_xs %}
+    <nav class="visible-xs pull-right" style="width: 110px">
+        <ul id="nav-xs" style="position: absolute">
+            <li class="show-search">
+                <i class="glyphicon glyphicon-search"></i>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="home">
+                    <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                        <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
+                        {% if user.personal_notices > 0 %}
+                            <span class="label label-danger">{{ user.personal_notices }}</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% if collaborates_on|length >= 1 %}
+                    <li class="app-list" data-toggle="collapse" data-target="#iao-app-list-xs" aria-expanded="false">
+                        <a href="#"><i class="glyphicon glyphicon-th-large"></i> </a>
+                    </li>
+                {% endif %}
+
+                <div class="action dropdown" style="float: right;margin-top: -5px; margin-right: 20px; width: 20px">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="user-menu" aria-haspopup="true" aria-expanded="true">
+                        <div class="button-hover-handler active"><i class="glyphicon glyphicon-user" style=" margin-left: 11px;"></i></div>
+                    </a>
+                    <ul class="user-menu dropdown-menu" aria-labelledby="user-menu" style="left: -120px">
+                        <li style="padding: 3px 20px"> Idris </li>
+                        <li role="separator" class="divider"></li>
+
+                            <li>
+                                <a href="/ikwen/staffRouter/">Admin</a>
+                            </li>
+
+                        <li>
+                            <a href="http://www.ikwen.com/accountSetup/">Account setup</a>
+                        </li>
+                        <li><a href="/ikwen/logout">Logout</a></li>
+                    </ul>
+                </div>
+            {% else %}
+                <li>
+                    <a href="{% url 'ikwen:sign_in' %}" style="float: left"><i class="glyphicon glyphicon-user"></i></a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}
+{% block site_menu %}
+    <div id="site-menu" class="collapse navbar-collapse hidden-sm-up">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right" style="margin: 0 -15px 0 0">
+                <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
+                <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
+                {% if user.is_authenticated %}
+                    <li id="user-home">
+                        <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                            {% trans "Home" %}
+                            {% if user.get_notice_count > 0 %}
+                                <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% if collaborates_on|length == 1 %}
+                        <li id="user-apps">
+                            <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
+                        </li>
+                    {% elif collaborates_on|length > 1 %}
+                        <li id="user-apps" class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps</a>
+                            <ul class="dropdown-menu" aria-labelledby="apps">
+                                {% for app in collaborates_on %}
+                                    <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li id="user-menu" class="dropdown">
+                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="user-menu">
+                            <li style="padding: 3px 20px"> {{ user.get_short_name }} </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
+                            </li>
+                            <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="hidden-xs">
+                        <a href="{% url 'ikwen:sign_in' %}" style="padding-top: 13px;">
+                            <button class="btn btn-sm" style="background: #233682;color: #FFF;font-weight: 600; width: 100px;">{% trans "Login" %}</button>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block page_content %}
+    <section style="">
+        <div class="container">
+            <div class="cntr-notice col-sm-8 col-sm-offset-2" >
+                <img src="{% static 'website/img/check-mark.png' %}" />
+                <p>{% trans "Your payment was successful. Thank you for your trust." %}</p>
+            </div>
+            <p style="float: left; margin-top: 25px; text-align: center; width: 100%">{% trans "please provide us with the necessary information for your campaign" %}</p>
+            <div class="campaign-info">
+                <form id="submit-item" class="tab-content admin-form" method="post" action="{% url 'tsunami:checkout' campaign.id  %}">{% csrf_token %}
+                    {% if error %}<p class="alert alert-danger">{{ error }}</p>{% endif %}
+                    <input type="hidden" id="campaign-id" name="campaign_id" value="{{ campaign.id }}" />
+                    <input type="hidden" name="gender" id="gender" />
+                    <input type="hidden" name="age_range" id="age_range" />
+                    <input type="hidden" name="custom_audience" id="custom_audience" />
+                    <input type="hidden" name="photos_ids" id="photos_ids" value="" />
+                    <div class="col-sm-8" style="padding-left: 0">
+
+                        <div class="form-row field-page form-group">
+                            <div>
+                                <label class="required" for="id_sm_page">{% trans "Your facebook link" %}</label>
+                                <input type="url" id="network-page-url" name="network_page" class="form-control input-sm" placeholder="{% trans 'http://www.facebook.com/Mypage' %}">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-sm-12" style="border-bottom: solid 1px #EEE; margin-top: 40px; padding: 5px 0 0">
+                        <label class="required" for="id_sm_audience" style="font-size: 18px">{% trans "Target Audiences" %}</label>
+                    </div>
+                    <div class="col-sm-12 audience" style="margin-top: 30px">
+
+                        <div class="form-row field-page form-group col-sm-4">
+                            <label class="required" for="id_sm_location">{% trans "Location" %}</label>
+                            <div class="form-input">
+                                <input type="radio" id="around" name="location" value="around"><label class="required" for="around">{% trans "Around" %}</label><br/>
+                                <input type="radio" id="everywhere" name="location" value="everywhere"><label class="required" for="everywhere">{% trans "Everywhere" %}</label><br/>
+                            </div>
+                        </div>
+
+                        <div class="form-row field-page form-group col-sm-4" style="float: left; padding: 0 0 25px">
+                            <label class="required" for="id_sm_location">{% trans "Gender" %}</label>
+                            <div class="form-input">
+                                <input type="radio" id="male" name="gender" value="male"><label class="required" for="male">{% trans "Male" %}</label><br/>
+                                <input type="radio" id="female" name="gender" value="female"><label class="required" for="female">{% trans "Female" %}</label><br/>
+                                <input type="radio" id="both" name="gender" value="both"><label class="required" for="both">{% trans "Both" %}</label><br/>
+                            </div>
+                        </div>
+                        <div class="form-row field-page form-group" style="float: left; ">
+                            <label class="required" for="id_sm_age">{% trans "Age range" %}</label>
+                            <select  id="id_age" name="age_range" class="form-control input-sm">
+                                <option value="all">{% trans "Everybody" %}</option>
+                                <option value="15-18">15 - 18 {% trans "years" %}</option>
+                                <option value="18-25">18 - 25 {% trans "years" %}</option>
+                                <option value="25-45">25 - 45 {% trans "years" %}</option>
+                                <option value="45-75">45 - 75 {% trans "years" %}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="item-photos" class="tab-pane active col-sm-12" role="tabpanel" style="padding-bottom: 90px">
+                        <h4>{% trans "Send us some photos (Max.4)" %}</h4>
+                        <div id="upload-container" class="images-uploader">
+                            <div class="frame image tpl">
+                                <span class="progress"></span>
+                                {% include 'core/snippets/spinner.html' %}
+                                <div class="delete has-shade" title="{% trans 'Delete image' %}">&times;</div>
+                            </div>
+                            <div class="frame uploader"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="form-group submit col-xs-12 col-sm-4 col-md-3" style="clear: both; margin-left: -15px; padding-top: 15px">
+                        <button class="btn btn-sm btn-primary btn-block">{% trans "Submit" %}</button>
+                    </div>
+                    {% url "ikwen:account_setup" as account_setup_url %}
+                    <div class="notice col-sm-12">
+                        <p>{% trans "You  choose to have a website. A professionel will contact you to discuss all detail." %}</p> <br/>
+                        <p>{% trans "Is this your number " %} {{ request.user.phone }} ? {% trans " if not, please " %} <a href="{{ account_setup_url|ikwenize }}">change here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+    <script src="{% static 'ikwen/ajaxuploader/js/fileuploader.js' %}"></script>
+    <script src="{% static 'website/js/bootstrap-slider.js' %}"></script>
+    <script type="text/javascript">
+    (function() {
+        {% if campaign %}
+            $('#item-id').val("{{ campaign.id }}")
+        {% endif %}
+        $('div#upload-container').on('click', '.image .delete', function() {
+            var itemId = $('#item-id').val(),
+                $photo = $(this).parent(),
+                id = $photo.attr('id'),
+                photosIDs = $('#photos_ids').val();
+            photosIDs = photosIDs.replace(id, '');
+            $('#photos_ids').val(photosIDs);
+            $photo.fadeOut('normal', function() {
+                $(this).remove()
+            });
+            var item = getLocalProduct(), photos;
+            if (item.photos) photos = item.photos;
+            else photos = [];
+            item.photos = [];
+            for (var i=0; i<photos.length; i++) {
+                var photo = photos[i];
+                if (photo.id != id) item.photos.push(photo)
+            }
+            localStorage.setItem('item', JSON.stringify(item));
+        });
+        var uploader = new qq.FileUploader({
+            action: "{% url 'tsunami:item_photo_uploader' %}",
+            element: $('div#upload-container .uploader')[0],
+            buttonText: "+",
+            multiple: false,
+            onSubmit: function(id, fileName) {
+                var uploadId = 'u' + id;
+                $('div#upload-container .image.tpl').clone().removeClass('tpl').addClass('loading ' + uploadId).insertBefore('div#upload-container .image.tpl');
+            },
+            onProgress: function(id, fileName, loaded, total) {
+                var ratio = loaded / total,
+                    percent = ratio * 100,
+                    uploadId = 'u' + id;
+                $('div#upload-container .image.loading.' + uploadId + ' .progress').animate({opacity: 1 - ratio, width: percent + '%'});
+                if (ratio == 1) $('div#upload-container .image.loading.' + uploadId + ' .spinner').show()
+            },
+            onComplete: function(id, fileName, responseJSON) {
+                if(responseJSON.success) {
+                    var uploadId = 'u' + id,
+                        photo = {id: responseJSON.id, url: responseJSON.url},
+                        photosIDs = $('#photos_ids').val(),
+                        img = new Image(),
+                        item = getLocalProduct();
+                    $('div#upload-container .image.loading.' + uploadId).attr('id', photo.id);
+                    img.onload = function() {
+                        $('div#upload-container .image.loading.' + uploadId).removeClass('loading').css('background-image', "url('" + photo.url +"')")
+                            .find('.progress, .spinner').remove();
+                    };
+                    img.src = photo.url;
+                    item.photos_IDs = photosIDs + ',' + photo.id;
+                    item.photos.push(photo);
+                    $('#photos_ids').val(item.photos_IDs);
+                    localStorage.setItem('item', JSON.stringify(item));
+                } else {
+                    alert("upload failed!");
+                }
+            },
+            params: {
+                'csrf_token': '{{ csrf_token }}',
+                'csrf_name': 'csrfmiddlewaretoken',
+                'csrf_xname': 'X-CSRFToken',
+                'campaign_id': '{{ campaign.id }}'
+            }
+        });
+
+        var pageLoading = true,
+            product;
+
+        function getLocalProduct() {
+            product = localStorage.getItem('item') ? JSON.parse(localStorage.getItem('item')):{};
+            if (pageLoading) {
+                // Do not override locally saved product with form data upon page loading
+                pageLoading = false;
+                return product
+            }
+            var photos = [];
+            if (product != {} && product.photos) photos = product.photos; //Keep a copy of photos objects
+            var productAsArray = $('form#submit-item').serialize().split('&');
+            for (var i=0; i<productAsArray.length; i++) {
+                var elt = productAsArray[i].split('=');
+                product[elt[0]] = decodeURIComponent(elt[1]).replace(/\+/g, ' ');
+            }
+            product.photos = photos; //Then restore the photos objects on the update serialized form
+            return product
+        }
+
+         $("#age-range-aud").on('slide', function (ev) {
+             var ageRange = $('#age-range-aud').val();
+             $('input#age_range').val(ageRange)
+         });
+         $("#tab a.btn").click(function (ev) {
+             var gender = $(this).attr('sex');
+             $('input#gender').val(gender)
+         });
+
+
+
+    })()
+    </script>
+{% endblock %}

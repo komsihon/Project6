@@ -3,7 +3,7 @@
 {% block content %}
     {% with crcy=order.currency rcc=order.rcc|upper %}
     <div style="color: #777; font: normal 1.35em 'Open Sans', 'Helvetica Neue', Lato, Verdana, Arial, sans-serif; line-height: 1.44em; margin-top: 45px; min-height: 180px; padding: 0 15px; text-align: justify">
-        {% url 'shopping:cart' order.id as order_cart_url  %}
+        {% url 'tsunami:cart' order.id as order_cart_url  %}
         {% blocktrans %}Dear {{ buyer_name }}{% endblocktrans %},<br>
         {% if IS_BANK %}
             {% if order.status == 'Confirmed' %}

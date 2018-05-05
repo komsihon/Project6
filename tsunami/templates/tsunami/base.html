@@ -1,0 +1,57 @@
+{% extends "core/base_bs.html" %}
+{% load i18n humanize static %}
+{% block page_title %}
+    <title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">ikwen - {% trans 'Checkout' %} </title>{% endblock %}
+{% block head_style %}
+    {{ block.super }}
+{% endblock %}
+{% block content %}
+    {% block page_content %}
+    {% endblock %}
+    <section class="address">
+        <div class="cover">
+            <div class="container">
+                <div class="achievements">
+                    <h1 class="title animated wow fadeInLeft" style="color: #fff">{% trans "Contact Us Now" %}</h1>
+                    <p class="lead animated wow fadeInDown">
+                        And let us bring to reality your world-changing project.
+                    </p>
+                    <div class="app">
+                        <div class="col-sm-2 hidden-xs"> </div>
+                        <div class="contact-img col-sm-4 col-xs-12"><img src="{% static "website/img/rocket.png" %}" width="50%"> </div>
+                        <div class="col-sm-4 col-xs-12 contact-address ">
+                            <a href="http://www.ikwen.com/"><img src="{% static 'website/img/logo_ikwen-344x150.png' %}" width="200"></a>
+                            <div class="address">
+                                <p>195 Route Montée Jouvence</p>
+                                <p>Yaoundé, Cameroon</p>
+                                <p></p>
+                                <p>E-mail: <a href="mailto:contact@ikwen.com">contact@ikwen.com</a> </p>
+{#                                <p>Tel: (+237) 000.00.00.00</p>#}
+                                <p>Web: <a href="http://www.ikwen.com/{% url 'home' %}">www.ikwen.com</a> </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-2 hidden-xs"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                {% trans "All rights reserved." %}
+                {% if config.legal_mentions_url %}
+                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                {% endif %}
+            </div>
+            <div id="bottom-menu">
+                <ul>
+                    <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                    <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+{#                    <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>#}
+                    <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+{% endblock %}

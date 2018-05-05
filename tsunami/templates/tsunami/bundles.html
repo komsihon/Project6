@@ -1,0 +1,370 @@
+{% extends "tsunami/base.html" %}
+{% load i18n humanize static auth_tokens  %}
+{% block page_title %}<title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">ikwen - {% trans 'Tsunami' %} </title>{% endblock %}
+
+{% block meta %}
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="IKWEN communication bundles" />
+    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+    <meta property="og:description" content="Let network user know about you and your business" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel='stylesheet' href="{% static 'website/css/com.css' %}" />
+    <style type="text/css">
+        body {font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
+        .modal.fade.show {opacity: 1}
+        #navbar {background-color: #FFF}
+        #navbar .glyphicon.glyphicon-search {color: #FFF}
+        #bottom-menu li a {color: #203e96}
+        .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
+        .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
+        #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
+        #payment-methods .modal-content {top: 50px}
+        section.address {background-image: url("{% static 'website/img/map.svg' %}"); background-size: 100% auto; color: #FFF; font-size: 22px; font-weight: 300;height: 600px;}
+
+        .company .title {font-size: 60px; text-align: center; font-weight: 300 }
+        .pricing-list > li:nth-child(1) {}
+        .pricing-list > li:nth-child(1) .pricing-header {background-color:#eebd00}
+        .pricing-list > li:nth-child(1) .btn-primary {background-color:#eebd00; border-color:#eebd00}
+        .pricing-list > li:nth-child(2) {}
+        .pricing-list > li:nth-child(2) .pricing-header {background-color:#a3005b}
+        .pricing-list > li:nth-child(2) .btn-primary {background-color:#a3005b; border-color:#a3005b}
+        .pricing-list > li:nth-child(3) {}
+        .pricing-list > li:nth-child(3) .pricing-header {background-color: #00828d}
+        .pricing-list > li:nth-child(3) .btn-primary {background-color: #00828d; border-color: #00828d}
+        .pricing-list > li:nth-child(4) {}
+        .pricing-list > li:nth-child(4) .pricing-header {background-color: #0a437c}
+        .pricing-list > li:nth-child(4) .btn-primary {background-color: #0a437c; border-color: #0a437c}
+
+        .code-container {display: none; float: left; margin-top: 30px; padding: 0 15px; text-align: center; width: 100%}
+        .code-container .currency {font-size: 12px}
+        .code-container .value {font-size: 25px}
+        .code-container .p-code {float: left; font-weight: 700; color:#a3005b; text-transform: uppercase }
+
+        .previous-price{display: none; float: left; margin-top: 30px; padding: 0 15px; text-align: center; width: 100%}
+        .previous-price .currency {font-size: 12px}
+        .previous-price .value {font-size: 25px}
+        .previous-price .p-code {float: left; font-weight: 700; color:#a3005b; text-transform: uppercase }
+
+        .promo-code {display: block;font-size: 11px;text-align: right;clear: both;}
+        .input-group.promo  {display: none}
+        .input-group.promo input {width: 65%}
+        .input-group.promo .input-group-btn {width: 35%}
+        .btn.apply-promo-code {padding: 5px 15px;}
+        .promo-code-cntr {display: block;clear: both; margin-top: 50px; padding: 0 25px;}
+        .promo-code-cntr .invalid-code {color: #ad3949;display: none}
+        .promo-code-cntr input[type=text]{text-transform: uppercase;border-right: transparent; height: 35px}
+        .promo-code-rate {color: #ad3949; font-size: 17px; text-transform: uppercase}
+
+    </style>
+{% endblock %}
+
+
+{% block site_menu_xs %}
+    <nav class="visible-xs pull-right" style="width: 110px">
+        <ul id="nav-xs" style="position: absolute">
+            <li class="show-search">
+                <i class="glyphicon glyphicon-search"></i>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="home">
+                    <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                        <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
+                        {% if user.personal_notices > 0 %}
+                            <span class="label label-danger">{{ user.personal_notices }}</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% if collaborates_on|length >= 1 %}
+                    <li class="app-list" data-toggle="collapse" data-target="#iao-app-list-xs" aria-expanded="false">
+                        <a href="#"><i class="glyphicon glyphicon-th-large"></i> </a>
+                    </li>
+                {% endif %}
+
+                <div class="action dropdown" style="float: right;margin-top: -5px; margin-right: 20px; width: 20px">
+                    <a class="dropdown-toggle" data-toggle="dropdown" id="user-menu" aria-haspopup="true" aria-expanded="true">
+                        <div class="button-hover-handler active"><i class="glyphicon glyphicon-user" style=" margin-left: 11px;"></i></div>
+                    </a>
+                    <ul class="user-menu dropdown-menu" aria-labelledby="user-menu" style="left: -120px">
+                        <li style="padding: 3px 20px"> Idris </li>
+                        <li role="separator" class="divider"></li>
+
+                            <li>
+                                <a href="/ikwen/staffRouter/">Admin</a>
+                            </li>
+
+                        <li>
+                            <a href="http://www.ikwen.com/accountSetup/">Account setup</a>
+                        </li>
+                        <li><a href="/ikwen/logout">Logout</a></li>
+                    </ul>
+                </div>
+            {% else %}
+                <li>
+                    <a href="{% url 'ikwen:sign_in' %}" style="float: left"><i class="glyphicon glyphicon-user"></i></a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}
+{% block site_menu %}
+    <div id="site-menu" class="collapse navbar-collapse hidden-sm-up">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right" style="margin: 0 -15px 0 0">
+                <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
+                <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
+                {% if user.is_authenticated %}
+                    <li id="user-home">
+                        <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                            {% trans "Home" %}
+                            {% if user.get_notice_count > 0 %}
+                                <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% if collaborates_on|length == 1 %}
+                        <li id="user-apps">
+                            <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
+                        </li>
+                    {% elif collaborates_on|length > 1 %}
+                        <li id="user-apps" class="dropdown">
+                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps</a>
+                            <ul class="dropdown-menu" aria-labelledby="apps">
+                                {% for app in collaborates_on %}
+                                    <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                    <li id="user-menu" class="dropdown">
+                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="glyphicon glyphicon-user"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="user-menu">
+                            <li style="padding: 3px 20px"> {{ user.get_short_name }} </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
+                            </li>
+                            <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
+                        </ul>
+                    </li>
+                {% else %}
+                    <li class="hidden-xs">
+                        <a href="{% url 'ikwen:sign_in' %}" style="padding-top: 13px;">
+                            <button class="btn btn-sm" style="background: #233682;color: #FFF;font-weight: 600; width: 100px;">{% trans "Login" %}</button>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+{% block page_content %}
+
+    <section>
+        <div class="container">
+            <div class="company">
+                <div class="title animated wow fadeInLeft">{% trans "Our communication bundles" %}</div>
+            </div>
+            <div class="pricing-container">
+                <input type="hidden" id="promo-code-id">
+                <input type="hidden" class="add-website tpl" name="website_needed">
+                <ul class="pricing-list bounce-invert" id="pricing-list">
+                    {% for bundle in bundles %}
+                        {% if bundles.count <= 2 %}
+                            <li class="col-sm-6">
+                        {% elif bundles.count == 3  %}
+                            <li class="col-sm-4">
+                        {% elif bundles.count == 4  %}
+                            <li class="col-sm-3">
+                        {% endif %}
+                            <ul class="pricing-wrapper">
+                                <li data-type="monthly" class="is-visible bundle" offer-cost="{{ bundle.monthly_cost }}">
+                                    <header class="pricing-header month">
+                                        <h2>{{ bundle.name }}</h2>
+                                    </header>
+                                    <div class="pricing-body">
+                                        <ul class="pricing-features options">
+                                            {% for option in bundle.options %}
+                                            <li>{{ option }}</li>
+                                            {% endfor %}
+                                        </ul>
+
+                                        <ul class="pricing-features">
+                                            <li class="website-cost">+ Website (+<i>{{ bundle.website_cost }}</i>)</li>
+                                            <li>{% trans "Integrated MoMo/OM payments" %}</li>
+                                            <li>{% trans "1 Month phone support" %}</li>
+                                            <li>{% trans "1 Domain name" %}</li>
+                                            <li>
+                                                <label>
+                                                    <input type="checkbox" class="add-website"/>
+                                                    <span class="text">{% trans "Yes, I want my website" %}</span>
+                                                </label>
+                                            </li>
+                                        </ul>
+
+                                        <div class="promo-code-cntr">
+                                            <div class="">
+                                                <div class="input-group promo">
+                                                    <input type="text" class="form-control code"  placeholder="{% trans 'Promo code' %}">
+                                                    <span class="input-group-btn">
+                                                        <button class="btn btn-secondary apply-promo-code" type="button">{% trans 'Apply' %}</button>
+                                                    </span>
+                                                </div>
+                                                <div class="invalid-code">{% trans "Invalid promotion code" %}</div>
+                                            </div>
+                                            <a class="promo-code" href="javascript:;" >{% trans 'Promo code' %} ?</a>
+                                        </div>
+
+
+                                        <div class="code-container">
+                                            <span class="p-code">VLADIMIR-50</span>
+                                           <span style="float: right;">
+                                               <span class="currency" style="font-size: 32px; line-height: 0;">-</span>
+                                               <span class="value"> {{ bundle.monthly_cost }}</span>
+                                           </span>
+                                        </div>
+
+                                        <div class="previous-price">
+                                            <span class="currency">XAF</span>
+                                            <del class="value"></del>
+{#                                            <span class="duration">mo</span>#}
+                                        </div>
+
+                                        <div class="price">
+                                            <span class="currency">XAF</span>
+                                            <span class="value">{{ bundle.monthly_cost }}</span>
+{#                                            <span class="duration">mo</span>#}
+                                        </div>
+
+                                        <div class="form-group buy-now hidden-sm">
+                                            <a class="btn btn-sm btn-primary btn-block cta buy-now" data-id="{{ bundle.id }}" data-toggle="modal"
+                                                {% if user.is_anonymous %}data-target="#login-to-continue"{% endif %}>{% trans "BUY NOW" %}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+    {% with payment_conf='tsunami' %}
+    {% include 'billing/snippets/modal_payment_options.html' %}
+    {% endwith %}
+    <div class="modal fade" id="login-to-continue" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-info">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">{% trans "Sign in" %}</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="col-xs-12" style="margin-bottom: 1em">{% trans "Please sign in to continue" %}</p>
+                    <div class="col-xs-12 col-sm-4 col-md-3 pull-right">
+                        <a href="{% url 'ikwen:sign_in' %}?next={{ request.META.REQUEST_URI }}"
+                           class="btn btn-sm btn-success btn-block do-empty-cart">{% trans "Sign in" %}</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-4 col-md-3 pull-right">
+                        <a href="{% url 'ikwen:sign_in' %}?next={{ request.META.REQUEST_URI }}"
+                           class="btn btn-sm btn-warning btn-block">{% trans "Register" %}</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+{#    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>#}
+    <script  src="{% static 'website/js/com.js' %}"></script>
+    <script type="text/javascript">
+        (function() {
+            var $askForWebsite = $('.add-website.tpl').clone().removeClass('tpl')
+            $askForWebsite.insertAfter('#checkout #product-id')
+            {% if user.is_authenticated %}
+                $('.bundle .btn.buy-now').click(function() {
+                    $('#payment-methods').modal('show');
+                    var productId = $(this).data('id');
+                    $('#product-id').val(productId);
+                    $('#checkout .add-website').val(false)
+                    if ($(this).parents('.bundle').find('input.add-website').is(":checked")){
+                        $('#checkout .add-website').val(true)
+                    }
+                });
+                $('.payment-method').click(function() {
+                    var actionURL = $(this).data('action-url');
+                    $('form#checkout').attr('action', actionURL).submit();
+                });
+            {% endif %}
+{#            $('label input').click(function () {#}
+{#                var com = $(this).parents('.pricing-body').find('.cta').attr('href')#}
+{#                if ($(this).is(':checked')){#}
+{#                    $(this).parents('.pricing-body').find('.cta').attr('href', com+"&website=true")#}
+{#                }else {#}
+{#                    com = com.replace("&website=true", '')#}
+{#                    $(this).parents('.pricing-body').find('.cta').attr('href', com)#}
+{#                }#}
+{#            })#}
+            $(".promo-code").click(function () {
+                $('.input-group.promo').hide();
+                $(".promo-code").show()
+                $(this).parent(".promo-code-cntr").find('.input-group.promo').show().find('input.code').focus();
+                $(this).hide();
+            })
+            $('.apply-promo-code').click(function () {
+                var that = $(this),
+                code = $(this).parents(".promo-code-cntr").find('.input-group.promo input.code').val();
+                   $.getJSON("{% url 'tsunami:find_promo_code' %}", {code: code}, function(resp) {
+                    if (resp.error) {
+                        that.parents(".promo-code-cntr").find('.invalid-code').fadeIn().show();
+                        that.parents(".promo-code-cntr").find('.input-group.promo input.code').focus()
+                    }else {
+                        $('#promo-code-id').val(resp.promo_code.id)
+                        $('#promo-code-id').attr('rate', resp.promo_code.rate)
+                        $('.code-container').fadeIn().show()
+                        $('.previous-price').fadeIn().show()
+                        $('.code-container .p-code').text(resp.promo_code.code)
+                        $('.promo-code-cntr').hide()
+
+                        calculateFinalCost()
+                    }
+                });
+            })
+            $('input.add-website').click(function () {
+                calculateFinalCost()
+            })
+            function calculateFinalCost() {
+                var promoCode = $('#promo-code-id').val(),
+                 pCode = ''
+                if (promoCode) pCode = "&promocode=" + promoCode
+                $('#pricing-list').find('.bundle').each(function (e) {
+                    var websiteCost = $(this).find('.pricing-features').find('li.website-cost i').text()
+                    var bundleCost = $(this).attr('offer-cost')
+                    var previousPrice = parseInt(bundleCost)
+                    var promoRate = $('#promo-code-id').attr('rate'),
+                    finalCost = parseInt(bundleCost)
+                    if (!promoRate) promoRate = 0
+                    $('#checkout .add-website').val(false)
+                    if ($(this).find('input.add-website').is(":checked")){
+                        $('#checkout .add-website').val(true)
+                        finalCost += parseInt(websiteCost)
+                        previousPrice += parseInt(websiteCost)
+                    }
+                    finalCost = finalCost*(1-promoRate/100)
+                    $(this).find('.price .value').text(finalCost)
+                    $(this).find('.code-container span .value').text(previousPrice * promoRate/100)
+                    $(this).find('.previous-price .value').text(previousPrice)
+                })
+            }
+        })()
+    </script>
+{% endblock %}

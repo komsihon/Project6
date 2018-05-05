@@ -1,0 +1,30 @@
+- model: tsunami.bundleoption
+  pk: 55d1fa8feb60008099bd2251
+  fields:
+    name: tsunami1
+    slug: tsunami1
+    cost: 10000
+    options: ['comm', '550 abonnes', 'website']
+    max_img_count: 5
+    include_website: no
+    has_page: yes
+
+- model: tsunami.bundleoption
+  pk: 55d1fa8feb60118099bd4152
+  fields:
+    name: tsunami1
+    slug: tsunami2
+    cost: 10000
+    options: ['comm', '1550 abonnes', 'website']
+    max_img_count: 5
+    include_website: yes
+    has_page: yes
+    website_data: 55d1fa8f4460002299bd2251
+
+- model: tsunami.websiteData
+  pk: 55d1fa8f4460002299bd2251
+  fields:
+    domain_name: 56eb6d04b37b3379b531b102
+    username: virant
+    setup_cost: 59000
+    monthly_cost: 3500
