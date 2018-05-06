@@ -8,13 +8,30 @@
     <link rel='stylesheet' href="{% static 'ikwen/css/bootstrap.min.css' %}" />
     <link rel='stylesheet' href="{% static 'ikwen/css/apps.css' %}" />
     <style type="text/css">
-        #navbar {background-color: rgba(255, 255, 255, 0.36)}
+        #navbar {background-color: #fff}
         #navbar-search input {background: rgba(92, 120, 177, 0.48); color: #FFF}
-        #navbar .glyphicon.glyphicon-search {color: #FFF}
+{#        #navbar .glyphicon.glyphicon-search {color: #FFF}#}
         #bottom-menu li a {color: #203e96}
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
         .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
         #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #1f356a;}
+        @media only screen
+        and (max-device-width : 425px) {
+            .company .title {font-size: 35px }
+            .pricing-list > li {margin-top: 75px}
+            .lead {font-size: 22px; text-align: center}
+            .achievements .title {text-align: center}
+            section.address {height: 1000px}
+            section.address .cover {height: 1000px}
+            #bottom-menu {margin-top: 70px; position: relative; text-align: center}
+            #bottom-menu {margin-top: 70px; position: relative; text-align: center}
+            #bottom-menu li a {color: #fff; font-size: 22px}
+            #navbar .glyphicon {color: #211919;}
+            #nav-xs {margin-top: 2px;right: 19px; width: 220px;}
+            #nav-xs li {margin-right: 39px;}
+            section .cover {height: 2000px}
+            section.main-feat {height: 2000px}
+        }
     </style>
 {% endblock %}
 {% block site_menu_xs %}
@@ -40,7 +57,7 @@
 
                 <div class="action dropdown" style="float: right;margin-top: -5px; margin-right: 20px; width: 20px">
                     <a class="dropdown-toggle" data-toggle="dropdown" id="user-menu" aria-haspopup="true" aria-expanded="true">
-                        <div class="button-hover-handler active"><i class="glyphicon glyphicon-user" style=" margin-left: 11px;"></i></div>
+                        <div class="button-hover-handler active"><i class="glyphicon glyphicon-user" style=" margin-top: 4px;"></i></div>
                     </a>
                     <ul class="user-menu dropdown-menu" aria-labelledby="user-menu" style="left: -120px">
                         <li style="padding: 3px 20px"> Idris </li>

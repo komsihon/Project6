@@ -19,6 +19,8 @@
         body {font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
         .modal.fade.show {opacity: 1}
         #navbar {background-color: #FFF}
+        #navbar .glyphicon {color: #211919;}
+        #nav-xs {width: 200px}
         #navbar .glyphicon.glyphicon-search {color: #FFF}
         #bottom-menu li a {color: #203e96}
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
@@ -60,6 +62,23 @@
         .promo-code-cntr .invalid-code {color: #ad3949;display: none}
         .promo-code-cntr input[type=text]{text-transform: uppercase;border-right: transparent; height: 35px}
         .promo-code-rate {color: #ad3949; font-size: 17px; text-transform: uppercase}
+        @media only screen
+        and (max-device-width : 425px) {
+            .company .title {font-size: 35px }
+            .pricing-list > li {margin-top: 75px}
+            .lead {font-size: 22px; text-align: center}
+            .achievements .title {text-align: center}
+            section.address {height: 1000px}
+            section.address .cover {height: 1000px}
+            #bottom-menu {margin-top: 70px; position: relative; text-align: center}
+            #bottom-menu {margin-top: 70px; position: relative; text-align: center}
+            #bottom-menu li a {color: #fff; font-size: 22px}
+            #navbar .glyphicon {color: #211919;}
+            #nav-xs {margin-top: 2px;right: 19px; width: 220px;}
+            #nav-xs li {margin-right: 39px;}
+            section .cover {height: 2000px}
+            section.main-feat {height: 2000px}
+        }
 
     </style>
 {% endblock %}

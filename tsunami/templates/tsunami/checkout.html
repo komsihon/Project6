@@ -70,9 +70,28 @@
         .notice p {float: left; width: 100%}
         .notice a {color: #2548d3;}
         .form-input label {font-weight: 300; margin-left: 10px}
+        #navbar .glyphicon {color: #211919;}
+        #nav-xs {width: 200px}
         @media (min-width: 768px) {
             .images-uploader .frame {width: 235px;height: 230px;}
             .images-uploader .qq-upload-button {line-height: 190px}
+        }
+        @media only screen
+        and (max-device-width : 425px) {
+            .company .title {font-size: 35px }
+            .pricing-list > li {margin-top: 75px}
+            .lead {font-size: 22px; text-align: center}
+            .achievements .title {text-align: center}
+            section.address {height: 1000px}
+            section.address .cover {height: 1000px}
+            #bottom-menu {margin-top: 70px; position: relative; text-align: center}
+            #bottom-menu {margin-top: 70px; position: relative; text-align: center}
+            #bottom-menu li a {color: #fff; font-size: 22px}
+            #navbar .glyphicon {color: #211919;}
+            #nav-xs {margin-top: 2px;right: 19px; width: 220px;}
+            #nav-xs li {margin-right: 39px;}
+            section .cover {height: 2000px}
+            section.main-feat {height: 2000px}
         }
     </style>
 {% endblock %}
@@ -224,7 +243,7 @@
                                 <input type="radio" id="both" name="gender" value="both"><label class="required" for="both">{% trans "Both" %}</label><br/>
                             </div>
                         </div>
-                        <div class="form-row field-page form-group" style="float: left; ">
+                        <div class="form-row field-page form-group col-sm-4" style="float: left; ">
                             <label class="required" for="id_sm_age">{% trans "Age range" %}</label>
                             <select  id="id_age" name="age_range" class="form-control input-sm">
                                 <option value="all">{% trans "Everybody" %}</option>
@@ -235,7 +254,7 @@
                             </select>
                         </div>
                     </div>
-                    <div id="item-photos" class="tab-pane active col-sm-12" role="tabpanel" style="padding-bottom: 90px">
+                    <div id="item-photos" class="tab-pane active col-sm-12" role="tabpanel" style="clear: both;padding-bottom: 90px">
                         <h4>{% trans "Send us some photos (Max.4)" %}</h4>
                         <div id="upload-container" class="images-uploader">
                             <div class="frame image tpl">
