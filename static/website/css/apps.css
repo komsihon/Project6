@@ -1,0 +1,48 @@
+
+body {font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
+a {color: #2c3e50}
+
+.has-shade {box-shadow: 1px 1px 9px 4px rgba(0, 0, 0, .1)}
+.bottom-shade {box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1)}
+.text-has-shade {text-shadow: 1px 2px 2px rgba(0, 0, 0, .7)}
+.inner-shade {box-shadow: inset 0 1px 3px rgba(0, 0, 0, .15);}
+.subtle-shade {box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .15);}
+
+a:hover, a:focus,a:active {color: #4263ac; text-decoration: none}
+a.btn {background: #fe7400;border: #fe7400;color: #fff;  font-size: 20px; margin: auto; padding: 10px 40px; text-align: center; width: 300px}
+a.btn:hover {background: #dc6e00; color: #fff; }
+#navbar {top: 0}
+section.site {float: left; font-size: 28px; line-height: 45px; font-weight:300; text-align: center; min-height: 400px; padding: 100px 0; width: 100%}
+section.site.header {background-size: cover;  float: left; height: 900px; padding: 20px 0;  width: 100%}
+section.site.header .logo {float: left; margin: 75px 50px }
+section.site.main-feat {background-size: cover;background-attachment: fixed; height: 900px; }
+section.site .cover {background:#000000e3; color: #FFF;line-height: 60px; position: absolute; height: 900px; margin-top: -100px; padding: 100px 0; width: 100%}
+section.site .cover h1 {padding: 30px 0 0}
+section.site .cover .btn {margin-top: 105px}
+footer {float: left}
+#bottom-menu {bottom: 20px; position: absolute; right: 20px; }
+#bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+#bottom-menu li a {color: #fff; font-size: 12px}
+.section-header img {float: left; width: 80%}
+.features p {font-size: 20px; text-align: justify; line-height: 35px}
+.features img {margin: auto;}
+footer {display: none}
+div.footer {color: #FFF; font-size: 12px; position: absolute; bottom: 20px; left: 20px}
+div.footer .company-name {color: #FFF; text-decoration: none;}
+div.cloud-deploy {position: absolute; bottom: 100px; width: 100%}
+.navbar-default { border: none}
+
+@media (max-width: 425px) {
+    #bottom-menu {margin-top: 0; width: 100%;}
+    #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+    #bottom-menu li a {float: left; width: 100%}
+    div.container {margin-top: 0}
+    .app-logo img {width: 75%}
+    section.site {margin-top: 20px; padding-bottom: 10px}
+    .contact-img {text-align: center}
+    .contact-address {text-align: center}
+    footer div {float: left; padding-bottom: 25px; width: 100%}
+    #bottom-menu li {float: left; clear: both; width: 100%}
+    #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
+    .section-header img {float: left;clear: both; margin-top: 30px; width: 80%}
+}

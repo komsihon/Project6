@@ -1,101 +1,160 @@
-{% extends "apps/apps_base.html" %}
+{% extends "tsunami/base.html" %}
 {% load i18n humanize static auth_tokens  %}
-{% block page_title %}<title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Webnode - {% trans 'Details' %} </title>{% endblock %}
+{% block page_title %}<title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Webnode - {% trans 'Deploy cloud' %} </title>{% endblock %}
 
 {% block meta %}
-    <meta property="og:type" content="Website" />
-    <meta property="og:title" content="IKWEN" />
+    <meta property="og:title" content="Webnode" />
     <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
-    <meta property="og:description" content="Web Apps to empower your small or big business" />
-    <meta property="description" content="Web Apps to empower your small or big business" />
-    <meta name="abstract" content="Kakocase provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+    <meta property="og:description" content="{% trans "Create or improve your online presence to enhance your visibility and add to your credibility" %}" />
+    <meta property="description" content="{% trans "Provide you with world-class communication tools that meet international standards tailored to your needs in just 5 minutes" %}" />
+    <meta name="abstract" content="{% trans "Provide you with world-class communication tools that meet international standards tailored to your needs in just 5 minutes" %}"/>
 {% endblock %}
 {% block head_style %}
     {{ block.super }}
-
+    <link rel='stylesheet' href="{% static 'website/css/apps.css' %}" />
     <style type="text/css">
-        section.header {background: url("{% static 'ikwen/img/ikwen-banner2.jpg' %}"); background-size: cover;}
-        section.main-feat {background-image:url("{% static 'ikwen/img/ikwen_Console.png' %}");background-size: cover;}
+        section.header {background: url("{% static 'website/img/webnode-banne-full.png' %}"); background-size: cover;}
+        section.main-feat {background-image:url("{% static 'website/img/webnode-banner.png' %}");background-size: cover;}
+        section.main-feat .feat {font-size: 18px; line-height: 35px; margin-top: 50px; text-align: justify}
+        section.main-feat .feat h3 {font-weight: 400; font-size: 25px; text-align: center}
+        section.main-feat p {margin-top: 30px;}
+        section.address {margin-top: 0; height: 670px;}
+        section.address .cover {background-color: rgba(255, 255, 255, 0.83); color: #2f2f2f; font-weight: 400;}
+        section.address .cover h1 {color: #210707;}
+        section.address a {color: #2f2f2f;font-weight: 300;}
+        #bottom-menu li a {font-weight: 400;}
+{#        section.address p {height: 33px; padding: 12px 0}#}
+        section.address .cover {height: 670px}
+        .white-text-has-shade {text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.7)}
+        #navbar .glyphicon.glyphicon-search {color: #555}
+
+        #bottom-menu .lang-switcher {margin: 0 0 0 50px;}
+        #bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px}
+        #bottom-menu li a {color: #203e96;}
+        .features h3 {font-weight: 400}
+        a.btn {width: 365px}
+
+        div.footer, div.footer .company-name {color: #203e96;}
+
+        @media only screen
+        and (max-width : 768px){
+            .features {padding: 25px 0; margin-top: 50px}
+            .feat {margin-top: 20px}
+
+            section.header {height: 510px; margin-top: 0;}
+            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 70px;}
+            section.header h3 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px; text-transform: uppercase}
+            div.cloud-deploy {bottom: inherit;margin-top: 225px; position: relative}
+        }
+
+        @media only screen and (min-width : 992px) {
+            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 130px;}
+            section.header h3 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px; text-transform: uppercase}
+            section.header {height: 900px}
+        }
+
+        @media only screen and (min-width : 1700px) {
+            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 170px;}
+            section.header h3 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px; text-transform: uppercase}
+            section.header {height: 1015px}
+        }
+
+        @media only screen and (max-device-width : 425px) {
+            section.site.main-feat{height: 1235px;}
+            section.site.header {height: 410px; margin-top: 0;}
+            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 70px;}
+            section.header h3 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px; text-transform: uppercase}
+            .company .title {font-size: 35px }
+            .pricing-list > li {margin-top: 75px}
+            .lead {font-size: 22px}
+            .achievements .title {}
+            section.address {height: 1000px}
+            section.address .cover {height: 1000px}
+            #bottom-menu {margin-top: 70px; position: relative}
+            #bottom-menu li a {color: #fff; font-size: 22px}
+            div.cloud-deploy {bottom: inherit;margin-top: 133px; position: relative}
+            .features {padding: 25px 0; margin-top: 0}
+            .feat {margin-top: 100px}
+            .feat:first-child {margin-top: 0}
+            section.main-feat {height: 1235px}
+            section.main-feat .cover {height: 1235px}
+            .contact-img {margin-top: 35px}
+            a.btn {font-size: 18px; width: 300px}
+            div.cloud-deploy {margin-top: 95px}
+        }
     </style>
+
 {% endblock %}
 
-{% block content %}
-    <section class="header">
-        <div class="logo">
-            <img class="img-responsive" src="{% static 'ikwen/img/webnode-logo.png' %}">
-        </div>
-        <div class="container">
-        </div>
-            <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/webnode/deployCloud/">DEPLOY NOW!</a></div>
+{% block page_content %}
+    <section class="header site">
+            <div class="banner-title-cntr">
+                <h3 class="white-text-has-shade">{% trans "Create your website and improve your visibility in a few clicks." %}</h3>
+            </div>
+        <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/webnode/deployCloud/">CREATE MY WEBSITE NOW</a></div>
     </section>
-    <section>
+    <section class="features site">
         <div class="container">
-            <h1>Features</h1>
+            <h1>{% trans "Features" %}</h1>
             <p class="lead"></p>
             <div class="row features">
                 <div class="feat col-sm-4">
                     <div class="col-sm-12">
-                        <img class="img-responsive" src="{% static 'ikwen/img/services2.png' %}">
+                        <img class="img-responsive" src="{% static 'website/img/easy setup-01.png' %}">
                     </div>
                     <div class="col-sm-12">
-                        <h3>Easy setup</h3>
+                        <h3>{% trans "Easy setup" %}</h3>
                         <div>
-                            <p>Satellite data provides information on a global scale that is consistent in space although they usually</p>
+                            <p>{% trans "Whether you are a company, an institution, an individual, or other, WebNode gives you the visibility you need on the internet with a modern custom website in 5 minutes.." %}</p>
+                            <p>{% trans "Start building your e-reputation right now!" %}</p>
                         </div>
                     </div>
                 </div>
                 <div class="feat col-sm-4">
                     <div class="col-sm-12">
-                        <img class="img-responsive" src="{% static 'ikwen/img/services3.png' %}">
+                        <img class="img-responsive" src="{% static 'website/img/responsive-design-01.png' %}">
                     </div>
                     <div class="col-sm-12">
-                        <h3>Mobile money</h3>
+                        <h3>{% trans "Responsive design" %}</h3>
                         <div>
-                            <p>Satellite data provides information on a global scale that is consistent in space although they usually</p>
+                            <p>{% trans "Your website adapts to all existing and future screens to optimize the user experience. From mobile phones to connected TVs via the tablet screen and the computer screen, your website appears as you wish." %}</p>
                         </div>
                     </div>
                 </div>
                 <div class="feat col-sm-4">
                     <div class="col-sm-12">
-                        <img class="img-responsive" src="{% static 'ikwen/img/services5.png' %}">
+                        <img class="img-responsive" src="{% static 'website/img/fully-customizable-01.png' %}">
                     </div>
                     <div class="col-sm-12">
-                        <h3>Smartphone ready</h3>
+                        <h3>{% trans "Fully customizable" %}</h3>
                         <div>
-                            <p>Satellite data provides information on a global scale that is consistent in space although they usually</p>
+                            <p>{% trans "Shape your website according to your needs. Simply and effectively. Focus only on your content and how you want to show it, Webnode takes care of the rest" %}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="main-feat">
+    <section class="main-feat site">
         <div class="cover">
             <div class="container">
-                <h1>Zero-asset online trade.</h1>
-                <div>Sell online in 5 minutes ! We provide you with a modern, smartphone-ready website that accepts
-                    payments through Mobile Money (MTN, Orange) and bank cards (UBA Visa, etc.).
-                    Our partners take care of delivery to guarantee that your business goes on even when you sleep.
-                    Increase visibility and revenue by creating a network of Sales people online.
+                <h1>{% trans "Take your e-reputation to the next level" %}.</h1>
+                <div class="col-sm-4 feat">
+                    <h3>{% trans "Are you a company" %}?</h3>
+                    <p>{% trans "Create or improve your online presence to enhance your visibility and add to your credibility" %}</p>
                 </div>
-                <a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/webnode/deployCloud/">DEPLOY NOW!</a>
-            </div>
-            <div class="footer">
-                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
-                {% trans "All rights reserved." %}
-                {% if config.legal_mentions_url %}
-                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
-                {% endif %}
-            </div>
-            <div id="bottom-menu">
-                <ul>
-                    <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
-                    <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
-                    <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>
-                    <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
-                </ul>
+                <div class="col-sm-4 feat">
+                    <h3>{% trans "Are you an institution" %}?</h3>
+                    <p>{% trans "Provide you with world-class communication tools that meet international standards tailored to your needs in just 5 minutes" %}</p>
+                </div>
+                <div class="col-sm-4 feat">
+                    <h3>{% trans "Are you an individual" %}?</h3>
+                    <p>{% trans "Whether you are a rising star, an expert, or just someone whose concern is to gain quality visibility on the web, with WebNode you now have a professional-quality digital identity, in 5 minutes chrono" %}</p>
+                </div>
+                <a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/webnode/deployCloud/">CREATE MY WEBSITE NOW</a>
             </div>
         </div>
-
     </section>
+
+{% include 'tsunami/snippets/address_section.html' %}
 {% endblock %}

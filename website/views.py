@@ -27,3 +27,7 @@ class Kakocase(TemplateView):
 
 class Shavida(TemplateView):
     template_name = 'apps/shavida.html'
+
+
+class PinsView(TemplateView):
+    template_name = 'apps/pinsview.html'

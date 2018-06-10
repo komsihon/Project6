@@ -1,4 +1,4 @@
-{% extends "core/base_bs.html" %}
+{% extends "tsunami/base.html" %}
 {% load i18n humanize static auth_tokens  %}
 {% block page_title %}<title>ikwen - {% trans 'Home' %} </title>{% endblock %}
 
@@ -14,257 +14,73 @@
 {% block head_style %}
     {{ block.super }}
     <style type="text/css">
-        body {overflow: hidden}
-        #v-carousel {bottom: 20%}
-        #banner {background-attachment: fixed; background-size: cover; background-image: url('{% static 'ikwen/img/balloon-2435142.jpg' %}'); padding: 0; width: 100%}
-        #banner .overlay {background-color: rgba(0, 0, 0, 0.20); height: 100%; position: fixed; top: 0; width: 100%}
-        #banner .main-title {color: #fff; font-size: 1.5em; margin-top: 25%; text-align: center; text-indent: 0; position: absolute; width: 100%}
-        #banner .carousel h3  {color: #FFF; font-size: 1.3rem;line-height: 3rem;font-weight: 700;text-align: center;}
-        .main-title button {color: #FFF;font-weight: 600; width: 200px;}
-        #v-carousel {font-size: 16px;height: 75px;text-align: center; width: 100%;overflow: hidden; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; position: absolute}
-        #v-carousel h3 {height: 72px; margin-top: inherit}
-        #banner .carousel h1  {font-size: 3rem;margin-bottom: 3rem;}
-
-        #banner .carousel h2  {font-size: 2rem;margin-bottom: 1rem;}
-        #navbar {display: block}
+        html, body {height: 100%}
+        body {background: url('{% static 'ikwen/img/balloon-2435142.jpg' %}') no-repeat fixed; background-size: cover}
+        .main-title {color: #fff; font-size: 1.5em; text-align: center}
+        .icon-bar {background: #1f356a}
+        #navbar .glyphicon {color: #FFF}
         #navbar .navbar-brand{font-weight: 700;}
         footer {bottom: -20px; color: #fff; background: transparent; position: fixed;  left: 0; text-align: center}
         footer a, footer .company-name {color: #fff}
         #bottom-menu {}
         #presentation {display: none}
+        #bottom-menu .lang-switcher {margin: 0 0 0 50px;}
+        #bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px}
 
-        .divider {height: 1px; margin: 9px 0; overflow: hidden;background-color: #e5e5e5; width: 100%;}
 
         footer {float: left}
         #bottom-menu {bottom: -20px; position: absolute; right: 0; margin: 30px;}
         #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
         #bottom-menu li a {color: #FFF; font-size: 12px}
-        @media (max-width: 425px) {
-            div.container {margin-top: 0}
-            .app-logo img {width: 75%}
-            section {margin-top: 20px; padding-bottom: 10px}
-            .contact-img {text-align: center}
-            .contact-address {text-align: center}
-            footer div {float: left; padding-bottom: 25px; width: 100%}
-            #bottom-menu li {float: left; clear: both; width: 100%}
-            #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
-            #navbar-search input {rgba(90, 125, 193, 0.48);; color: #FFF;}
-        }
+        .apps ul a {padding: 10px 20px; width: 100%}
         #navbar {background-color: transparent}
-        #navbar-search input {background: rgba(90, 125, 193, 0.48); color: #FFF}
-        #navbar .glyphicon.glyphicon-search {color: #FFF}
         #bottom-menu li a {color: #203e96}
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
         .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
+        .choices .btn {font-weight: 700}
 
-        /* Smartphones (portrait and landscape) ----------- */
-        @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 480px) {
-            #v-carousel {bottom: 35%}
-            #banner .main-title {font-size: 2em; margin-top: 30%;  text-indent: 14px;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
-            #banner .carousel h3  {font-size: 1.5rem; line-height: 3rem;}
-            .main-title button {width: 100%}
-            #bottom-menu {bottom: 2px; left: 0; margin-left: 0; text-align: center}
-            #bottom-menu li a {padding-top: 0}
-            #nav-xs li {margin-top: -5px}
-            #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
+        @media only screen and (orientation: landscape) {
+            .main-title {margin-top: 10%}
         }
 
-        /* Smartphones (landscape) ----------- */
-        @media only screen
-        and (min-width : 481px) {
-            #v-carousel {bottom: 20%}
-            #banner .main-title {font-size: 3em; margin-top: 13%;  text-indent: 14px;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
-            #banner .carousel h3  {font-size: 2rem; line-height: 3rem;}
-            #bottom-menu {bottom: 2px; left: 0; margin-left: 0; text-align: center}
-            #bottom-menu li a {padding-top: 0}
-            #nav-xs li.show-search {margin-top: -5px}
-            #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
+        @media only screen and (orientation: portrait) {
+            .main-title {margin-top: 42%}
         }
 
-
-
-        /* iPhone 5 (portrait & landscape)----------- */
-        @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 568px) {
-            #v-carousel {bottom: 35%}
-            #banner p {font-size: 1em; margin-top: 0%;  text-indent: 0;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 10px 15px;}
-            #banner .carousel h3  {font-size: 1.3rem; line-height: 3rem;}
-            .main-title button {margin-top: 25px; width: 90%}
-            #bottom-menu {bottom: 2px; left: 0; margin-left: 0; text-align: center}
-            #bottom-menu li a {padding-top: 0}
-            #nav-xs li.show-search {margin-top: -5px}
-            #navbar-search input {background: rgba(90, 125, 193, 0.48);; color: #1f356a;}
-        }
-
-        /* iPhone 5 (landscape)----------- */
-        @media only screen
-        and (min-device-width : 320px)
-        and (max-device-width : 568px)
-        and (orientation : landscape) {
-            #v-carousel {bottom: 20%}
-            #banner .main-title {font-size: 2em; margin-top: 13%;  text-indent: 14px;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px}
-            #banner .carousel h3  {font-size: 2rem;line-height: 3rem;}
-            #nav-xs li.show-search {margin-top: -5px}
-        }
-
-
-        /* iPads (portrait and landscape) ----------- */
-        @media only screen
-        and (min-device-width : 768px)
-        and (max-device-width : 1023px) {
-            #v-carousel {margin-top: 74%; }
-            #banner p {font-size: 1em; margin-top: 10%;  text-indent: 14px;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 10px 15px;}
-            #banner .carousel h3  {font-size: 3rem;line-height: 3rem;}
-            .main-title button {width: 180px}
+        @media only screen and
+        (max-width: 767px) {
+{#            body {background-attachment: fixed; background-size: auto 200%}#}
+            .main-title {font-size: 2.3em; line-height: 45px}
             #site-menu .kakocase, #site-menu .tsunami {display: none}
+             #bottom-menu li {margin-left: 0}
+             #bottom-menu {bottom: inherit; left: 0; margin-left: 0; margin-top: 100px; text-align: center}
+            #bottom-menu li {margin-left: 25px}
+            .choices > div {margin-top: 35px}
         }
 
-        /* iPads (landscape) ----------- */
         @media only screen
-        and (min-device-width : 768px)
-        and (max-device-width : 1023px)
-        and (orientation : landscape) {
-            #v-carousel {bottom: 20%}
-            #banner .main-title {font-size: 4em; margin-top: 13%;  text-indent: 14px;}
-            #banner .carousel h3  {font-size: 4rem;line-height: 3rem;}
-            .main-title button {width: 180px}
-            #site-menu .kakocase, #site-menu .tsunami {display: none}
+        and (min-width : 768px){
+            .main-title {font-size: 4em; margin: 180px 0 75px;  text-indent: 14px;}
             #bottom-menu li {float: right;}
+            #bottom-menu li {margin-left: 25px}
+            #navbar-search input {background: rgba(90, 125, 193, 0.48); color: #FFF}
+            .navbar li a {font-size: 14px}
+            #navbar .glyphicon.glyphicon-search {color: #FFF}
+            .navbar-default .navbar-nav >.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {background-color:rgba(199, 199, 199, 0.33)}
+            .dropdown-menu>li>a {color: #233682}
+            #navbar .navbar-nav .open .dropdown-menu {border-radius: 4px; top: 3px; right: 3px;}
         }
 
-        /* Desktops and laptops ----------- */
-        @media only screen
-        and (min-width : 1224px) {
-            #v-carousel {bottom: 20%}
-            #banner p {font-size: 2em; margin-top: 75px;  text-indent: 14px;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
-            #banner .carousel h3  {font-size: 2rem;line-height: 3rem;}
-            #bottom-menu li {float: right;}
+        @media only screen and (min-width : 992px) and (orientation: landscape) {
+            .main-title {margin-top: 25%}
         }
 
-        /* Large screens ----------- */
-        @media only screen
-        and (min-width : 1824px) {
-            #v-carousel {bottom: 20%}
-            #banner .main-title {font-size: 4em; margin-top: 13%;  text-indent: 14px;}
-            #navbar .navbar-brand {font-size: 2em; letter-spacing: 2px; padding: 14px 15px;}
-            #banner .carousel h3  {font-size: 2rem;line-height: 3rem;}
-            #bottom-menu li {float: right;}
-        }
     </style>
 {% endblock %}
 
-{% block site_menu_xs %}
-    <nav class="visible-xs pull-right" style="width: 110px">
-        <ul id="nav-xs" style="position: absolute">
-            <li class="show-search">
-                <i class="glyphicon glyphicon-search"></i>
-            </li>
-            {% if user.is_authenticated %}
-                <li class="home">
-                    <a href="{{ settings.IKWEN_CONSOLE_URL }}">
-                        <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
-                        {% if user.personal_notices > 0 %}
-                            <span class="label label-danger">{{ user.personal_notices }}</span>
-                        {% endif %}
-                    </a>
-                </li>
-                {% if collaborates_on|length >= 1 %}
-                    <li class="app-list" data-toggle="collapse" data-target="#iao-app-list-xs" aria-expanded="false">
-                        <a href="#"><i class="glyphicon glyphicon-th-large"></i> </a>
-                    </li>
-                {% endif %}
-
-                <div class="action dropdown" style="float: right;margin-top: -5px; margin-right: 20px; width: 20px">
-                    <a class="dropdown-toggle" data-toggle="dropdown" id="user-menu" aria-haspopup="true" aria-expanded="true">
-                        <div class="button-hover-handler active"><i class="glyphicon glyphicon-user" style=" margin-left: 11px;"></i></div>
-                    </a>
-                    <ul class="user-menu dropdown-menu" aria-labelledby="user-menu" style="left: -120px">
-                        <li style="padding: 3px 20px"> Idris </li>
-                        <li role="separator" class="divider"></li>
-
-                            <li>
-                                <a href="/ikwen/staffRouter/">Admin</a>
-                            </li>
-
-                        <li>
-                            <a href="http://www.ikwen.com/accountSetup/">Account setup</a>
-                        </li>
-                        <li><a href="/ikwen/logout">Logout</a></li>
-                    </ul>
-                </div>
-            {% else %}
-                <li>
-                    <a href="{% url 'ikwen:sign_in' %}" style="float: left"><i class="glyphicon glyphicon-user"></i></a>
-                </li>
-            {% endif %}
-        </ul>
-    </nav>
-{% endblock %}
-{% block site_menu %}
-    <div id="site-menu" class="collapse navbar-collapse hidden-sm-up">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-right" style="margin: 0 -15px 0 0">
-                <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
-                <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
-                {% if user.is_authenticated %}
-                    <li id="user-home">
-                        <a href="{{ settings.IKWEN_CONSOLE_URL }}">
-                            {% trans "Home" %}
-                            {% if user.get_notice_count > 0 %}
-                                <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
-                            {% endif %}
-                        </a>
-                    </li>
-                    {% if collaborates_on|length == 1 %}
-                        <li id="user-apps">
-                            <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
-                        </li>
-                    {% elif collaborates_on|length > 1 %}
-                        <li id="user-apps" class="dropdown">
-                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps</a>
-                            <ul class="dropdown-menu" aria-labelledby="apps">
-                                {% for app in collaborates_on %}
-                                    <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </li>
-                    {% endif %}
-                    <li id="user-menu" class="dropdown">
-                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="glyphicon glyphicon-user"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="user-menu">
-                            <li style="padding: 3px 20px"> {{ user.get_short_name }} </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
-                            </li>
-                            <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
-                        </ul>
-                    </li>
-                {% else %}
-                    <li class="hidden-xs">
-                        <a href="{% url 'ikwen:sign_in' %}" style="padding-top: 13px;">
-                            <button class="btn btn-sm" style="background: #233682;color: #FFF;font-weight: 600; width: 100px;">{% trans "Login" %}</button>
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
-    </div>
-{% endblock %}
 {% block content %}
     <div id="presentation">
-        <h1>ikwen is a software engineering company involved into helping classic businesses go digital.</h1>
+        <h1><a href="/"> ikwen</a> is a software engineering company involved into helping classic businesses go digital.</h1>
         <p>
             Our purpose is to provide people
             and businesses with very simple, yet powerful web/mobile apps
@@ -272,62 +88,60 @@
             communication tool, but also a business tool. So said, our
             solutions always integrate online Mobile Money payments out
             of the box. Our solutions are Cloud based, one can deploy and run his own
-            website from our apps library on www.ikwen.com
+            website from our apps library on <a href="/">www.ikwen.com</a>
         </p>
     </div>
-    <div id="banner" class="container-fluid">
-        <div class="text-has-shade main-title">
-            <p>WHAT DO YOU WANT ?</p>
-            <div>
-                 <div class="col-sm-offset-3 col-sm-3">
-                     <button class="btn subtle-shade" style="background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
+    <div class="container">
+        <h1 class="main-title text-has-shade ">{% trans "WHAT DO YOU WANT " %}?</h1>
+        <div class="choices row">
+            {% get_available_languages as LANGUAGES %}
+            {% get_current_language as LANGUAGE_CODE %}
+            {% if LANGUAGE_CODE == 'en' %}
+                 <div class="col-sm-offset-3 col-sm-3 col-xs-offset-1 col-xs-10">
+                     <a href="http://blog.ikwen.com/need-a-website/" target="_blank">
+                         <button class="btn btn-block subtle-shade" style="color:#462929; background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
+                     </a>
                  </div>
-                 <div class="col-sm-3">
-                     <button class="btn subtle-shade" style="background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
+                 <div class="col-sm-3 col-xs-offset-1  col-sm-offset-0 col-xs-10">
+                    <a href="http://blog.ikwen.com/more-customers/" target="_blank">
+                        <button class="btn btn-block subtle-shade" style="color:#fff; background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
+                    </a>
                  </div>
-                <div class="clearfix"></div>
-            </div>
+            {% endif %}
+            {% if LANGUAGE_CODE == 'fr' %}
+                 <div class="col-sm-offset-3 col-sm-3 col-xs-offset-1 col-xs-10">
+                     <a href="http://blog.ikwen.com/decouvrez-webnode/" target="_blank">
+                        <button class="btn btn-block subtle-shade" style="color:#462929; background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
+                     </a>
+                 </div>
+                 <div class="col-sm-3 col-xs-offset-1  col-sm-offset-0 col-xs-10">
+                     <a href="http://blog.ikwen.com/plus-de-clients/" target="_blank">
+                        <button class="btn btn-block subtle-shade" style="color:#fff; background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
+                     </a>
+                 </div>
+            {% endif %}
+            <div class="clearfix"></div>
         </div>
 
 
-{#        <div id="v-carousel" class="text-has-shade" style="color: #fff;">#}
-{#            <div class="carousel-inner">#}
-{#                <h3>{% trans 'You can do so much more with internet' %}</h3>#}
-{#                <h3>{% trans 'Right tools for your small or big company' %}</h3>#}
-{#                <h3>{% trans 'Better interaction with your customers' %}</h3>#}
-{#                <h3>{% trans 'Empower your business with simple web/mobile apps' %}</h3>#}
-{#            </div>#}
-{#        </div>#}
+        <div id="bottom-menu" class="hidden-xs">
+            <ul>
+                {% include 'tsunami/snippets/language_switcher.html' %}
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+{#                <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>#}
+                <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+            </ul>
+        </div>
+{#        {% include 'tsunami/snippets/language_switcher.html' %}#}
     </div>
-
-{% endblock %}
-{% block footer %}
-    {{ block.super }}
-    <div id="bottom-menu">
-        <ul>
-            <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
-            <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
-            <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>
-            <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
-        </ul>
-    </div>
+    {% include 'tsunami/snippets/edge_panel.html' %}
 {% endblock %}
 {% block js %}
     {{ block.super }}
-    
-    
     <script type="text/javascript">
         (function() {
-{#            var switchFeatures = function(){#}
-{#                $('#v-carousel h3:first').animate({marginTop: '-75'},'slow','swing',function(){#}
-{#                    $(this).appendTo('.carousel-inner').css('margin-top',0)#}
-{#                })#}
-{#            }#}
-{#            setInterval(switchFeatures, 6000)#}
 
-            $("footer, footer a").css('color', '#fff')
-            var documentH = screen.height
-            $('body, #banner').css('height', documentH)
         })()
     </script>
 

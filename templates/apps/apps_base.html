@@ -6,7 +6,8 @@
     {{ block.super }}
     <link rel='stylesheet' href="{% static 'ikwen/css/animate.min.css' %}" />
     <link rel='stylesheet' href="{% static 'ikwen/css/bootstrap.min.css' %}" />
-    <link rel='stylesheet' href="{% static 'ikwen/css/apps.css' %}" />
+    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?ver=1.2" />
+    <link rel='stylesheet' href="{% static 'website/css/apps.css' %}" />
     <style type="text/css">
         #navbar {background-color: #fff}
         #navbar-search input {background: rgba(92, 120, 177, 0.48); color: #FFF}
@@ -15,6 +16,8 @@
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
         .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
         #navbar-search input {background: rgba(240, 241, 243, 0.48); color: #1f356a;}
+        .apps ul a {padding: 10px 20px; width: 100%}
+        #bottom-menu li a {color: #FFF}
         @media only screen
         and (max-device-width : 425px) {
             .company .title {font-size: 35px }
@@ -27,13 +30,29 @@
             #bottom-menu {margin-top: 70px; position: relative; text-align: center}
             #bottom-menu li a {color: #fff; font-size: 22px}
             #navbar .glyphicon {color: #211919;}
-            #nav-xs {margin-top: 2px;right: 19px; width: 220px;}
+            #nav-xs {margin-top: 2px;right: 19px; width: 158px;}
             #nav-xs li {margin-right: 39px;}
             section .cover {height: 2000px}
             section.main-feat {height: 2000px}
+            section.header {height: 480px}
+            div.cloud-deploy {bottom: inherit; margin-top: 130px;}
+            .logo img {width: 65%}
+            .features {margin-top: 0}
+            .features .feat {margin-top: 75px}
+            .features .feat:first-child {margin-top: 20px}
         }
     </style>
 {% endblock %}
+
+ {% block header_brand %}
+    <span class="navbar-brand visible-xs" href="{{ service.url }}">
+        <strong>{{ service.project_name }}</strong>
+    </span>
+    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
+        <strong>{{ service.project_name }}</strong>
+    </a>
+{% endblock %}
+
 {% block site_menu_xs %}
     <nav class="visible-xs pull-right" style="width: 110px">
         <ul id="nav-xs" style="position: absolute">
@@ -54,30 +73,41 @@
                         <a href="#"><i class="glyphicon glyphicon-th-large"></i> </a>
                     </li>
                 {% endif %}
-
-                <div class="action dropdown" style="float: right;margin-top: -5px; margin-right: 20px; width: 20px">
-                    <a class="dropdown-toggle" data-toggle="dropdown" id="user-menu" aria-haspopup="true" aria-expanded="true">
-                        <div class="button-hover-handler active"><i class="glyphicon glyphicon-user" style=" margin-top: 4px;"></i></div>
-                    </a>
-                    <ul class="user-menu dropdown-menu" aria-labelledby="user-menu" style="left: -120px">
-                        <li style="padding: 3px 20px"> Idris </li>
-                        <li role="separator" class="divider"></li>
-
-                            <li>
-                                <a href="/ikwen/staffRouter/">Admin</a>
+                   <li id="user-menu" class="dropdown">
+                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ user.first_name }} <i class="glyphicon glyphicon-user" aria-hidden="true"
+                                                     style="font-size: 24px"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="user-menu">
+                            <li style="padding: 3px 20px"> {{ user.get_short_name }} </li>
+                            <li role="separator" class="divider" style="margin-bottom: 0; width: 100%"></li>
+                            {% if user.is_staff %}
+                                <li>
+                                    <a href="{% url 'ikwen:staff_router' %}">Admin</a>
+                                </li>
+                            {% endif %}
+                            <li>{% url "ikwen:account_setup" as account_setup_url %}
+                                <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
                             </li>
-
-                        <li>
-                            <a href="http://www.ikwen.com/accountSetup/">Account setup</a>
-                        </li>
-                        <li><a href="/ikwen/logout">Logout</a></li>
-                    </ul>
-                </div>
+                            <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a></li>
+                        </ul>
+                   </li>
             {% else %}
                 <li>
                     <a href="{% url 'ikwen:sign_in' %}" style="float: left"><i class="glyphicon glyphicon-user"></i></a>
                 </li>
             {% endif %}
+            <div class="action apps  dropdown" style="float: right;margin-top: 0; margin-right: 20px; width: 20px">
+                <a class="dropdown-toggle" data-toggle="dropdown" id="user-menu" aria-haspopup="true" aria-expanded="true">
+                    <div class="button-hover-handler active"><i class="glyphicon glyphicon-th-list" style=" margin-left: 11px;"></i></div>
+                </a>
+                <ul class="user-menu dropdown-menu" aria-labelledby="user-menu" style="left: -120px">
+                    <li><a href="{% url 'ikwen:company_profile' 'kakocase' %}">Kakocase</a></li>
+                    <li><a href="{% url 'tsunami:bundles' %}">Tsunami</a></li>
+                    <li><a href="{% url 'ikwen:company_profile' 'webnode' %}">Webnode</a></li>
+                    <li><a href="{% url 'ikwen:company_profile' 'shavida' %}">Shavida</a></li>
+                </ul>
+            </div>
         </ul>
     </nav>
 {% endblock %}

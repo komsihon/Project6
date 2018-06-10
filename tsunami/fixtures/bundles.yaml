@@ -1,0 +1,85 @@
+- model: accesscontrol.member
+  pk: 56eb6d04b37b3379b531e012
+  fields:
+    username: member2
+    email: member2@ikwen.com
+    password: pbkdf2_sha256$12000$nNK3SeCKYSvl$CuoviZNeie9YzaWhukVCi9iQtNmpu3QBbK2yHGHEUxc=  # admin
+    phone: 677000002
+    is_iao: Yes
+    is_superuser: Yes
+    first_name: Tamo
+    gender: Male
+
+- model: accesscontrol.member
+  pk: 56eb6d04b37b3379b531e013
+  fields:
+    username: member3
+    email: member3@ikwen.com
+    password: pbkdf2_sha256$12000$nNK3SeCKYSvl$CuoviZNeie9YzaWhukVCi9iQtNmpu3QBbK2yHGHEUxc=  # admin
+    phone: 677000003
+    is_iao: Yes
+    is_superuser: Yes
+    first_name: Foka
+
+- model: accesscontrol.member
+  pk: 56eb6d04b37b3379b531e014
+  fields:
+    username: member4
+    email: member4@ikwen.com
+    password: pbkdf2_sha256$12000$nNK3SeCKYSvl$CuoviZNeie9YzaWhukVCi9iQtNmpu3QBbK2yHGHEUxc=  # admin
+    phone: 677000004
+    first_name: Simo
+    last_name: Kamdem
+    full_name: Simo Kamdem
+    customer_on_fk_list: [56eb6d04b37b3379b531b101]
+
+- model: tsunami.ComCampaign
+  pk: 55d1fa8feb60008099bd2251
+  fields:
+    offer: 55d1fa8f4464442299bd2251
+    network_page: tsunami1
+    member: 56eb6d04b37b3379b531e014
+    has_page: ['comm', '550 abonnes', 'website']
+    age_range: 5
+    audience_gender: no
+    location: yes
+    website_needed: yes
+    cost: yes
+    status: yes
+
+
+- model: tsunami.ComOffer
+  pk: 55d1fa8f4464442299bd2251
+  fields:
+    name: bundle1
+    slug: bundle1
+    monthly_cost: 5000
+    yearly_cost: 35000
+    website_cost: 49000
+    options: 'comm, 550 abonnes, website'
+    max_img_count: 5
+    is_active: yes
+
+- model: tsunami.ComOffer
+  pk: 55d1fa8f4465552299bd2251
+  fields:
+    name: bundle2
+    slug: bundle2
+    monthly_cost: 15000
+    yearly_cost: 39000
+    website_cost: 40000
+    options: 'comm, 550 abonnes, website'
+    max_img_count: 15
+    is_active: yes
+
+- model: tsunami.ComOffer
+  pk: 55d1fa8f4466662299bd2251
+  fields:
+    name: bundle3
+    slug: bundle3
+    monthly_cost: 25000
+    yearly_cost: 79000
+    website_cost: 45000
+    options: 'comm, 550 abonnes, website'
+    max_img_count: 15
+    is_active: yes

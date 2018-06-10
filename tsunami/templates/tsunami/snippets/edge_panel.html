@@ -1,0 +1,63 @@
+ {% load i18n humanize staticfiles cache auth_tokens %}
+<div class="edge-panel-left-container visible-xs">
+    <div id="side-nav" class="edge-panel-left subtle-shade" style="margin-left: -240px">
+        <div class="wrapper">
+            <div class="stage">
+                <div class="top-edge-panel" style>
+                    {% if config.cover_image and config.cover_image.name %}
+                        <div class="panel-top" style="background-image: url({% static 'ikwen/img/default-cover.jpg' %});background-position: center;">
+                    {% else %}
+                        <div class="panel-top" style="background-image: url({% static 'ikwen/img/default-cover.jpg' %});background-position: center;">
+                    {% endif %}
+                        <div class="cover">
+                            <div class="company">
+                                <div class="logo">
+                                    <div class="ik-logo" style="background-image: url({% static 'ikwen/img/logo-ikwen-150.png' %})"></div>
+                                </div>
+                            </div>
+
+                            {% include 'tsunami/snippets/language_switcher.html' %}
+                            <div class="bottom-cntr"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="divider"></div>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="/">{% trans "Home" %}</a></li>
+                        <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
+                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
+{#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'webnode' %}"> Webnode</a></li>#}
+{#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'shavida' %}"> Shavida</a></li>#}
+                        <div class="divider"></div>
+                        <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                        <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+                        <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+{#                        <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>#}
+                        {% if agreement_page %}
+{#                            <li><a href="{% url 'flatpage' agreement_page.url %}">{{ agreement_page.title }}</a></li>#}
+                        {% endif %}
+                    </ul>
+                    <div class="clearfix"></div>
+                    <div class="social-icon">
+                        {% if config.facebook_link %}
+                            <a href="{{ config.facebook_link }}" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                        {% endif %}
+                        {% if config.instagram_link %}<a href="{{ config.instagram_link }}" target="_blank"><i class="fa fa-instagram"></i></a>{% endif %}
+                        {% if config.twitter_link %}<a href="{{ config.twitter_link }}" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
+                        {% if config.google_plus_link %}
+                            <a href="{{ config.google_plus_link }}" target="_blank"><i class="fa fa-google-plus-square"></i></a>{% endif %}
+                        {% if config.linkedin_link %}<a href="{{ config.linkedin_link }}" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div id="footer">
+                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                {% trans "All rights reserved." %}
+                {% if config.legal_mentions_url %}
+                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

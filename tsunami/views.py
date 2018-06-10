@@ -3,12 +3,13 @@ import os
 from datetime import datetime
 from threading import Thread
 
-from ajaxuploader.views import AjaxFileUploader
+from ajaxuploader.views import AjaxFileUploader, render
 from django.core.files.base import File
 from django.core.mail.message import EmailMessage
 from django.core.urlresolvers import reverse
 from django.http.response import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404
+from django.template import context
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic.base import TemplateView
@@ -34,15 +35,18 @@ class Bundles(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Bundles, self).get_context_data(**kwargs)
+        bundles = ComOffer.objects.filter(is_active=True)
+        context['bundles'] = bundles
+        return context
+
+    def get(self, request, *args, **kwargs):
         customer = self.request.user
         if customer.is_authenticated():
             pending_campaigns = ComCampaign.objects.filter(member=customer, status=ComCampaign.PAID)
             if pending_campaigns:
                 campaign = pending_campaigns[0]
                 return HttpResponseRedirect(reverse('tsunami:checkout', kwargs={'campaign_id': campaign.id}))
-        bundles = ComOffer.objects.filter(is_active=True)
-        context['bundles'] = bundles
-        return context
+        return render(self.request, self.template_name, self.get_context_data())
 
 
 class Checkout(TemplateView):
@@ -221,7 +225,8 @@ def set_checkout(request, *args, **kwargs):
 
     logger.info("Initialize payment process of Campaign %s " % (campaign.id))
     subject = _("Initialize payment process")
-    send_confirmation_email(subject, request.user.full_name, request.user.email, campaign)
+    msg = ("Initialize payment process of Campaign %s " % (campaign.id))
+    send_confirmation_email(subject, request.user.full_name, request.user.email, campaign.id, msg)
 
 
 def confirm_checkout(request, *args, **kwargs):
@@ -239,12 +244,13 @@ def confirm_checkout(request, *args, **kwargs):
         buyer_name = member.full_name
         buyer_email = member.email
     else:
-        buyer_name = campaign.anonymous_buyer.name
-        buyer_email = campaign.anonymous_buyer.email
+        logger.info("Try of an order without loged in for the campaign %s " % (campaign.id))
+        return HttpResponseRedirect(reverse('tsunami:bundles'))
     logger.info("Order successfully proceeded for the Campaign %s " % (campaign.id))
 
     subject = _("Order successful")
-    send_confirmation_email(subject, buyer_name, buyer_email, campaign)
+    msg = ("Your order was successfully procceded for the campaingn %s. Thank for your trust" % (campaign.id))
+    send_confirmation_email(subject, buyer_name, buyer_email, campaign.id, msg)
 
     next_url = reverse('checkout',  kwargs={'campaign_id': campaign.id})
     request.session.modified = True

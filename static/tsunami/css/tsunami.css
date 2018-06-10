@@ -28,15 +28,7 @@ html * {
 }
 
 a {text-decoration: none;}
-.pricing-container.full-width {width: 100%; max-width: none;}
-.pricing-switcher {text-align: center;display: none;}
-.pricing-switcher .fieldset {display: inline-block;position: relative;padding: 2px;border-radius: 5px;border: 2px solid #027782;background: #00656e;}
-.pricing-switcher input[type="radio"] {position: absolute;opacity: 0;}
-.pricing-switcher label {position: relative;	z-index: 1;display: inline-block;float: left;width: 90px;height: 40px;line-height: 40px;cursor: pointer;font-size: 1.4rem;color: #ffffff;}
-.pricing-switcher .switch {position: absolute;top: 2px;left: 2px;height: 40px;width: 90px;background-color: #00828d;border-radius: 5px;-webkit-transition: -webkit-transform 0.5s;-moz-transition: -moz-transform 0.5s;transition: transform 0.5s;}
-.pricing-switcher input[type="radio"]:checked + label + .switch,
-.pricing-switcher input[type="radio"]:checked + label:nth-of-type(n) + .switch {-webkit-transform: translateX(90px);-moz-transform: translateX(90px);-ms-transform: translateX(90px);-o-transform: translateX(90px);	transform: translateX(90px);}
-.no-js .pricing-switcher {display: none;}
+
 .pricing-list {margin: 2em 0 0;}
 .pricing-list > li {position: relative;	margin-bottom: 1em;}
 @media only screen and (min-width: 768px) {
@@ -60,17 +52,6 @@ a {text-decoration: none;}
 .pricing-wrapper .is-visible {position: relative;	z-index: 5;}
 .pricing-wrapper .is-hidden {position: absolute;	top: 0;	left: 0;height: 100%;width: 100%;z-index: 1;	-webkit-transform: rotateY(180deg);	-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg); -o-transform: rotateY(180deg);transform: rotateY(180deg);}
 .pricing-wrapper .is-selected {z-index: 3 !important;}
-
-.label__checkbox {display: none;}
-.label {padding: 0}
-.label .text {color: #6b7177; margin-top: -20px; float: left; width: 100%;}
-.label__check {display: inline-block; border-radius: 50%; border: 5px solid rgba(0,0,0,0.1);  background: white; vertical-align: middle; margin-right: 20px; width: 2em; height: 2em; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border .3s ease;
-
-  i.icon { opacity: 0.2; font-size: ~'calc(1rem + 1vw)'; color: transparent;  transition: opacity .3s .1s ease;  -webkit-text-stroke: 3px rgba(0,0,0,.5); }
-
-  &:hover { border: 5px solid rgba(0,0,0,0.2); }}
-
-.label__checkbox:checked + .label__text .label__check { animation: check .5s cubic-bezier(0.895, 0.030, 0.685, 0.220) forwards;  .icon {opacity: 1; transform: scale(0); color: white;  -webkit-text-stroke: 0; animation: icon .3s cubic-bezier(1.000, 0.008, 0.565, 1.650) .1s 1 forwards; }}
 
 .center {position: absolute;  top: 50%; left: 50%;  transform: translate(-50%,-50%);}
 
@@ -105,8 +86,9 @@ footer {display: none}
 div.footer {color: #FFF; font-size: 12px; position: absolute; bottom: 20px; left: 20px}
 div.footer .company-name {color: #FFF; font-size: 12px; text-decoration: none;}
 
-section.address a {color: #FFF; font-size: 22px; font-weight: 300}
-section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; margin-top: -100px; padding-top: 75px; position: absolute; width: 100%}
+section.address a {color: #080808; font-size: 22px; font-weight: 300}
+section.address .cover {background-color: rgba(255, 255, 255, 0.8);height: 600px; margin-top: -100px; padding-top: 75px; position: absolute; width: 100%}
+#bottom-menu li a {color: #203e96; font-weight: 400;}
 
 .buy-now {clear: both; padding: 25px 0 0; width: 100%}
 .buy-now .btn {margin: auto;padding: 10px 0;width: 80%;font-size: 20px;}
@@ -114,6 +96,9 @@ section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; marg
 #payment-methods ul {padding-left: 0;}
 .payment-method {display: block; margin-bottom: 1em}
 .payment-method a {display: block; text-align: center}
+
+#bottom-menu .lang-switcher { margin: 0 0 0 50px;  }
+#bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px;}
 
 @media (max-width: 425px) {
     #bottom-menu {margin-top: 0; width: 100%;}
@@ -140,10 +125,6 @@ section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; marg
   .has-margins .pricing-wrapper > li {border-radius: 4px 4px 6px 6px;}
   .has-margins .pricing-wrapper > li::before {display: none;}
 }
-@media only screen and (min-width: 1500px) {
-  .full-width .pricing-wrapper > li {padding: 2.5em 0;}
-}
-.no-js .pricing-wrapper .is-hidden {position: relative; -webkit-transform: rotateY(0); -moz-transform: rotateY(0); -ms-transform: rotateY(0); -o-transform: rotateY(0); transform: rotateY(0); margin-top: 1em;}
 @media only screen and (min-width: 768px) {
   .exclusive .pricing-wrapper > li::before {display: none;}
   .exclusive + li .pricing-wrapper > li::before {display: none; }
@@ -192,64 +173,3 @@ section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; marg
 .pricing-features li label input {height: 20px; width: 20px}
 .pricing-features li label span {font-weight: 700; margin-left: 30px}
 .pricing-features li.website-cost {border-top: solid 1px #DDD;border-top: solid 1px #DDD;font-size: 25px;padding: 15px 15px 0;text-align: center;}
-@-webkit-keyframes rotate {
-  0% {-webkit-transform: perspective(2000px) rotateY(0);}
-  70% {-webkit-transform: perspective(2000px) rotateY(200deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(180deg);}
-}
-@-moz-keyframes rotate {
-  0% {-moz-transform: perspective(2000px) rotateY(0);}
-  70% {-moz-transform: perspective(2000px) rotateY(200deg);}
-  100% {-moz-transform: perspective(2000px) rotateY(180deg);}
-}
-@keyframes rotate {
-  0% {-webkit-transform: perspective(2000px) rotateY(0); -moz-transform: perspective(2000px) rotateY(0); -ms-transform: perspective(2000px) rotateY(0); -o-transform: perspective(2000px) rotateY(0); transform: perspective(2000px) rotateY(0);}
-  70% {-webkit-transform: perspective(2000px) rotateY(200deg); -moz-transform: perspective(2000px) rotateY(200deg); -ms-transform: perspective(2000px) rotateY(200deg); -o-transform: perspective(2000px) rotateY(200deg); transform: perspective(2000px) rotateY(200deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(180deg); -moz-transform: perspective(2000px) rotateY(180deg); -ms-transform: perspective(2000px) rotateY(180deg); -o-transform: perspective(2000px) rotateY(180deg); transform: perspective(2000px) rotateY(180deg);}
-}
-@-webkit-keyframes rotate-inverse {
-  0% {-webkit-transform: perspective(2000px) rotateY(-180deg);}
-  70% {-webkit-transform: perspective(2000px) rotateY(20deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(0);}
-}
-@-moz-keyframes rotate-inverse {
-  0% {-moz-transform: perspective(2000px) rotateY(-180deg);}
-  70% {-moz-transform: perspective(2000px) rotateY(20deg);}
-  100% {-moz-transform: perspective(2000px) rotateY(0);}
-}
-@keyframes rotate-inverse {
-  0% {-webkit-transform: perspective(2000px) rotateY(-180deg); -moz-transform: perspective(2000px) rotateY(-180deg); -ms-transform: perspective(2000px) rotateY(-180deg); -o-transform: perspective(2000px) rotateY(-180deg); transform: perspective(2000px) rotateY(-180deg);}
-  70% {-webkit-transform: perspective(2000px) rotateY(20deg);-moz-transform: perspective(2000px) rotateY(20deg); -ms-transform: perspective(2000px) rotateY(20deg); -o-transform: perspective(2000px) rotateY(20deg); transform: perspective(2000px) rotateY(20deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(0); -moz-transform: perspective(2000px) rotateY(0); -ms-transform: perspective(2000px) rotateY(0); -o-transform: perspective(2000px) rotateY(0); transform: perspective(2000px) rotateY(0);}
-}
-@-webkit-keyframes rotate-back {
-  0% {-webkit-transform: perspective(2000px) rotateY(0);}
-  70% {-webkit-transform: perspective(2000px) rotateY(-200deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(-180deg);}
-}
-@-moz-keyframes rotate-back {
-  0% {-moz-transform: perspective(2000px) rotateY(0);}
-  70% {-moz-transform: perspective(2000px) rotateY(-200deg);}
-  100% {-moz-transform: perspective(2000px) rotateY(-180deg);}
-}
-@keyframes rotate-back {
-  0% {-webkit-transform: perspective(2000px) rotateY(0); -moz-transform: perspective(2000px) rotateY(0); -ms-transform: perspective(2000px) rotateY(0); -o-transform: perspective(2000px) rotateY(0); transform: perspective(2000px) rotateY(0);}
-  70% {-webkit-transform: perspective(2000px) rotateY(-200deg);-moz-transform: perspective(2000px) rotateY(-200deg); -ms-transform: perspective(2000px) rotateY(-200deg); -o-transform: perspective(2000px) rotateY(-200deg); transform: perspective(2000px) rotateY(-200deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(-180deg); -moz-transform: perspective(2000px) rotateY(-180deg); -ms-transform: perspective(2000px) rotateY(-180deg); -o-transform: perspective(2000px) rotateY(-180deg);transform: perspective(2000px) rotateY(-180deg);}
-}
-
-@-webkit-keyframes rotate-inverse-back {
-  0% {-webkit-transform: perspective(2000px) rotateY(180deg);}
-  70% {-webkit-transform: perspective(2000px) rotateY(-20deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(0);}
-}
-@-moz-keyframes rotate-inverse-back {
-  0% {-moz-transform: perspective(2000px) rotateY(180deg);}
-  70% {-moz-transform: perspective(2000px) rotateY(-20deg);}
-  100% {-moz-transform: perspective(2000px) rotateY(0);}
-}
-@keyframes rotate-inverse-back {
-  0% {-webkit-transform: perspective(2000px) rotateY(180deg); -moz-transform: perspective(2000px) rotateY(180deg); -ms-transform: perspective(2000px) rotateY(180deg); -o-transform: perspective(2000px) rotateY(180deg); transform: perspective(2000px) rotateY(180deg);}
-  70% {-webkit-transform: perspective(2000px) rotateY(-20deg); -moz-transform: perspective(2000px) rotateY(-20deg); -ms-transform: perspective(2000px) rotateY(-20deg); -o-transform: perspective(2000px) rotateY(-20deg); transform: perspective(2000px) rotateY(-20deg);}
-  100% {-webkit-transform: perspective(2000px) rotateY(0); -moz-transform: perspective(2000px) rotateY(0); -ms-transform: perspective(2000px) rotateY(0); -o-transform: perspective(2000px) rotateY(0);transform: perspective(2000px) rotateY(0);}
-}
