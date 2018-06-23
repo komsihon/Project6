@@ -12,7 +12,7 @@ class ComOfferAdmin(admin.ModelAdmin):
 
 
 class ComCampaignAdmin(admin.ModelAdmin):
-    list_display = ('member', 'offer', 'age_range', 'status')
+    list_display = ('member', 'offer', 'age_range', 'status', 'created_on')
     search_fields = ('offer',)
     readonly_fields = ["campaign_image"]
 

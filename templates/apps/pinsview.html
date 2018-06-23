@@ -21,7 +21,7 @@
         section.address .cover h1 {color: #210707;}
         section.address a {color: #2f2f2f;font-weight: 300;}
         section.address .cover {height: 670px}
-        section.site {min-height: 100px; padding: 50px 0}
+        section.site {min-height: 100px; padding: 137px 0}
         section.site:nth-child(2n) {background-color: #fff}
         section.site img {width: 60%}
         .white-text-has-shade {text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.7)}
@@ -47,18 +47,20 @@
         div.footer, div.footer .company-name {color: #203e96;}
 
         @media only screen and (min-width : 992px) {
+            .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #fff}
             section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 130px;}
             section.header h3 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px;}
             section.header {height: 900px}
             .features p {line-height: 40px}
             section.site img {width: 55%}
             section.site img.history {width: 60%}
-            section.site.banner {text-align: left}
+            section.site.banner {text-align: left; padding-top: 0; height: 850px}
             section.site.banner p {margin-top: 25px; text-align: justify;font-size: 21px;line-height: 40px;}
             section.site.banner h1 {font-size: 51px;line-height: 65px; font-weight: 700}
             section.site.banner .video {margin-top: 58px}
             .cta {text-align: left; }
-            .feat h2 {padding-bottom: 30px; font-size: 32px; text-align: left}
+            .feat h2 {padding-bottom: 30px; font-size: 32px; font-weight: 600; text-align: left}
+            .trail {margin-top: 100px;}
         }
 
         @media only screen and (min-width : 1200px) {
@@ -103,7 +105,7 @@
             .feat {margin-top: 100px}
             .feat:first-child {margin-top: 0}
             section.main-feat {height: 1000px}
-            section.main-feat .cover {height: 1000px}
+            section.main-feat .cover {height: 1000px; margin-top: -138px;}
             section.main-feat.banner .cover {height: 780px}
             section.site.main-feat.banner {height: 780px}
             .contact-img {margin-top: 35px}
@@ -131,12 +133,16 @@
                             {% endblocktrans %}
                         </p>
                     </div>
-                    <div class="col-md-6 video">
-{#                        <iframe width="560" height="315" src="https://www.youtube.com/embed/zDo0H8Fm7d0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>#}
+                    <div class="col-md-6 hidden-xs video">
+                        {% if LANGUAGE_CODE == 'en' %}
+                            <div class="trail"><iframe width="560" height="315" src="https://www.youtube.com/embed/cCLHe21ZxYM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                        {% else %}
+                            <div class="trail"><iframe width="560" height="315" src="https://www.youtube.com/embed/BZb0XFs73yc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
+                        {% endif %}
                     </div>
                 </div>
 
-                <div class="cta" style="float: left;font-weight: 600; width: 100%"><a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/kakocase/deployCloud/" style="font-weight: 600">{% trans "Get started" %}</a></div>
+                <div class="cta" style="float: left;font-weight: 600; width: 100%"><a id="deploy" class="btn btn-sm" href="{% url 'ikwen:sign_in' %}" style="font-weight: 600">{% trans "Get started" %}</a></div>
             </div>
         </div>
     </section>
@@ -156,7 +162,7 @@
                                 profile that best suits your business.
                                 {% endblocktrans %}
                                 <br/>
-                                <a href="#">{% trans "Discover some usages" %}</a>
+                                <a href="#" style="color: #007ab9;">{% trans "Discover some usages" %}</a>
                             </p>
                         </div>
                     </div>
