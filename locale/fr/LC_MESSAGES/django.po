@@ -1,0 +1,786 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-12 16:10+0100\n"
+"PO-Revision-Date: 2018-06-12 16:15+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#: templates/about.html:3 templates/about.html.py:292 templates/home.html:133
+#: templates/apps/shavida.html:95
+#: tsunami/templates/tsunami/snippets/address_section.html:42
+#: tsunami/templates/tsunami/snippets/edge_panel.html:34
+msgid "About"
+msgstr "À propos"
+
+#: templates/about.html:90
+msgid "ABOUT THE COMPANY"
+msgstr "L'ENTREPRISE"
+
+#: templates/about.html:93
+msgid ""
+"\n"
+"                        <p>\n"
+"                            <strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>\n"
+"                            is a software engineering company involved into "
+"helping\n"
+"                            classic businesses go digital. Our purpose is to "
+"provide people\n"
+"                            and businesses with very simple, yet powerful "
+"web/mobile apps\n"
+"                            that let them kick off their online business in "
+"no time.\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            We guide them into turning internet into more "
+"than just a communication tool, but also a\n"
+"                            business tool. So said, our solutions always "
+"integrate online Mobile Money payments out of the box.\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Our solutions are Cloud based, one can deploy "
+"and run his own website from our apps library on <a href=\"http://www.ikwen."
+"com/\">www.ikwen.com</a>\n"
+"                        </p>\n"
+"                    "
+msgstr ""
+"\n"
+"                        <p>\n"
+"                            <strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>\n"
+"                            est une société de génie logiciel qui aide les "
+"entreprises classiques à se digitaliser.Notre objectif est de\n"
+" fournir aux particuliers et aux entreprises des applications web / mobiles\n"
+"                           très simples mais puissantes qui leur permettent "
+"de \n"
+"                          démarrer leur activité en ligne en un rien de "
+"temps.\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Nous les aidons à faire d'Internet non seulement "
+"un outil de communication, mais aussi un outil de travail.\n"
+"                           Cela dit, nos solutions intègrent toujours les "
+"paiements en ligne par Mobile Money dès la sortie de la boîte.\n"
+"                        </p>\n"
+"                        <p>\n"
+"                            Nos solutions sont basées sur le Cloud, on peut "
+"déployer et exécuter son propre site Web depuis notre bibliothèque "
+"d'applications sur <a href=\"http://www.ikwen.com/\">www.ikwen.com</a>\n"
+"                        </p>"
+
+#: templates/about.html:116
+msgid "WONDERFUL ACHIEVEMENTS"
+msgstr "D'INCROYABLES RÉALISATIONS"
+
+#: templates/about.html:117
+msgid ""
+"Great Products created by us, for our Cloud Platform ... Even better "
+"products created for our custom applications clients"
+msgstr ""
+"Grands produits créés par nous, pour notre plate-forme cloud ... Encore "
+"mieux produits créés pour nos clients d'applications personnalisées"
+
+#: templates/about.html:139
+msgid ""
+"lets you create a full-working e-commerce website with integrated Mobile "
+"Money online payment"
+msgstr ""
+"vous permet de créer un site Web de commerce électronique entièrement "
+"fonctionnel avec un paiement en ligne Mobile Money intégré"
+
+#: templates/about.html:141 templates/about.html.py:168
+#: templates/about.html:200
+msgid "See it in action on"
+msgstr "Quelques exemples"
+
+#: templates/about.html:148
+msgid "Deploy your e-commerce"
+msgstr "Deployez"
+
+#: templates/about.html:165
+msgid ""
+"Create a Corporate, Personal or Business Website. Extend capabilities with "
+"pluggable modules (Blog, Subscriptions ...)"
+msgstr ""
+"Créer un site Web d'entreprise, personnel ou professionnel. Étendre les "
+"capacités avec des modules personnalisables (Blog, Inscriptions ...)"
+
+#: templates/about.html:175
+msgid "Deploy your website"
+msgstr "Deployez votre siteweb"
+
+#: templates/about.html:198
+msgid ""
+"lets you deploy a VOD website in minutes. Get paid with Mobile Money online"
+msgstr ""
+"vous permet de déployer un site Web VOD en quelques minutes incluant des pas "
+"paiments Mobile Money"
+
+#: templates/about.html:206
+msgid "Deploy your VoD"
+msgstr "DÉPLOYEZ VOTRE SITE VoD"
+
+#: templates/about.html:215
+msgid "CUSTOM APP DEV"
+msgstr "DÉVELOPPEMENT À LA DÉMANDE"
+
+#: templates/about.html:216
+msgid ""
+"Rock-solid applications made by our teams to solve business-critical issues "
+"for our customers"
+msgstr ""
+"Applications robustes faites par nos équipes pour résoudre des problèmes "
+"critiques de nos clients"
+
+#: templates/about.html:226
+msgid "Buy your WiFi internet bundles access online."
+msgstr "Achetez vos forfaits internet WiFi en ligne."
+
+#: templates/about.html:246
+msgid "Network assets visualization of CREOLINK COMMUNICATIONS"
+msgstr "Visualisation des ressources réseau de CREOLINK COMMUNICATIONS"
+
+#: templates/about.html:246
+msgid "Private access"
+msgstr "Accès privé"
+
+#: templates/about.html:256
+#: tsunami/templates/tsunami/snippets/address_section.html:6
+msgid "Contact Us Now"
+msgstr "Contactez-nous"
+
+#: templates/about.html:258
+#: tsunami/templates/tsunami/snippets/address_section.html:8
+msgid "And let us bring to reality your world-changing project."
+msgstr "Et réalisons ensemble votre incroyable projet"
+
+#: templates/about.html:281 templates/apps/shavida.html:85
+#: tsunami/templates/tsunami/snippets/address_section.html:31
+#: tsunami/templates/tsunami/snippets/edge_panel.html:56
+msgid "All rights reserved."
+msgstr "Tous droits réservés"
+
+#: templates/about.html:283 templates/apps/shavida.html:87
+#: tsunami/templates/tsunami/snippets/address_section.html:33
+#: tsunami/templates/tsunami/snippets/edge_panel.html:58
+msgid "Legal mentions"
+msgstr "Mentions légales"
+
+#: templates/about.html:289 templates/home.html:130
+#: templates/apps/shavida.html:92
+#: tsunami/templates/tsunami/snippets/address_section.html:39
+#: tsunami/templates/tsunami/snippets/edge_panel.html:32
+msgid "Blog"
+msgstr "Blog"
+
+#: templates/about.html:290 templates/home.html:131
+#: templates/apps/shavida.html:93
+#: tsunami/templates/tsunami/snippets/address_section.html:40
+#: tsunami/templates/tsunami/snippets/edge_panel.html:33
+msgid "Support"
+msgstr "Support"
+
+#: templates/base.html:69 templates/home.html:3
+#: templates/apps/apps_base.html:123 tsunami/templates/tsunami/base.html:69
+#: tsunami/templates/tsunami/checkout.html:154
+#: tsunami/templates/tsunami/snippets/edge_panel.html:26
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/base.html:97 templates/apps/apps_base.html:90
+#: templates/apps/apps_base.html.py:151 tsunami/templates/tsunami/base.html:97
+#: tsunami/templates/tsunami/checkout.html:182
+msgid "Account setup"
+msgstr "Infos compte"
+
+#: templates/base.html:99 templates/apps/apps_base.html:92
+#: templates/apps/apps_base.html.py:153 tsunami/templates/tsunami/base.html:99
+#: tsunami/templates/tsunami/checkout.html:184
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: templates/base.html:105 templates/apps/apps_base.html:159
+#: tsunami/templates/tsunami/base.html:105
+#: tsunami/templates/tsunami/checkout.html:190
+msgid "Login"
+msgstr "Connexion"
+
+#: templates/home.html:95
+msgid "WHAT DO YOU WANT "
+msgstr "QUE VOULEZ-VOUS"
+
+#: templates/home.html:102 templates/home.html.py:114
+msgid "A website"
+msgstr "Un site web"
+
+#: templates/home.html:107 templates/home.html.py:119
+msgid "More customers"
+msgstr "Plus de clients"
+
+#: templates/apps/kakocase.html:3 templates/apps/kakocase.html.py:85
+#: templates/apps/kakocase.html:134 templates/apps/pinsview.html:3
+#: templates/apps/pinsview.html.py:140
+msgid "Get started"
+msgstr "Lancez-vous"
+
+#: templates/apps/kakocase.html:9 templates/apps/kakocase.html.py:10
+msgid ""
+"Kakocase lets you create an e-commerce website in a few clicks. Your website "
+"accepts Mobile Money payments right out of the box. PayPal is also supported "
+"to handle payments with Credit/Debit cards. With our integrated Facebook "
+"communication module, launch your marketing campaign and drive thousands of "
+"visitors and buyers to your website."
+msgstr ""
+"Kakocase vous permet de créer un site Web de e-commerce en quelques clics. "
+"Votre site Web intègre les paiements Mobile Money . PayPal est également "
+"pris en charge pour gérer les paiements avec les cartes de crédit / débit. "
+"Avec notre module de communication Facebook intégré, lancez votre campagne "
+"marketing et conduisez des milliers de visiteurs et d'acheteurs sur votre "
+"site web."
+
+#: templates/apps/kakocase.html:11
+msgid "Web Apps to empower your small or big business"
+msgstr "Applications Web pour autonomiser votre petite ou grande entreprise"
+
+#: templates/apps/kakocase.html:83
+msgid "Build your customers community and sell online"
+msgstr "Construisez votre communauté de client et vendez en ligne"
+
+#: templates/apps/kakocase.html:89 templates/apps/webnode.html:98
+msgid "Features"
+msgstr "Fonctionnalités"
+
+#: templates/apps/kakocase.html:96 templates/apps/webnode.html:106
+msgid "Easy setup"
+msgstr "Mise sur pied facile"
+
+#: templates/apps/kakocase.html:98
+msgid ""
+"You create your website by filling a simple form, then choosing the template "
+"that suits your brand and voilà ! Your business is online."
+msgstr ""
+"Vous créez votre site web en remplissant un simple formulaire, puis en "
+"choisissant le modèle qui correspond à votre marque et voilà! Votre "
+"entreprise est en ligne."
+
+#: templates/apps/kakocase.html:107
+msgid "Mobile Money"
+msgstr ""
+
+#: templates/apps/kakocase.html:109
+msgid ""
+"Your website accepts online payment from MTN Mobile Money and Orange Money. "
+"You have detailed report of transactions on your website."
+msgstr ""
+"Votre site Web intègre les paiements en ligne de MTN Mobile Money et Orange "
+"Money. Vous avez un rapport détaillé des transactions sur votre site Web."
+
+#: templates/apps/kakocase.html:118
+msgid "Integrated Communication"
+msgstr "Communication intégrée"
+
+#: templates/apps/kakocase.html:120
+msgid ""
+"You can advert your website on Facebook with the plan that matches your "
+"goal. Drive thousands of visitors and buyers to your website with a few "
+"clicks."
+msgstr ""
+"Vous pouvez lancer des PUB de votre site Web sur Facebook avec des plans "
+"correspondant à vos objectifs. Conduisez des milliers de visiteurs et "
+"d'acheteurs sur votre site web en quelques clics."
+
+#: templates/apps/kakocase.html:130
+msgid "Take your business online today."
+msgstr "Allez en ligne dès maintenant"
+
+#: templates/apps/kakocase.html:132
+msgid ""
+"There are more than 4.2 billion people out there on internet. Go to them "
+"with the right e-commerce website and communication campaign. Access a whole "
+"new market by starting today."
+msgstr ""
+"Il y a plus de 4,2 milliards de personnes sur Internet. Allez vers eux avec "
+"le bons site de e-commerce et la bonne  campagne de communication. Accédez à "
+"un tout nouveau marché en commençant aujourd'hui."
+
+#: templates/apps/pinsview.html:9 templates/apps/pinsview.html.py:10
+msgid ""
+"PinsView lets you follow your assets on the field in real-time. Your agents "
+"pinpoint and describe your interests when they are out for a campaign or "
+"intervention. The history module lets you set events on elements on your "
+"map. Gone are the days where you were wondering what is going on out"
+msgstr ""
+"PinsView vous permet de faire un suivi géographique de vos bien sur le "
+"terrain en temps réel. Les agents pointent et décrivent vos intérêts "
+"lorsqu'ils sont en campagne ou en intervention. Le module d'historique "
+"permet d'associer une suite d'événements à chaque élément positionné. Vous "
+"ne vous poserez plus jamais la question de savoir ce qu'il se passe dehors."
+
+#: templates/apps/pinsview.html:126
+msgid "Geographic visualization for effective business"
+msgstr "Visualisation géographique de vos biens"
+
+#: templates/apps/pinsview.html:128
+msgid ""
+"\n"
+"                                PinsView lets you follow your assets on the "
+"field in real-time. Your agents pinpoint and\n"
+"                                describe your interests when they are out "
+"for a campaign or intervention. The history module\n"
+"                                lets you set events on elements on your map. "
+"Gone are the days where you were wondering what is going on out\n"
+"                            "
+msgstr ""
+"\n"
+"                                PinsView vous permet de faire un suivi "
+"géographique de vos bien sur le terrain en temps réel. Les agents pointent "
+"et décrivent vos intérêts lorsqu'ils sont en campagne ou en intervention. Le "
+"module d'historique permet d'associer une suite d'événements à chaque "
+"élément positionné. Vous ne vous poserez plus jamais la question de savoir "
+"ce qu'il se passe dehors. "
+
+#: templates/apps/pinsview.html:152
+msgid "Multi-purpose"
+msgstr "Multi-usage"
+
+#: templates/apps/pinsview.html:155
+msgid ""
+"Be you an operator with a physical network of assets, a company with agents "
+"on the field\n"
+"                                for any campaign, PinsView will help you "
+"follow all what matters to you by creating the\n"
+"                                profile that best suits your business.\n"
+"                                "
+msgstr ""
+"Que vous soyez un opérateur avec un réseau physique, ou une entreprise avec "
+"des agents\n"
+" sur le terrain pour une campagne,\n"
+"PinsView vous permet de suivre ce qui vous importe en créant le profil "
+"adapté à votre activité."
+
+#: templates/apps/pinsview.html:160
+msgid "Discover some usages"
+msgstr "Découvrez quelques cas pratiques"
+
+#: templates/apps/pinsview.html:176
+msgid "Scalable"
+msgstr "Évolutif"
+
+#: templates/apps/pinsview.html:178
+msgid ""
+"Do you have hundreds, thousands or tens of thousands of information to put "
+"on the map ?\n"
+"                                Go ahead. Our platform is designed for high "
+"performance and low resource usage. It's so\n"
+"                                lightweight you will be able to use it on "
+"your PC and Smartphone too.\n"
+"                               "
+msgstr ""
+"Vous avez des centaines, des milliers ou même des dizaines de milliers "
+"d’éléments à visualiser sur une carte\n"
+" dynamique ? Allez-y ! Notre plateforme est conçue de façon à maximiser la "
+"performance tout en minimisant les\n"
+" ressources nécessaires ; vous permettant ainsi d’utiliser le système aussi "
+"bien sur votre ordinateur que sur votre\n"
+" smartphone."
+
+#: templates/apps/pinsview.html:197
+msgid "Follow state and history"
+msgstr "Suivez l'état et l'historique"
+
+#: templates/apps/pinsview.html:199
+msgid ""
+"\n"
+"                                Visualization of the current state is not "
+"all. You can set and keep track of events\n"
+"                                for every single item on the map over time.\n"
+"                            "
+msgstr ""
+"\n"
+"PinsView ne se limite pas à la visualisation de l’état actuel des éléments, "
+"vous pouvez renseigner et garder\n"
+" l’historique des événements sur chacun d’entre eux au gré de leur évolution "
+"et à mesure que le temps passe."
+
+#: templates/apps/shavida.html:3 templates/apps/webnode.html:3
+msgid "Deploy cloud"
+msgstr "Déployez"
+
+#: templates/apps/webnode.html:8 templates/apps/webnode.html.py:144
+msgid ""
+"Create or improve your online presence to enhance your visibility and add to "
+"your credibility"
+msgstr ""
+"Créez ou améliorez votre présence en ligne pour accroitre votre visibilité "
+"et votre crédibilité"
+
+#: templates/apps/webnode.html:9 templates/apps/webnode.html.py:10
+#: templates/apps/webnode.html:148
+msgid ""
+"Provide you with world-class communication tools that meet international "
+"standards tailored to your needs in just 5 minutes"
+msgstr ""
+"Vous fournir des outils de communication de classe mondiale répondant aux "
+"normes internationales adaptées à vos besoins en 5 minutes seulement "
+
+#: templates/apps/webnode.html:92
+msgid "Create your website and improve your visibility in a few clicks."
+msgstr ""
+"Créez votre site Web et informez des milliers d'acheteurs en quelques clics."
+
+#: templates/apps/webnode.html:108
+msgid ""
+"Whether you are a company, an institution, an individual, or other, WebNode "
+"gives you the visibility you need on the internet with a modern custom "
+"website in 5 minutes.."
+msgstr ""
+"Que vous soyez une entreprise, une institution, un particulier ou tout autre "
+"opérateur, WebNode vous offre la visibilité dont vous avez besoin sur "
+"internet grâce à un site Web personnalisé et personnalisé et fonctionnel "
+"juste  en 5 minutes."
+
+#: templates/apps/webnode.html:109
+msgid "Start building your e-reputation right now!"
+msgstr "Construisez votre e-réputation dès maintenant!"
+
+#: templates/apps/webnode.html:118
+msgid "Responsive design"
+msgstr "Design responsive"
+
+#: templates/apps/webnode.html:120
+msgid ""
+"Your website adapts to all existing and future screens to optimize the user "
+"experience. From mobile phones to connected TVs via the tablet screen and "
+"the computer screen, your website appears as you wish."
+msgstr ""
+"Votre site s'adapte à tous les écrans existants et futurs pour optimiser "
+"l'expérience utilisateur. Des téléphones portables aux téléviseurs connectés "
+"en passant par l'écran de la tablette et l'écran de l'ordinateur, votre site "
+"Web apparaît comme vous le souhaitez."
+
+#: templates/apps/webnode.html:129
+msgid "Fully customizable"
+msgstr "Entièrement personnalisable"
+
+#: templates/apps/webnode.html:131
+msgid ""
+"Shape your website according to your needs. Simply and effectively. Focus "
+"only on your content and how you want to show it, Webnode takes care of the "
+"rest"
+msgstr ""
+"Façonnez votre site web en fonction de vos besoins. Simplement et "
+"efficacement. Concentrez-vous uniquement sur votre contenu et comment vous "
+"voulez le montrer, Webnode s'occupe du reste"
+
+#: templates/apps/webnode.html:141
+msgid "Take your e-reputation to the next level"
+msgstr "Poussez votre e-réputation au niveau superieur"
+
+#: templates/apps/webnode.html:143
+msgid "Are you a company"
+msgstr "Êtes-vous une entreprise"
+
+#: templates/apps/webnode.html:147
+msgid "Are you an institution"
+msgstr "Êtes-vous une institution"
+
+#: templates/apps/webnode.html:151
+msgid "Are you an individual"
+msgstr "Êtes-vous un particulier"
+
+#: templates/apps/webnode.html:152
+msgid ""
+"Whether you are a rising star, an expert, or just someone whose concern is "
+"to gain quality visibility on the web, with WebNode you now have a "
+"professional-quality digital identity, in 5 minutes chrono"
+msgstr ""
+"Que vous soyez une étoile montante, un expert, ou simplement quelqu'un dont "
+"le souci est d'obtenir une visibilité de qualité sur le web, avec WebNode "
+"vous avez maintenant une identité numérique de qualité professionnelle en 5 "
+"minutes chrono"
+
+#: tsunami/models.py:36
+msgid "Cost per month"
+msgstr "Coût mensuel"
+
+#: tsunami/models.py:37
+msgid "Cost per year"
+msgstr "Coût annuel"
+
+#: tsunami/models.py:38
+msgid "Cost of the website for the current offer"
+msgstr "Coût du site "
+
+#: tsunami/models.py:39
+msgid "Coma separated options"
+msgstr ""
+
+#: tsunami/models.py:40
+msgid "Image count for the offer"
+msgstr ""
+
+#: tsunami/models.py:54
+msgid "Pending"
+msgstr ""
+
+#: tsunami/models.py:55
+msgid "Paid"
+msgstr ""
+
+#: tsunami/models.py:56
+msgid "Complete"
+msgstr ""
+
+#: tsunami/models.py:57
+msgid "Processed"
+msgstr ""
+
+#: tsunami/models.py:69
+msgid "Campaign final cost"
+msgstr ""
+
+#: tsunami/models.py:119
+msgid "Title of the discount coupon"
+msgstr ""
+
+#: tsunami/models.py:120
+msgid "First day of the discount coupon"
+msgstr ""
+
+#: tsunami/models.py:121
+msgid "Last day of the discount coupon"
+msgstr ""
+
+#: tsunami/models.py:122
+msgid "Discount coupon percentage"
+msgstr ""
+
+#: tsunami/models.py:124
+msgid "Allow to activate or no the promo code"
+msgstr ""
+
+#: tsunami/views.py:227
+msgid "Initialize payment process"
+msgstr "Initialisation du processus de paiement"
+
+#: tsunami/views.py:251
+msgid "Order successful"
+msgstr "Paiement réussit"
+
+#: tsunami/templates/tsunami/bundles.html:3
+msgid "Tsunami"
+msgstr ""
+
+#: tsunami/templates/tsunami/bundles.html:84
+msgid "Choose your bundle"
+msgstr "Choisissez votre forfait"
+
+#: tsunami/templates/tsunami/bundles.html:111
+msgid "Integrated MoMo/OM payments"
+msgstr "Paiements MoMo/OM intégrés"
+
+#: tsunami/templates/tsunami/bundles.html:112
+msgid "1 Month phone support"
+msgstr "1 Mois de support téléphone"
+
+#: tsunami/templates/tsunami/bundles.html:113
+msgid "1 Domain name"
+msgstr "1 Nom de domaine"
+
+#: tsunami/templates/tsunami/bundles.html:117
+msgid "Yes, I want my website"
+msgstr "Oui, Je veux mon site web"
+
+#: tsunami/templates/tsunami/bundles.html:125
+#: tsunami/templates/tsunami/bundles.html:132
+msgid "Promo code"
+msgstr "Code promo"
+
+#: tsunami/templates/tsunami/bundles.html:127
+msgid "Apply"
+msgstr "Appliquer"
+
+#: tsunami/templates/tsunami/bundles.html:130
+msgid "Invalid promotion code"
+msgstr "Code Promo invalide"
+
+#: tsunami/templates/tsunami/bundles.html:158
+msgid "BUY NOW"
+msgstr "JE VEUX"
+
+#: tsunami/templates/tsunami/bundles.html:176
+#: tsunami/templates/tsunami/bundles.html:182
+msgid "Sign in"
+msgstr "Connexion"
+
+#: tsunami/templates/tsunami/bundles.html:179
+msgid "Please sign in to continue"
+msgstr "Connectez-vous  pour continuer SVP"
+
+#: tsunami/templates/tsunami/bundles.html:186
+msgid "Register"
+msgstr "Inscription"
+
+#: tsunami/templates/tsunami/checkout.html:4
+msgid "Checkout"
+msgstr "Terminer"
+
+#: tsunami/templates/tsunami/checkout.html:203
+msgid "Your payment was successful. Thank you for your trust."
+msgstr "Paiement réussi. Merci pour votre confiance "
+
+#: tsunami/templates/tsunami/checkout.html:205
+msgid "please provide us with the necessary information for your campaign"
+msgstr "Veuillez nous fournir les infos nécéssaire pour votre campagne SVP"
+
+#: tsunami/templates/tsunami/checkout.html:218
+msgid "Your facebook link"
+msgstr "Votre lien facebook"
+
+#: tsunami/templates/tsunami/checkout.html:219
+msgid "http://www.facebook.com/Mypage"
+msgstr "http://www.facebook.com/Mapagefacebook"
+
+#: tsunami/templates/tsunami/checkout.html:226
+msgid "Target Audiences"
+msgstr "Audience cible"
+
+#: tsunami/templates/tsunami/checkout.html:231
+msgid "Location"
+msgstr "Localisation"
+
+#: tsunami/templates/tsunami/checkout.html:233
+msgid "Around"
+msgstr "À proximité"
+
+#: tsunami/templates/tsunami/checkout.html:234
+msgid "Everywhere"
+msgstr "Partout"
+
+#: tsunami/templates/tsunami/checkout.html:239
+msgid "Gender"
+msgstr "Sexe"
+
+#: tsunami/templates/tsunami/checkout.html:241
+msgid "Male"
+msgstr "Homme"
+
+#: tsunami/templates/tsunami/checkout.html:242
+msgid "Female"
+msgstr "Femme"
+
+#: tsunami/templates/tsunami/checkout.html:243
+msgid "Both"
+msgstr "Les deux"
+
+#: tsunami/templates/tsunami/checkout.html:247
+msgid "Age range"
+msgstr "Tranche d'âge"
+
+#: tsunami/templates/tsunami/checkout.html:249
+msgid "Everybody"
+msgstr "Tout le monde"
+
+#: tsunami/templates/tsunami/checkout.html:250
+#: tsunami/templates/tsunami/checkout.html:251
+#: tsunami/templates/tsunami/checkout.html:252
+#: tsunami/templates/tsunami/checkout.html:253
+msgid "years"
+msgstr "ans"
+
+#: tsunami/templates/tsunami/checkout.html:258
+msgid "Send us some photos (Max.4)"
+msgstr "Envoyez quelques photos (Max.4)"
+
+#: tsunami/templates/tsunami/checkout.html:263
+msgid "Delete image"
+msgstr "Supprimer l'image"
+
+#: tsunami/templates/tsunami/checkout.html:270
+msgid "Submit"
+msgstr "Envoyer"
+
+#: tsunami/templates/tsunami/checkout.html:274
+msgid ""
+"You  choose to have a website. A professionel will contact you to discuss "
+"all detail."
+msgstr ""
+"Vous avez choisi d'avoir un site web. Un professionnel vous contactera pour "
+"plus de dédails"
+
+#: tsunami/templates/tsunami/checkout.html:275
+msgid "Is this your number "
+msgstr "Ce numero est le votre"
+
+#: tsunami/templates/tsunami/checkout.html:275
+msgid " if not, please "
+msgstr "sinon, svp"
+
+#: tsunami/templates/tsunami/mails/order_notice.html:6
+#, python-format
+msgid "Dear %(buyer_name)s"
+msgstr "Cher %(buyer_name)s"
+
+#: tsunami/templates/tsunami/mails/order_notice.html:7
+#, python-format
+msgid ""
+"\n"
+"                        %(message)s\n"
+"                    "
+msgstr ""
+
+#: tsunami/templates/tsunami/mails/order_notice.html:13
+msgid "Thank you for your trust."
+msgstr "Merci pour votre confiance "
+
+#: tsunami/templates/tsunami/snippets/language_switcher.html:6
+msgid "Language"
+msgstr "Langue"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "                            We guide them into turning internet into more "
+#~ "than just a communication tool, but also a\n"
+#~ "                            business tool. So said, our solutions always "
+#~ "integrate online Mobile Money payments out of the box.\n"
+#~ "                        "
+#~ msgstr ""
+#~ "\n"
+#~ "PinsView ne se limite pas à la visualisation de l’état actuel des "
+#~ "éléments, vous pouvez renseigner et garder\n"
+#~ " l’historique des événements sur chacun d’entre eux au gré de leur "
+#~ "évolution et à mesure que le temps passe."
+
+#~ msgid "DEPLOY YOUR e-COMMERCE"
+#~ msgstr "DÉPLOYEZ VOTRE e-COMMERCE"
+
+#~ msgid "DEPLOY YOUR WEBSITE"
+#~ msgstr "DÉPLOYEZ VOTRE SITE WEB"
+
+#~ msgid "DEPLOY YOUR VoD"
+#~ msgstr "DÉPLOYEZ VOTRE SITE VoD"
+
+#~ msgid "Create your website and inform thousands of buyers in a few clicks."
+#~ msgstr ""
+#~ "Créez votre site Web et informez des milliers d'acheteurs en quelques "
+#~ "clics."
+
+#~ msgid "Details"
+#~ msgstr "Détails"
+
+#~ msgid "Terms & conditions"
+#~ msgstr "Conditions d'utilisation"
