@@ -1,4 +1,4 @@
-{% extends "tsunami/base.html" %}
+{% extends "website/base.html" %}
 {% load i18n humanize static auth_tokens  %}
 {% block page_title %}<title>ikwen - {% trans 'Home' %} </title>{% endblock %}
 
@@ -18,6 +18,7 @@
         body {background: url('{% static 'ikwen/img/balloon-2435142.jpg' %}') no-repeat fixed; background-size: cover}
         .main-title {color: #fff; font-size: 1.5em; text-align: center}
         .icon-bar {background: #1f356a}
+        #navbar {background-color: transparent}
         #navbar .glyphicon {color: #FFF}
         #navbar .navbar-brand{font-weight: 700;}
         footer {bottom: -20px; color: #fff; background: transparent; position: fixed;  left: 0; text-align: center}
@@ -33,7 +34,6 @@
         #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
         #bottom-menu li a {color: #FFF; font-size: 12px}
         .apps ul a {padding: 10px 20px; width: 100%}
-        #navbar {background-color: transparent}
         #bottom-menu li a {color: #203e96}
         .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
         .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
@@ -56,6 +56,7 @@
              #bottom-menu {bottom: inherit; left: 0; margin-left: 0; margin-top: 100px; text-align: center}
             #bottom-menu li {margin-left: 25px}
             .choices > div {margin-top: 35px}
+            #navbar .glyphicon {color: #203e96}
         }
 
         @media only screen

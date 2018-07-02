@@ -4,7 +4,7 @@ from django.views.generic.base import TemplateView
 
 
 class Home(TemplateView):
-    template_name = 'home.html'
+    template_name = 'website/home.html'
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated():
@@ -14,20 +14,20 @@ class Home(TemplateView):
 
 
 class About(TemplateView):
-    template_name = 'about.html'
+    template_name = 'website/about.html'
 
 
 class Webnode(TemplateView):
-    template_name = 'apps/webnode.html'
+    template_name = 'website/apps/webnode.html'
 
 
 class Kakocase(TemplateView):
-    template_name = 'apps/kakocase.html'
+    template_name = 'website/apps/kakocase.html'
 
 
 class Shavida(TemplateView):
-    template_name = 'apps/shavida.html'
+    template_name = 'website/apps/shavida.html'
 
 
 class PinsView(TemplateView):
-    template_name = 'apps/pinsview.html'
+    template_name = 'website/apps/pinsview.html'

@@ -9,6 +9,7 @@
 /* Website edge panel style */
 
 .top-edge-panel {float: left; height: 200px; width: 100%}
+.edge-panel-left .wrapper {padding-top: 0}
 .panel-top {background-size: cover;height: 200px; }
 #side-nav .panel-top .cover {background: rgba(0, 0, 0, 0.52);height: 200px;padding: 10px; width: 100%}
 #side-nav .nav-stacked li a {font-weight: 700; color: #676767;font-size: 14px;    padding: 10px 25px;}
@@ -25,6 +26,10 @@
 .lang-switcher {float: right; margin: 30px 20px}
 .lang-switcher i { margin: 3px 35px; position: absolute}
 .lang-switcher select {background: transparent; border: none; color: #FFF}
+
+
+#bottom-menu .lang-switcher { margin: 0 0 0 50px;  }
+#bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px;}
 
 .apps ul a {padding: 10px 20px; width: 100%}
 #navbar {background-color: #FFF}
