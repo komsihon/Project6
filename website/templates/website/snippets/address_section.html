@@ -1,0 +1,46 @@
+{% load i18n humanize static auth_tokens  %}
+<section class="address">
+    <div class="cover">
+        <div class="container">
+            <div class="achievements">
+                <h1 class="title animated wow fadeInLeft" style="">{% trans "Contact Us Now" %}</h1>
+                <p class="lead animated wow fadeInDown">
+                    {% trans "And let us bring to reality your world-changing project." %}
+
+                </p>
+                <div class="app">
+{#                    <div class="col-sm-2 hidden-xs"> </div>#}
+                    <div class="contact-img col-sm-6 col-xs-12"><img src="{% static "website/img/rocket.png" %}" width="50%"> </div>
+                    <div class="col-sm-6 col-xs-12 contact-address ">
+                        <a href="http://www.ikwen.com/"><img src="{% static 'website/img/logo-ikwen-150.png' %}" width="200"></a>
+                        <div class="address">
+                            <p>195 Route Montée Jouvence</p>
+                            <p>Yaoundé, Cameroon</p>
+                            <p></p>
+                            <p>E-mail: <a href="mailto:contact@ikwen.com" style="font-weight: 400">contact@ikwen.com</a> </p>
+                            <p>Tel: (+237) 657 833 956 / 652 916 124</p>
+                            <p>Web: <a href="http://www.ikwen.com" style="font-weight: 400">www.ikwen.com</a> </p>
+                        </div>
+                    </div>
+{#                    <div class="col-sm-2 hidden-xs"> </div>#}
+                </div>
+            </div>
+        </div>
+        <div class="footer hidden-xs">
+            &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+            {% trans "All rights reserved." %}
+            {% if config.legal_mentions_url %}
+            - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+            {% endif %}
+        </div>
+        <div id="bottom-menu" class="hidden-xs">
+            <ul>
+                {% include 'tsunami/snippets/language_switcher.html' %}
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+               <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+            </ul>
+        </div>
+    </div>
+</section>

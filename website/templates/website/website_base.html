@@ -1,0 +1,383 @@
+{% load i18n staticfiles auth_tokens %}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block meta %}
+            {% include 'core/snippets/favicon.html' %}
+        {% endblock %}
+		{% block page_title %}{% endblock %}
+		{% block head_style %}
+            <link rel='stylesheet' href="{% static 'ikwen/font-awesome/css/font-awesome.min.css' %}" />
+            <link href="{% static 'website/css/bootstrap-4.0.0.css' %}" rel="stylesheet">
+            <link rel='stylesheet' href="{% static 'ikwen/css/base.css' %}" />
+
+            <style>
+                #navbar {height: 55px;min-height: 50px;position: fixed;width: 100%;}
+                #navbar .glyphicon, #navbar .fa  {color: #fff;cursor: pointer;font-size: 18px;}
+                #navbar .back {display: none;float:left;font-size: 24px;margin: 12px 15px 0 10px;}
+                .navbar-light .navbar-brand {padding: 18px 0 0 0;margin-left: 10px;}
+                 #navbar .navbar-header {height: 55px;overflow: hidden}
+                #navbar-search {
+                    display: none;
+                    background: #fff;
+                    border-radius: 3px;
+                    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+                    margin-left: 2%;
+                    padding: 10px;
+                    position: fixed;
+                    top: 3px;
+                    width: 96%;
+                    z-index: 1001;
+                }
+                #navbar-search .hide-search {color: #bbb;float: left;font-size: 20px;margin-top: 6px;}
+                #navbar-search input {background: none;border: none;float: right;width: 88%;}
+
+                #navbar-results {clear: both}
+                #navbar-results .stage {max-height: 300px; overflow: auto}
+                #navbar-results .ik-li {padding: 3px 0;}
+                #navbar-results .ik-li .full_name {text-transform: capitalize;color: #666;font-weight: 700;}
+                #navbar-results .ik-li .info {margin-left: 6px;max-width: 220px}
+                #navbar-results .ik-li .title {margin-top: 0;}
+                #navbar-results .ik-li .about {height: 35px;margin-bottom: 0;overflow: hidden;}
+
+                #bottom-menu li {list-style-type: none}
+
+                #nav-xs li {display: inline-block;margin-right: 18px;}
+                #nav-xs li:last-child {margin-right: 10px}
+                #nav-xs {padding: 18px 0;}
+
+                .nav > .tab {position: relative; display: block;}
+                .nav > .tab > a {position: relative;display: block;padding: 10px 6px;text-decoration: none;}
+                .nav-tabs > .tab {float: left;margin-bottom: -1px;}
+                .nav-tabs > .tab > a {line-height: 1.42857143;border: 1px solid transparent;border-radius: 4px 4px 0 0;}
+                .nav-tabs > .tab.active > a, .nav-tabs > .tab.active > a:hover, .nav-tabs > .tab.active > a:focus {
+                    color: #2c3e50;
+                    background-color: #ffffff;
+                    border: 1px solid #ecf0f1;
+                    border-bottom-color: transparent;
+                    cursor: default
+                }
+
+
+
+
+
+
+                @media (max-width: 767px) {
+                    #navbar > .container-fluid {padding: 0;}
+                    .navbar-light .navbar-brand {max-width: 115px;overflow: hidden;}
+                    .navbar-light .navbar-brand > * {float: left; width: 300%}
+                    #navbar-results {border-top: 1px solid #eee}
+                    .nav-tabs.swiper-wrapper {background: #f8f6f6; border-bottom: none}
+                    .nav-tabs > .tab {margin-bottom: -2px}
+                    .nav-tabs > .tab > a {border-radius: 0;border-top: 2px solid transparent;border-bottom: 2px solid transparent;color: #aaa;font-weight: 700;line-height: 1.2;text-align: center;}
+                    .nav-tabs > .tab.active > a, .nav-tabs > .tab.active > a:hover, .nav-tabs > .tab.active > a:focus {
+                        background: none;
+                        border: none;
+                        border-bottom: 2px solid #1b6d85;
+                        color: #555
+                    }
+                }
+                @media (min-width: 768px) {
+                    .navbar-left {float: left !important;}
+                    #navbar .navbar-header {float: left; height: auto}
+                    .navbar-right {float: right !important;margin-right: -15px;}
+
+                    #user-menu-xs {display: none}
+                    .navbar-light .navbar-brand {padding: 19px 15px 19px 0;}
+                    .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left: 0}
+                    #navbar .fa.fa-search {color: #fff;font-size: 15px;margin: 15px 0 0 10px;position: absolute}
+                    #navbar-search {
+                        background: transparent;
+                        display: block;
+                        margin: 0;
+                        padding-left: 0;
+                        padding-right: 0;
+                        position: absolute;
+                        box-shadow: none;
+                        width: 300px;
+                        }
+                    #navbar-search input {
+                        background: #142331;
+                        border-radius: 3px;
+                        color: #ddd;
+                        float: right;
+                        width: 100%;
+                        margin-top: 5px;
+                        padding-left: 35px;
+                    }
+
+                    #navbar {height: 65px;background-color: #2c3e50;}
+                    #navbar-results {margin-top: 1px;float: left; width: 100%}
+                    #navbar-results .stage {background: #fff;box-shadow: 1px 1px 9px 4px rgba(0, 0, 0, .1)}
+                    #navbar-results .ik-li {padding: 3px}
+                    #navbar .glyphicon, #navbar .fa {font-size: 21px}
+                    .nav > .tab > a {padding: 10px 15px}
+                }
+                @media (min-width: 992px) {
+                    #navbar-search {margin-left: 80px;width: 360px}
+                    #navbar-results {box-sizing: content-box;margin-top: 0;margin-left: -45px;padding: 1px 45px 45px;}
+                    #navbar-results .ik-li a {cursor: pointer; padding: 7px;}
+                    #navbar-results .ik-li .info {margin-left: 15px;max-width: 265px}
+                    #navbar-results .ik-li .about {max-width: 240px;}
+                    #content.form {
+                        padding-top: 7%
+                    }
+                    .edge-panel-left {display: block;margin-left: 0;}
+                }
+                @media (min-width: 1200px) {
+                    .tiles .ik-li {height: 300px;width: 25%;}
+                    .menu-button {margin: 18px 15px 0 0;}
+                    .icon-bar {
+                        width: 30px;
+                        height: 3px;
+                        margin-bottom: 7px;
+                    }
+                    #navbar-search {margin-left: 210px;width: 450px;}
+                    #navbar-results .ik-li .info {max-width: 340px;}
+                    #navbar-results .ik-li .about {max-width: 330px;}
+                    #item-detail #navbar-results .ik-li .info {max-width: 305px}
+                    #item-detail #navbar-results .ik-li .about {max-width: 310px;}
+                    .member, .ik-li {padding: 15px}
+                    .member .info, .ik-li .info {float: left; margin-left: 30px}
+
+                    form#search .spinner {
+                        margin: 0 0 0 420px
+                    }
+                }
+            </style>
+
+
+            <link rel='stylesheet' href="{% static 'website/css/transparent-navbar-darkbg.css' %}" />
+		{% endblock %}
+        {% block head_js %}
+            <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+            <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+              <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+            <![endif]-->
+            <script src="{% static 'website/js/jquery-3.2.1.min.js' %}"></script>
+        {% endblock %}
+    </head>
+    {% block after_head %}{% endblock %}
+    <body>
+        <div id="top-notice-ctnr" style="display: none">
+            <span class="floating-notice has-shade" style="float: none; position: static"> </span>
+        </div>
+        {% block header %}
+            {% with collaborates_on=user.collaborates_on %}
+                {% url "ikwen:account_setup" as account_setup_url %}
+                <nav id="navbar" class="navbar-light navbar-static-top">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <i class="glyphicon glyphicon-menu-left back"></i>
+                            <div class="menu-button">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </div>
+                            {% block header_brand %}
+                                <a class="navbar-brand d-none d-md-block d-xs-none" href="{{ service.url }}">
+                                    <strong>{{ service.project_name }}</strong>
+                                </a>
+                                <strong class="navbar-brand d-md-none">{{ service.project_name }}</strong>
+                            {% endblock %}
+                            {% block site_menu_xs %}
+                                <nav class=" d-md-none pull-right">
+                                    <ul id="nav-xs" class="navbar-right">
+                                        <li class="show-search">
+                                            <a>
+                                                <i class="fa fa-search"></i>
+                                            </a>
+                                        </li>
+                                        {% if user.is_authenticated %}
+                                            <li class="home">
+                                                <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                                                    <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
+                                                    {% if user.personal_notices > 0 %}
+                                                        <span class="label label-danger">{{ user.personal_notices }}</span>
+                                                    {% endif %}
+                                                </a>
+                                            </li>
+                                            {% if collaborates_on|length >= 1 %}
+                                                <li class="dropdown">
+                                                    <a id="apps-xs" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="glyphicon glyphicon-th-large"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu" aria-labelledby="apps-xs" style="right: -39px">
+                                                        {% for app in collaborates_on %}
+                                                            <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% endif %}
+                                            <li class="dropdown">
+                                                <a id="user-menu-xs" class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="glyphicon glyphicon-user"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="user-menu-xs">
+                                                    <li style="padding: 3px 20px"> {{ user.get_short_name }} </li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li>
+                                                        <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
+                                                    </li>
+                                                    <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
+                                                </ul>
+                                            </li>
+                                        {% else %}
+                                            <li>
+                                                <a href="{% url 'ikwen:sign_in' %}" style="float: left">{% trans "Login" %}</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </nav>
+                            {% endblock %}
+                        </div>
+                        <div id="navbar-search" class="form-inline navbar-left">
+                            <form id="search" autocomplete="off" onsubmit="return false">
+                                <i class="glyphicon glyphicon-menu-left hide-search  d-md-none"></i>
+                                <i class="fa fa-search hidden-xs"></i>
+                                <input type="text" name="radix" class="form-control input-sm" placeholder="{% trans "Search" %}">
+                                <input type="hidden" name="q">
+                                <span class="spinner" style="display: none"></span>
+                            </form>
+                            <div id="navbar-results" style="display: none" data-min-search-chars="2">
+                                <div class="stage">
+                                    {% include 'core/snippets/spinner.html' %}
+                                    <ul style="float: left; padding-left: 0; width: 100%">
+                                        <li class="ik-li tpl" style="display: none">
+                                            <a class="target_url" style="display: block">
+                                                <span class="image rounded photo logo bg-img" style="background-image: url({% static 'ikwen/img/no_photo.png' %})"></span>
+                                                <div class="info">
+                                                     <div class='full_name project_name has-faded-edge'></div>
+                                                    <p class="about short_description minor-tag"></p>
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        {% block site_menu %}
+                            <div id="site-menu" class="">
+                                <div class="container-fluid">
+                                    <ul class="nav navbar-nav navbar-right" style="margin: 0 -15px 0 0">
+                                        {% if user.is_authenticated %}
+                                            <li id="user-home">
+                                                <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                                                    {% trans "Home" %}
+                                                    {% if user.get_notice_count > 0 %}
+                                                        <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
+                                                    {% endif %}
+                                                </a>
+                                            </li>
+                                            {% if collaborates_on|length == 1 %}
+                                                <li id="user-apps">
+                                                    <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
+                                                </li>
+                                            {% elif collaborates_on|length > 1 %}
+                                                <li id="user-apps" class="dropdown">
+                                                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Apps</a>
+                                                    <ul class="dropdown-menu" aria-labelledby="apps">
+                                                        {% for app in collaborates_on %}
+                                                            <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </li>
+                                            {% endif %}
+                                            <li id="user-menu" class="dropdown">
+                                                <a class="icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="glyphicon glyphicon-user"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="user-menu">
+                                                    <li style="padding: 3px 20px"> {{ user.get_short_name }} </li>
+                                                    <li role="separator" class="divider"></li>
+                                                    <li>
+                                                        <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
+                                                    </li>
+                                                    <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
+                                                </ul>
+                                            </li>
+                                        {% else %}
+                                            <li class="d-none d-md-block d-xs-none">
+                                                <a href="{% url 'ikwen:sign_in' %}" class="cta">{% trans "Login" %}</a>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
+                            </div>
+                        {% endblock %}
+                    </div>
+                </nav>
+            {% endwith %}
+        {% endblock %}
+        {% block selection_control %}{% endblock %}
+        {% block content %}{% endblock %}
+        <div class="edge-swipe-overlay"></div>
+        <script src="{% static 'website/js/bootstrap4.js' %}"></script>
+        <script src="{% static 'ikwen/hammerjs/hammer.min.js' %}"></script>
+        <script src="{% static 'ikwen/hammerjs/jquery.hammer.js' %}"></script>
+        <script src="{% static 'ikwen/js/ikwen-util.js' %}"></script>
+        {% block js %}
+            <script>
+                (function() {
+                    ikwen.URL_KEY = '{{ request.GET.key }}';
+                    ikwen.URL_RAND = '{{ request.GET.rand }}';
+                    $('form#lang a').click(function() {
+                        var lang = $(this).data('val');
+                        $('form#lang input[name=language]').val(lang);
+                        $('form#lang').submit();
+                        return false
+                    });
+
+                    $('#nav-xs').on('click', '.show-search', function() {
+                        $('#navbar-search').prependTo('body').fadeIn().find('input').focus();
+                    });
+                    $('#navbar-search').on('click', '.hide-search', function() {
+                        $('#navbar-search').fadeOut();
+                        $(this).val("");
+                        $('#search-results').fadeOut()
+                    });
+                    if ($(window).width() < 992) {
+                        $('.edge-panel-left').addClass('has-shade').appendTo('.edge-swipe-overlay')
+                    }
+                    $( window ).resize(ikwen.debouncer(function (e) {
+                        var winWidth = $(window).width();
+                        if (winWidth < 768) {
+                            if (!$('#navbar-search').is(':visible')) {
+                                $('#navbar-search').prependTo('body');
+                                $('#navbar-search input').focus();
+                            }
+                            $('.edge-panel-right').addClass('has-shade').appendTo('.edge-swipe-overlay');
+                        } else if (winWidth >= 768) {
+                            $('#navbar-search').insertBefore('#site-menu');
+                            $('.edge-panel-right').removeClass('has-shade').appendTo('.edge-panel-right-container').show();
+                        }
+                        if (winWidth >= 992) {
+                            $('.edge-panel-left').removeClass('has-shade').appendTo('.edge-panel-left-container').show();
+                        } else {
+                            $('.edge-panel-left').addClass('has-shade').appendTo('.edge-swipe-overlay');
+                        }
+                    }));
+
+                    {% url 'ikwen:list_projects' as list_projects_url %}
+                    var searchDescriptor = [{
+                        endpoint: '{{ list_projects_url|ikwenize }}',
+                        resultTplSelector: '#navbar-results .ik-li',
+                        jsonp: true
+                    }];
+                    $('form#search input').focusout(function() {$('#navbar-results').fadeOut()});
+                    ikwen.setupSearch('#search input', '#navbar-results', searchDescriptor);
+                })()
+            </script>
+        {% endblock %}
+    </body>
+</html>

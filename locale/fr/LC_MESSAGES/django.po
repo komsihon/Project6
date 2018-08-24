@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-12 16:10+0100\n"
-"PO-Revision-Date: 2018-06-12 16:15+0100\n"
+"POT-Creation-Date: 2018-08-20 12:39+0100\n"
+"PO-Revision-Date: 2018-08-20 14:20+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -18,18 +18,486 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: templates/about.html:3 templates/about.html.py:292 templates/home.html:133
-#: templates/apps/shavida.html:95
-#: tsunami/templates/tsunami/snippets/address_section.html:42
+#: templates/base.html:69 tsunami/templates/tsunami/base.html:70
+#: tsunami/templates/tsunami/checkout.html:157
+#: tsunami/templates/tsunami/snippets/edge_panel.html:26
+#: website/templates/website/base.html:68 website/templates/website/home.html:3
+#: website/templates/website/new_home.html:3
+#: website/templates/website/website_base.html:278
+#: website/templates/website/apps/apps_base.html:123
+msgid "Home"
+msgstr "Accueil"
+
+#: templates/base.html:97 tsunami/templates/tsunami/base.html:98
+#: tsunami/templates/tsunami/checkout.html:185
+#: website/templates/website/base.html:96
+#: website/templates/website/website_base.html:228
+#: website/templates/website/website_base.html:306
+#: website/templates/website/apps/apps_base.html:90
+#: website/templates/website/apps/apps_base.html:151
+msgid "Account setup"
+msgstr "Infos compte"
+
+#: templates/base.html:99 tsunami/templates/tsunami/base.html:100
+#: tsunami/templates/tsunami/checkout.html:187
+#: website/templates/website/base.html:98
+#: website/templates/website/website_base.html:230
+#: website/templates/website/website_base.html:308
+#: website/templates/website/apps/apps_base.html:92
+#: website/templates/website/apps/apps_base.html:153
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: templates/base.html:105 tsunami/templates/tsunami/base.html:106
+#: tsunami/templates/tsunami/checkout.html:193
+#: website/templates/website/base.html:104
+#: website/templates/website/website_base.html:235
+#: website/templates/website/website_base.html:313
+#: website/templates/website/apps/apps_base.html:159
+msgid "Login"
+msgstr "Connexion"
+
+#: tsunami/models.py:38
+msgid "Social marketing"
+msgstr ""
+
+#: tsunami/models.py:39
+msgid "Full option"
+msgstr ""
+
+#: tsunami/models.py:40 tsunami/templates/tsunami/tsunami.html:72
+msgid "Business"
+msgstr ""
+
+#: tsunami/models.py:53
+msgid "Cost per month"
+msgstr "Coût mensuel"
+
+#: tsunami/models.py:54
+msgid "Cost of the website for the current offer"
+msgstr "Coût du site "
+
+#: tsunami/models.py:55
+msgid "Coma separated options"
+msgstr ""
+
+#: tsunami/models.py:56
+msgid "Image count for the offer"
+msgstr ""
+
+#: tsunami/models.py:70
+msgid "Pending"
+msgstr ""
+
+#: tsunami/models.py:71
+msgid "Paid"
+msgstr ""
+
+#: tsunami/models.py:72
+msgid "Complete"
+msgstr ""
+
+#: tsunami/models.py:73
+msgid "Processed"
+msgstr ""
+
+#: tsunami/models.py:85
+msgid "Campaign final cost"
+msgstr ""
+
+#: tsunami/models.py:135
+msgid "Title of the discount coupon"
+msgstr ""
+
+#: tsunami/models.py:136
+msgid "First day of the discount coupon"
+msgstr ""
+
+#: tsunami/models.py:137
+msgid "Last day of the discount coupon"
+msgstr ""
+
+#: tsunami/models.py:138
+msgid "Discount coupon percentage"
+msgstr ""
+
+#: tsunami/models.py:140
+msgid "Allow to activate or no the promo code"
+msgstr ""
+
+#: tsunami/views.py:244
+msgid "Initialize payment process"
+msgstr "Initialisation du processus de paiement"
+
+#: tsunami/views.py:268
+msgid "Order successful"
+msgstr "Paiement réussit"
+
+#: tsunami/templates/tsunami/bundles.html:3
+msgid "Tsunami"
+msgstr ""
+
+#: tsunami/templates/tsunami/bundles.html:84
+msgid "Choose your bundle"
+msgstr "Choisissez votre forfait"
+
+#: tsunami/templates/tsunami/bundles.html:111
+msgid "Integrated MoMo/OM payments"
+msgstr "Paiements MoMo/OM intégrés"
+
+#: tsunami/templates/tsunami/bundles.html:112
+msgid "1 Month phone support"
+msgstr "1 Mois de support téléphone"
+
+#: tsunami/templates/tsunami/bundles.html:113
+msgid "1 Domain name"
+msgstr "1 Nom de domaine"
+
+#: tsunami/templates/tsunami/bundles.html:117
+msgid "Yes, I want my website"
+msgstr "Oui, Je veux mon site web"
+
+#: tsunami/templates/tsunami/bundles.html:125
+#: tsunami/templates/tsunami/bundles.html:132
+msgid "Promo code"
+msgstr "Code promo"
+
+#: tsunami/templates/tsunami/bundles.html:127
+msgid "Apply"
+msgstr "Appliquer"
+
+#: tsunami/templates/tsunami/bundles.html:130
+msgid "Invalid promotion code"
+msgstr "Code Promo invalide"
+
+#: tsunami/templates/tsunami/bundles.html:158
+msgid "BUY NOW"
+msgstr "JE VEUX"
+
+#: tsunami/templates/tsunami/bundles.html:176
+#: tsunami/templates/tsunami/bundles.html:182
+#: tsunami/templates/tsunami/tsunami.html:309
+#: tsunami/templates/tsunami/tsunami.html:315
+msgid "Sign in"
+msgstr "Connexion"
+
+#: tsunami/templates/tsunami/bundles.html:179
+#: tsunami/templates/tsunami/tsunami.html:312
+msgid "Please sign in to continue"
+msgstr "Connectez-vous  pour continuer SVP"
+
+#: tsunami/templates/tsunami/bundles.html:186
+#: tsunami/templates/tsunami/tsunami.html:319
+#: website/templates/website/new_home.html:103
+msgid "Register"
+msgstr "Inscription"
+
+#: tsunami/templates/tsunami/checkout.html:4
+msgid "Checkout"
+msgstr "Terminer"
+
+#: tsunami/templates/tsunami/checkout.html:206
+msgid "Your payment was successful. Thank you for your trust."
+msgstr "Paiement réussi. Merci pour votre confiance "
+
+#: tsunami/templates/tsunami/checkout.html:208
+msgid "please provide us with the necessary information for your campaign"
+msgstr "Veuillez nous fournir les infos nécéssaire pour votre campagne SVP"
+
+#: tsunami/templates/tsunami/checkout.html:221
+msgid "Your facebook link"
+msgstr "Votre lien facebook"
+
+#: tsunami/templates/tsunami/checkout.html:222
+msgid "http://www.facebook.com/Mypage"
+msgstr "http://www.facebook.com/Mapagefacebook"
+
+#: tsunami/templates/tsunami/checkout.html:229
+msgid "Target Audiences"
+msgstr "Audience cible"
+
+#: tsunami/templates/tsunami/checkout.html:235
+msgid "Location"
+msgstr "Localisation"
+
+#: tsunami/templates/tsunami/checkout.html:237
+msgid "Around"
+msgstr "À proximité"
+
+#: tsunami/templates/tsunami/checkout.html:238
+msgid "Everywhere"
+msgstr "Partout"
+
+#: tsunami/templates/tsunami/checkout.html:244
+msgid "Gender"
+msgstr "Sexe"
+
+#: tsunami/templates/tsunami/checkout.html:246
+msgid "Male"
+msgstr "Homme"
+
+#: tsunami/templates/tsunami/checkout.html:247
+msgid "Female"
+msgstr "Femme"
+
+#: tsunami/templates/tsunami/checkout.html:248
+msgid "Both"
+msgstr "Les deux"
+
+#: tsunami/templates/tsunami/checkout.html:252
+msgid "Age range"
+msgstr "Tranche d'âge"
+
+#: tsunami/templates/tsunami/checkout.html:254
+msgid "Everybody"
+msgstr "Tout le monde"
+
+#: tsunami/templates/tsunami/checkout.html:255
+#: tsunami/templates/tsunami/checkout.html:256
+#: tsunami/templates/tsunami/checkout.html:257
+#: tsunami/templates/tsunami/checkout.html:258
+msgid "years"
+msgstr "ans"
+
+#: tsunami/templates/tsunami/checkout.html:263
+#, fuzzy
+msgid "Send us some photos "
+msgstr "Envoyez quelques photos (Max.4)"
+
+#: tsunami/templates/tsunami/checkout.html:268
+msgid "Delete image"
+msgstr "Supprimer l'image"
+
+#: tsunami/templates/tsunami/checkout.html:275
+#: website/templates/website/new_home.html:90
+msgid "Submit"
+msgstr "Envoyer"
+
+#: tsunami/templates/tsunami/checkout.html:279
+msgid ""
+"You  choose to have a website. A professionel will contact you to discuss "
+"all detail."
+msgstr ""
+"Vous avez choisi d'avoir un site web. Un professionnel vous contactera pour "
+"plus de dédails"
+
+#: tsunami/templates/tsunami/checkout.html:280
+msgid "Is this your number "
+msgstr "Ce numero est le votre"
+
+#: tsunami/templates/tsunami/checkout.html:280
+msgid " if not, please "
+msgstr "sinon, svp"
+
+#: tsunami/templates/tsunami/tsunami.html:46
+msgid "Tsunami pricing table"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:54
+msgid "Social Marketing"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:55
+msgid "Make some noise on social media and reach the visibility you deserve"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:63
+msgid "Full Option"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:64
+msgid "Get a persistent service which will build you more than simple noise"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:74
+msgid "Get the all-in VIP process from ikwen"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:95
+#: tsunami/templates/tsunami/tsunami.html:119
+#: tsunami/templates/tsunami/tsunami.html:143
+#: tsunami/templates/tsunami/tsunami.html:183
+#: tsunami/templates/tsunami/tsunami.html:220
+#: tsunami/templates/tsunami/tsunami.html:257
+#, fuzzy
+msgid "Month of digital communication"
+msgstr "Communication intégrée"
+
+#: tsunami/templates/tsunami/tsunami.html:96
+#: tsunami/templates/tsunami/tsunami.html:120
+#: tsunami/templates/tsunami/tsunami.html:144
+#: tsunami/templates/tsunami/tsunami.html:185
+#: tsunami/templates/tsunami/tsunami.html:222
+#: tsunami/templates/tsunami/tsunami.html:259
+msgid "Till"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:101
+#: tsunami/templates/tsunami/tsunami.html:125
+#: tsunami/templates/tsunami/tsunami.html:149
+#: tsunami/templates/tsunami/tsunami.html:193
+#: tsunami/templates/tsunami/tsunami.html:230
+#: tsunami/templates/tsunami/tsunami.html:267
+msgid "I want"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:145
+msgid "expert conseil"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:177
+msgid "Till 2.000 revives mails/mois"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:181
+#: tsunami/templates/tsunami/tsunami.html:218
+#, fuzzy
+msgid "Domain name"
+msgstr "1 Nom de domaine"
+
+#: tsunami/templates/tsunami/tsunami.html:182
+#: tsunami/templates/tsunami/tsunami.html:256
+msgid "E-commerce website"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:188
+#, fuzzy
+msgid "Support online"
+msgstr "Support"
+
+#: tsunami/templates/tsunami/tsunami.html:214
+msgid "Till 5.000 revives mails/mois"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:219
+msgid "E-commerce website "
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:225
+msgid "online Support + mail assistance"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:251
+msgid "Till 12.000 revives mails/mois"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:255
+#, fuzzy
+msgid "Domain"
+msgstr "1 Nom de domaine"
+
+#: tsunami/templates/tsunami/tsunami.html:262
+msgid "Online support + mail assistance & Telegram"
+msgstr ""
+
+#: tsunami/templates/tsunami/tsunami.html:278
+msgid ""
+"\n"
+"                       <div class=\"jumbotron\">\n"
+"\t\t\t\t\t\t   <h1 class=\"display-4\">Hello, partner!</h1>\n"
+"\t\t\t\t\t\t   <p class=\"lead\">Switch to digital with the power of a "
+"digital Tsunami.</p>\n"
+"\t\t\t\t\t\t   <hr class=\"my-4\">\n"
+"\t\t\t\t\t\t   <p style=\"margin-bottom: 0\">If you want to exploit the full "
+"potential of IKWEN, experts are ready to support you at every step of the "
+"digitalization of your company</p>\n"
+"                           <ul>\n"
+"                              <li>Activez le <a class=\"link\" href=\"#\" "
+"style=\"text-decoration: none; color: #233682\">Cloud Customer Manager "
+"(CCM)</a> to keep in touch with the customer once and for all ;</li>\n"
+"                              <li>Optimize your customer retention with <a "
+"class=\"link\" href=\"#\" style=\"text-decoration: none; color: "
+"#233682\">Continuous Rewarding (CR)</a> ;</li>\n"
+"                              <li>Disregard any technological limitations "
+"with the <a class=\"link\" href=\"#\" style=\"text-decoration: none; color: "
+"#233682\">Cloud Cash-In (CC-I)</a> ;</li>\n"
+"                              <li>Benefit for quality training in digital "
+"marketing - inbound marketing specifications and personalized assistance.</"
+"li>\n"
+"\t\t\t\t\t\t\t\n"
+"                           </ul>\n"
+"\t\t\t\t\t\t  <a class=\"btn btn-ikwen btn-lg\" href=\"#\" role=\"button"
+"\">Learn more</a>\n"
+"                            "
+msgstr ""
+
+#: tsunami/templates/tsunami/mails/order_notice.html:6
+#, python-format
+msgid "Dear %(buyer_name)s"
+msgstr "Cher %(buyer_name)s"
+
+#: tsunami/templates/tsunami/mails/order_notice.html:7
+#, python-format
+msgid ""
+"\n"
+"                        %(message)s\n"
+"                    "
+msgstr ""
+
+#: tsunami/templates/tsunami/mails/order_notice.html:13
+msgid "Thank you for your trust."
+msgstr "Merci pour votre confiance "
+
+#: tsunami/templates/tsunami/snippets/address_section.html:6
+#: website/templates/website/about.html:261
+msgid "Contact Us Now"
+msgstr "Contactez-nous"
+
+#: tsunami/templates/tsunami/snippets/address_section.html:8
+#: website/templates/website/about.html:263
+msgid "And let us bring to reality your world-changing project."
+msgstr "Et réalisons ensemble votre incroyable projet"
+
+#: tsunami/templates/tsunami/snippets/address_section.html:31
+#: tsunami/templates/tsunami/snippets/edge_panel.html:57
+#: website/templates/website/about.html:286
+#: website/templates/website/new_home.html:181
+#: website/templates/website/apps/shavida.html:85
+msgid "All rights reserved."
+msgstr "Tous droits réservés"
+
+#: tsunami/templates/tsunami/snippets/address_section.html:33
+#: tsunami/templates/tsunami/snippets/edge_panel.html:59
+#: website/templates/website/about.html:288
+#: website/templates/website/new_home.html:183
+#: website/templates/website/apps/shavida.html:87
+msgid "Legal mentions"
+msgstr "Mentions légales"
+
+#: tsunami/templates/tsunami/snippets/address_section.html:39
+#: tsunami/templates/tsunami/snippets/edge_panel.html:33
+#: website/templates/website/about.html:294
+#: website/templates/website/home.html:131
+#: website/templates/website/apps/shavida.html:92
+msgid "Blog"
+msgstr "Blog"
+
+#: tsunami/templates/tsunami/snippets/address_section.html:40
 #: tsunami/templates/tsunami/snippets/edge_panel.html:34
+#: website/templates/website/about.html:295
+#: website/templates/website/home.html:132
+#: website/templates/website/apps/shavida.html:93
+msgid "Support"
+msgstr "Support"
+
+#: tsunami/templates/tsunami/snippets/address_section.html:42
+#: tsunami/templates/tsunami/snippets/edge_panel.html:35
+#: website/templates/website/about.html:3
+#: website/templates/website/about.html:297
+#: website/templates/website/home.html:134
+#: website/templates/website/apps/shavida.html:95
 msgid "About"
 msgstr "À propos"
 
-#: templates/about.html:90
+#: tsunami/templates/tsunami/snippets/language_switcher.html:6
+msgid "Language"
+msgstr "Langue"
+
+#: website/templates/website/about.html:95
 msgid "ABOUT THE COMPANY"
 msgstr "L'ENTREPRISE"
 
-#: templates/about.html:93
+#: website/templates/website/about.html:98
 msgid ""
 "\n"
 "                        <p>\n"
@@ -81,11 +549,11 @@ msgstr ""
 "d'applications sur <a href=\"http://www.ikwen.com/\">www.ikwen.com</a>\n"
 "                        </p>"
 
-#: templates/about.html:116
+#: website/templates/website/about.html:121
 msgid "WONDERFUL ACHIEVEMENTS"
 msgstr "D'INCROYABLES RÉALISATIONS"
 
-#: templates/about.html:117
+#: website/templates/website/about.html:122
 msgid ""
 "Great Products created by us, for our Cloud Platform ... Even better "
 "products created for our custom applications clients"
@@ -93,7 +561,7 @@ msgstr ""
 "Grands produits créés par nous, pour notre plate-forme cloud ... Encore "
 "mieux produits créés pour nos clients d'applications personnalisées"
 
-#: templates/about.html:139
+#: website/templates/website/about.html:144
 msgid ""
 "lets you create a full-working e-commerce website with integrated Mobile "
 "Money online payment"
@@ -101,16 +569,17 @@ msgstr ""
 "vous permet de créer un site Web de commerce électronique entièrement "
 "fonctionnel avec un paiement en ligne Mobile Money intégré"
 
-#: templates/about.html:141 templates/about.html.py:168
-#: templates/about.html:200
+#: website/templates/website/about.html:146
+#: website/templates/website/about.html:173
+#: website/templates/website/about.html:205
 msgid "See it in action on"
 msgstr "Quelques exemples"
 
-#: templates/about.html:148
+#: website/templates/website/about.html:153
 msgid "Deploy your e-commerce"
 msgstr "Deployez"
 
-#: templates/about.html:165
+#: website/templates/website/about.html:170
 msgid ""
 "Create a Corporate, Personal or Business Website. Extend capabilities with "
 "pluggable modules (Blog, Subscriptions ...)"
@@ -118,26 +587,26 @@ msgstr ""
 "Créer un site Web d'entreprise, personnel ou professionnel. Étendre les "
 "capacités avec des modules personnalisables (Blog, Inscriptions ...)"
 
-#: templates/about.html:175
+#: website/templates/website/about.html:180
 msgid "Deploy your website"
 msgstr "Deployez votre siteweb"
 
-#: templates/about.html:198
+#: website/templates/website/about.html:203
 msgid ""
 "lets you deploy a VOD website in minutes. Get paid with Mobile Money online"
 msgstr ""
 "vous permet de déployer un site Web VOD en quelques minutes incluant des pas "
 "paiments Mobile Money"
 
-#: templates/about.html:206
+#: website/templates/website/about.html:211
 msgid "Deploy your VoD"
 msgstr "DÉPLOYEZ VOTRE SITE VoD"
 
-#: templates/about.html:215
+#: website/templates/website/about.html:220
 msgid "CUSTOM APP DEV"
 msgstr "DÉVELOPPEMENT À LA DÉMANDE"
 
-#: templates/about.html:216
+#: website/templates/website/about.html:221
 msgid ""
 "Rock-solid applications made by our teams to solve business-critical issues "
 "for our customers"
@@ -145,98 +614,702 @@ msgstr ""
 "Applications robustes faites par nos équipes pour résoudre des problèmes "
 "critiques de nos clients"
 
-#: templates/about.html:226
+#: website/templates/website/about.html:231
 msgid "Buy your WiFi internet bundles access online."
 msgstr "Achetez vos forfaits internet WiFi en ligne."
 
-#: templates/about.html:246
+#: website/templates/website/about.html:251
 msgid "Network assets visualization of CREOLINK COMMUNICATIONS"
 msgstr "Visualisation des ressources réseau de CREOLINK COMMUNICATIONS"
 
-#: templates/about.html:246
+#: website/templates/website/about.html:251
 msgid "Private access"
 msgstr "Accès privé"
 
-#: templates/about.html:256
-#: tsunami/templates/tsunami/snippets/address_section.html:6
-msgid "Contact Us Now"
-msgstr "Contactez-nous"
+#: website/templates/website/about.html:298
+#: website/templates/website/home.html:135
+msgid "Terms & conditions"
+msgstr "Conditions d'utilisation"
 
-#: templates/about.html:258
-#: tsunami/templates/tsunami/snippets/address_section.html:8
-msgid "And let us bring to reality your world-changing project."
-msgstr "Et réalisons ensemble votre incroyable projet"
-
-#: templates/about.html:281 templates/apps/shavida.html:85
-#: tsunami/templates/tsunami/snippets/address_section.html:31
-#: tsunami/templates/tsunami/snippets/edge_panel.html:56
-msgid "All rights reserved."
-msgstr "Tous droits réservés"
-
-#: templates/about.html:283 templates/apps/shavida.html:87
-#: tsunami/templates/tsunami/snippets/address_section.html:33
-#: tsunami/templates/tsunami/snippets/edge_panel.html:58
-msgid "Legal mentions"
-msgstr "Mentions légales"
-
-#: templates/about.html:289 templates/home.html:130
-#: templates/apps/shavida.html:92
-#: tsunami/templates/tsunami/snippets/address_section.html:39
-#: tsunami/templates/tsunami/snippets/edge_panel.html:32
-msgid "Blog"
-msgstr "Blog"
-
-#: templates/about.html:290 templates/home.html:131
-#: templates/apps/shavida.html:93
-#: tsunami/templates/tsunami/snippets/address_section.html:40
-#: tsunami/templates/tsunami/snippets/edge_panel.html:33
-msgid "Support"
-msgstr "Support"
-
-#: templates/base.html:69 templates/home.html:3
-#: templates/apps/apps_base.html:123 tsunami/templates/tsunami/base.html:69
-#: tsunami/templates/tsunami/checkout.html:154
-#: tsunami/templates/tsunami/snippets/edge_panel.html:26
-msgid "Home"
-msgstr "Accueil"
-
-#: templates/base.html:97 templates/apps/apps_base.html:90
-#: templates/apps/apps_base.html.py:151 tsunami/templates/tsunami/base.html:97
-#: tsunami/templates/tsunami/checkout.html:182
-msgid "Account setup"
-msgstr "Infos compte"
-
-#: templates/base.html:99 templates/apps/apps_base.html:92
-#: templates/apps/apps_base.html.py:153 tsunami/templates/tsunami/base.html:99
-#: tsunami/templates/tsunami/checkout.html:184
-msgid "Logout"
-msgstr "Déconnexion"
-
-#: templates/base.html:105 templates/apps/apps_base.html:159
-#: tsunami/templates/tsunami/base.html:105
-#: tsunami/templates/tsunami/checkout.html:190
-msgid "Login"
-msgstr "Connexion"
-
-#: templates/home.html:95
+#: website/templates/website/home.html:96
 msgid "WHAT DO YOU WANT "
 msgstr "QUE VOULEZ-VOUS"
 
-#: templates/home.html:102 templates/home.html.py:114
+#: website/templates/website/home.html:103
+#: website/templates/website/home.html:115
 msgid "A website"
 msgstr "Un site web"
 
-#: templates/home.html:107 templates/home.html.py:119
+#: website/templates/website/home.html:108
+#: website/templates/website/home.html:120
 msgid "More customers"
 msgstr "Plus de clients"
 
-#: templates/apps/kakocase.html:3 templates/apps/kakocase.html.py:85
-#: templates/apps/kakocase.html:134 templates/apps/pinsview.html:3
-#: templates/apps/pinsview.html.py:140
+#: website/templates/website/new_home.html:72
+msgid "Your password was successfully reset, login now."
+msgstr ""
+
+#: website/templates/website/new_home.html:80
+msgid "Username or email"
+msgstr ""
+
+#: website/templates/website/new_home.html:85
+msgid "Password"
+msgstr ""
+
+#: website/templates/website/new_home.html:93
+msgid "Login with <strong>ikwen</strong>"
+msgstr ""
+
+#: website/templates/website/new_home.html:101
+#, fuzzy
+msgid "No account yet ?"
+msgstr "Infos compte"
+
+#: website/templates/website/termsconditions.html:3
+#, fuzzy
+msgid "Terms and conditions"
+msgstr "Conditions d'utilisation"
+
+#: website/templates/website/termsconditions.html:95
+msgid "Legal Notice and Terms of Use"
+msgstr ""
+
+#: website/templates/website/termsconditions.html:97
+msgid ""
+"\n"
+"                        <p>The website accessible at <strong><a href="
+"\"http://www.ikwen.com/\">ikwen</a></strong> (hereinafter referred to as "
+"SITE) is intended for personal use for its Internet users.</p>\n"
+"                        <p>Access and use of this site and the associated "
+"mobile application are subject to these Terms of Use.\n"
+"                            The company that owns the site and the mobile "
+"application reserves the right to modify and update, without notice, the "
+"present Legal Notice and all the elements, products or services presented on "
+"the site. All of these modifications are binding on Internet users who must "
+"consult the Legal Mentions related to the site.</p>\n"
+"                        <p>These Terms of Use are subject to Cameroonian law."
+"</p>\n"
+"                        <h3>Publication.</h3>\n"
+"                        <p>The site: <strong><a href=\"http://www.ikwen.com/"
+"\">ikwen</a></strong> is published by the company ikwen, located in "
+"Yaoundé / Cameroun whose information is available at the tax center: CDI 09 "
+"D'Efoulan.</p>\n"
+"                        <p>E-mail address: contact@ikwen.com</p>\n"
+"                        <p>Intellectual property rights.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> notifies users of its platform that many elements of it:</p>\n"
+"                        <ul>\n"
+"                            <li>Are protected by copyright legislation: this "
+"may include photographs, articles, drawings, animated sequences, audio or "
+"digital video recordings.</li>\n"
+"                            <li>And / or are protected by design legislation;"
+"</li>\n"
+"                            <li>Are protected by the legislation on the "
+"marks: it is in particular the marks, the logo, appearing on the site.</li>\n"
+"                        </ul>\n"
+"                        <p>The elements thus protected are the property of "
+"<strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.</p>\n"
+"                        <p>As such, any reproduction, representation, use, "
+"adaptation, modification, incorporation, translation, marketing, partial or "
+"complete by any process and on any medium whatsoever (paper, digital, ...) "
+"is prohibited, without prior written permission. ikwen, except the "
+"exceptions legally allowed by articles 29 (2) and 36 of the law 2000/011 of "
+"19 December 2000 on copyright and neighboring rights under pain of "
+"constituting an infringement of copyright infringement and designs, "
+"punishable by two (2) to five (5) years imprisonment and one (1) to twenty-"
+"five (25) million CFA francs in fine or penalty infringement of copyrights "
+"and in the case of trademark infringement.</p>\n"
+"                        <P>The trademarks and logos of the software "
+"displayed on this Site and the associated mobile application are the "
+"property of the respective company, and may not be exploited without the "
+"prior written consent of ikwen. These trademarks include but are not "
+"necessarily limited to any software not specifically identified in these "
+"Legal Notices.</P>\n"
+"                        <h3>Cookies.</h3>\n"
+"                        <p>The Site and the associated mobile application "
+"includes a system of cookies. Thus the user is informed that during his "
+"visits to the site, cookies may be installed automatically on his Internet "
+"browser.</p>\n"
+"                        <p>Cookies are files sent to users' hard drives in "
+"order to facilitate their browsing on the site and the associated mobile "
+"application and to establish attendance statistics.</p>\n"
+"                        <p>These cookies do not contain any personal "
+"information.</p>\n"
+"                        <p>The User can disable the sending of cookies by "
+"modifying the parameters of his Internet browser.</p>\n"
+"                        <h3>Protection of personal data.</h3>\n"
+"                        <p>You can visit the site and the associated mobile "
+"application without revealing your identity or any other personal "
+"information about you.</p>\n"
+"                        <p>Regarding the personal information that you would "
+"have to communicate to us, you have the right to access and rectify "
+"according to Cameroonian law.</p>\n"
+"                        <p>The information collected is subject to computer "
+"processing to provide you with personalized content. This computerized "
+"processing is done by the applications of ikwen in its infrastructure You "
+"have a right to access, modify, rectify, and limit the data concerning you.</"
+"p>\n"
+"                        <p>To exercise these rights, ikwen provides you with "
+"a personal interface to modify your personal data. For reasons of data "
+"integrity of the platform, only your ikwen ID is not editable.</p>\n"
+"                        <p> <strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> has a centralized authentication module. You can use your access "
+"information to connect to one of the third-party Internet sites of which it "
+"is the provider. In such a case, you are part of the third-party community "
+"and may have access to information such as your last name, first name, phone "
+"number, e-mail and sex. The third party platform undertakes to respect the "
+"same rules of protection and non-disclosure of your personal data as defined "
+"by  <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  takes all measures to avoid any prejudice to the User.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  undertakes to implement appropriate technical and "
+"organizational measures to protect personal data against accidental or "
+"unlawful destruction, accidental loss, alteration, dissemination or "
+"unauthorized access.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  undertakes to keep the personal data for a period not exceeding "
+"that necessary for the fulfillment of the purposes for which they were "
+"collected or processed.</p>\n"
+"                        <p>ikwen may be required to disclose any information "
+"about the User in order to comply with any applicable law or regulation or "
+"to respond to any legal or administrative request. These data are collected "
+"automatically by the site; the applications allow the publisher to establish "
+"statistics regarding the consultation of his web pages and offers him "
+"adapted and more personalized content.</p>\n"
+"                        <h3>Registration details.</h3>\n"
+"                        <p>Registration is reserved for individuals aged 15 "
+"or over</p>\n"
+"                        <p>In the event that the user provides false, "
+"inaccurate, outdated, incomplete, misleading or misleading information, "
+"ikwen may, immediately, without notice or compensation, suspend or terminate "
+"the profile of the User / his services and deny him access, temporarily or "
+"permanently, to all or part of the ikwen Services.</p>\n"
+"                        <h3>Password management. </h3>\n"
+"                        <p>To access your private interface on ikwen, you "
+"must enter your ikwen ID; as well as your password.</p>\n"
+"                        <p>This password is strictly personal and you must "
+"keep it confidential. As such, you are responsible for any use of this "
+"password and ikwen can in no way be held responsible for any loss or damage "
+"caused by the use of these spaces and / or password.</p>\n"
+"                        <p>The User must disconnect after each consultation "
+"of the site, in order to avoid any fraudulent use of his spaces and / or his "
+"password.</p>\n"
+"                        <h3>Limitation of liability</h3>\n"
+"                        <p>You use the ikwen platform under your sole and "
+"entire responsibility.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>   can not be held responsible for direct or indirect damages, "
+"such as, in particular material damage, loss of data or program, financial "
+"loss, resulting from the use of this site and the associated mobile "
+"application or sites that are linked.</p>\n"
+"                        <p>We draw your attention to the fact that certain "
+"products or services presented on the site and the associated mobile "
+"application may be the subject of specific regulations or even restrictions "
+"and / or prohibitions in certain countries.</p>\n"
+"                        <h3>Responsibility of the user.</h3>\n"
+"                        <p>Users of the site and the associated mobile "
+"application undertake to respect this legal notice and to use the site under "
+"their responsibility. The user is deemed to have accepted the legal notice "
+"simply by consulting the site.</p>\n"
+"                        <p>Any consultation of the Site and the associated "
+"mobile application implies acceptance of these legal notices in their latest "
+"version.</p>\n"
+"                        <p>ikwen can not be held responsible for damages "
+"resulting from the use of the site.\n"
+"Users must in particular protect their technical equipment against any form "
+"of contamination by viruses and / or intrusion attempts, ikwen can not be "
+"held responsible in this case.</p>\n"
+"                        <h3>Hypertext links.</h3>\n"
+"                        <p>The establishment of a hypertext link to the Site "
+"and the associated mobile application requires prior written permission from "
+"ikwen.</p>\n"
+"                        <p>In any case, ikwen is in no way responsible for "
+"the content or the products or services offered on the sites that are linked "
+"by hypertext links or any other kind of links to ikwen.\n"
+"All sites with a hyperlink pointing to a page of the ikwen platform, are not "
+"under the control of ikwen. ikwen assumes no responsibility for the "
+"availability of these sites, their content, advertisements, products or "
+"services available on or from these sites.</p>\n"
+"                        <p>The user is responsible for their use.</p>\n"
+"                        <p>Applicable law and competent jurisdiction.</p>\n"
+"                        <p>The site, the associated mobile application and "
+"these legal notices are subject to Cameroonian law excluding conflict of "
+"laws rules.</p>\n"
+"                        <p>They are written in French or English.</p>\n"
+"                        <p>In the event of any dispute relating to the "
+"interpretation or execution of this legal notice, the courts of first and "
+"highest instance of Yaoundé have exclusive jurisdiction; unless otherwise "
+"required by law.</p>\n"
+"                        <h3>Access to the elements.</h3>\n"
+"                        <p>The elements of the site and the associated "
+"mobile application are accessible through the Internet.</p>\n"
+"                        <p>All costs related to access to the items whether "
+"material costs, software or Internet access, are the responsibility of the "
+"user. The user is solely responsible for the proper functioning of his "
+"equipment as well as access to the Internet.</p>\n"
+"                        <p>The user declares accepting the characteristics "
+"and limits of the Internet and acknowledges having knowledge of the nature "
+"of the Internet network and, in particular, its technical performance, "
+"response times for consulting, interrogating or transferring information, "
+"risks of interruption and more generally the risks inherent in any "
+"connection and transmission on the Internet.</p>\n"
+"                        <p>ikwen implements all reasonable means at its "
+"disposal to ensure quality access to the elements, it being specified that "
+"ikwen is under no obligation to achieve this result.</p>\n"
+"                        <h3>Terms of use for registered users.</h3>\n"
+"                        <p>These general conditions of use describe the "
+"terms and conditions under which the company ikwen provides its applications."
+"</p>\n"
+"                        <p>Access to this service is subject to compliance "
+"with these general conditions of use mentioned above.</p>\n"
+"                        <p>Any user wishing to access it must have "
+"previously read these general conditions of use and undertakes to comply "
+"with them without reservation.\n"
+"ikwen may freely modify these general conditions of use at any time and the "
+"user is invited to consult them regularly.</p>\n"
+"                        <p>The user can receive promotional messages from "
+"ikwen's business partners by email, SMS or on his personal space.</p>\n"
+"                        <h3>Personal space.</h3>\n"
+"                        <p>Refers to the personal pages of the user in which "
+"his personal data is inserted and the management of these / his data with "
+"third parties.</p>\n"
+"                        <p>The user accesses the service and all its "
+"features by filling in an ikwen ID that he has previously obtained free of "
+"charge.</p>\n"
+"                        <p>It is his responsibility to implement the "
+"precautionary and security measures necessary to protect his login "
+"credentials.</p>\n"
+"                        <h3>Responsibility</h3>\n"
+"                        <p>Members of the ikwen platform are responsible for "
+"all content that they make available to third parties, that they send by "
+"email or that they store on personal spaces of the platform or spaces "
+"accessible to third parties that they download or otherwise transmit through "
+"the site.</p>\n"
+"                        <p>ikwen has no prior control over the contents. "
+"ikwen has no obligation to monitor content stored on its site and associated "
+"applications by users.\n"
+"The user agrees to use the site and associated applications in accordance "
+"with national and international regulations, and in particular not to use it "
+"to display, download, send, transmit any content:</p>\n"
+"                        <ul>\n"
+"                            <li>violating or likely to undermine the respect "
+"and dignity of the human person, the equality of men and women, the "
+"protection of children and adolescents, including the production, transport "
+"and distribution of messages of a violent or pornographic nature or of a "
+"nature to undermine human dignity (Article 74 (4), 75,76 of the law 2010/012 "
+"of December 21, 2010 on cybersecurity and cybercrime)</li>\n"
+"                            <li>which encourages the commission of crimes "
+"and misdemeanors (Article 77 of Law 2010/012 of 21 December 2010)</li>\n"
+"                            <li>that causes or may cause discrimination, "
+"hatred, violence on the basis of race, ethnicity or nation (Article 74 (5), "
+"77 of Law 2010/012 of 21 December 2010 on Cybersecurity and Cybercrime in "
+"Cameroon)</li>\n"
+"                            <li>that misleads other Users by usurping the "
+"name or corporate name of other persons</li>\n"
+"                            <li>which infringes the rights of third parties "
+"such as, but not limited to, any manufacturing secret, professional secrecy, "
+"confidential information, trademark, patent and in general any industrial or "
+"intellectual property right or any other right relating thereto. on "
+"protected information or content</li>\n"
+"                            <li>including, but not limited to, computer "
+"viruses or any other code or program designed to interrupt, destroy or limit "
+"the functionality of any software, computer or telecommunication tool.</li>\n"
+"                        </ul>\n"
+"                        <h3>Terms of use for visitors.</h3>\n"
+"                        <p>These terms and conditions describe the terms and "
+"conditions under which the company ikwen provides its services online.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> also has ikwen sites: which are websites of other people (legal "
+"or physical) deployed on the basis of ikwen's web environment, but whose "
+"ikwen company does not have full ownership.</p>\n"
+"                        <p>Access to this service is subject to compliance "
+"with these general conditions of use mentioned above.</p>\n"
+"                        <p>Any user wishing to access it must have "
+"previously read these general conditions of use and undertakes to comply "
+"with it without reservation.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> may freely modify these terms of use at any time and the visitor "
+"is invited to consult them regularly.</p>\n"
+"                        <p>The user can receive promotional messages from "
+"ikwen's business partners.</p>\n"
+"                        <h3>Console</h3>\n"
+"                        <p>Every registered user automatically gets a news "
+"feed (console).</p>\n"
+"                        <p>This console allows him:</p>\n"
+"                        <ul>\n"
+"                            <li>receive alerts about the evolution or "
+"modification of the services offered on the site and the associated mobile "
+"application</li>\n"
+"                            <li>to receive targeted advertising</li>\n"
+"                        </ul>\n"
+"                        <h3>Rescission</h3>\n"
+"                        <p>Services are provided by ikwen for an indefinite "
+"period.</p>\n"
+"                        <p>Any account may be terminated at any time by "
+"simple request by email to the following address: contact@ikwen.com</p>\n"
+"                        <p>The user also expressly acknowledges that ikwen "
+"has the right to terminate ipso jure, without prior notice, without notice, "
+"indemnity or justification, all or part of the services provided to Users.</"
+"p>\n"
+"\n"
+"                    "
+msgstr ""
+"\n"
+"                        <p>Le site accessible à l’adresse <strong><a href="
+"\"http://www.ikwen.com/\">ikwen</a></strong> (ci-après dénommé SITE) est "
+"destiné à une utilisation personnelle pour ses internautes.</p>\n"
+"                        <p>L’accès et l’utilisation de ce site et de "
+"l’application mobile associée sont soumis aux présentes Conditions "
+"d’utilisations. \n"
+"                            La société propriétaire du site et de "
+"l’application mobile se réserve le droit de modifier et de mettre à jour, "
+"sans préavis, les présentes Mentions Légales et tous les éléments, produits "
+"ou services présentés sur le site. L’ensemble de ces modifications s’impose "
+"aux internautes qui doivent consulter les Mentions Légales liées au site.</"
+"p>\n"
+"                        <pLes présentes Conditions d’utilisations sont "
+"soumises au Droit Camerounais.</p>\n"
+"                        <h3>Publication.</h3>\n"
+"                        <p>Le site: <strong><a href=\"http://www.ikwen.com/"
+"\">ikwen</a></strong>est publié par l’entreprise ikwen, situé à Yaoundé/"
+"Cameroun dont les informations sont disponibles au centre des impôts: CDI 09 "
+"D'Efoulan.</p>\n"
+"                        <p>Adresse E-mail de contact: contact@ikwen.com</p>\n"
+"                        <p>Droits de propriété intellectuelle.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> avise les utilisateurs de sa plateforme que de nombreux éléments "
+"de celui-ci :</p>\n"
+"                        <ul>\n"
+"                            <li>Sont protégés par la législation sur le "
+"droit d’auteur : ce peut être notamment des photographies, des articles, des "
+"dessins, des séquences animées, des enregistrements au format audio ou "
+"vidéos numériques. </li>\n"
+"                            <li>Et/ou sont protégés par la législation sur "
+"les dessins et modèles;</li>\n"
+"                            <li>Sont protégés par la législation sur les "
+"marques : ce sont notamment les marques, le logo, apparaissant sur le site.</"
+"li>\n"
+"                        </ul>\n"
+"                        <p>Les éléments ainsi protégés sont la propriété d’ "
+"<strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.</p>\n"
+"                        <p>A ce titre, toute reproduction, représentation, "
+"utilisation, adaptation, modification, incorporation, traduction, "
+"commercialisation, partielles ou intégrales par quelque procédé et sur "
+"quelque support  que ce soit (papier,numérique,…) est interdite, sans "
+"l’autorisation écrite préalable de ikwen , hormis les exceptions légalement "
+"admises par les articles 29(2) et 36 de la loi 2000/011 du 19 décembre 2000 "
+"relative au droit d’auteur et aux droits voisins sous peine de constituer un "
+"délit de contrefaçon de droits d’auteur et de dessins et modèles, puni de "
+"deux (2) à cinq (5)ans d’emprisonnement et de un (1) à vingt-cinq (25) "
+"millions de FCFA d’amende  ou d’une de ces peines dans le cas des "
+"contrefaçons de droits d’auteur et dans le cas des contrefaçons des marques."
+"</p>\n"
+"                        <P>Les marques et logos des logiciels affichés sur "
+"ce Site et de l’application mobile associée sont la propriété respective de "
+"la société les exploitant, et ne peuvent être exploités sans l’accord "
+"préalable  et écrit de <strong><a href=\"http://www.ikwen.com/\">ikwen</a></"
+"strong>. Ces marques incluant mais ne se limitant pas nécessairement à tout "
+"logiciel non nommément identifié dans les présentes Mentions Légales.</P>\n"
+"                        <h3>Cookies.</h3>\n"
+"                        <p>Le Site et l’application mobile associée comporte "
+"un système de cookies. Ainsi l’utilisateur est informé que lors de ses "
+"visites sur le site, des cookies peuvent être installés automatiquement sur "
+"son navigateur Internet.</p>\n"
+"                        <p>Les cookies sont des fichiers envoyés sur le "
+"disque dur des utilisateurs afin de faciliter leur navigation sur le site et "
+"l’application mobile associée et d’établir des statistiques de "
+"fréquentation. </p>\n"
+"                        <p>Ces cookies ne contiennent en aucun cas des "
+"informations nominatives.</p>\n"
+"                        <p>L’Utilisateur peut désactiver l’envoi de cookies "
+"en modifiant les paramètres de son navigateur Internet.</p>\n"
+"                        <h3>Protection des données personnelles. </h3>\n"
+"                        <p>La consultation du site et de l’application "
+"mobile associée sont possibles sans que vous n’ayez à révéler votre identité "
+"ou toute autre information à caractère personnel vous concernant./p>\n"
+"                        <p>Concernant les informations à caractère personnel "
+"que vous seriez amené à nous communiquer, vous bénéficiez d’un droit d’accès "
+"et de rectification conformément à la loi camerounaise.</p>\n"
+"                        <p>Les informations collectées font l’objet d’un "
+"traitement informatisé afin de vous proposer un contenu personnalisé. Ce "
+"traitement informatisé est fait par les applications d’ikwen dans son "
+"infrastructure  Vous disposez d’un droit d’accès, de modification, de "
+"rectification, et de limitation, des données qui vous concernent. </p>\n"
+"                        <p>Pour exercer ces droits, ikwen vous fournit une "
+"interface  personnelle de modification de vos données personnelles. Pour des "
+"raisons d’intégrité des  données de la plateforme, seule votre ID ikwen "
+"n’est pas modifiable.</p>\n"
+"                        <p> <strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> disposant d’un module d’authentification centralisé. Vous pouvez "
+"utiliser vos informations d’accès pour vous connecter sur un des sites "
+"internets tiers dont il le fournisseur. Dans un tel cas de figure, vous "
+"faites partie de la communauté du tiers et il peut avoir accès à des "
+"informations telles votre nom, prénom, numéro de téléphone, e-mail et sexe. "
+"La plateforme tiers s’engage à respecter les mêmes règles de protection et "
+"non divulgation de vos données personnelles telles que définies par  "
+"<strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> prend toutes les mesures pour éviter tout préjudice à "
+"l’Utilisateur.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  s’engage à mettre en œuvre les mesures techniques et "
+"d’organisation appropriées pour protéger les données à caractère personnel "
+"contre la destruction accidentelle, ou illicite, la perte accidentelle, "
+"l’altération, la diffusion ou l’accès non autorisé.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> s’engage à conserver les données à caractère personnel pendant "
+"une durée n’excédant pas celle nécessaire à la réalisation des finalités "
+"pour lesquelles elles ont été collectées ou traitées.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  pourrait être obligé de divulguer toute information concernant "
+"l’Utilisateur afin de se conformer à toute loi ou réglementation en vigueur "
+"ou pour répondre à toute demande judiciaire ou administrative. Ces données "
+"sont collectées automatiquement par le site ; les applications permettent à "
+"l’éditeur d’établir des statistiques quant à la consultation de ses pages "
+"web et lui propose un contenu adapté et plus personnalisé.</p>\n"
+"                        <h3>Modalités d’inscription.</h3>\n"
+"                        <p>L’inscription est réservée aux personnes "
+"physiques d’au moins 15 ans</p>\n"
+"                        <p>Dans l’hypothèse où l’utilisateur fournirait des "
+"informations fausses, inexactes, périmées, incomplètes, trompeuses ou de "
+"nature à induire en erreur, ikwen pourra, immédiatement, sans préavis ni "
+"indemnité, suspendre ou résilier le profil de l'Utilisateur/ ses services, "
+"et lui refuser l’accès, de façon temporaire ou définitive à tout ou partie "
+"des Services <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.</"
+"p>\n"
+"                        <h3>Gestion des mots de passe. </h3>\n"
+"                        <p>Pour obtenir accéder à votre interface privée "
+"sur  <a href=\"http://www.ikwen.com/\">ikwen</a>, vous devez saisir votre "
+"identifiant <a href=\"http://www.ikwen.com/\">ikwen</a>, ; ainsi que votre "
+"mot de passe.</p>\n"
+"                        <p>Ce mot de passe est strictement personnel et vous "
+"devez en en assurer la confidentialité. A ce titre, vous êtes responsables "
+"de toute utilisation de ce mot de passe et  <a href=\"http://www.ikwen.com/"
+"\">ikwen</a>, ne peut en aucun cas être tenu responsable de toute perte ou "
+"dommage occasionné par l’utilisation de ces espaces et/ou de ce mot de passe."
+"</p>\n"
+"                        <p>L'Utilisateur doit se déconnecter après chaque "
+"consultation du site, afin d’éviter toute utilisation frauduleuse de ses "
+"espaces  ou/et de son mot de passe.</p>\n"
+"                        <h3>Limitation de responsabilité</h3>\n"
+"                        <p>Vous utilisez la plateforme <a href=\"http://www."
+"ikwen.com/\">ikwen</a sous votre seule et entière responsabilité.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>   ne pourra être tenu pour responsable des dommages directs ou "
+"indirects, tels que, notamment préjudice matériel, pertes de données ou de "
+"programme, préjudice financier, résultant de l’utilisation de ce site et "
+"l’application mobile associée ou de sites qui lui sont liés. </p>\n"
+"                        <p>Nous attirons votre attention sur le fait que "
+"certains produits ou services présentés sur le site et l’application mobile "
+"associée peuvent faire l’objet de réglementations particulières voire de "
+"restrictions et/ou interdictions dans certains pays.</p>\n"
+"                        <h3>Responsabilité de l’utilisateur.</h3>\n"
+"                        <p>Les utilisateurs du site et l’application mobile "
+"associée s’engagent à respecter les présentes mentions légales et à utiliser "
+"le site sous leur responsabilité. L’utilisateur est réputé avoir accepté les "
+"mentions légales du simple fait de la consultation du site.</p>\n"
+"                        <p>Toute consultation du Site et de l’application "
+"mobile associée emportent acceptation des présentes mentions légales dans "
+"leur dernière version.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  ne pourra être tenu pour responsable des dommages résultant de "
+"l’utilisation du site.\n"
+"Les Utilisateurs doivent notamment protéger leurs équipements techniques "
+"contre toute forme de contamination par des virus et/ou tentatives "
+"d’intrusion, <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong> ne "
+"pouvant être tenu pour responsable dans ce cas.</p>\n"
+"                        <h3>Liens hypertextes.</h3>\n"
+"                        <p>La mise en place d’un lien hypertexte vers le "
+"Site et l’application mobile associée nécessite une autorisation préalable "
+"et écrite d’ <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.</"
+"p>\n"
+"                        <p>En tout état de cause, <strong><a href=\"http://"
+"www.ikwen.com/\">ikwen</a></strong> n’est en aucun cas tenu responsable du "
+"contenu ainsi que des produits ou services proposés sur les sites qui se "
+"trouveraient liées par des liens hypertextes ou tout autre type de liens à "
+"<strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>.\n"
+"Tous les sites ayant un lien hypertexte pointant sur une page de la "
+"plateforme  <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>, ne "
+"sont pas sous le contrôle de  <strong><a href=\"http://www.ikwen.com/"
+"\">ikwen</a></strong>.  <strong><a href=\"http://www.ikwen.com/\">ikwen</a></"
+"strong> n’assume, par conséquent aucune responsabilité quant à la "
+"disponibilité de ces sites, leur contenu, publicités, produits ou services "
+"disponibles sur ou à partir de ces sites.</p>\n"
+"                        <p>L’utilisateur est responsable de leur utilisation."
+"</p>\n"
+"                        <h3>Droit applicable et juridiction compétente.</"
+"h3>\n"
+"                        <p>Le site, l’application mobile associée et les "
+"présentes mentions légales sont soumis au Droit camerounais à l’exclusion de "
+"règles de conflit de lois..</p>\n"
+"                        <p>Elles sont rédigées en français ou en anglais.</"
+"p>\n"
+"                        <p>En cas de litige relatif à l’interprétation ou à "
+"l’exécution des présentes mentions légales, les tribunaux de première et "
+"grande instance de Yaoundé sont seuls compétents; sauf disposition légale "
+"impérative contraire.</p>\n"
+"                        <h3>Accès aux éléments.</h3>\n"
+"                        <p>Les éléments du site et l’application mobile "
+"associée sont accessibles par le réseau Internet.</p>\n"
+"                        <p>Tous les coûts afférents à l’accès aux éléments "
+"qu’il s’agisse des frais matériels, logiciels ou accès à internet, sont à la "
+"charge de l’utilisateur. L’utilisateur est seul responsable du bon "
+"fonctionnement de son équipement ainsi que de l’accès à Internet.</p>\n"
+"                        <p>L’utilisateur déclare accepter les "
+"caractéristiques et les limites d’Internet et reconnaît avoir connaissance "
+"de la nature du réseau Internet et, en particulier, de ses performances "
+"techniques, des temps de réponse pour consulter, interroger ou transférer "
+"des informations, des risques d’interruption et plus généralement les "
+"risques inhérents à toute connexion et transmission sur Internet.</p>\n"
+"                        <p> <strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>, met en œuvre tous les moyens raisonnables à sa disposition pour "
+"assurer un accès de qualité aux éléments, étant précisé que  <strong><a href="
+"\"http://www.ikwen.com/\">ikwen</a></strong> n’est tenu à aucune obligation "
+"de résultat d’y parvenir.</p>\n"
+"                        <h3>Conditions d’utilisation pour les utilisateurs "
+"inscrits.</h3>\n"
+"                        <p>Les présentes conditions générales d’utilisation "
+"décrivent les termes et conditions dans lesquelles l'entreprise  <strong><a "
+"href=\"http://www.ikwen.com/\">ikwen</a></strong> fournit ses applications.</"
+"p>\n"
+"                        <p>L’accès à ce service est subordonné au respect "
+"des présentes conditions générales d’utilisation précédemment citées. </p>\n"
+"                        <p>Tout internaute souhaitant y accéder doit avoir "
+"pris connaissance préalablement de ces conditions générales d’utilisation et "
+"s’engage à les respecter sans réserve.\n"
+" <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong> peut modifier "
+"librement et à tout moment les présentes conditions générales d’utilisation "
+"et l’utilisateur est invité à les consulter régulièrement.</p>\n"
+"                        <p>L’utilisateur peut recevoir des messages "
+"promotionnels des  partenaires commerciaux de  <strong><a href=\"http://www."
+"ikwen.com/\">ikwen</a></strong> par mail, SMS ou encore sur son espace "
+"personnel.</p>\n"
+"                        <h3>Espace personnel.</h3>\n"
+"                        <p>Désigne les pages personnelles de l’utilisateur "
+"dans lesquelles s’insèrent ses données personnelles et la gestion de ces/ses "
+"données avec les tiers.</p>\n"
+"                        <p>L’utilisateur accède au service et à toutes ses "
+"fonctionnalités en renseignant un identifiant <strong><a href=\"http://www."
+"ikwen.com/\">ikwen</a></strong> qu’il aura préalablement obtenu gratuitement."
+"</p>\n"
+"                        <p>Il lui appartient de mettre en œuvre les mesures "
+"de précaution et de sécurité nécessaires à la protection de ses identifiants "
+"de connexion.</p>\n"
+"                        <h3>Responsabilité</h3>\n"
+"                        <p>Les membres de la plateforme <strong><a href="
+"\"http://www.ikwen.com/\">ikwen</a></strong> sont responsables de tout le "
+"contenu qu’ils rendent accessible à des tiers, qu’ils envoient par courrier "
+"électronique ou qu’ils stockent sur des espaces personnels de la plateforme "
+"ou des espaces accessibles à des tiers qu’ils téléchargent ou transmettent "
+"de toute autre manière par le site.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> n’exerce aucun contrôle a priori sur lesdits contenus. ikwen  "
+"n’a pas d’obligation de surveillance du contenu stocké sur son site et des "
+"applications associées par les utilisateurs.\n"
+"L’utilisateur s’engage à utiliser le site et les applications associées "
+"conformément aux réglementations nationales et internationales, et en "
+"particulier à ne pas l’utiliser pour afficher, télécharger, envoyer, "
+"transmettre tout contenu:</p>\n"
+"                        <ul>\n"
+"                            <li>à caractère violent ou susceptible de porter "
+"atteinte au respect et à la dignité de la personne humaine, à l’égalité "
+"entre les hommes et les femmes, à la protection des enfants et des "
+"adolescents, notamment par la fabrication, le transport et la diffusion de "
+"messages à caractère violent ou pornographique ou de nature à porter "
+"atteinte à la dignité humaine (Article 74(4),75,76 de la loi 2010/012 du 21 "
+"décembre 2010 relative à la cybersécurité et à la cybercriminalité)</li>\n"
+"                            <li>qui encourage la commission de crimes et "
+"délits (Article 77 de la loi 2010/012 du 21 décembre 2010 )</li>\n"
+"                            <li>qui incite à la consommation de substances "
+"interdites</li>\n"
+"                            <li>qui provoque ou puisse provoquer la "
+"discrimination, la haine, la violence en raison de la race, de l’ethnie ou "
+"de la nation (Article 74(5) ,77 de la loi 2010/012 du 21 décembre 2010 "
+"relative à la cybersécurité et la cybercriminalité au Cameroun)</li>\n"
+"                            <li>qui soit illégal, nuisible, menaçant, "
+"abusif, constitutif de harcèlement, diffamatoire, injurieux, vulgaire, "
+"obscène, menaçant pour la vie privée d’autrui ou de nature à heurter la "
+"sensibilité de certaines personnes (Article 74(4), 81, 82, 83 de la même "
+"loi</li>\n"
+"                            <li>qui induise en erreur d’autres Utilisateurs "
+"en usurpant le nom ou la dénomination sociale d’autres personnes</li>\n"
+"<li>qui induise en erreur d’autres Utilisateurs en usurpant le nom ou la "
+"dénomination sociale d’autres personnes</li>\n"
+"<li>qui porte atteinte aux droits de tiers comme, sans que cette liste ne "
+"soit limitative, à tout secret de fabrication, secret professionnel, "
+"information confidentielle, marque, brevet et d’une manière générale tout "
+"droit de propriété industrielle ou intellectuelle ou tout autre droit "
+"portant sur une information ou un contenu protégé</li>\n"
+"<li>comprenant, sans que cette liste ne soit limitative, des virus "
+"informatiques ou tout autre code ou programme, conçus pour interrompre, "
+"détruire ou limiter la fonctionnalité de tout logiciel, ordinateur ou outil "
+"de télécommunication.</li>\n"
+"\n"
+"                        </ul>\n"
+"                        <h3>Conditions d’utilisation pour les visiteurs.</"
+"h3>\n"
+"                        <p>Les présentes conditions générales d’utilisation "
+"décrivent les termes et conditions dans lesquels l'entreprise  <strong><a "
+"href=\"http://www.ikwen.com/\">ikwen</a></strong> fournit ses services en "
+"ligne.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong> a aussi des sites ikwen : qui sont des sites internet d'autres "
+"personnes (morales ou physiques) déployés sur la base de l'environnement web "
+"d' <strong><a href=\"http://www.ikwen.com/\">ikwen</a></strong>, mais dont "
+"l'entreprise ikwen n'a pas la pleine propriété.</p>\n"
+"                        <p>L’accès à ce service est subordonné au respect "
+"des présentes conditions générales d’utilisation précédemment citées. </p>\n"
+"                        <p>Tout internaute souhaitant y accéder doit avoir "
+"pris connaissance préalablement de ces conditions générales d’utilisation et "
+"s’engage à le respecter sans réserve.</p>\n"
+"                        <p><strong><a href=\"http://www.ikwen.com/\">ikwen</"
+"a></strong>  peut modifier librement et à tout moment les présentes "
+"conditions générales d’utilisation et le visiteur est invité à les consulter "
+"régulièrement.</p>\n"
+"                        <p>L’utilisateur peut recevoir des messages "
+"promotionnels des  partenaires commerciaux d’ <strong><a href=\"http://www."
+"ikwen.com/\">ikwen</a></strong>.</p>\n"
+"                        <h3>Console</h3>\n"
+"                        <p>Tout utilisateur inscrit bénéficie "
+"automatiquement d’un fil d’actualités (console). </p>\n"
+"                        <p>Cette console lui permet :</p>\n"
+"                        <ul>\n"
+"                            <li>de recevoir les alertes sur l’évolution ou "
+"la modification des services proposés sur le site et l’application mobile "
+"associée</li>\n"
+"                            <li>de recevoir les informations de ses "
+"mouvements sur les différents sites web </li>\n"
+"<li>de recevoir des publicités ciblées</li>\n"
+"\n"
+"                        </ul>\n"
+"                        <h3>RESILIATION </h3>\n"
+"                        <p>Les services sont fournis par ikwen pour une "
+"durée indéterminée. </p>\n"
+"                        <p>Tout compte pourra être résilié à tout moment sur "
+"simple demande par émail à l’adresse suivante : contact@ikwen.com </p>\n"
+"                        <p>L’utilisateur reconnaît par ailleurs expressément "
+"que ikwen a la faculté de résilier de plein droit, sans mise en demeure "
+"préalable, sans préavis ni indemnité ni justification, tout ou partie des "
+"services fournis aux Utilisateurs.</p>\n"
+"\n"
+"                    "
+
+#: website/templates/website/website_base.html:247
+msgid "Search"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:3
+#: website/templates/website/apps/kakocase.html:86
+#: website/templates/website/apps/kakocase.html:135
+#: website/templates/website/apps/pinsview.html:3
+#: website/templates/website/apps/pinsview.html:145
 msgid "Get started"
 msgstr "Lancez-vous"
 
-#: templates/apps/kakocase.html:9 templates/apps/kakocase.html.py:10
+#: website/templates/website/apps/kakocase.html:9
+#: website/templates/website/apps/kakocase.html:10
 msgid ""
 "Kakocase lets you create an e-commerce website in a few clicks. Your website "
 "accepts Mobile Money payments right out of the box. PayPal is also supported "
@@ -251,23 +1324,25 @@ msgstr ""
 "marketing et conduisez des milliers de visiteurs et d'acheteurs sur votre "
 "site web."
 
-#: templates/apps/kakocase.html:11
+#: website/templates/website/apps/kakocase.html:11
 msgid "Web Apps to empower your small or big business"
 msgstr "Applications Web pour autonomiser votre petite ou grande entreprise"
 
-#: templates/apps/kakocase.html:83
+#: website/templates/website/apps/kakocase.html:84
 msgid "Build your customers community and sell online"
 msgstr "Construisez votre communauté de client et vendez en ligne"
 
-#: templates/apps/kakocase.html:89 templates/apps/webnode.html:98
+#: website/templates/website/apps/kakocase.html:90
+#: website/templates/website/apps/webnode.html:98
 msgid "Features"
 msgstr "Fonctionnalités"
 
-#: templates/apps/kakocase.html:96 templates/apps/webnode.html:106
+#: website/templates/website/apps/kakocase.html:97
+#: website/templates/website/apps/webnode.html:106
 msgid "Easy setup"
 msgstr "Mise sur pied facile"
 
-#: templates/apps/kakocase.html:98
+#: website/templates/website/apps/kakocase.html:99
 msgid ""
 "You create your website by filling a simple form, then choosing the template "
 "that suits your brand and voilà ! Your business is online."
@@ -276,11 +1351,11 @@ msgstr ""
 "choisissant le modèle qui correspond à votre marque et voilà! Votre "
 "entreprise est en ligne."
 
-#: templates/apps/kakocase.html:107
+#: website/templates/website/apps/kakocase.html:108
 msgid "Mobile Money"
 msgstr ""
 
-#: templates/apps/kakocase.html:109
+#: website/templates/website/apps/kakocase.html:110
 msgid ""
 "Your website accepts online payment from MTN Mobile Money and Orange Money. "
 "You have detailed report of transactions on your website."
@@ -288,11 +1363,11 @@ msgstr ""
 "Votre site Web intègre les paiements en ligne de MTN Mobile Money et Orange "
 "Money. Vous avez un rapport détaillé des transactions sur votre site Web."
 
-#: templates/apps/kakocase.html:118
+#: website/templates/website/apps/kakocase.html:119
 msgid "Integrated Communication"
 msgstr "Communication intégrée"
 
-#: templates/apps/kakocase.html:120
+#: website/templates/website/apps/kakocase.html:121
 msgid ""
 "You can advert your website on Facebook with the plan that matches your "
 "goal. Drive thousands of visitors and buyers to your website with a few "
@@ -302,11 +1377,11 @@ msgstr ""
 "correspondant à vos objectifs. Conduisez des milliers de visiteurs et "
 "d'acheteurs sur votre site web en quelques clics."
 
-#: templates/apps/kakocase.html:130
+#: website/templates/website/apps/kakocase.html:131
 msgid "Take your business online today."
 msgstr "Allez en ligne dès maintenant"
 
-#: templates/apps/kakocase.html:132
+#: website/templates/website/apps/kakocase.html:133
 msgid ""
 "There are more than 4.2 billion people out there on internet. Go to them "
 "with the right e-commerce website and communication campaign. Access a whole "
@@ -316,7 +1391,8 @@ msgstr ""
 "le bons site de e-commerce et la bonne  campagne de communication. Accédez à "
 "un tout nouveau marché en commençant aujourd'hui."
 
-#: templates/apps/pinsview.html:9 templates/apps/pinsview.html.py:10
+#: website/templates/website/apps/pinsview.html:9
+#: website/templates/website/apps/pinsview.html:10
 msgid ""
 "PinsView lets you follow your assets on the field in real-time. Your agents "
 "pinpoint and describe your interests when they are out for a campaign or "
@@ -329,11 +1405,11 @@ msgstr ""
 "permet d'associer une suite d'événements à chaque élément positionné. Vous "
 "ne vous poserez plus jamais la question de savoir ce qu'il se passe dehors."
 
-#: templates/apps/pinsview.html:126
+#: website/templates/website/apps/pinsview.html:127
 msgid "Geographic visualization for effective business"
 msgstr "Visualisation géographique de vos biens"
 
-#: templates/apps/pinsview.html:128
+#: website/templates/website/apps/pinsview.html:129
 msgid ""
 "\n"
 "                                PinsView lets you follow your assets on the "
@@ -352,11 +1428,11 @@ msgstr ""
 "élément positionné. Vous ne vous poserez plus jamais la question de savoir "
 "ce qu'il se passe dehors. "
 
-#: templates/apps/pinsview.html:152
+#: website/templates/website/apps/pinsview.html:157
 msgid "Multi-purpose"
 msgstr "Multi-usage"
 
-#: templates/apps/pinsview.html:155
+#: website/templates/website/apps/pinsview.html:160
 msgid ""
 "Be you an operator with a physical network of assets, a company with agents "
 "on the field\n"
@@ -371,15 +1447,15 @@ msgstr ""
 "PinsView vous permet de suivre ce qui vous importe en créant le profil "
 "adapté à votre activité."
 
-#: templates/apps/pinsview.html:160
+#: website/templates/website/apps/pinsview.html:165
 msgid "Discover some usages"
 msgstr "Découvrez quelques cas pratiques"
 
-#: templates/apps/pinsview.html:176
+#: website/templates/website/apps/pinsview.html:181
 msgid "Scalable"
 msgstr "Évolutif"
 
-#: templates/apps/pinsview.html:178
+#: website/templates/website/apps/pinsview.html:183
 msgid ""
 "Do you have hundreds, thousands or tens of thousands of information to put "
 "on the map ?\n"
@@ -397,11 +1473,11 @@ msgstr ""
 "bien sur votre ordinateur que sur votre\n"
 " smartphone."
 
-#: templates/apps/pinsview.html:197
+#: website/templates/website/apps/pinsview.html:202
 msgid "Follow state and history"
 msgstr "Suivez l'état et l'historique"
 
-#: templates/apps/pinsview.html:199
+#: website/templates/website/apps/pinsview.html:204
 msgid ""
 "\n"
 "                                Visualization of the current state is not "
@@ -415,11 +1491,13 @@ msgstr ""
 " l’historique des événements sur chacun d’entre eux au gré de leur évolution "
 "et à mesure que le temps passe."
 
-#: templates/apps/shavida.html:3 templates/apps/webnode.html:3
+#: website/templates/website/apps/shavida.html:3
+#: website/templates/website/apps/webnode.html:3
 msgid "Deploy cloud"
 msgstr "Déployez"
 
-#: templates/apps/webnode.html:8 templates/apps/webnode.html.py:144
+#: website/templates/website/apps/webnode.html:8
+#: website/templates/website/apps/webnode.html:144
 msgid ""
 "Create or improve your online presence to enhance your visibility and add to "
 "your credibility"
@@ -427,8 +1505,9 @@ msgstr ""
 "Créez ou améliorez votre présence en ligne pour accroitre votre visibilité "
 "et votre crédibilité"
 
-#: templates/apps/webnode.html:9 templates/apps/webnode.html.py:10
-#: templates/apps/webnode.html:148
+#: website/templates/website/apps/webnode.html:9
+#: website/templates/website/apps/webnode.html:10
+#: website/templates/website/apps/webnode.html:148
 msgid ""
 "Provide you with world-class communication tools that meet international "
 "standards tailored to your needs in just 5 minutes"
@@ -436,12 +1515,12 @@ msgstr ""
 "Vous fournir des outils de communication de classe mondiale répondant aux "
 "normes internationales adaptées à vos besoins en 5 minutes seulement "
 
-#: templates/apps/webnode.html:92
+#: website/templates/website/apps/webnode.html:92
 msgid "Create your website and improve your visibility in a few clicks."
 msgstr ""
 "Créez votre site Web et informez des milliers d'acheteurs en quelques clics."
 
-#: templates/apps/webnode.html:108
+#: website/templates/website/apps/webnode.html:108
 msgid ""
 "Whether you are a company, an institution, an individual, or other, WebNode "
 "gives you the visibility you need on the internet with a modern custom "
@@ -452,15 +1531,15 @@ msgstr ""
 "internet grâce à un site Web personnalisé et personnalisé et fonctionnel "
 "juste  en 5 minutes."
 
-#: templates/apps/webnode.html:109
+#: website/templates/website/apps/webnode.html:109
 msgid "Start building your e-reputation right now!"
 msgstr "Construisez votre e-réputation dès maintenant!"
 
-#: templates/apps/webnode.html:118
+#: website/templates/website/apps/webnode.html:118
 msgid "Responsive design"
 msgstr "Design responsive"
 
-#: templates/apps/webnode.html:120
+#: website/templates/website/apps/webnode.html:120
 msgid ""
 "Your website adapts to all existing and future screens to optimize the user "
 "experience. From mobile phones to connected TVs via the tablet screen and "
@@ -471,11 +1550,11 @@ msgstr ""
 "en passant par l'écran de la tablette et l'écran de l'ordinateur, votre site "
 "Web apparaît comme vous le souhaitez."
 
-#: templates/apps/webnode.html:129
+#: website/templates/website/apps/webnode.html:129
 msgid "Fully customizable"
 msgstr "Entièrement personnalisable"
 
-#: templates/apps/webnode.html:131
+#: website/templates/website/apps/webnode.html:131
 msgid ""
 "Shape your website according to your needs. Simply and effectively. Focus "
 "only on your content and how you want to show it, Webnode takes care of the "
@@ -485,23 +1564,23 @@ msgstr ""
 "efficacement. Concentrez-vous uniquement sur votre contenu et comment vous "
 "voulez le montrer, Webnode s'occupe du reste"
 
-#: templates/apps/webnode.html:141
+#: website/templates/website/apps/webnode.html:141
 msgid "Take your e-reputation to the next level"
 msgstr "Poussez votre e-réputation au niveau superieur"
 
-#: templates/apps/webnode.html:143
+#: website/templates/website/apps/webnode.html:143
 msgid "Are you a company"
 msgstr "Êtes-vous une entreprise"
 
-#: templates/apps/webnode.html:147
+#: website/templates/website/apps/webnode.html:147
 msgid "Are you an institution"
 msgstr "Êtes-vous une institution"
 
-#: templates/apps/webnode.html:151
+#: website/templates/website/apps/webnode.html:151
 msgid "Are you an individual"
 msgstr "Êtes-vous un particulier"
 
-#: templates/apps/webnode.html:152
+#: website/templates/website/apps/webnode.html:152
 msgid ""
 "Whether you are a rising star, an expert, or just someone whose concern is "
 "to gain quality visibility on the web, with WebNode you now have a "
@@ -512,243 +1591,8 @@ msgstr ""
 "vous avez maintenant une identité numérique de qualité professionnelle en 5 "
 "minutes chrono"
 
-#: tsunami/models.py:36
-msgid "Cost per month"
-msgstr "Coût mensuel"
-
-#: tsunami/models.py:37
-msgid "Cost per year"
-msgstr "Coût annuel"
-
-#: tsunami/models.py:38
-msgid "Cost of the website for the current offer"
-msgstr "Coût du site "
-
-#: tsunami/models.py:39
-msgid "Coma separated options"
-msgstr ""
-
-#: tsunami/models.py:40
-msgid "Image count for the offer"
-msgstr ""
-
-#: tsunami/models.py:54
-msgid "Pending"
-msgstr ""
-
-#: tsunami/models.py:55
-msgid "Paid"
-msgstr ""
-
-#: tsunami/models.py:56
-msgid "Complete"
-msgstr ""
-
-#: tsunami/models.py:57
-msgid "Processed"
-msgstr ""
-
-#: tsunami/models.py:69
-msgid "Campaign final cost"
-msgstr ""
-
-#: tsunami/models.py:119
-msgid "Title of the discount coupon"
-msgstr ""
-
-#: tsunami/models.py:120
-msgid "First day of the discount coupon"
-msgstr ""
-
-#: tsunami/models.py:121
-msgid "Last day of the discount coupon"
-msgstr ""
-
-#: tsunami/models.py:122
-msgid "Discount coupon percentage"
-msgstr ""
-
-#: tsunami/models.py:124
-msgid "Allow to activate or no the promo code"
-msgstr ""
-
-#: tsunami/views.py:227
-msgid "Initialize payment process"
-msgstr "Initialisation du processus de paiement"
-
-#: tsunami/views.py:251
-msgid "Order successful"
-msgstr "Paiement réussit"
-
-#: tsunami/templates/tsunami/bundles.html:3
-msgid "Tsunami"
-msgstr ""
-
-#: tsunami/templates/tsunami/bundles.html:84
-msgid "Choose your bundle"
-msgstr "Choisissez votre forfait"
-
-#: tsunami/templates/tsunami/bundles.html:111
-msgid "Integrated MoMo/OM payments"
-msgstr "Paiements MoMo/OM intégrés"
-
-#: tsunami/templates/tsunami/bundles.html:112
-msgid "1 Month phone support"
-msgstr "1 Mois de support téléphone"
-
-#: tsunami/templates/tsunami/bundles.html:113
-msgid "1 Domain name"
-msgstr "1 Nom de domaine"
-
-#: tsunami/templates/tsunami/bundles.html:117
-msgid "Yes, I want my website"
-msgstr "Oui, Je veux mon site web"
-
-#: tsunami/templates/tsunami/bundles.html:125
-#: tsunami/templates/tsunami/bundles.html:132
-msgid "Promo code"
-msgstr "Code promo"
-
-#: tsunami/templates/tsunami/bundles.html:127
-msgid "Apply"
-msgstr "Appliquer"
-
-#: tsunami/templates/tsunami/bundles.html:130
-msgid "Invalid promotion code"
-msgstr "Code Promo invalide"
-
-#: tsunami/templates/tsunami/bundles.html:158
-msgid "BUY NOW"
-msgstr "JE VEUX"
-
-#: tsunami/templates/tsunami/bundles.html:176
-#: tsunami/templates/tsunami/bundles.html:182
-msgid "Sign in"
-msgstr "Connexion"
-
-#: tsunami/templates/tsunami/bundles.html:179
-msgid "Please sign in to continue"
-msgstr "Connectez-vous  pour continuer SVP"
-
-#: tsunami/templates/tsunami/bundles.html:186
-msgid "Register"
-msgstr "Inscription"
-
-#: tsunami/templates/tsunami/checkout.html:4
-msgid "Checkout"
-msgstr "Terminer"
-
-#: tsunami/templates/tsunami/checkout.html:203
-msgid "Your payment was successful. Thank you for your trust."
-msgstr "Paiement réussi. Merci pour votre confiance "
-
-#: tsunami/templates/tsunami/checkout.html:205
-msgid "please provide us with the necessary information for your campaign"
-msgstr "Veuillez nous fournir les infos nécéssaire pour votre campagne SVP"
-
-#: tsunami/templates/tsunami/checkout.html:218
-msgid "Your facebook link"
-msgstr "Votre lien facebook"
-
-#: tsunami/templates/tsunami/checkout.html:219
-msgid "http://www.facebook.com/Mypage"
-msgstr "http://www.facebook.com/Mapagefacebook"
-
-#: tsunami/templates/tsunami/checkout.html:226
-msgid "Target Audiences"
-msgstr "Audience cible"
-
-#: tsunami/templates/tsunami/checkout.html:231
-msgid "Location"
-msgstr "Localisation"
-
-#: tsunami/templates/tsunami/checkout.html:233
-msgid "Around"
-msgstr "À proximité"
-
-#: tsunami/templates/tsunami/checkout.html:234
-msgid "Everywhere"
-msgstr "Partout"
-
-#: tsunami/templates/tsunami/checkout.html:239
-msgid "Gender"
-msgstr "Sexe"
-
-#: tsunami/templates/tsunami/checkout.html:241
-msgid "Male"
-msgstr "Homme"
-
-#: tsunami/templates/tsunami/checkout.html:242
-msgid "Female"
-msgstr "Femme"
-
-#: tsunami/templates/tsunami/checkout.html:243
-msgid "Both"
-msgstr "Les deux"
-
-#: tsunami/templates/tsunami/checkout.html:247
-msgid "Age range"
-msgstr "Tranche d'âge"
-
-#: tsunami/templates/tsunami/checkout.html:249
-msgid "Everybody"
-msgstr "Tout le monde"
-
-#: tsunami/templates/tsunami/checkout.html:250
-#: tsunami/templates/tsunami/checkout.html:251
-#: tsunami/templates/tsunami/checkout.html:252
-#: tsunami/templates/tsunami/checkout.html:253
-msgid "years"
-msgstr "ans"
-
-#: tsunami/templates/tsunami/checkout.html:258
-msgid "Send us some photos (Max.4)"
-msgstr "Envoyez quelques photos (Max.4)"
-
-#: tsunami/templates/tsunami/checkout.html:263
-msgid "Delete image"
-msgstr "Supprimer l'image"
-
-#: tsunami/templates/tsunami/checkout.html:270
-msgid "Submit"
-msgstr "Envoyer"
-
-#: tsunami/templates/tsunami/checkout.html:274
-msgid ""
-"You  choose to have a website. A professionel will contact you to discuss "
-"all detail."
-msgstr ""
-"Vous avez choisi d'avoir un site web. Un professionnel vous contactera pour "
-"plus de dédails"
-
-#: tsunami/templates/tsunami/checkout.html:275
-msgid "Is this your number "
-msgstr "Ce numero est le votre"
-
-#: tsunami/templates/tsunami/checkout.html:275
-msgid " if not, please "
-msgstr "sinon, svp"
-
-#: tsunami/templates/tsunami/mails/order_notice.html:6
-#, python-format
-msgid "Dear %(buyer_name)s"
-msgstr "Cher %(buyer_name)s"
-
-#: tsunami/templates/tsunami/mails/order_notice.html:7
-#, python-format
-msgid ""
-"\n"
-"                        %(message)s\n"
-"                    "
-msgstr ""
-
-#: tsunami/templates/tsunami/mails/order_notice.html:13
-msgid "Thank you for your trust."
-msgstr "Merci pour votre confiance "
-
-#: tsunami/templates/tsunami/snippets/language_switcher.html:6
-msgid "Language"
-msgstr "Langue"
+#~ msgid "Cost per year"
+#~ msgstr "Coût annuel"
 
 #, fuzzy
 #~ msgid ""
@@ -781,6 +1625,3 @@ msgstr "Langue"
 
 #~ msgid "Details"
 #~ msgstr "Détails"
-
-#~ msgid "Terms & conditions"
-#~ msgstr "Conditions d'utilisation"

@@ -1,0 +1,151 @@
+{% extends "website/base.html" %}
+{% load i18n humanize static auth_tokens  %}
+{% block page_title %}<title>ikwen - {% trans 'Home' %} </title>{% endblock %}
+
+{% block meta %}
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="IKWEN" />
+    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+    <meta property="og:description" content="Web Apps to empower your small or big business" />
+    <meta property="description" content="Web Apps to empower your small or big business" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <style type="text/css">
+        html, body {height: 100%}
+        body {background: url('{% static 'ikwen/img/balloon-2435142.jpg' %}') no-repeat fixed; background-size: cover}
+        .main-title {color: #fff; font-size: 1.5em; text-align: center}
+        .icon-bar {background: #1f356a}
+        #navbar {background-color: transparent}
+        #navbar .glyphicon {color: #FFF}
+        #navbar .navbar-brand{font-weight: 700;}
+        footer {bottom: -20px; color: #fff; background: transparent; position: fixed;  left: 0; text-align: center}
+        footer a, footer .company-name {color: #fff}
+        #bottom-menu {}
+        #presentation {display: none}
+        #bottom-menu .lang-switcher {margin: 0 0 0 50px;}
+        #bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px}
+
+
+        footer {float: left}
+        #bottom-menu {bottom: -20px; position: absolute; right: 0; margin: 30px;}
+        #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+        #bottom-menu li a {color: #FFF; font-size: 12px}
+        .apps ul a {padding: 10px 20px; width: 100%}
+        #bottom-menu li a {color: #203e96}
+        .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
+        .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
+        .choices .btn {font-weight: 700}
+
+        @media only screen and (orientation: landscape) {
+            .main-title {margin-top: 10%}
+        }
+
+        @media only screen and (orientation: portrait) {
+            .main-title {margin-top: 42%}
+        }
+
+        @media only screen and
+        (max-width: 767px) {
+{#            body {background-attachment: fixed; background-size: auto 200%}#}
+            .main-title {font-size: 2.3em; line-height: 45px}
+            #site-menu .kakocase, #site-menu .tsunami {display: none}
+             #bottom-menu li {margin-left: 0}
+             #bottom-menu {bottom: inherit; left: 0; margin-left: 0; margin-top: 100px; text-align: center}
+            #bottom-menu li {margin-left: 25px}
+            .choices > div {margin-top: 35px}
+            #navbar .glyphicon {color: #203e96}
+        }
+
+
+        @media only screen
+        and (min-width : 768px){
+            .main-title {font-size: 4em; margin: 180px 0 75px;  text-indent: 14px;}
+            #bottom-menu li {float: right;}
+            #bottom-menu li {margin-left: 25px}
+            #navbar-search input {background: rgba(90, 125, 193, 0.48); color: #FFF}
+            .navbar li a {font-size: 14px}
+            #navbar .glyphicon.glyphicon-search {color: #FFF}
+            .navbar-default .navbar-nav >.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {background-color:rgba(199, 199, 199, 0.33)}
+            .dropdown-menu>li>a {color: #233682}
+            #navbar .navbar-nav .open .dropdown-menu {border-radius: 4px; top: 3px; right: 3px;}
+        }
+
+        @media only screen and (min-width : 992px) and (orientation: landscape) {
+            .main-title {margin-top: 25%}
+        }
+
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div id="presentation">
+        <h1><a href="/"> ikwen</a> is a software engineering company involved into helping classic businesses go digital.</h1>
+        <p>
+            Our purpose is to provide people
+            and businesses with very simple, yet powerful web/mobile apps
+            that let them kick off their online business in no time. We guide them into turning internet into more than just a
+            communication tool, but also a business tool. So said, our
+            solutions always integrate online Mobile Money payments out
+            of the box. Our solutions are Cloud based, one can deploy and run his own
+            website from our apps library on <a href="/">www.ikwen.com</a>
+        </p>
+    </div>
+    <div class="container">
+        <h1 class="main-title text-has-shade ">{% trans "WHAT DO YOU WANT " %}?</h1>
+        <div class="choices row">
+            {% get_available_languages as LANGUAGES %}
+            {% get_current_language as LANGUAGE_CODE %}
+            {% if LANGUAGE_CODE == 'en' %}
+                 <div class="col-sm-offset-3 col-sm-3 col-xs-offset-1 col-xs-10">
+                     <a href="http://blog.ikwen.com/need-a-website/" target="_blank">
+                         <button class="btn btn-block subtle-shade" style="color:#462929; background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
+                     </a>
+                 </div>
+                 <div class="col-sm-3 col-xs-offset-1  col-sm-offset-0 col-xs-10">
+                    <a href="http://blog.ikwen.com/more-customers/" target="_blank">
+                        <button class="btn btn-block subtle-shade" style="color:#fff; background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
+                    </a>
+                 </div>
+            {% endif %}
+            {% if LANGUAGE_CODE == 'fr' %}
+                 <div class="col-sm-offset-3 col-sm-3 col-xs-offset-1 col-xs-10">
+                     <a href="http://blog.ikwen.com/decouvrez-webnode/" target="_blank">
+                        <button class="btn btn-block subtle-shade" style="color:#462929; background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
+                     </a>
+                 </div>
+                 <div class="col-sm-3 col-xs-offset-1  col-sm-offset-0 col-xs-10">
+                     <a href="http://blog.ikwen.com/plus-de-clients/" target="_blank">
+                        <button class="btn btn-block subtle-shade" style="color:#fff; background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
+                     </a>
+                 </div>
+            {% endif %}
+            <div class="clearfix"></div>
+        </div>
+
+
+        <div id="bottom-menu" class="hidden-xs">
+            <ul>
+                {% include 'tsunami/snippets/language_switcher.html' %}
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+{#                <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>#}
+                <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+                <li><a href="{% url 'terms' %}">{% trans 'Terms & conditions' %}</a> </li>
+            </ul>
+        </div>
+{#        {% include 'tsunami/snippets/language_switcher.html' %}#}
+    </div>
+    {% include 'tsunami/snippets/edge_panel.html' %}
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+    <script type="text/javascript">
+        (function() {
+
+        })()
+    </script>
+
+{% endblock %}

@@ -18,7 +18,7 @@ from django.utils.translation import gettext as _
 
 from conf import settings
 from ikwen.core.utils import DefaultUploadBackend, get_service_instance, get_mail_content
-from tsunami.models import ComOffer, ComCampaign, Photo, PromoCode
+from tsunami.models import Bundle, ComCampaign, Photo, PromoCode, BundleType
 from ikwen.billing.mtnmomo.views import MTN_MOMO
 from ikwen.billing.orangemoney.views import ORANGE_MONEY
 
@@ -31,12 +31,26 @@ class Maintenance(TemplateView):
 
 
 class Bundles(TemplateView):
-    template_name = 'tsunami/bundles.html'
+    template_name = 'tsunami/tsunami.html'
 
     def get_context_data(self, **kwargs):
         context = super(Bundles, self).get_context_data(**kwargs)
-        bundles = ComOffer.objects.filter(is_active=True)
+        social_type = BundleType.objects.get(name=BundleType.SOCIAL)
+        full_type = BundleType.objects.get(name=BundleType.FULL)
+        bundles = Bundle.objects.filter(is_active=True)
+        full_basic = Bundle.objects.filter(slug='basic', type=full_type, is_active=True)[0]
+        full_express = Bundle.objects.filter(slug='express', type=full_type, is_active=True)[0]
+        full_exceptional = Bundle.objects.filter(slug='exceptional', type=full_type, is_active=True)[0]
+        social_basic = Bundle.objects.filter(slug='basic', type=social_type, is_active=True)[0]
+        social_express = Bundle.objects.filter(slug='express', type=social_type, is_active=True)[0]
+        social_exceptional = Bundle.objects.filter(slug='exceptional', type=social_type, is_active=True)[0]
         context['bundles'] = bundles
+        context['full_basic'] = full_basic
+        context['full_express'] = full_express
+        context['full_exceptional'] = full_exceptional
+        context['social_basic'] = social_basic
+        context['social_express'] = social_express
+        context['social_exceptional'] = social_exceptional
         return context
 
     def get(self, request, *args, **kwargs):
@@ -73,7 +87,7 @@ class Checkout(TemplateView):
             has_page = True
         try:
             campaign = get_object_or_404(ComCampaign, pk=campaign_id, status=ComCampaign.PAID)
-        except ComOffer.DoesNotExist:
+        except Bundle.DoesNotExist:
             return HttpResponseRedirect(reverse('tsunami:bundles') + '?Errors=unexisting_offer')
         else:
             campaign.audience_gender = gender
@@ -178,13 +192,13 @@ def find_promo_code(request, *args, **kwargs):
 def set_checkout(request, *args, **kwargs):
     com_offer_id = request.POST.get('product_id')
     need_website = request.POST.get('website_needed')
-    website_needed = True
+    website_needed = False
     if need_website == 'false':
         website_needed = False
     member = request.user
     try:
-        choosen_offer = ComOffer.objects.get(pk=com_offer_id)
-    except ComOffer.DoesNotExist:
+        choosen_offer = Bundle.objects.get(pk=com_offer_id)
+    except Bundle.DoesNotExist:
         return HttpResponseRedirect(reverse('tsunami:bundles') + '?Errors=yes')
     else:
         campaign = ComCampaign(member=member, offer=choosen_offer, website_needed=website_needed)
@@ -196,16 +210,16 @@ def set_checkout(request, *args, **kwargs):
         except PromoCode.DoesNotExist:
             pass
         else:
-            offer_cost = choosen_offer.monthly_cost
+            offer_cost = choosen_offer.cost
             if website_needed:
-                offer_cost = choosen_offer.monthly_cost + choosen_offer.website_cost
+                offer_cost = choosen_offer.cost + choosen_offer.website_cost
             campaign_cost = offer_cost - (offer_cost * coupon.rate / 100)
             campaign.cost = campaign_cost
             campaign.save()
     else:
-        offer_cost = choosen_offer.monthly_cost
+        offer_cost = choosen_offer.cost
         if website_needed:
-            offer_cost = choosen_offer.monthly_cost + choosen_offer.website_cost
+            offer_cost = choosen_offer.cost + choosen_offer.website_cost
         campaign.cost = offer_cost
         campaign.save()
 
@@ -222,6 +236,9 @@ def set_checkout(request, *args, **kwargs):
         request.session['return_url'] = service.url + (reverse('tsunami:checkout', kwargs={'campaign_id': campaign.id}))
         request.session['cancel_url'] = service.url + reverse('tsunami:bundles')
         request.session['is_momo_payment'] = False
+
+        service = get_service_instance()
+        request.session['merchant_name'] = service.project_name
 
     logger.info("Initialize payment process of Campaign %s " % (campaign.id))
     subject = _("Initialize payment process")

@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 # from ikwen.flatpages.views import FlatPageView
 
-from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView
+from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms
 
 admin.autodiscover()
 
@@ -13,6 +13,7 @@ urlpatterns = patterns(
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', Home.as_view(), name='home'),
     url(r'^about$', About.as_view(), name='about'),
+    url(r'^terms$', Terms.as_view(), name='terms_and_conditions'),
     url(r'^webnode$', Webnode.as_view(), name='webnode'),
     url(r'^kakocase$', Kakocase.as_view(), name='kakocase'),
     url(r'^shavida$', Shavida.as_view(), name='shavida'),

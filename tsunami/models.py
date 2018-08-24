@@ -14,7 +14,6 @@ from ikwen.core.models import Model
 from django import forms
 
 
-
 class StringListField(forms.CharField):
     def prepare_value(self, value):
         return ', '.join(value)
@@ -30,11 +29,28 @@ class OptionsField(ListField):
         return models.Field.formfield(self, StringListField, **kwargs)
 
 
-class ComOffer(Model):
+class BundleType(Model):
+    SOCIAL = 'Social marketing'
+    FULL = 'Full option'
+    BUSINESS = 'Business'
+
+    STATUS_CHOICES = (
+        (SOCIAL, _('Social marketing')),
+        (FULL, _('Full option')),
+        (BUSINESS, _('Business')),
+    )
+    name = models.CharField(max_length=30, choices=STATUS_CHOICES, default=SOCIAL)
+    is_active = models.BooleanField(default=True)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Bundle(Model):
     name = models.CharField(max_length=100)
     slug = models.CharField(max_length=100, blank=True)
-    monthly_cost = models.IntegerField(help_text=_("Cost per month"))
-    yearly_cost = models.IntegerField(help_text=_("Cost per year"))
+    type = models.ForeignKey(BundleType, blank=True)
+    cost = models.IntegerField(help_text=_("Cost per month"))
     website_cost = models.IntegerField(null=True, blank=True, help_text=_("Cost of the website for the current offer"))
     options = OptionsField(help_text=_("Coma separated options"))
     max_img_count = models.IntegerField(default=5, help_text=_("Image count for the offer"))
@@ -57,7 +73,7 @@ class ComCampaign(Model):
         (PROCESSED, _('Processed'))
     )
 
-    offer = models.ForeignKey(ComOffer)
+    offer = models.ForeignKey(Bundle)
     member = models.ForeignKey(Member, blank=True)
     network_page = models.URLField(max_length=255, blank=True, null=True)
     has_page = models.BooleanField(default=False)

@@ -64,7 +64,8 @@
         .qq-upload-button { margin-top: -10px; }
         .cntr-notice {background: #fff; border: solid 2px #62b01e; float: left; padding: 15px}
         .cntr-notice img {float: left}
-        .cntr-notice p {float: left;font-size: 22px; line-height: 87px; margin-left: 50px}
+        .cntr-notice p {color: #203e96;float: left;font-size: 22px; line-height: 87px; margin-left: 50px}
+        h4 {color: #203e96}
         .campaign-info {background: #fff; float: left; padding: 25px; width: 100%}
         .notice {background: #d5ebff; border: solid 2px #00aac9; float: left;margin-top: 83px; text-align: center; padding: 15px 45px; width: 100%}
         .notice p {float: left; width: 100%}
@@ -72,10 +73,12 @@
         .form-input label {font-weight: 300; margin-left: 10px}
         #navbar .glyphicon {color: #211919;}
         #nav-xs {width: 200px}
+        label {color: #203e96; padding-bottom: 5px}
         @media (min-width: 768px) {
             .images-uploader .frame {width: 235px;height: 230px;}
             .images-uploader .qq-upload-button {line-height: 190px}
         }
+
         @media only screen
         and (max-device-width : 425px) {
             .company .title {font-size: 35px }
@@ -228,6 +231,7 @@
                     <div class="col-sm-12 audience" style="margin-top: 30px">
 
                         <div class="form-row field-page form-group col-sm-4">
+                            <i class="fa fa-map-marker"></i>
                             <label class="required" for="id_sm_location">{% trans "Location" %}</label>
                             <div class="form-input">
                                 <input type="radio" id="around" name="location" value="around"><label class="required" for="around">{% trans "Around" %}</label><br/>
@@ -236,6 +240,7 @@
                         </div>
 
                         <div class="form-row field-page form-group col-sm-4" style="float: left; padding: 0 0 25px">
+                            <i class="fa fa-venus-mars"></i>
                             <label class="required" for="id_sm_location">{% trans "Gender" %}</label>
                             <div class="form-input">
                                 <input type="radio" id="male" name="gender" value="male"><label class="required" for="male">{% trans "Male" %}</label><br/>
@@ -243,7 +248,7 @@
                                 <input type="radio" id="both" name="gender" value="both"><label class="required" for="both">{% trans "Both" %}</label><br/>
                             </div>
                         </div>
-                        <div class="form-row field-page form-group col-sm-4" style="float: left; ">
+                        <div class="form-row field-page form-group col-sm-4" style="float: left; "><i class="fa fa-bullseye"></i>
                             <label class="required" for="id_sm_age">{% trans "Age range" %}</label>
                             <select  id="id_age" name="age_range" class="form-control input-sm">
                                 <option value="all">{% trans "Everybody" %}</option>
@@ -255,7 +260,7 @@
                         </div>
                     </div>
                     <div id="item-photos" class="tab-pane active col-sm-12" role="tabpanel" style="clear: both;padding-bottom: 90px">
-                        <h4>{% trans "Send us some photos (Max.4)" %}</h4>
+                        <h4>{% trans "Send us some photos " %}(Max.{{ campaign.offer.max_img_count }})</h4>
                         <div id="upload-container" class="images-uploader">
                             <div class="frame image tpl">
                                 <span class="progress"></span>
@@ -289,6 +294,12 @@
             $('#item-id').val("{{ campaign.id }}")
         {% endif %}
         $('div#upload-container').on('click', '.image .delete', function() {
+
+            var uploadPhotoCount = $(".frame.image").not('.tpl').length
+            {#var maxImgCount = parseIn("{{ campaign.offer.max_img_count }}")#}
+            if (uploadPhotoCount <= {{ campaign.offer.max_img_count }}){
+                $(".frame.uploader").show()
+            }
             var itemId = $('#item-id').val(),
                 $photo = $(this).parent(),
                 id = $photo.attr('id'),
@@ -314,6 +325,15 @@
             buttonText: "+",
             multiple: false,
             onSubmit: function(id, fileName) {
+
+                var uploadPhotoCount = $(".frame.image").not('.tpl').length
+                {#var maxImgCount = parseIn("{{ campaign.offer.max_img_count }}")#}
+                if (uploadPhotoCount >= {{ campaign.offer.max_img_count }}){
+                    $(".frame.uploader").hide()
+                    return false
+                }else {
+                   $(".frame.uploader").show()
+                }
                 var uploadId = 'u' + id;
                 $('div#upload-container .image.tpl').clone().removeClass('tpl').addClass('loading ' + uploadId).insertBefore('div#upload-container .image.tpl');
             },

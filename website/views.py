@@ -17,6 +17,10 @@ class About(TemplateView):
     template_name = 'website/about.html'
 
 
+class Terms(TemplateView):
+    template_name = 'website/termsconditions.html'
+
+
 class Webnode(TemplateView):
     template_name = 'website/apps/webnode.html'
 

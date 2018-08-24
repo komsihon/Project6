@@ -40,9 +40,9 @@
                     <i class="glyphicon glyphicon-search"></i>
                 </a>
             </li>
-            <li>
-                <a href="{% url 'ikwen:sign_in' %}" style="float: left"><i class="glyphicon glyphicon-user"></i></a>
-            </li>
+{#            <li>#}
+{#                <a href="{% url 'ikwen:sign_in' %}" style="float: left"><i class="glyphicon glyphicon-user"></i></a>#}
+{#            </li>#}
         </ul>
     </nav>
 {% endblock %}
@@ -55,7 +55,7 @@
 {#                <li class="tsunami visible-md visible-lg"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>#}
                 <li id="ik-apps" class="visible-sm dropdown">
                     <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="glyphicon glyphicon-th-list" style="color: #233682"></i>
+                        <i class="glyphicon glyphicon-th-list"></i>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="ik-apps">
                         <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
@@ -63,14 +63,6 @@
                     </ul>
                 </li>
                 {% if user.is_authenticated %}
-                    <li id="user-home">
-                        <a href="{{ settings.IKWEN_CONSOLE_URL }}">
-                            {% trans "Home" %}
-                            {% if user.get_notice_count > 0 %}
-                                <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
-                            {% endif %}
-                        </a>
-                    </li>
                     {% if collaborates_on|length == 1 %}
                         <li id="user-apps">
                             <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
@@ -98,12 +90,12 @@
                             <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
                         </ul>
                     </li>
-                {% else %}
-                    <li class="hidden-xs" style="height: 65px;">
-                        <a href="{% url 'ikwen:sign_in' %}" style="padding-top: 13px;">
-                            <button class="login btn btn-sm" style="">{% trans "Login" %}</button>
-                        </a>
-                    </li>
+{#                {% else %}#}
+{#                    <li class="hidden-xs" style="height: 65px;">#}
+{#                        <a href="{% url 'ikwen:sign_in' %}" style="padding-top: 13px;">#}
+{#                            <button class="login btn btn-sm" style="">{% trans "Login" %}</button>#}
+{#                        </a>#}
+{#                    </li>#}
                 {% endif %}
             </ul>
         </div>

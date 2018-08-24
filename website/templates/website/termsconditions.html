@@ -1,0 +1,253 @@
+{% extends "website/base.html" %}
+{% load i18n humanize static %}
+{% block page_title %}<title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">ikwen - {% trans 'Terms and conditions' %} </title>{% endblock %}
+
+{% block meta %}
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="IKWEN" />
+    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+    <meta property="og:description" content="Web Apps to empower your small or big business" />
+    <meta property="description" content="Web Apps to empower your small or big business" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <link rel='stylesheet' href="{% static 'ikwen/css/animate.min.css' %}" />
+    <style type="text/css">
+        a {color: #2c3e50}
+        #bottom-menu .lang-switcher select {color: #fff}
+        #navbar-search input {background: rgba(14, 13, 14, 0.22); color: #FFF}
+        #navbar {background-color: rgb(35, 54, 130);}
+        .icon-bar {background: #fff}
+        .navbar-default .navbar-brand, #navbar .glyphicon  {color: #fff}
+        .btn.login {background: #FFF; color: #233682;font-weight: 600; width: 100px;}
+        a:hover, a:focus,a:active {color: #4263ac; text-decoration: none}
+        .navbar-brand strong, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover {color: #ffffff}
+        a.btn {background: #08a506;border: #08a506; font-size: 20px; margin: auto; padding: 10px 20px; text-align: center; width: 300px}
+        a.btn:hover {background: #089306}
+        .grp-eg {padding-left: 0}
+        .grp-eg li {line-height: 22px; padding: 2px 0}
+        .grp-eg li a {color: #1b6d85; font-size: 18px}
+        #navbar {top: 0}
+        section {float: left;padding: 100px 0; width: 100%}
+        section.colored {background: rgb(238, 238, 238)}
+        section .title {color: #2c3e50; font-size: 35px; padding: 12px 0; text-align: center; width: 100%}
+        section .app {margin-top: 0;}
+        section .app:first-child {margin-top: 20px;}
+        section .app .title {font-size: 25px; padding: 12px 0; text-align: left; width: 100%}
+        section .app a {font-size: 15px}
+        section .desc {font-weight: 300;font-size: 18px;line-height: 35px; padding: 0 25px; text-align: justify; }
+        section .desc .action {}
+        .section-header {padding-bottom: 60px}
+        .few-deployments {width: 100%;}
+        {#section li {list-style-type: none}#}
+        .lead {font-size: 20px; text-align: center}
+        .eg-img {border-radius: 150px; min-height: 350px;}
+        .app-logo {float: left;text-align: center;padding-bottom: 85px; width: 100%}
+        .app-logo img {width: 25%}
+        .app-logo a {color: #1b6d85; clear:both; float: left; font-size: 20px; text-align: center; width: 100%}
+        .contact-img {float: left}
+        p i {color: #dc1e0b }
+
+        footer {float: left}
+        #bottom-menu {bottom: 20px; position: absolute; right: 20px; }
+        #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+        #bottom-menu li a {color: #fff; font-size: 12px}
+        footer {display: none}
+
+        div.footer {color: #FFF; font-size: 12px; position: absolute; bottom: 20px; left: 20px}
+        div.footer .company-name {color: #FFF; font-size: 12px; text-decoration: none;}
+        .section-header img {float: left; width: 80%}
+        section.logos {background-image: url("{% static 'website/img/SHTT-Lead-Image-Costumes.jpg' %}"); background-size: cover; background-attachment: fixed; background-position: center; height: 500px}
+        section.logos .cover {background: rgba(0, 0, 0, 0.8); color: #FFFFFF; height: 500px; margin-top: -100px; position: absolute; padding-top: 105px; width: 100%}
+        section.logos .title, section.logos .lead {color: #FFFFFF; text-shadow: 1px 2px 3px rgba(0,0,0, 0.5);}
+        section.logos .row {margin-top: 65px}
+        .navbar-default { border: none}
+        section.address {background-image: url("{% static 'website/img/map.svg' %}"); background-size: 100% auto; color: #FFF; font-size: 22px; font-weight: 300;height: 600px; margin-top: 0;}
+        .cta {text-transform: inherit}
+
+        section.address a {color: #FFF; font-size: 22px; font-weight: 300}
+        section.address .cover {background-color: rgba(0, 0, 0, 0.8);height: 600px; margin-top: -100px; padding-top: 75px; position: absolute; width: 100%}
+        @media (max-width: 425px) {
+            #bottom-menu {margin-top: 0; width: 100%;}
+            #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
+            #bottom-menu li a {float: left; width: 100%}
+            div.container {margin-top: 0}
+            .app-logo img {width: 75%}
+            section {margin-top: 20px; padding-bottom: 10px}
+            .contact-img {text-align: center}
+            .contact-address {text-align: center}
+            footer div {float: left; padding-bottom: 25px; width: 100%}
+    {#        footer ul {background: #fff; bottom: 0; padding-bottom: 15px; position: fixed; width: 100%}#}
+            #bottom-menu li {float: left; clear: both; width: 100%}
+            #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
+            .section-header img {float: left;clear: both; margin-top: 30px; width: 80%}
+        }
+        body {font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
+    </style>
+{% endblock %}
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="company">
+                <div class="title animated wow fadeInLeft">{% trans "Legal Notice and Terms of Use" %}</div>
+                <div class="desc">
+                    {% blocktrans %}
+                        <p>The website accessible at <strong><a href="http://www.ikwen.com/">ikwen</a></strong> (hereinafter referred to as SITE) is intended for personal use for its Internet users.</p>
+                        <p>Access and use of this site and the associated mobile application are subject to these Terms of Use.
+                            The company that owns the site and the mobile application reserves the right to modify and update, without notice, the present Legal Notice and all the elements, products or services presented on the site. All of these modifications are binding on Internet users who must consult the Legal Mentions related to the site.</p>
+                        <p>These Terms of Use are subject to Cameroonian law.</p>
+                        <h3>Publication.</h3>
+                        <p>The site: <strong><a href="http://www.ikwen.com/">ikwen</a></strong> is published by the company ikwen, located in Yaoundé / Cameroun whose information is available at the tax center: CDI 09 D'Efoulan.</p>
+                        <p>E-mail address: contact@ikwen.com</p>
+                        <p>Intellectual property rights.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong> notifies users of its platform that many elements of it:</p>
+                        <ul>
+                            <li>Are protected by copyright legislation: this may include photographs, articles, drawings, animated sequences, audio or digital video recordings.</li>
+                            <li>And / or are protected by design legislation;</li>
+                            <li>Are protected by the legislation on the marks: it is in particular the marks, the logo, appearing on the site.</li>
+                        </ul>
+                        <p>The elements thus protected are the property of <strong><a href="http://www.ikwen.com/">ikwen</a></strong>.</p>
+                        <p>As such, any reproduction, representation, use, adaptation, modification, incorporation, translation, marketing, partial or complete by any process and on any medium whatsoever (paper, digital, ...) is prohibited, without prior written permission. ikwen, except the exceptions legally allowed by articles 29 (2) and 36 of the law 2000/011 of 19 December 2000 on copyright and neighboring rights under pain of constituting an infringement of copyright infringement and designs, punishable by two (2) to five (5) years imprisonment and one (1) to twenty-five (25) million CFA francs in fine or penalty infringement of copyrights and in the case of trademark infringement.</p>
+                        <P>The trademarks and logos of the software displayed on this Site and the associated mobile application are the property of the respective company, and may not be exploited without the prior written consent of ikwen. These trademarks include but are not necessarily limited to any software not specifically identified in these Legal Notices.</P>
+                        <h3>Cookies.</h3>
+                        <p>The Site and the associated mobile application includes a system of cookies. Thus the user is informed that during his visits to the site, cookies may be installed automatically on his Internet browser.</p>
+                        <p>Cookies are files sent to users' hard drives in order to facilitate their browsing on the site and the associated mobile application and to establish attendance statistics.</p>
+                        <p>These cookies do not contain any personal information.</p>
+                        <p>The User can disable the sending of cookies by modifying the parameters of his Internet browser.</p>
+                        <h3>Protection of personal data.</h3>
+                        <p>You can visit the site and the associated mobile application without revealing your identity or any other personal information about you.</p>
+                        <p>Regarding the personal information that you would have to communicate to us, you have the right to access and rectify according to Cameroonian law.</p>
+                        <p>The information collected is subject to computer processing to provide you with personalized content. This computerized processing is done by the applications of ikwen in its infrastructure You have a right to access, modify, rectify, and limit the data concerning you.</p>
+                        <p>To exercise these rights, ikwen provides you with a personal interface to modify your personal data. For reasons of data integrity of the platform, only your ikwen ID is not editable.</p>
+                        <p> <strong><a href="http://www.ikwen.com/">ikwen</a></strong> has a centralized authentication module. You can use your access information to connect to one of the third-party Internet sites of which it is the provider. In such a case, you are part of the third-party community and may have access to information such as your last name, first name, phone number, e-mail and sex. The third party platform undertakes to respect the same rules of protection and non-disclosure of your personal data as defined by  <strong><a href="http://www.ikwen.com/">ikwen</a></strong>.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong>  takes all measures to avoid any prejudice to the User.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong>  undertakes to implement appropriate technical and organizational measures to protect personal data against accidental or unlawful destruction, accidental loss, alteration, dissemination or unauthorized access.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong>  undertakes to keep the personal data for a period not exceeding that necessary for the fulfillment of the purposes for which they were collected or processed.</p>
+                        <p>ikwen may be required to disclose any information about the User in order to comply with any applicable law or regulation or to respond to any legal or administrative request. These data are collected automatically by the site; the applications allow the publisher to establish statistics regarding the consultation of his web pages and offers him adapted and more personalized content.</p>
+                        <h3>Registration details.</h3>
+                        <p>Registration is reserved for individuals aged 15 or over</p>
+                        <p>In the event that the user provides false, inaccurate, outdated, incomplete, misleading or misleading information, ikwen may, immediately, without notice or compensation, suspend or terminate the profile of the User / his services and deny him access, temporarily or permanently, to all or part of the ikwen Services.</p>
+                        <h3>Password management. </h3>
+                        <p>To access your private interface on ikwen, you must enter your ikwen ID; as well as your password.</p>
+                        <p>This password is strictly personal and you must keep it confidential. As such, you are responsible for any use of this password and ikwen can in no way be held responsible for any loss or damage caused by the use of these spaces and / or password.</p>
+                        <p>The User must disconnect after each consultation of the site, in order to avoid any fraudulent use of his spaces and / or his password.</p>
+                        <h3>Limitation of liability</h3>
+                        <p>You use the ikwen platform under your sole and entire responsibility.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong>   can not be held responsible for direct or indirect damages, such as, in particular material damage, loss of data or program, financial loss, resulting from the use of this site and the associated mobile application or sites that are linked.</p>
+                        <p>We draw your attention to the fact that certain products or services presented on the site and the associated mobile application may be the subject of specific regulations or even restrictions and / or prohibitions in certain countries.</p>
+                        <h3>Responsibility of the user.</h3>
+                        <p>Users of the site and the associated mobile application undertake to respect this legal notice and to use the site under their responsibility. The user is deemed to have accepted the legal notice simply by consulting the site.</p>
+                        <p>Any consultation of the Site and the associated mobile application implies acceptance of these legal notices in their latest version.</p>
+                        <p>ikwen can not be held responsible for damages resulting from the use of the site.
+Users must in particular protect their technical equipment against any form of contamination by viruses and / or intrusion attempts, ikwen can not be held responsible in this case.</p>
+                        <h3>Hypertext links.</h3>
+                        <p>The establishment of a hypertext link to the Site and the associated mobile application requires prior written permission from ikwen.</p>
+                        <p>In any case, ikwen is in no way responsible for the content or the products or services offered on the sites that are linked by hypertext links or any other kind of links to ikwen.
+All sites with a hyperlink pointing to a page of the ikwen platform, are not under the control of ikwen. ikwen assumes no responsibility for the availability of these sites, their content, advertisements, products or services available on or from these sites.</p>
+                        <p>The user is responsible for their use.</p>
+                        <p>Applicable law and competent jurisdiction.</p>
+                        <p>The site, the associated mobile application and these legal notices are subject to Cameroonian law excluding conflict of laws rules.</p>
+                        <p>They are written in French or English.</p>
+                        <p>In the event of any dispute relating to the interpretation or execution of this legal notice, the courts of first and highest instance of Yaoundé have exclusive jurisdiction; unless otherwise required by law.</p>
+                        <h3>Access to the elements.</h3>
+                        <p>The elements of the site and the associated mobile application are accessible through the Internet.</p>
+                        <p>All costs related to access to the items whether material costs, software or Internet access, are the responsibility of the user. The user is solely responsible for the proper functioning of his equipment as well as access to the Internet.</p>
+                        <p>The user declares accepting the characteristics and limits of the Internet and acknowledges having knowledge of the nature of the Internet network and, in particular, its technical performance, response times for consulting, interrogating or transferring information, risks of interruption and more generally the risks inherent in any connection and transmission on the Internet.</p>
+                        <p>ikwen implements all reasonable means at its disposal to ensure quality access to the elements, it being specified that ikwen is under no obligation to achieve this result.</p>
+                        <h3>Terms of use for registered users.</h3>
+                        <p>These general conditions of use describe the terms and conditions under which the company ikwen provides its applications.</p>
+                        <p>Access to this service is subject to compliance with these general conditions of use mentioned above.</p>
+                        <p>Any user wishing to access it must have previously read these general conditions of use and undertakes to comply with them without reservation.
+ikwen may freely modify these general conditions of use at any time and the user is invited to consult them regularly.</p>
+                        <p>The user can receive promotional messages from ikwen's business partners by email, SMS or on his personal space.</p>
+                        <h3>Personal space.</h3>
+                        <p>Refers to the personal pages of the user in which his personal data is inserted and the management of these / his data with third parties.</p>
+                        <p>The user accesses the service and all its features by filling in an ikwen ID that he has previously obtained free of charge.</p>
+                        <p>It is his responsibility to implement the precautionary and security measures necessary to protect his login credentials.</p>
+                        <h3>Responsibility</h3>
+                        <p>Members of the ikwen platform are responsible for all content that they make available to third parties, that they send by email or that they store on personal spaces of the platform or spaces accessible to third parties that they download or otherwise transmit through the site.</p>
+                        <p>ikwen has no prior control over the contents. ikwen has no obligation to monitor content stored on its site and associated applications by users.
+The user agrees to use the site and associated applications in accordance with national and international regulations, and in particular not to use it to display, download, send, transmit any content:</p>
+                        <ul>
+                            <li>violating or likely to undermine the respect and dignity of the human person, the equality of men and women, the protection of children and adolescents, including the production, transport and distribution of messages of a violent or pornographic nature or of a nature to undermine human dignity (Article 74 (4), 75,76 of the law 2010/012 of December 21, 2010 on cybersecurity and cybercrime)</li>
+                            <li>which encourages the commission of crimes and misdemeanors (Article 77 of Law 2010/012 of 21 December 2010)</li>
+                            <li>that causes or may cause discrimination, hatred, violence on the basis of race, ethnicity or nation (Article 74 (5), 77 of Law 2010/012 of 21 December 2010 on Cybersecurity and Cybercrime in Cameroon)</li>
+                            <li>that misleads other Users by usurping the name or corporate name of other persons</li>
+                            <li>which infringes the rights of third parties such as, but not limited to, any manufacturing secret, professional secrecy, confidential information, trademark, patent and in general any industrial or intellectual property right or any other right relating thereto. on protected information or content</li>
+                            <li>including, but not limited to, computer viruses or any other code or program designed to interrupt, destroy or limit the functionality of any software, computer or telecommunication tool.</li>
+                        </ul>
+                        <h3>Terms of use for visitors.</h3>
+                        <p>These terms and conditions describe the terms and conditions under which the company ikwen provides its services online.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong> also has ikwen sites: which are websites of other people (legal or physical) deployed on the basis of ikwen's web environment, but whose ikwen company does not have full ownership.</p>
+                        <p>Access to this service is subject to compliance with these general conditions of use mentioned above.</p>
+                        <p>Any user wishing to access it must have previously read these general conditions of use and undertakes to comply with it without reservation.</p>
+                        <p><strong><a href="http://www.ikwen.com/">ikwen</a></strong> may freely modify these terms of use at any time and the visitor is invited to consult them regularly.</p>
+                        <p>The user can receive promotional messages from ikwen's business partners.</p>
+                        <h3>Console</h3>
+                        <p>Every registered user automatically gets a news feed (console).</p>
+                        <p>This console allows him:</p>
+                        <ul>
+                            <li>receive alerts about the evolution or modification of the services offered on the site and the associated mobile application</li>
+                            <li>to receive targeted advertising</li>
+                        </ul>
+                        <h3>Rescission</h3>
+                        <p>Services are provided by ikwen for an indefinite period.</p>
+                        <p>Any account may be terminated at any time by simple request by email to the following address: contact@ikwen.com</p>
+                        <p>The user also expressly acknowledges that ikwen has the right to terminate ipso jure, without prior notice, without notice, indemnity or justification, all or part of the services provided to Users.</p>
+
+                    {% endblocktrans %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{#    <section class="address">#}
+{#        <div class="cover">#}
+{#            <div class="container">#}
+{#                <div class="achievements">#}
+{#                    <h1 class="title animated wow fadeInLeft" style="color: #fff; text-align: left">{% trans "Contact Us Now" %}</h1>#}
+{#                    <p class="lead animated wow fadeInDown"  style="text-align: left">#}
+{#                        {% trans "And let us bring to reality your world-changing project." %}#}
+{##}
+{#                    </p>#}
+{#                    <div class="app">#}
+    {#                    <div class="col-sm-2 hidden-xs"> </div>#}
+{#                        <div class="contact-img col-sm-6 col-xs-12"><img src="{% static "website/img/rocket.png" %}" width="50%"> </div>#}
+{#                        <div class="col-sm-6 col-xs-12 contact-address ">#}
+{#                            <a href="http://www.ikwen.com/"><img src="{% static 'website/img/logo_ikwen_white.png' %}" width="200"></a>#}
+{#                            <div class="address">#}
+{#                                <p>195 Route Montée Jouvence</p>#}
+{#                                <p>Yaoundé, Cameroon</p>#}
+{#                                <p></p>#}
+{#                                <p>E-mail: <a href="mailto:contact@ikwen.com" style="font-weight: 400">contact@ikwen.com</a> </p>#}
+{#                                <p>Tel: (+237) 657 833 956 / 652 916 124</p>#}
+{#                                <p>Web: <a href="http://www.ikwen.com" style="font-weight: 400">www.ikwen.com</a> </p>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="footer hidden-xs">#}
+{#                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.#}
+{#                {% trans "All rights reserved." %}#}
+{#                {% if config.legal_mentions_url %}#}
+{#                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>#}
+{#                {% endif %}#}
+{#            </div>#}
+{#            <div id="bottom-menu" class="hidden-xs">#}
+{#                <ul>#}
+{#                    {% include 'tsunami/snippets/language_switcher.html' %}#}
+{#                    <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>#}
+{#                    <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>#}
+{#                    <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>#}
+{#                    <li><a href="{% url 'terms' %}">{% trans 'Terms & conditions' %}</a> </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+    {% include 'tsunami/snippets/edge_panel.html' %}
+{% endblock %}

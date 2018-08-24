@@ -4,7 +4,7 @@
 
 {% block meta %}
     <meta property="og:type" content="Website" />
-    <meta property="og:title" content="IKWEN communication bundles" />
+    <meta property="og:title" content="IKWEN Tsunami bundles" />
     <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
     <meta property="og:description" content="Let network user know about you and your business" />
     <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
@@ -236,7 +236,6 @@
                             $('.previous-price').fadeIn().show()
                             $('.code-container .p-code').text(resp.promo_code.code)
                             $('.promo-code-cntr').hide()
-
                             calculateFinalCost()
                         }
                     });

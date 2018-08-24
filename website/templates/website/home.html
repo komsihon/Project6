@@ -3,6 +3,8 @@
 {% block page_title %}<title>ikwen - {% trans 'Home' %} </title>{% endblock %}
 
 {% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:type" content="Website" />
     <meta property="og:title" content="IKWEN" />
     <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
@@ -13,135 +15,166 @@
 
 {% block head_style %}
     {{ block.super }}
-    <style type="text/css">
-        html, body {height: 100%}
-        body {background: url('{% static 'ikwen/img/balloon-2435142.jpg' %}') no-repeat fixed; background-size: cover}
-        .main-title {color: #fff; font-size: 1.5em; text-align: center}
-        .icon-bar {background: #1f356a}
-        #navbar {background-color: transparent}
-        #navbar .glyphicon {color: #FFF}
-        #navbar .navbar-brand{font-weight: 700;}
-        footer {bottom: -20px; color: #fff; background: transparent; position: fixed;  left: 0; text-align: center}
-        footer a, footer .company-name {color: #fff}
-        #bottom-menu {}
-        #presentation {display: none}
-        #bottom-menu .lang-switcher {margin: 0 0 0 50px;}
-        #bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px}
-
-
-        footer {float: left}
-        #bottom-menu {bottom: -20px; position: absolute; right: 0; margin: 30px;}
-        #bottom-menu li {float: left; list-style-type: none; margin-left: 15px}
-        #bottom-menu li a {color: #FFF; font-size: 12px}
-        .apps ul a {padding: 10px 20px; width: 100%}
-        #bottom-menu li a {color: #203e96}
-        .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
-        .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
-        .choices .btn {font-weight: 700}
-
-        @media only screen and (orientation: landscape) {
-            .main-title {margin-top: 10%}
+{#    <link href="{% static 'website/css/ikwen-form.css' %}" rel="stylesheet" type="text/css">#}
+{#	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">#}
+    <link href="{% static 'website/css/ikwen-website.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/transparent-navbar-darkbg.css' %}" rel="stylesheet">
+    <style>
+        .resume {margin-top: 155px}
+        footer {bottom: 12px; margin: 0; position: absolute; width: 100%}
+        #navbar {z-index: 5}
+        label {color: #696969;}
+        .card-header {background-color: #6f00ff; padding: 1px 5px 7px 10px;}
+        .forgot-password {font-size: 12px;text-align: right;}
+        #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0;}
+        #stage {padding: 15px 30px 15px;}
+        .btn.login  {display: none}
+        @media (min-width: 768px){
+            ul.nav.navbar-nav li .cta {display: none}
+            .navbar-default {background-color: transparent;}
+            #navbar-search input {background: rgba(4, 10, 33, 0.26);}
+             .form-wrapper {width: 100%}
+            .btn-sm, .btn-group-sm > .btn {padding: 10px 0}
+            #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0; width: 360px}
+            {##stage {padding: 15px 30px 15px;}#}
+            .register {margin-top: 40px;}
         }
-
-        @media only screen and (orientation: portrait) {
-            .main-title {margin-top: 42%}
-        }
-
-        @media only screen and
-        (max-width: 767px) {
-{#            body {background-attachment: fixed; background-size: auto 200%}#}
-            .main-title {font-size: 2.3em; line-height: 45px}
-            #site-menu .kakocase, #site-menu .tsunami {display: none}
-             #bottom-menu li {margin-left: 0}
-             #bottom-menu {bottom: inherit; left: 0; margin-left: 0; margin-top: 100px; text-align: center}
-            #bottom-menu li {margin-left: 25px}
-            .choices > div {margin-top: 35px}
-            #navbar .glyphicon {color: #203e96}
-        }
-
         @media only screen
-        and (min-width : 768px){
-            .main-title {font-size: 4em; margin: 180px 0 75px;  text-indent: 14px;}
-            #bottom-menu li {float: right;}
-            #bottom-menu li {margin-left: 25px}
-            #navbar-search input {background: rgba(90, 125, 193, 0.48); color: #FFF}
-            .navbar li a {font-size: 14px}
-            #navbar .glyphicon.glyphicon-search {color: #FFF}
-            .navbar-default .navbar-nav >.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {background-color:rgba(199, 199, 199, 0.33)}
-            .dropdown-menu>li>a {color: #233682}
-            #navbar .navbar-nav .open .dropdown-menu {border-radius: 4px; top: 3px; right: 3px;}
+        and (max-width : 768px) {
+             #loginbox {width: 100%}
+        }
+        @media only screen
+        and (max-width : 425px) {
+            #navbar {background: #141d5a}
+            .masthead .btn-xl.register {margin-top: 30px}
+            .masthead .header-content {margin-bottom: 20px}
+            .edge-panel-left {background: #fff; height: 100%; top: 0; width: 85%}
+            .edge-panel-left .wrapper {padding-top: 0}
+            .edge-panel-left .stage {padding: 0 0 90px; width: 100%;}
+            .top-edge-panel {float: left;height: 200px;width: 100%;}
+            .panel-top {background-size: cover;height: 200px;}
+            #side-nav .panel-top .cover {background: rgba(0, 0, 0, 0.52);height: 200px;padding: 10px; width: 100%;}
+            .lang-switcher {float: right;margin: 30px 20px;}
+            .ik-logo {background-size: 100% auto;background-repeat: no-repeat;height: 80px;width: 190px;}
+
+            .divider {height: 1px;margin: 9px 0;overflow: hidden;background-color: #e5e5e5;width: 100%;}
+            #side-nav .nav-stacked li a {font-weight: 700;color: #676767;font-size: 14px;padding: 10px 25px;}
+            .lang-switcher select {background: transparent;border: none;color: #FFF;}
+            .lang-switcher i {margin: 3px 35px;position: absolute;}
+
+            .resume {margin-top: 45px}
+             #bottom-menu {display: none}
+             #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 100px; padding: 0;}
+            footer {margin-top: -25px; position: relative; width: 100%}
+            {#ul#nav-xs.navbar-right li a {display: none}#}
+            .icon-bar {background: #fff}
+            .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #FFF}
         }
 
-        @media only screen and (min-width : 992px) and (orientation: landscape) {
-            .main-title {margin-top: 25%}
-        }
+
 
     </style>
 {% endblock %}
 
 {% block content %}
-    <div id="presentation">
-        <h1><a href="/"> ikwen</a> is a software engineering company involved into helping classic businesses go digital.</h1>
-        <p>
-            Our purpose is to provide people
-            and businesses with very simple, yet powerful web/mobile apps
-            that let them kick off their online business in no time. We guide them into turning internet into more than just a
-            communication tool, but also a business tool. So said, our
-            solutions always integrate online Mobile Money payments out
-            of the box. Our solutions are Cloud based, one can deploy and run his own
-            website from our apps library on <a href="/">www.ikwen.com</a>
-        </p>
-    </div>
-    <div class="container">
-        <h1 class="main-title text-has-shade ">{% trans "WHAT DO YOU WANT " %}?</h1>
-        <div class="choices row">
-            {% get_available_languages as LANGUAGES %}
-            {% get_current_language as LANGUAGE_CODE %}
-            {% if LANGUAGE_CODE == 'en' %}
-                 <div class="col-sm-offset-3 col-sm-3 col-xs-offset-1 col-xs-10">
-                     <a href="http://blog.ikwen.com/need-a-website/" target="_blank">
-                         <button class="btn btn-block subtle-shade" style="color:#462929; background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
-                     </a>
-                 </div>
-                 <div class="col-sm-3 col-xs-offset-1  col-sm-offset-0 col-xs-10">
-                    <a href="http://blog.ikwen.com/more-customers/" target="_blank">
-                        <button class="btn btn-block subtle-shade" style="color:#fff; background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
-                    </a>
-                 </div>
-            {% endif %}
-            {% if LANGUAGE_CODE == 'fr' %}
-                 <div class="col-sm-offset-3 col-sm-3 col-xs-offset-1 col-xs-10">
-                     <a href="http://blog.ikwen.com/decouvrez-webnode/" target="_blank">
-                        <button class="btn btn-block subtle-shade" style="color:#462929; background: radial-gradient(circle at 70% 30%,#ffff67 0,#fddd34 50%);">{% trans "A website" %}</button>
-                     </a>
-                 </div>
-                 <div class="col-sm-3 col-xs-offset-1  col-sm-offset-0 col-xs-10">
-                     <a href="http://blog.ikwen.com/plus-de-clients/" target="_blank">
-                        <button class="btn btn-block subtle-shade" style="color:#fff; background: radial-gradient(circle at 70% 30%,#8398df 0,#8398df 50%)">{% trans "More customers" %}</button>
-                     </a>
-                 </div>
-            {% endif %}
-            <div class="clearfix"></div>
+    <div class="masthead">
+        <div id="animatedBackground1" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_1.png' %});background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground2" class="animated2 infinite flash" style="background-image: url({% static 'website/img/bg-2_2.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground3" class="animated3 infinite fadeIn" style="background-image: url({% static 'website/img/bg-2_3.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground4" class="animated4 infinite flash" style="background-image: url({% static 'website/img/bg-2_4.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground5" class="animated4 infinite flash" style="background-image: url({% static 'website/img/bg-2_5.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground6" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_6.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-sm-7 hidden-xs resume">
+                    <div class="header-content">
+                        <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
+                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
+                        <a href="{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
+
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div id="loginbox" class="mainbox col-sm-12 loginbox">
+                        <div class="card border-primary" >
+                            <div class="card-header text-white bg-primary hidden-xs">
+                                <div class="card-title">
+                                <h1>Sign In</h1>
+                                </div>
+                                {% url 'ikwen:forgotten_password' as forgotten_password_url %}
+                                <div class="forgot-password"> <a style="color: #FFFFFF" href="{{ forgotten_password_url|ikwenize }}">Forgot password?</a> </div>
+                            </div>
+                            <div id='stage' class="card-body panel-pad">
+                                {% if login_form.errors %}
+                                <p class="failure" style="font-size: 1em; padding: 9px">{{ error_message }}</p>
+                                {% elif request.GET.msg %}
+                                <p class="failure" style="font-size: 1em; padding: 9px">{{ request.GET.msg }}</p>
+                                {% elif request.GET.successfulPasswordReset %}
+                                <p class="success" style="font-size: 1em; padding: 9px">{% trans "Your password was successfully reset, login now." %}</p>
+                                {% endif %}
+                                {% if messages %}
+                                {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
+                                {% endif %}
+                                <div id="login" class="form-wrapper">
+                                    <form id="auth" action="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" method="post">{% csrf_token %}
+                                        <div class="form-group" style="margin-top: .4em">
+                                            <label for="lg-username">{% trans "Email" %}</label>
+                                            <input id="lg-username" class="form-control input-sm username" type="email" name="username" autofocus value="{{ request.GET.username }}{{ request.GET.phone }}" /> {#Only username or phone will be output depending on what is available#}
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lg-password">{% trans "Password" %}</label>
+                                            <input id="lg-password" class="form-control input-sm password" type="password" name="password" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary btn-block btn-sm"> {% trans "Submit" %} </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-7 visible-xs resume">
+                    <div class="header-content">
+                        <h4 class="mb-4"><strong>{% trans "Join" %}</strong> {% trans " your favorite companies on" %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h4>
+                        <h4 class="mb-4"><strong>{% trans "Collect" %} </strong>  {% trans "coupons" %} <strong>{% trans "for free" %}</strong></h4>
+                        <h4 class="mb-5"><strong>{% trans "Earn" %}</strong> {% trans "an infinity of " %} <strong>{% trans "gifts" %}!</strong></h4>
+                        <a href="{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
+
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+	  
 
 
-        <div id="bottom-menu" class="hidden-xs">
-            <ul>
-                {% include 'tsunami/snippets/language_switcher.html' %}
-                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
-                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
-{#                <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>#}
-                <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
-            </ul>
-        </div>
-{#        {% include 'tsunami/snippets/language_switcher.html' %}#}
-    </div>
-    {% include 'tsunami/snippets/edge_panel.html' %}
+    <!-- Custom scripts-->
+
+
+    {% include 'website/snippets/edge_panel.html' %}
 {% endblock %}
 {% block js %}
     {{ block.super }}
+    <script src="{% static 'website/js/ikwen-website.js' %}"></script>
+	  <!-- Bootstrap core JavaScript -->
     <script type="text/javascript">
         (function() {
+
+            function testEmail() {
+                $('.errorlist.email').remove();
+                var $email = $('#email'),
+                    email = $email.val().replace(/ /g, '').toLowerCase();
+                $email.val(email);
+                if (email.isValidEmail()) return true;
+                $('<ul class="errorlist email"><li>' + "{% trans "Please, enter valid email" %}" + '</li></ul>')
+                        .insertAfter('#email');
+                $email.focus();
+                return false;
+            }
 
         })()
     </script>

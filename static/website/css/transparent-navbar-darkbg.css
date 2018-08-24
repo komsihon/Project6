@@ -1,0 +1,11 @@
+#navbar .glyphicon {color: #FFF;}
+@media only screen
+and (min-width : 768px) {
+     #navbar {background-color: transparent}
+    .navbar-brand strong, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover {color: #FFF;}
+    #navbar-search input {background: rgba(90, 125, 193, 0.48); color: #fff;}
+
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #FFF;}
+    #navbar .glyphicon.glyphicon-search {color: #fff;}
+    .btn.login { background: #FFF; color: #233682;font-weight: 600;width: 100px;}
+}

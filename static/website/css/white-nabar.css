@@ -1,0 +1,9 @@
+
+#navbar {background-color: #FFF;}
+.navbar-brand strong, .navbar-default .navbar-nav>li>a, .navbar-default .navbar-nav>li>a:hover {color: #203e96;}
+#navbar-search input {background: rgba(240, 241, 243, 0.48);color: #1f356a;}
+#navbar .glyphicon {color: #211919;}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a;}
+#navbar .glyphicon.glyphicon-search {color: #203e96;}
+.btn.login, li a.cta{background: #203e96; color: #FFF;font-weight: 600;width: 100px;}
+#navbar-search input {box-shadow: none}

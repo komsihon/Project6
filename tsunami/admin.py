@@ -2,13 +2,18 @@ from django.contrib.admin import site
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from models import ComOffer, PromoCode, ComCampaign
+from models import Bundle, PromoCode, ComCampaign, BundleType
 
 
-class ComOfferAdmin(admin.ModelAdmin):
-    list_display = ('name', 'monthly_cost', 'yearly_cost', 'max_img_count')
+class BundleAdmin(admin.ModelAdmin):
+    list_display = ('name', 'cost', 'max_img_count')
     search_fields = ('name',)
     prepopulated_fields = {"slug": ("name",)}
+
+
+class BundleTypeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_active')
+    search_fields = ('name',)
 
 
 class ComCampaignAdmin(admin.ModelAdmin):
@@ -29,6 +34,7 @@ class PromoCodeAdmin(admin.ModelAdmin):
     search_fields = ('code',)
 
 
-site.register(ComOffer, ComOfferAdmin)
+site.register(BundleType, BundleTypeAdmin)
+site.register(Bundle, BundleAdmin)
 site.register(PromoCode, PromoCodeAdmin)
 site.register(ComCampaign, ComCampaignAdmin)
