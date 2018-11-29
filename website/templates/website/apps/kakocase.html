@@ -14,12 +14,12 @@
     {{ block.super }}
     <link rel='stylesheet' href="{% static 'website/css/apps.css' %}" />
     <style type="text/css">
-        section.header {background: url("{% static 'ikwen/img/bann_kakocase_web.jpg' %}"); background-size: cover;}
-        section.main-feat {background-image:url("{% static 'ikwen/img/commarketing.jpg' %}");background-size: cover;}
-        section.address {margin-top: 0; height: 670px;}
+        section.header {background: url("{% static 'website/img/bann_kakocase_web.jpg' %}"); background-size: cover;}
+        section.main-feat {background-image:url("{% static 'website/img/commarketing.jpg' %}");background-size: cover;}
+        section.address {float: left; margin-top: 0; height: 670px;}
         section.address .cover {background-color: rgba(255, 255, 255, 0.83); color: #2f2f2f; font-weight: 400;}
-        section.address .cover h1 {color: #210707;}
-        section.address a {color: #2f2f2f;font-weight: 300;}
+        section.address .cover h1 {color: #2d2d2d;}
+        section.address a {color: #2f2f2f;}
         section.address .cover {height: 670px}
         .white-text-has-shade {text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.7)}
         #navbar .glyphicon.glyphicon-search {color: #555}
@@ -32,37 +32,54 @@
         h2 {font-size: 36px; font-weight: 600}
         div.footer, div.footer .company-name {color: #203e96;}
 
+        @media only screen
+        and (max-width : 768px){
+            .features {padding: 25px 0; margin-top: 50px}
+            .feat {margin-top: 20px}
+            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 120px;}
+            section.header h1 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px;}
+            div.cloud-deploy {bottom: inherit;margin-top: 225px; position: relative}
+            section.site.header {height: 510px; margin-top: 0;}
+            section.site {padding: 10px 0;}
+            section.site.main-feat {height: 700px;}
+            section.site .cover {height: 700px; margin-top: -11px;}
+            section.address {height: 500px}
+            section.address .cover {height: 500px}
+        }
+
         @media only screen and (max-device-width : 425px) {
-            section.header {height: 410px; margin-top: 0;}
+            section.site.header{height: 410px; margin-top: 0;}
             section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 70px;}
             section.header h1 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px; }
             .company .title {font-size: 35px }
             .pricing-list > li {margin-top: 75px}
             .lead {font-size: 22px}
             .achievements .title {}
-            section.address {height: 1000px}
-            section.address .cover {height: 1000px}
+            section.address {float: left; height: 670px}
+            section.address .cover {height: 670px}
             #bottom-menu {margin-top: 70px; position: relative}
             #bottom-menu li a {color: #fff; font-size: 22px}
-            div.cloud-deploy {bottom: inherit;margin-top: 133px; position: relative}
-            .features {padding: 25px 0; margin-top: 0}
+            div.cloud-deploy {bottom: inherit;margin-top: 75px; position: relative}
+            .features {padding: 0 0 25px; margin-top: 0}
             .feat {margin-top: 100px}
             .feat:first-child {margin-top: 0}
             section.main-feat {height: 1000px}
             section.main-feat .cover {height: 1000px}
             .contact-img {margin-top: 35px}
+            section.site {margin-top: 20px;padding: 10px 0; font-size: 20px;}
+            section.site .cover {margin-top: -11px;line-height: 40px}
+            section.site.main-feat {height: 650px}
+            section.main-feat .cover {height: 650px}
+            #navbar-search input {background: rgba(247, 241, 241, 0.22)}
         }
-        @media only screen
-        and (max-width : 768px){
-            .features {padding: 25px 0; margin-top: 50px}
-            .feat {margin-top: 20px}
-            section.header {height: 510px; margin-top: 0;}
-            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 70px;}
-            section.header h1 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px;}
-            div.cloud-deploy {bottom: inherit;margin-top: 225px; position: relative}
+         @media only screen
+        and (min-width : 768px){
+            #navbar .navbar-brand {padding-top: 5px}
         }
-
         @media only screen and (min-width : 992px) {
+        #navbar .navbar-brand {padding-top: 5px;}
+            section.address {float: left; height: 560px; width: 100%}
+            section.address .cover {height: 560px}
             #navbar-search input {background: rgba(210, 210, 210, 0.22);}
             section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 130px;}
             section.header h1 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px;}
@@ -77,13 +94,20 @@
     </style>
 {% endblock %}
 
-{% block page_content %}
 
+{% block header_brand %}
+    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
+        <img src="{% static "website/img/logo-ikwen-150.png" %}">
+    </a>
+    <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
+{% endblock %}
+
+{% block page_content %}
     <section class="header site">
             <div class="banner-title-cntr">
                 <h1 class="white-text-has-shade">{% trans "Build your customers community and sell online" %}</h1>
             </div>
-        <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="{% url app.deployment_url_name %}">{% trans "Get started" %}</a></div>
+        <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/kakocase/deployCloud/">{% trans "Get started" %}</a></div>
     </section>
     <section class="features site">
         <div class="container">
@@ -91,10 +115,11 @@
             <div class="row features">
                 <div class="feat col-sm-4">
                     <div class="col-sm-12">
+                        <h3 class="visible-xs">{% trans "Easy setup" %}</h3>
                         <img class="img-responsive" src="{% static 'website/img/easy setup-01.png' %}">
                     </div>
                     <div class="col-sm-12">
-                        <h3>{% trans "Easy setup" %}</h3>
+                        <h3 class="hidden-xs">{% trans "Easy setup" %}</h3>
                         <div>
                             <p>{% trans "You create your website by filling a simple form, then choosing the template that suits your brand and voilà ! Your business is online." %}</p>
                         </div>
@@ -102,10 +127,12 @@
                 </div>
                 <div class="feat col-sm-4">
                     <div class="col-sm-12">
-                        <img class="img-responsive" src="{% static 'website/img/mtn-OM.png' %}">
+                        <h3 class="visible-xs">{% trans "Mobile Money" %}</h3>
+                        <img class="img-responsive hidden-xs" src="{% static 'website/img/mtn-OM.png' %}">
+                        <img class="img-responsive visible-xs" src="{% static 'website/img/mtn-OM-mob.png' %}">
                     </div>
                     <div class="col-sm-12">
-                        <h3>{% trans "Mobile Money" %}</h3>
+                        <h3 class="hidden-xs">{% trans "Mobile Money" %}</h3>
                         <div>
                             <p>{% trans "Your website accepts online payment from MTN Mobile Money and Orange Money. You have detailed report of transactions on your website." %}</p>
                         </div>
@@ -113,10 +140,11 @@
                 </div>
                 <div class="feat col-sm-4">
                     <div class="col-sm-12">
+                        <h3 class="visible-xs">{% trans "Integrated Communication" %}</h3>
                         <img class="img-responsive" src="{% static 'website/img/integrated-communication.png' %}">
                     </div>
                     <div class="col-sm-12">
-                        <h3>{% trans "Integrated Communication" %}</h3>
+                        <h3 class="hidden-xs">{% trans "Integrated Communication" %}</h3>
                         <div>
                             <p>{% trans "You can advert your website on Facebook with the plan that matches your goal. Drive thousands of visitors and buyers to your website with a few clicks." %}</p>
                         </div>
@@ -137,5 +165,5 @@
         </div>
     </section>
 
-{% include 'tsunami/snippets/address_section.html' %}
+{% include 'website/snippets/address_section.html' %}
 {% endblock %}

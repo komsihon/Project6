@@ -12,7 +12,7 @@
                         <div class="cover">
                             <div class="company">
                                 <div class="logo">
-                                    <div class="ik-logo" style="background-image: url({% static 'ikwen/img/logo-ikwen-150.png' %})"></div>
+                                    <div class="ik-logo" style="background-image: url({% static 'website/img/ikwen-white-logo-150.png' %})"></div>
                                 </div>
                             </div>
 
@@ -24,16 +24,16 @@
                 <div class="divider"></div>
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="/">{% trans "Home" %}</a></li>
-                        <li><a href="{% url 'ikwen:company_profile' 'pinsview' %}"> PinsView</a></li>
+                        <li><a href="{% url 'pinsview' %}"> PinsView</a></li>
                         <li class="tsunami"><a href="{% url 'tsunami:bundles' %}"> Tsunami</a></li>
-                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'kakocase' %}"> Kakocase</a></li>
+                        <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
 {#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'webnode' %}"> Webnode</a></li>#}
 {#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'shavida' %}"> Shavida</a></li>#}
                         <div class="divider"></div>
                         <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
                         <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
                         <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
-{#                        <li><a href="http://blog.ikwen.com">{% trans 'Terms & conditions' %}</a> </li>#}
+                        <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
                         {% if agreement_page %}
 {#                            <li><a href="{% url 'flatpage' agreement_page.url %}">{{ agreement_page.title }}</a></li>#}
                         {% endif %}

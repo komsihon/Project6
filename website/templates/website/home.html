@@ -20,15 +20,21 @@
     <link href="{% static 'website/css/ikwen-website.css' %}" rel="stylesheet">
     <link href="{% static 'website/css/transparent-navbar-darkbg.css' %}" rel="stylesheet">
     <style>
+        a {color: #fff}
         .resume {margin-top: 155px}
-        footer {bottom: 12px; margin: 0; position: absolute; width: 100%}
+        footer {color: #fff; bottom: 12px; margin: 0; position: absolute; width: 100%}
+        footer strong {color: #fff}
         #navbar {z-index: 5}
         label {color: #696969;}
-        .card-header {background-color: #6f00ff; padding: 1px 5px 7px 10px;}
+        .card-header {background-color: #007eff; padding: 1px 5px 7px 10px;}
         .forgot-password {font-size: 12px;text-align: right;}
         #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0;}
         #stage {padding: 15px 30px 15px;}
         .btn.login  {display: none}
+        #bottom-menu {bottom: 15px; position: absolute; right: 35px}
+        #bottom-menu li {list-style-type: none}
+        #bottom-menu li a {color: #fff; display: block; font-size: 12px}
+
         @media (min-width: 768px){
             ul.nav.navbar-nav li .cta {display: none}
             .navbar-default {background-color: transparent;}
@@ -38,6 +44,7 @@
             #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0; width: 360px}
             {##stage {padding: 15px 30px 15px;}#}
             .register {margin-top: 40px;}
+            #bottom-menu .lang-switcher select {color: #fff}
         }
         @media only screen
         and (max-width : 768px) {
@@ -46,6 +53,7 @@
         @media only screen
         and (max-width : 425px) {
             #navbar {background: #141d5a}
+            #navbar .glyphicon {color: #fff}
             .masthead .btn-xl.register {margin-top: 30px}
             .masthead .header-content {margin-bottom: 20px}
             .edge-panel-left {background: #fff; height: 100%; top: 0; width: 85%}
@@ -56,7 +64,7 @@
             #side-nav .panel-top .cover {background: rgba(0, 0, 0, 0.52);height: 200px;padding: 10px; width: 100%;}
             .lang-switcher {float: right;margin: 30px 20px;}
             .ik-logo {background-size: 100% auto;background-repeat: no-repeat;height: 80px;width: 190px;}
-
+            .masthead .header-content h2 {font-size: 24px;}
             .divider {height: 1px;margin: 9px 0;overflow: hidden;background-color: #e5e5e5;width: 100%;}
             #side-nav .nav-stacked li a {font-weight: 700;color: #676767;font-size: 14px;padding: 10px 25px;}
             .lang-switcher select {background: transparent;border: none;color: #FFF;}
@@ -88,10 +96,14 @@
             <div class="row h-100">
                 <div class="col-sm-7 hidden-xs resume">
                     <div class="header-content">
-                        <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        {% if request.GET.project_name_slug %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <strong><a href="{% url 'home' %}">{{ project_name }}</a></strong></h2>
+                        {% else %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        {% endif %}
                         <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
                         <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
-                        <a href="{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
+                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
 
                     </div>
                 </div>
@@ -139,14 +151,27 @@
 
                 <div class="col-sm-7 visible-xs resume">
                     <div class="header-content">
-                        <h4 class="mb-4"><strong>{% trans "Join" %}</strong> {% trans " your favorite companies on" %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h4>
-                        <h4 class="mb-4"><strong>{% trans "Collect" %} </strong>  {% trans "coupons" %} <strong>{% trans "for free" %}</strong></h4>
-                        <h4 class="mb-5"><strong>{% trans "Earn" %}</strong> {% trans "an infinity of " %} <strong>{% trans "gifts" %}!</strong></h4>
-                        <a href="{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
-
+                        {% if request.GET.project_name_slug %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <strong><a href="{% url 'home' %}">{{ project_name }}</a></strong></h2>
+                        {% else %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        {% endif %}
+                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
+                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
+                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="bottom-menu" class="hidden-xs">
+            <ul>
+                {% include 'tsunami/snippets/language_switcher.html' %}
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+               <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="{% url 'about' %}">{% trans 'About' %}</a> </li>
+            </ul>
         </div>
     </div>
 	  

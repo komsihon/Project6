@@ -13,6 +13,8 @@ from ikwen.core.fields import MultiImageField
 from ikwen.core.models import Model
 from django import forms
 
+from ikwen.rewarding.models import CumulatedCoupon
+
 
 class StringListField(forms.CharField):
     def prepare_value(self, value):
@@ -146,4 +148,9 @@ class PromoCode(Model):
         var['start_on'] = naturaltime(self.start_on)
         var['end_on'] = naturaltime(self.end_on)
         return var
+
+
+class CloudCashIn(Model):
+    member = models.ForeignKey(Member, blank=True)
+    amount = models.IntegerField(help_text=_("Sales Cost"))
 
