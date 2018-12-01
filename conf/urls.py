@@ -30,7 +30,7 @@ urlpatterns = patterns(
     # url(r'^shavida/', include('ikwen_shavida.shavida.urls', namespace='shavida')),
     url(r'^webnode/', include('ikwen_webnode.webnode.urls', namespace='webnode')),
     url(r'^rewarding/', include('ikwen.rewarding.urls', namespace='rewarding')),
-    url(r'^cci/', include('ikwen_kakocase.cci.urls', namespace='cci')),
+    # url(r'^cci/', include('ikwen_kakocase.cci.urls', namespace='cci')),
     url(r'^', include('ikwen.core.urls', namespace='ikwen')),
     # url(r'^page/(?P<url>[-\w]+)/$', FlatPageView.as_view(), name='flatpage'),
 )
