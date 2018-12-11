@@ -2,6 +2,8 @@ a { text-decoration: none !important }
 
 .heading-title {margin: 10vh 0;}
 
+.features-separator { width: 80%; }
+
 .pricingTable{
     background: #fff;
 	border: 0 solid #FFFFFF;
@@ -101,8 +103,12 @@ a { text-decoration: none !important }
 .pricingTable .subtitle{
     color: #82919f;
     display: block;
-    font-size: 12px;
+    font-size: 15px;
 	margin-top: -20px !important;
+    padding-left: 3vw !important;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    text-align: left !important;
 }
 
 
@@ -185,6 +191,8 @@ a { text-decoration: none !important }
 .pricingTable.purple .pricingTable-signup:before{ border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #b14468; }
 
 .pricingTable.purple .pricingTable-signup:after{ border-color: rgba(0, 0, 0, 0) #b14468 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0); }
+
+.navbar-left { display: none !important; }
 
 @media only screen and (max-width: 990px){
     .pricingTable{ margin-bottom: 30px; }

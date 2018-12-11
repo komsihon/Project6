@@ -265,7 +265,7 @@
                 $('#auth .spinner').css('visibility', 'visible');
                 $.ajax({
                     url: '{% url 'ikwen:sign_in' %}',
-                    data: {email: email},
+                    data: {username: username},
                     error: function(req, status, error) {
                         $('#auth .spinner').css('visibility', 'hidden');
                         $('#content .failure').show().html("{% trans "Oops! An error occurred. Check your internet." %}");
