@@ -4,14 +4,13 @@ html { height: 100%;}
 
 body{ background: url(../img/com_bg_deploy.png) no-repeat center center fixed;
 		-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-		background-size: cover; display: flex; flex-direction: column; height: 100vh }
-button {min-width: 200px }
+		background-size: cover;}
+button { min-width: 200px }
 
 .btn-outline-primary { color: #007bff; background-color: transparent; background-image: none; border-color: #007bff; }
 .btn-outline-primary:hover { color: #fff; background-color: #007bff; border-color: #007bff; }
 .btn-outline-primary:focus, .btn-outline-primary.focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
 
-.container { flex: 10 auto; padding: 20px }
 
 .container.desktop-landscape{ padding-top: 2vh; transform: translateY(10%)}
 
@@ -41,7 +40,7 @@ button {min-width: 200px }
 @media only screen and (max-width: 900px) and (orientation: landscape) {
 	button {height: 10vh !important; min-width: 200px }
 	
-	.container{ padding-top: 2vh !important; margin: 0 !important; transform: translateX(55%) !important}
+	.container{ padding-top: 2vh !important; margin: 0 !important; transform: translateX(100%) !important}
 	
 	.form-control-custom { height: 10vh !important; }
 	

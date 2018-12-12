@@ -12,8 +12,8 @@
 {% endblock %}
 
 {% block content %}
-    <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center;
-            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 100vh; ">
+    <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center ;
+            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 110vh; background-repeat: no-repeat">
         <div class="container" style="font-family: Lato; margin-bottom: 10vh;">
             <div class="row text-center">
                 <h1 class="heading-title ">Tsunami Pricing Table</h1>
@@ -26,6 +26,7 @@
                         <div class="pricingTable-header">
                             <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                             <h3 class="title">{{ bundle.name }}</h3>
+                            <span class="billing-cycle">{% trans 'Per quarter' %}</span>
                         </div>
                         <ul class="pricing-content">
                         <hr class="features-separator">
@@ -48,6 +49,7 @@
                         <div class="pricingTable-header">
                             <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                             <h3 class="title">{{ bundle.name }}</h3>
+                            <span class="billing-cycle">{% trans 'Per quarter' %}</span>
                         </div>
                         <ul class="pricing-content">
                         <hr class="features-separator">
@@ -68,8 +70,9 @@
                 {% else %}
                     <div class="pricingTable purple subtle-shade">
                         <div class="pricingTable-header">
-                            <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost }}</span>
+                            <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                             <h3 class="title">{{ bundle.name }}</h3>
+                            <span class="billing-cycle">{% trans 'Per quarter' %}</span>
                         </div>
                         <ul class="pricing-content">
                         <hr class="features-separator">
@@ -90,7 +93,7 @@
                 {% endif %}
                 </div>
             {% endfor %}
-        </div>
+            </div>
         </div>
 {% endblock %}
 

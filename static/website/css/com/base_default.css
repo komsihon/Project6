@@ -3,18 +3,23 @@
     Created on : August 04, 2016, 13:40
     Author     : Kom Sihon & W1773ND (wilfriedwillend@gmail.com)
     Description:
-        Additional basic display rules for Ikwen apps [Commercial version]
+        Additional basic display rules for Ikwen apps [Commercial default version]
 */
 
 @import url('https://fonts.googleapis.com/css?family=Lato:300|PT+Sans:400,700');
 
+
+html { height: 100%; }
+body { background-color: #f8f9fa; color: #464646; display: flex; flex-direction: column; height: 100vh;}
 a {text-decoration: none !important;}
-body { background-color: #f8f9fa; color: #464646;}
+
+
 .working {cursor: wait}
 .success {background: #B6F1B6; border: 1px solid; border-radius: 3px; color: #039B03}
 .msg-tag.info {background: #dde9f1;border: 1px solid;border-radius: 3px;color: #1d2e9b}
 .failure, .floating-notice.error, .msg-tag.error {background: #FFB6C1; border: 1px solid; border-radius: 3px; color:  #F00}
 .clear {clear: both}
+.container { flex: 1 0 auto; }
 .text-muted {color: #888}
 .help {color: #888; font-size: 14px}
 .arrow {color: #bbb; margin: auto; width: 40px}
@@ -408,5 +413,5 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .swiper-button-prev {left: 0 !important;border-top-right-radius: 3px;border-bottom-right-radius: 3px;}
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {pointer-events: visible !important;}
 
-.footer { background-color: #233682; padding: 3px 0; }
+.footer { background-color: #233682; flex-shrink: 0; padding: 3px 0; }
 .footer-copyright { color: #ffffff}
