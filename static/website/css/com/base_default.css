@@ -192,9 +192,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     z-index: 1001;
 }
 #navbar-search .hide-search {color: #bbb;float: left;font-size: 20px;margin-top: 6px;}
-#navbar-search input {background: none;border: none;float: left !important;width: 70% !important;}
+#navbar-search input {background: none;border: none;float: left !important; width: 88% !important;}
 .navbar-brand { display: none; color: #217dbb !important; }
-.navbar-nav>li>a {color: #217dbb !important; font-size: 1.5vw;}
+.navbar-nav>li>a {color: #217dbb !important; /*font-size: 1.5vw;*/}
 
 #navbar-results {clear: both}
 #navbar-results .stage {max-height: 300px; overflow: auto}
@@ -459,8 +459,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 /* Portrait */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
     /* Header */
-    .navbar-nav>li>a {font-size: 3.5vw;}
-    #navbar .glyphicon {font-size: 3vw;}
+    .navbar-nav>li>a {font-size: 2.5vw;}
+    #navbar .glyphicon {font-size: 2vw;}
+    #navbar-search input { font-size: 2.5vw; width: 100% !important;}
 
 
     /* Footer */
@@ -475,8 +476,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
     /* Header */
     #navbar .glyphicon {font-size: 2vw;}
+    #navbar-search input { font-size: 2vw; width: 100% !important;}
 
-    .navbar-nav>li>a {font-size: 2.5vw;}
+    .navbar-nav>li>a {font-size: 2vw;}
 
     /* Footer */
     div.mobile-adjust > h5 { font-size: 2vw !important; }
@@ -492,8 +494,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 /* Portrait */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : portrait) {
     /* Header */
-    .navbar-nav>li>a { font-size: 4vw; }
+    .navbar-nav>li>a { font-size: 3.5vw; }
     #navbar .glyphicon {font-size: 3vw;}
+    #navbar-search input { font-size: 2.5vw; width: 100% !important;}
 
     /* Footer */
     div.mobile-adjust > h5 { font-size: 3vw !important; }
@@ -506,6 +509,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 /* landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : landscape) {
     /* Header */
+
 
 
     /* Footer */
