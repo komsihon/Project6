@@ -16,6 +16,9 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 .btn-outline-secondary:hover { color: #000000; background-color: #ffffff; border-color: #ffffff; }
 .btn-outline-secondary:focus, .btn-outline-secondary.focus { box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
 
+
+.container-fluid { margin-left: 0 !important; margin-right: 0 !important;}
+
 .img-features{ max-width: 300px }
 
 .navbar-left { display: none !important; }
@@ -70,6 +73,8 @@ margin-bottom: 30px;
 
 	.bill-link { font-size: 4vw !important; }
 
+	.contact-address { font-size: 4vw !important; }
+
 	div.mobile-adjust{ padding-top: 8vh !important; }
 	div.fisrt { padding-top: 0 !important; }
 	
@@ -82,11 +87,12 @@ margin-bottom: 30px;
 	
 	.img-features {display:  none !important;}
 
+	.media-body { padding-bottom: 8vh !important; }
 	.media-object { display: none !important; }
 	
 	.picto-features { text-align: center !important; }
 
-	.section-header { background-color: #233682; color: #ffffff; padding-bottom: 2vh; padding-top: 2vh !important; text-align: center !important; }
+	.section-header { background-color: #233682; color: #ffffff; padding-bottom: 2vh; padding-top: 5vh !important; text-align: center !important; }
 	.section-features-text{ padding-top: 0 !important; }
 	
 }
@@ -94,19 +100,25 @@ margin-bottom: 30px;
 /* Landscape optimisation */
 @media only screen and (max-width: 900px) and (orientation: landscape) {
 	
-	div.mobile-adjust{ padding-top: 20vh !important; margin: 0 !important; }
+	div.mobile-adjust{ padding-top: 10vh !important; margin: 0 !important; }
+
+	.contact-address { font-size: 3vw !important; line-height: 8vh; }
 	
 	h1.mobile-adjust { font-size: 5vw !important; padding-bottom: 2vh !important; }
 	h1.media-heading { padding-top: 2vh !important; text-align: left; }
 	h2.mobile-adjust { font-size: 3.5vw !important; line-height: 12vh; padding-bottom: 2vh !important; }
-	h4.mobile-adjust { font-size: 2.5vw !important; line-height: 4.5vh; text-align: left; }
+	h4.mobile-adjust { font-size: 2.5vw !important; line-height: 5.5vh; text-align: left; }
 
 	p.mobile-adjust { font-size: 2.5vw !important; line-height: 6vh !important; padding-bottom: 1.5vh !important; margin-bottom: 2vh !important; }
+	p.bill-link { font-size: 2vw !important; text-align: left !important; }
 	
 	.img-features {display:  none !important;}
+	img.media-object { padding-top: 9vh; }
+
+	.media-body { text-align: left !important; padding-bottom: 10vh !important; }
 	
 	.section-banniere-top { margin-top: 10vh !important; }
-	.section-header { background-color: #233682; color: #ffffff; padding-bottom: 2vh; padding-top: 2vh !important; text-align: center !important; }
+	.section-header { background-color: #233682; color: #ffffff; padding-bottom: 2vh; padding-top: 15vh !important; text-align: center !important; }
 	.section-features-text{ padding-top: 0 !important; }
 }
 
@@ -116,7 +128,7 @@ margin-bottom: 30px;
 
 	.anchor { font-size: 8vw; padding-top: 6vh; }
 	
-	button.mobile-adjust { font-size: 3vw !important; height: 5vh !important; width: 32vw !important;}
+	a.btn.mobile-adjust { font-size: 3vw !important; height: 5vh !important; width: 32vw !important;}
 	
 	.discover-link { font-size: 2.2vw !important; }
 	
@@ -124,12 +136,20 @@ margin-bottom: 30px;
 	
 	h1.mobile-adjust { font-size: 5.5vw !important; padding-bottom: 2vh !important; }
 	h2.mobile-adjust { font-size: 4vw !important; line-height: 3vh; padding-bottom: 2vh !important; }
+	h2.media-heading { font-size: 4vw !important; }
+	h4.mobile-adjust { font-size: 3vw !important; line-height: 3.5vh; text-align: left; }
 
 	p.mobile-adjust { font-size: 2.5vw !important; line-height: 3vh !important; padding-bottom: 1.5vh !important; margin-bottom: 2vh !important; }
+	p.bill-link { font-size: 2.5vw !important; line-height: 3vh !important;}
+
+	img.media-object { padding-top: 10vh; max-width: 200px !important; }
 	
 	#section-header-iPad-view { display: block !important}  
-	.img-features { padding-top: 4vh !important; }
+	.img-features { max-width: 30vh; padding-top: 4vh !important; }
+
+	.media-body { text-align: left !important; padding-bottom: 10vh !important; }
 	
+	.section-banniere { height: 314px !important; }
 	.section-banniere > div { padding-top: 0 !important; }
 	.section-banniere > div > h1 { font-size: 5vw !important; }
 	
@@ -145,20 +165,24 @@ margin-bottom: 30px;
 
 	.anchor { font-size: 6vw; padding-top: 6vh; }
 	
-	button.mobile-adjust { font-size: 2vw !important; height: 10vh !important; width: 25vw !important;}
+	a.btn.mobile-adjust { font-size: 2.5vw !important; height: 8vh !important; width: 25vw !important;}
 	
 	div.mobile-adjust{ padding-top: 2vh !important; }
 	.discover-link { font-size: 2vw !important; }
 	
 	h1.mobile-adjust { font-size: 4.5vw !important; padding-bottom: 2vh !important; }
 	h2.mobile-adjust { font-size: 4vw !important; line-height: 6vh; padding-bottom: 2vh !important; }
+	h4.mobile-adjust { font-size: 2.5vw !important; line-height: 4vh; padding-bottom: 1vh !important; }
 
 	p.mobile-adjust { font-size: 2.5vw !important; line-height: 4vh !important; padding-bottom: 1.5vh !important; margin-bottom: 2vh !important; }
-	  
-	.img-features {padding-top: 10vh !important; }
+	p.bill-link { font-size: 2vw !important;}
+
+	.img-features { max-width: 45vh; padding-top: 3vh !important; }
+	img.media-object { padding-top: 4vh; max-width: 150px !important; }
 	
 	.section-banniere-top > h2 { font-size: 8vw !important; }
 	.section-features-text{ padding-top: 0 !important; }
+	.section-header { padding-top: 20vh !important; }
 }
 
 
@@ -180,7 +204,8 @@ margin-bottom: 30px;
 	
 	#section-header-iPad-view { display: block !important}  
 	.img-features { display: none !important}
-	
+
+	.section-banniere { height: 259px !important; }
 	.section-banniere > div { padding-top: 0 !important; }
 	.section-banniere > div > h1 { font-size: 5vw !important; }
 	
@@ -189,6 +214,12 @@ margin-bottom: 30px;
 	#section-banniere-top-iPad-view > div { padding-top: 5vh !important; }
 	#section-banniere-top-iPad-view > div > h1 { font-size: 5vw !important; }
 	.section-features-text{ padding-top: 0 !important; }
+}
+/* landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+	.section-banniere { height: 260px !important; }
+
 }
 
 

@@ -39,6 +39,10 @@ class Maintenance(TemplateView):
     template_name = 'tsunami/maintenance.html'
 
 
+class Success(TemplateView):
+    template_name = 'tsunami/successful_deployment.html'
+
+
 class SuccessfulDeployment(TemplateView):
     template_name = 'tsunami/successful_deployment.html'
 
@@ -69,17 +73,6 @@ class Go(VerifiedEmailTemplateView):
         context['billing_plan'] = billing_plan_list[0]
         context['business_category_list'] = BusinessCategory.objects.using(UMBRELLA).all()
         return context
-
-    def get(self, request, *args, **kwargs):
-        member = request.user
-        uri = request.META['REQUEST_URI']
-        next_url = reverse('ikwen:sign_in') + '?next=' + urlquote(uri)
-        if member.is_anonymous():
-            return HttpResponseRedirect(next_url)
-        if not getattr(settings, 'IS_IKWEN', False):
-            if not member.has_perm('accesscontrol.sudo'):
-                return HttpResponseForbidden("You are not allowed here. Please login as an administrator.")
-        return super(Go, self).get(request, *args, **kwargs)
 
     @method_decorator(csrf_protect)
     @method_decorator(never_cache)

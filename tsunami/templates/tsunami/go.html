@@ -37,9 +37,8 @@
                     <label for="business_category_id" class="control-label mobile-adjust">Type de Business</label>
                     <select class="form-control form-control-custom" id="business_category_id" name="business_category_id">
                         {% for business_category in business_category_list %}
-                            <option value="{{ business_category.id }}">{{ business_category }}</option>
+                            <option value="{{ business_category.id }}">{% trans business_category.name %}</option>
                         {% endfor %}
-                        <option value="OTHER">Autres...</option>
                     </select>
                 </div>
                 <div class="form-group"> <!-- Submit Button -->
@@ -81,9 +80,8 @@
                     <label for="business_category_id" class="control-label mobile-adjust">Type de Business</label>
                     <select class="form-control form-control-custom" id="business_category" name="business_category_id">
                         {% for business_category in business_category_list %}
-                            <option value="{{ business_category.id }}">{{ business_category }}</option>
+                            <option value="{{ business_category.id }}">{% trans business_category.name %}</option>
                         {% endfor %}
-                        <option value="OTHER">Autres...</option>
                     </select>
                 </div>
 
