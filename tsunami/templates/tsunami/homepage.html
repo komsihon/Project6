@@ -9,187 +9,121 @@
     {{ block.super }}
     <!-- Custom css -->
     <link rel="stylesheet" type="text/css" href="{% static 'tsunami/css/tsunami_homepage.css' %}">
-    
-    <!-- Inline css -->
-    <style>
-        .section-banniere { background: url('{% static 'tsunami/img/Tsunami_banniere.jpg' %}') center center;
-                            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-                            background-size: cover; color: white; height: 250px; margin-top: 5vh; }
-        .section-banniere-top { background: url('{% static 'tsunami/img/Tsunami_banniere_top.jpg' %}') center center;
-                            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-                            background-size: cover; color: white; height: 300px; margin-top: 5vh; }
-        .section-features-text { padding-top: 10vh; }
-        
-        .section-header{ background: url('{% static 'tsunami/img/Tsunami_entete.png' %}') center center;
-                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-                        background-size: cover; height: 100vh; }
-
-    /* Media querry */
-    /* Extra small devices (phones, 600px and down) */
-    @media only screen and (max-width: 600px) {
-        .section-header{ background: url('{% static 'tsunami/img/Tsunami_entete_mobile.png' %}') center center;
-                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-                        background-size: cover; height: 100vh; padding-top: 2.5vh !important;}
-        }
-
-    /* Landscape optimisation */
-    @media only screen and (max-width: 900px) and (orientation: landscape) {
-        .section-header{ background: url('{% static 'tsunami/img/Tsunami_entete_mobile.png' %}') center center;
-                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-                        background-size: cover; height: 100vh; padding-top: 15vh !important;;}
-    }
-
-
-    /* iPad pro optimisation */
-    /* Portrait */
-    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-        .section-header{ background: url('{% static 'tsunami/img/Tsunami_entete_iPad_pro.png' %}') center center;
-                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
-                        height: 100vh;}
-    }
-
-    /* Landscape */
-    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
-        .section-header{ background: url('{% static 'tsunami/img/Tsunami_entete_iPad_pro.png' %}') center center;
-                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
-                        height: 100vh;}
-    }
-
-    /* iPad optimisation : Portrait */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : portrait) {
-        .section-header{ background: url('{% static 'tsunami/img/Tsunami_entete_iPad_pro.png' %}') center center;
-                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-                        background-size: cover; height: 100vh;}
-    }
-    </style>
 {% endblock %}
 
-<!--{% block header_brand %}
+{% comment %}{% block header_brand %}
     <a class="navbar-brand hidden-xs" href="{{ service.url }}">
         <img src="{% static "tsunami/img/logo-ikwen-150.png" %}"/>
     </a>
     <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
-{% endblock %}-->
+{% endblock %}{% endcomment %}
 
 {% block content %}
-    <body style="background-color: #f8f9fa">
-		<div id="section-header-general-view" class="container-fluid section-header" style="padding-top: 8vh;">
-			<div class="row">
-				<div class="col-md-6 col-md-offset-3 text-center mobile-adjust" style="padding-top: 20vh">
-					<img style="max-width: 120px" alt="logo_ikwen_TSUNAMI" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}"/>
-				  <h1 class="mobile-adjust" style="font-size: 3.5vw;">{% trans 'Reach more customers and sell all your stocks with TSUNAMI' %}</h1>
-					<p class="mobile-adjust" style="">
-						{% trans 'TSUNAMI builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
-					</p>
-					<a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-primary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy TSUNAMI' %}I</button></a>
-					<div class="anchor">
-						<a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div id="section-header-iPad-view" class="container-fluid section-header" style="display: none;">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center mobile-adjust" style="padding-top: 20vh">
-					<img style="max-width: 120px" alt="logo_ikwen_TSUNAMI" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}"/>
-				  <h1 class="mobile-adjust" style="font-size: 3.5vw;">{% trans 'Reach more customers and sell all your stocks with TSUNAMI' %}</h1>
-					<p class="mobile-adjust" style="">
-						{% trans 'TSUNAMI builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
-					</p>
-					<button class="btn btn-outline-primary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy TSUNAMI' %}I</button>
-					<div class="anchor">
-						<a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
-					</div>
-				</div>models
-			</div>
-		</div>
-		<div id="banniere-top" class="container-fluid">
-			<div class="row section-banniere-top" style="margin-top: 0;">
-				<div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 7vh">
-				  <h1>{% trans 'Go digital with IKWEN TSUNAMI' %} </h1>
-					<a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;"><span style="">{% trans 'Deploy TSUNAMI' %}I</span></button></a>
-				</div>
-			</div>
-			<div id="section-banniere-top-iPad-view" class="row section-banniere-top" style="display: none">
-				<div class="col-md-8 col-md-offset-2 text-center">
-				  <h1>Passez au digital avec ikwen Tsunami </h1>
-					<a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;"><span style="">{% trans 'Deploy TSUNAMI' %}I</span></button></a>
-				</div>
-			</div>
-		</div>
+    <div id="section-header-general-view" class="container-fluid section-header" style="padding-top: 8vh;">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center mobile-adjust" style="padding-top: 20vh">
+                <img style="max-width: 120px" alt="logo_ikwen_TSUNAMI" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}"/>
+              <h1 class="mobile-adjust" style="font-size: 3.5vw;">{% trans 'Reach more customers and sell all your stocks with TSUNAMI' %}</h1>
+                <p class="mobile-adjust" style="">
+                    {% trans 'TSUNAMI builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
+                </p>
+                <a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-primary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy TSUNAMI' %}I</button></a>
+                <div class="anchor">
+                    <a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section-header-iPad-view" class="container-fluid section-header" style="display: none;">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center mobile-adjust" style="padding-top: 20vh">
+                <img style="max-width: 120px" alt="logo_ikwen_TSUNAMI" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}"/>
+              <h1 class="mobile-adjust" style="font-size: 3.5vw;">{% trans 'Reach more customers and sell all your stocks with TSUNAMI' %}</h1>
+                <p class="mobile-adjust" style="">
+                    {% trans 'TSUNAMI builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
+                </p>
+                <button class="btn btn-outline-primary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy TSUNAMI' %}I</button>
+                <div class="anchor">
+                    <a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="banniere-top" class="container-fluid">
+        <div class="row section-banniere-top" style="margin-top: 0;">
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 7vh">
+              <h1>{% trans 'Go digital with IKWEN TSUNAMI' %} </h1>
+                <a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;"><span style="">{% trans 'Deploy TSUNAMI' %}I</span></button></a>
+            </div>
+        </div>
+        <div id="section-banniere-top-iPad-view" class="row section-banniere-top" style="display: none">
+            <div class="col-md-8 col-md-offset-2 text-center">
+              <h1>Passez au digital avec ikwen Tsunami </h1>
+                <a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;"><span style="">{% trans 'Deploy TSUNAMI' %}I</span></button></a>
+            </div>
+        </div>
+    </div>
 
-		<div class="container">
-			<div class="row custom_row"  style="padding-top: 5vh">
-				<div class="col-md-6 section-features-text second-on-mobile">
-					<img class="picto-features" alt="picto_better_customer_compréhension" src="{% static 'tsunami/img/best_buddy_list_exploitation_picto.png' %}" />
-					<h2 class="mobile-adjust" style="font-size: 3vw">{% trans 'Efficient use of the customer directory' %}</h2>
-					<p class="mobile-adjust">
-						{% trans 'You will now keep the contacts of your customers in a modern and useful way. Tsunami will be able to use this directory on his own to bring you even more customers and encourage them into repeated purchases. No more old paper phone books that get dusty at the bottom of the drawer.' %}
-					</p>
-					<a href="http://blog.ikwen.com/notion-dinbound-marketing-marketing-entrant/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Cloud Customer Manager' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
-				</div>
-				<div class="col-md-6 col-sm-6 first-on-mobile">
-					<img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/best_buddy_list_exploitation.png' %}" />
-				</div>
-			</div>
-			<div class="row custom_row">
-				<div class="col-md-6 col-sm-6 first-on-mobile">
-					<img class="img-features" alt="img_client_retention" src="{% static 'tsunami/img/client_retention.png' %}" />
-				</div>
-				<div class="col-md-6 section-features-text second-on-mobile" style="padding-top: 15vh">
-					<img class="picto-features" alt="picto_client_retention" src="{% static 'tsunami/img/client_retention_picto.png' %}" />
-					<h2 class="mobile-adjust">{% trans 'Customer retention made easy' %}</h2>
-					<p class="mobile-adjust">
-						{% trans 'Tsunami has a powerful marketing tool that can strategically offers rewards to all your prospects without you spending a single penny.' %}
-					</p>
-					<a href="http://blog.ikwen.com/continuous-rewarding-a-propos-de/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Continuous Rewarding' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
-				</div>
-			</div>
-			<div class="row custom_row">
-				<div class="col-md-6 section-features-text second-on-mobile">
-					<img class="picto-features" alt="picto_sold_everywhere" src="{% static 'tsunami/img/sold_everywhere_picto.png' %}" />
-					<h2 class="mobile-adjust">{% trans 'Sell everywhere, sell everytime... Sell online' %}</h2>
-					<p class="mobile-adjust">
-						{% trans 'Tsunami ensures that you no longer lose any opportunity to sell, by making your products directly available online, on all platforms, 24/7. Yes, you have your own e-commerce web/mobile site. Customers can order immediately after receiving your messages and pay online using MTN Mobile Money and Orange Money.' %}
-					</p>
-					<a href="http://blog.ikwen.com/kakocase-le-e-commerce-par-ikwen/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover KAKOCASE' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
-				</div>
-				<div class="col-md-6 col-sm-6 first-on-mobile">
-					<img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/sold_everywhere.png' %}" />
-				</div>
-			</div>
-			<div class="row custom_row">
-				<div class="col-md-6 first-on-mobile">
-					<img class="img-features" alt="img_smartphone_accessibility" src="{% static 'tsunami/img/smartphone-accessibility.png' %}" />
-				</div>
-				<div class="col-md-6 section-features-text second-on-mobile">
-					<img class="picto-features" alt="picto_smartphone_accessibility" src="{% static 'tsunami/img/smartphone-accessibility_picto.png' %}" />
-					<h2 class="mobile-adjust">{% trans 'Be on your customers Smartphones' %} </h2>
-					<p class="mobile-adjust">
-						{% trans 'Stay close to your customers with your icon installed in their smartphones. They can easily access you online store just by pressing on his home screen. TSUNAMI redefines the customer contact for you.' %}
-					</p>
+    <div class="container">
+        <div class="row custom_row"  style="padding-top: 5vh">
+            <div class="col-md-6 section-features-text second-on-mobile">
+                <img class="picto-features" alt="picto_better_customer_compréhension" src="{% static 'tsunami/img/best_buddy_list_exploitation_picto.png' %}" />
+                <h2 class="mobile-adjust" style="font-size: 3vw">{% trans 'Efficient use of the customer directory' %}</h2>
+                <p class="mobile-adjust">
+                    {% trans 'You will now keep the contacts of your customers in a modern and useful way. Tsunami will be able to use this directory on his own to bring you even more customers and encourage them into repeated purchases. No more old paper phone books that get dusty at the bottom of the drawer.' %}
+                </p>
+                <a href="http://blog.ikwen.com/notion-dinbound-marketing-marketing-entrant/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Cloud Customer Manager' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
+            </div>
+            <div class="col-md-6 col-sm-6 first-on-mobile">
+                <img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/best_buddy_list_exploitation.png' %}" />
+            </div>
+        </div>
+        <div class="row custom_row">
+            <div class="col-md-6 col-sm-6 first-on-mobile">
+                <img class="img-features" alt="img_client_retention" src="{% static 'tsunami/img/client_retention.png' %}" />
+            </div>
+            <div class="col-md-6 section-features-text second-on-mobile" style="padding-top: 15vh">
+                <img class="picto-features" alt="picto_client_retention" src="{% static 'tsunami/img/client_retention_picto.png' %}" />
+                <h2 class="mobile-adjust">{% trans 'Customer retention made easy' %}</h2>
+                <p class="mobile-adjust">
+                    {% trans 'Tsunami has a powerful marketing tool that can strategically offers rewards to all your prospects without you spending a single penny.' %}
+                </p>
+                <a href="http://blog.ikwen.com/continuous-rewarding-a-propos-de/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Continuous Rewarding' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
+            </div>
+        </div>
+        <div class="row custom_row">
+            <div class="col-md-6 section-features-text second-on-mobile">
+                <img class="picto-features" alt="picto_sold_everywhere" src="{% static 'tsunami/img/sold_everywhere_picto.png' %}" />
+                <h2 class="mobile-adjust">{% trans 'Sell everywhere, sell everytime... Sell online' %}</h2>
+                <p class="mobile-adjust">
+                    {% trans 'Tsunami ensures that you no longer lose any opportunity to sell, by making your products directly available online, on all platforms, 24/7. Yes, you have your own e-commerce web/mobile site. Customers can order immediately after receiving your messages and pay online using MTN Mobile Money and Orange Money.' %}
+                </p>
+                <a href="http://blog.ikwen.com/kakocase-le-e-commerce-par-ikwen/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover KAKOCASE' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
+            </div>
+            <div class="col-md-6 col-sm-6 first-on-mobile">
+                <img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/sold_everywhere.png' %}" />
+            </div>
+        </div>
+        <div class="row custom_row">
+            <div class="col-md-6 first-on-mobile">
+                <img class="img-features" alt="img_smartphone_accessibility" src="{% static 'tsunami/img/smartphone-accessibility.png' %}" />
+            </div>
+            <div class="col-md-6 section-features-text second-on-mobile">
+                <img class="picto-features" alt="picto_smartphone_accessibility" src="{% static 'tsunami/img/smartphone-accessibility_picto.png' %}" />
+                <h2 class="mobile-adjust">{% trans 'Be on your customers Smartphones' %} </h2>
+                <p class="mobile-adjust">
+                    {% trans 'Stay close to your customers with your icon installed in their smartphones. They can easily access you online store just by pressing on his home screen. TSUNAMI redefines the customer contact for you.' %}
+                </p>
 {#					<a href="#" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover the Launchers' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>#}
-				</div>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="row section-banniere">
-				<div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 3.5vh">
-				  <h1>{% trans 'Go digital with IKWEN TSUNAMI' %}</h1>
-					<a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;">{% trans 'Deploy TSUNAMI' %}I</button></a>
-				</div>
-			</div>
-		</div>
-		<script>
-			(function() {
-				$('.js-scrollTo').on('click', function() {
-					var page = $(this).attr('href');
-					var speed = 750;
-					$('html, body').animate( { scrollTop: $(page).offset().top }, speed );
-					return false;
-				});
-			})();
-
-		</script>
-	</body>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row section-banniere">
+            <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 3.5vh">
+              <h1>{% trans 'Go digital with IKWEN TSUNAMI' %}</h1>
+                <a href="{% url 'tsunami:bundles' %}"><button class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;">{% trans 'Deploy TSUNAMI' %}I</button></a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,36 +1,27 @@
 /* Author : w1773ND (wilfriedwillend@gmail.com) */
 
-html { height: 100%;}
 
 body{ background: url(../img/com_bg_deploy.png) no-repeat center center fixed;
 		-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
 		background-size: cover;}
 button { min-width: 200px }
 
-.btn-outline-primary { color: #007bff; background-color: transparent; background-image: none; border-color: #007bff; }
-.btn-outline-primary:hover { color: #fff; background-color: #007bff; border-color: #007bff; }
-.btn-outline-primary:focus, .btn-outline-primary.focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
 
-
-.container.desktop-landscape{ padding-top: 2vh; transform: translateY(10%)}
+.container.desktop-landscape{ padding-top: 15vh;}
 
 .error-report { color: #e74c3c }
-
-/*.form-control-custom { height: 6vh }*/
-.footer { flex-shrink: 0; padding: 20px; width: 100%}
-/*.footer { background-color: #233682; bottom: 0; left: 0; padding: 3px 0; position: fixed; width: 100% }*/
 
 .navbar-left { display: none !important; }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) and (orientation: portrait) {
-	body{ background: url(../img/com_bg_deploy_mobil.png) no-repeat center center fixed;
-			-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-			background-size: cover; }
-	
+	body { background: #f8f9fa; }
+
 	.container.desktop-landscape{ display: none !important;}
 
-	.container.mobile-portrait{ display: block !important; margin: 5vh 0 0 !important;}
+	.container.mobile-portrait{ display: block !important; margin: 5vh 0 0 !important; padding-top: 5vh !important;}
+
+	label.mobile-adjust { font-size: 4vw !important; }
 
 
 }
@@ -38,83 +29,83 @@ button { min-width: 200px }
 
 /* Landscape optimisation */
 @media only screen and (max-width: 900px) and (orientation: landscape) {
-	button {height: 10vh !important; min-width: 200px }
-	
-	.container{ padding-top: 2vh !important; margin: 0 !important; transform: translateX(100%) !important}
-	
-	.form-control-custom { height: 10vh !important; }
-	
-	form.mobile-adjust { font-size: 1.8vw !important }
-	.footer { flex-shrink: 0; padding: 20px}
+
+	.container.desktop-landscape{ padding-top: 8vh !important; margin: 0 !important; margin-bottom: 10vh !important;}
+
+	label.mobile-adjust { font-size: 2vw !important; }
 }
 
 /* iPad pro optimisation */
 /* Portrait */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
-	
-	body{ background: url(../img/com_bg_deploy_mobil.png) no-repeat center center fixed;
-			-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-			background-size: cover; }
+
+	body{ background: #f8f9fa; }
 	button.mobile-adjust { font-size: 3vw !important; height: 5vh !important; width: 32vw !important; }
-	
+
 	.container.desktop-landscape{ display: none !important;}
 
-	.container.mobile-portrait{ display: block !important; margin: 5vh 0 0 !important;}
-	
+	.container.mobile-portrait{ display: block !important; margin: 5vh 0 0 !important; padding-top: 5vh !important;}
+
+    .error-report {font-size: 3vw !important;}
+
 	h1.mobile-adjust { font-size: 5.5vw !important; padding-bottom: 2vh !important; padding-top: 5vh !important; }
-	
-	.form-control-custom { font-size: 3vw !important;}
-	form.mobile-adjust { font-size: 3vw !important }
-	
+
+	label.mobile-adjust { font-size: 3vw !important }
+
+	.form-control-custom { height: 6vh !important; font-size: 2.5vw !important;}
+
 }
 
 /* Landscape */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
-	
+
 	button.mobile-adjust { font-size: 2vw !important; height: 7vh !important; width: 25vw !important;}
-	
-	div.mobile-adjust{ padding-top: 2vh !important; }
-	
+
+    .container.desktop-landscape { padding-top: 10vh !important; }
+
+    .error-report {font-size: 2vw !important;}
+
 	.form-control-custom { font-size: 1.5vw !important; height: 7vh !important; }
-	
+
 	h1.mobile-adjust { font-size: 4.5vw !important; padding-bottom: 2vh !important; }
-	
+
 	label.mobile-adjust { font-size: 1.8vw }
-	  
+
 }
 
 
 /* iPad optimisation */
 /* Portrait */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : portrait) {
-	
-	body{ background: url(../img/com_bg_deploy_mobil.png) no-repeat center center fixed;
-			-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-			background-size: cover; }
-	button.mobile-adjust { font-size: 3vw !important; height: 5vh !important; width: 32vw !important; }
-	
+
+	body{ background: #f8f9fa; }
+	button.mobile-adjust { font-size: 3vw !important; height: 6vh !important; width: 32vw !important; }
+
 	.container.desktop-landscape{ display: none !important;}
 
-	.container.mobile-portrait{ display: block !important; margin: 5vh 0 0 !important;}
-	
+	.container.mobile-portrait{ display: block !important; margin: 5vh 0 0 !important; padding-top: 5vh !important;}
+
+    .error-report {font-size: 3vw !important;}
+
 	h1.mobile-adjust { font-size: 5.5vw !important; padding-bottom: 2vh !important; padding-top: 5vh !important; }
-	
-	.form-control-custom { font-size: 3vw !important;}
-	form.mobile-adjust { font-size: 3vw !important }
-	
+
+	label.mobile-adjust { font-size: 3.5vw !important }
+
+	.form-control-custom { height: 6vh !important; font-size: 3vw !important;}
+
 }
 
 /* landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : landscape) {
-	
+
 	button.mobile-adjust { font-size: 2vw !important; height: 7vh !important; width: 25vw !important;}
-	
-	div.mobile-adjust{ padding-top: 2vh !important; }
-	
+
+    .container.desktop-landscape { padding-top: 8vh !important; }
+
 	.form-control-custom { font-size: 1.5vw !important; height: 7vh !important; }
-	
+
 	h1.mobile-adjust { font-size: 4.5vw !important; padding-bottom: 2vh !important; }
-	
+
 	label.mobile-adjust { font-size: 1.8vw }
 
 }

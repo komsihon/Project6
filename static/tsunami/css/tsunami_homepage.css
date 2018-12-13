@@ -10,16 +10,25 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 
 .anchor { font-size: 4vw; padding-top: 6vh; }
 
-.btn-outline-primary { color: #007bff; background-color: transparent; background-image: none; border-color: #007bff; }
-.btn-outline-primary:hover { color: #fff; background-color: #007bff; border-color: #007bff; }
-.btn-outline-primary:focus, .btn-outline-primary.focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
-.btn-outline-secondary { color: #ffffff; background-color: transparent; background-image: none; border-color: #FFFFFF; }
-.btn-outline-secondary:hover { color: #000000; background-color: #ffffff; border-color: #ffffff; }
-.btn-outline-secondary:focus, .btn-outline-secondary.focus { box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
+
+.container-fluid { margin-left: 0 !important; margin-right: 0 !important;}
 
 .img-features{ }
 
 .picto-features{ max-width: 100px; }
+
+
+.section-banniere { background: url(../img/Tsunami_banniere.jpg) center center;
+					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+					background-size: cover; color: white; height: 250px; margin-top: 5vh; }
+.section-banniere-top { background: url(../img/Tsunami_banniere_top.jpg) center center;
+					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+					background-size: cover; color: white; height: 300px; margin-top: 6.5vh !important; }
+.section-features-text { padding-top: 10vh; }
+
+.section-header{ background: url(../img/Tsunami_entete.png) center center;
+				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+				background-size: cover; height: 100vh; }
 
 
 /* Media querry */
@@ -74,6 +83,9 @@ margin-bottom: 30px;
 	.picto-features { text-align: center !important; }
 		
 	.section-features-text{ padding-top: 0 !important; }
+	.section-header{ background: url(../img/Tsunami_entete_mobile.png) center center;
+					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+					background-size: cover; height: 100vh; padding-top: 2.5vh !important;}
 	
 }
 
@@ -94,6 +106,9 @@ margin-bottom: 30px;
 	
 	.section-banniere-top { margin-top: 20vh !important; }
 	.section-features-text{ padding-top: 0 !important; }
+	.section-header{ background: url(../img/Tsunami_entete_mobile.png) center center;
+                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+                        background-size: cover; height: 100vh; padding-top: 15vh !important;;}
 
 
 }
@@ -125,7 +140,10 @@ margin-bottom: 30px;
 	#section-banniere-top-iPad-view { display: block !important; margin-top: 1vh !important;}
 	#section-banniere-top-iPad-view > div { padding-top: 3vh !important; }
 	#section-banniere-top-iPad-view > div > h1 { font-size: 5vw !important; }
-	.section-features-text{ padding-top: 0 !important; }	
+	.section-features-text{ padding-top: 0 !important; }
+	.section-header{ background: url(../img/Tsunami_entete_iPad_pro.png) center center;
+                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+                        height: 100vh;}
 
 }
 
@@ -150,6 +168,9 @@ margin-bottom: 30px;
 	.section-banniere-top > h2 { font-size: 8vw !important; }
     #section-banniere-top-iPad-view { display: block !important; margin-top: 10vh !important; padding-top: 5vh !important; }
 	.section-features-text{ padding-top: 0 !important; }
+	.section-header{ background: url(../img/Tsunami_entete_iPad_pro.png) center center;
+                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
+                        height: 100vh;}
 }
 
 
@@ -180,6 +201,9 @@ margin-bottom: 30px;
 	#section-banniere-top-iPad-view > div { padding-top: 5vh !important; }
 	#section-banniere-top-iPad-view > div > h1 { font-size: 5vw !important; }
 	.section-features-text{ padding-top: 0 !important; }
+	.section-header{ background: url(../img/Tsunami_entete_iPad_pro.png) center center;
+                        -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
+                        background-size: cover; height: 100vh;}
 }
 
 

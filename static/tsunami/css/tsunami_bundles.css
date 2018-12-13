@@ -115,8 +115,8 @@ a { text-decoration: none !important }
     color: #ffffff;
     display: block;
     font-size: 14px;
-	margin-top: -50px !important;
-    padding-left: 1.3vw !important;
+	margin-top: -50px;
+    padding-left: 1.3vw;
     padding-top: 1vh;
     text-align: left !important;
 }
@@ -206,6 +206,8 @@ a { text-decoration: none !important }
 
 @media only screen and (max-width: 990px){
     .pricingTable{ margin-bottom: 30px; }
+    .pricingTable .title { right: -40px !important; }
+    .pricingTable .billing-cycle { margin-top: -47px !important; padding-left: 3.3vw !important;}
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -217,7 +219,7 @@ a { text-decoration: none !important }
         height: 270%;
         top: -106%;
     }
-    .pricingTable .title{ text-align: left !important; }
+    .pricingTable .title{ right: -40px !important; text-align: left !important; }
 }
 
 @media only screen and (max-width: 767px){
@@ -229,7 +231,7 @@ a { text-decoration: none !important }
         height: 270%;
         top: -106%;
     }
-    .pricingTable .title{ text-align: center; }
+    /*.pricingTable .title{ text-align: center; }*/
 }
 
 @media only screen and (max-width: 480px){
@@ -242,6 +244,24 @@ a { text-decoration: none !important }
         top: -120%;
         left: -20%;
     }
+}
+
+/* iPad pro optimisation */
+/* Portrait */
+@media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+    .pricingTable .billing-cycle { padding-left: 2.3vw; }
+    .pricingTable .title { right: -20px !important; }
+}
+
+/* iPad optimisation */
+/* Portrait */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : portrait) {
+    /*.pricingTable .pricing-content { font-size: 50vw !important; }*/
+    .pricingTable .title { right: -40px !important; }
+}
+/* landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : landscape) {
+    .pricingTable .title { right: -25px !important; }
 }
 
 

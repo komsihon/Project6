@@ -187,38 +187,38 @@
         {% block footer %}
             <footer class="footer">
                 <div class="container">
-                    <div class="row" style="margin-bottom: 60px">
+                    <div class="row" style="margin-bottom: 15px">
                         <div class="col-sm-3" style="margin-top: 4vh; text-align: center;">
                             <a href="{% url 'tsunami:home' %}">
-                                <img src="{% static 'tsunami/img/Logo-IKWEN-Tsunami(niveau-de-blanc).png' %}" style="max-width: 6vw;"/>
-                                <h4 style="color: #ffffff; font-size: 1.5vw; text-align: center;" class="logo"> IKWEN Tsunami</h4>
+                                <img class="mobile-adjust" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami(niveau-de-blanc).png' %}" style="max-width: 7vw;"/>
+                                <h4 style="color: #ffffff; font-size: 1.8vw; text-align: center;" class="logo mobile-adjust"> IKWEN Tsunami</h4>
                             </a>
                         </div>
-                        <div class="col-sm-3">
-                            <h5 style="color: #ffffff; font-weight: bold; font-size: 1vw; margin-top: 5vh;">{% trans 'Get started' %}</h5>
-                            <ul style="line-height: 1.7; list-style-type: none; padding-left: 0">
-                                <li><a style="color: #d2d1d1; font-size: 0.8vw; text-decoration: none" href="{% url 'tsunami:home' %}">{% trans 'Home' %}</a></li>
-                                <li><a style="color: #d2d1d1; font-size: 0.8vw; text-decoration: none" href="http://www.ikwen.com/" target="_blank">{% trans 'Sign up' %}</a></li>
-        {#                        <li><a style="color: #d2d1d1; text-decoration: none" href="#" target="_blank">{% trans 'Downloads' %}</a></li>#}
+                        <div class="col-sm-3 col-xs-4 mobile-adjust">
+                            <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">{% trans 'Get started' %}</h5>
+                            <ul style="font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
+                                <li><a style="color: #d2d1d1;" href="{% url 'tsunami:home' %}">{% trans 'Home' %}</a></li>
+                                <li><a style="color: #d2d1d1;" href="http://www.ikwen.com/" target="_blank">{% trans 'Sign up' %}</a></li>
+        {#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Downloads' %}</a></li>#}
                             </ul>
                         </div>
-                        <div class="col-sm-3">
-                            <h5 style="color: #ffffff; font-weight: bold; font-size: 1vw; margin-top: 5vh;">{% trans 'About us' %}</h5>
-                            <ul style="line-height: 1.7; list-style-type: none; padding-left: 0">
-                                <li><a style="color: #d2d1d1; font-size: 0.8vw; text-decoration: none" href="http://www.ikwen.com/about" target="_blank">{% trans 'Company Information' %}</a></li>
-        {#                        <li><a style="color: #d2d1d1; text-decoration: none" href="#" target="_blank">{% trans 'Contact us' %}</a></li>#}
-                                <li><a style="color: #d2d1d1; font-size: 0.8vw; text-decoration: none" href="#" target="_blank">{% trans 'Reviews' %}</a></li>
+                        <div class="col-sm-3 col-xs-4 mobile-adjust">
+                            <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">{% trans 'About us' %}</h5>
+                            <ul style=" font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
+                                <li><a style="color: #d2d1d1;" href="http://www.ikwen.com/about" target="_blank">{% trans 'Our Company' %}</a></li>
+        {#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Contact us' %}</a></li>#}
+                                <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Reviews' %}</a></li>
                             </ul>
                         </div>
-                        <div class="col-sm-3">
-                            <h5 style="color: #ffffff; font-weight: bold; font-size: 1vw; margin-top: 5vh;">Support</h5>
-                            <ul style="line-height: 1.7; list-style-type: none; padding-left: 0">
-                                <li><a style="color: #d2d1d1; font-size: 0.8vw; text-decoration: none" href="http://blog.ikwen.com/" target="_blank">Blog</a></li>
-                                <li><a style="color: #d2d1d1; font-size: 0.8vw; text-decoration: none" href="http://support.ikwen.com/" target="_blank">{% trans 'Help desk' %}</a></li>
+                        <div class="col-sm-3 col-xs-4 mobile-adjust">
+                            <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">Support</h5>
+                            <ul style="font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
+                                <li><a style="color: #d2d1d1;" href="http://blog.ikwen.com/" target="_blank">Blog</a></li>
+                                <li><a style="color: #d2d1d1;" href="http://support.ikwen.com/" target="_blank">{% trans 'Help desk' %}</a></li>
         {#                        <li><a style="color: #d2d1d1; text-decoration: none" href="#" target="_blank">Forums</a></li>#}
                             </ul>
                         </div>
-        {#                <div class="col-sm-3">#}
+        {#                <div class="col-sm-3 mobile-adjust">#}
         {#                    <div class="social-networks" style="padding-bottom: 16px; padding-top: 30px; text-align: center">#}
         {#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="twitter"><i class="fa fa-twitter"></i></a>#}
         {#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="facebook"><i class="fa fa-facebook"></i></a>#}
@@ -228,7 +228,7 @@
         {#                </div>#}
                     </div>
                 </div>
-                <div class="footer-copyright" style="padding: 3px 0; text-align: center;">
+                <div class="footer-copyright mobile-adjust" style="padding: 3px 0; text-align: center;">
                     &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong style="color: #ffffff">{{ config.company_name }}</strong></a>.
                 </div>
             </footer>
@@ -279,7 +279,7 @@
                     }));
 
                     $(window).on("scroll", function() {
-                        if($(window).scrollTop() > 200) {
+                        if($(window).scrollTop() > 150) {
                             $(".navbar").addClass("active");
                             $("#navbar-search").addClass("active");
 
@@ -288,6 +288,13 @@
                            $(".navbar").removeClass("active");
                            $("#navbar-search").removeClass("active");
                         }
+                    });
+
+                    $('.js-scrollTo').on('click', function() {
+                        var page = $(this).attr('href');
+                        var speed = 750;
+                        $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+                        return false;
                     });
 
                     {% url 'ikwen:list_projects' as list_projects_url %}
