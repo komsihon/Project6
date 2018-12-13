@@ -39,10 +39,6 @@ class Maintenance(TemplateView):
     template_name = 'tsunami/maintenance.html'
 
 
-class Success(TemplateView):
-    template_name = 'tsunami/successful_deployment.html'
-
-
 class SuccessfulDeployment(TemplateView):
     template_name = 'tsunami/successful_deployment.html'
 
@@ -51,6 +47,7 @@ class SuccessfulDeployment(TemplateView):
         service_id = kwargs.pop('service_id')
         service = get_object_or_404(Service, pk=service_id)
         context['invoice'] = Invoice.objects.filter(subscription=service)[0]
+        context['service'] = service
         return context
 
 

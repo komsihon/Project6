@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block content %}
+    {% url 'billing:invoice_detail' invoice.id as invoice_url %}
     <body style="background-color: #f8f9fa">
 		<div id="section-header-general-view" class="container-fluid section-header">
 			<div class="row">
@@ -21,13 +22,15 @@
 							<img src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}" class="media-object" style="max-width: 110px" alt="Sample Image"/>
 						</a>
 						<div class="media-body ">
-							<h1 class="media-heading">Félicitations {{client.name}} !</h1>
-							<h4 class="mobile-adjust"> Vous êtes désormais propriétaire d'une plateforme Tsunami. Disponible sur <a href="{{ service.url }}"> {{ service.url }}</a>.
-								Découvrez les possibilités de ce formidable outil Cloud qui va révolutionner votre activité.
+                        {% blocktrans with client_name=service.member.first_name service_url=service.url %}
+							<h1 class="media-heading">Congratulations {{client_name}} !</h1>
+							<h4 class="mobile-adjust"> You're now the owner of TSUNAMI platform, availaible at <a href="{{ service_url }}"> {{ service_url }}</a>.
+								Discover all what you can do with this awesome Cloud tool. Take your business to the next level.
                             </h4>
-                            <p class="bill-link">Votre facture est disponible, payez maintenant et obtenez votre <span class="animated infinite pulse" style="color: #ef7000">code support.</span></p>
-{#                            <a href="{% url 'billing:invoice_detail' invoice.id %}" class="btn btn-outline-primary mobile-adjust" style="min-width: 200px;"> Payer</a>#}
-						</div>
+                            <p class="bill-link">Your invoice is available, pay now and get your <span class="animated infinite pulse" style="color: #ef7000">support code.</span></p>
+                            <a href="{{ invoice_url }}" class="btn btn-outline-primary mobile-adjust" style="min-width: 200px;"> Payer</a>
+						{% endblocktrans %}
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -40,12 +43,14 @@
 							<img src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}" class="media-object" style="max-width: 110px" alt="Sample Image"/>
 						</a>
 						<div class="media-body">
-							<h2 class="media-heading">Félicitations {{client.name}} !</h2>
-							<h4 class="mobile-adjust"> Vous êtes désormais propriétaire d'une plateforme Tsunami.
-								Découvrez les possibilités de ce formidable outil Cloud qui va révolutionner votre activité.
+                        {% blocktrans with client_name=service.member.first_name service_url=service.url %}
+							<h2 class="media-heading">Congratulations {{client_name}} !</h2>
+							<h4 class="mobile-adjust"> You're now the owner of TSUNAMI platform, availaible at <a href="{{ service_url }}"> {{ service_url }}</a>.
+								Discover all what you can do with this awesome Cloud tool. Take your business to the next level.
                             </h4>
-							<p class="bill-link">Votre facture est disponible, payez maintenant et obtenez votre <span class="animated infinite pulse" style="color: #ef7000">code support.</span></p>
-{#                            <a href="{% url 'billing:invoice_detail' invoice.id %}" class="btn btn-outline-primary mobile-adjust" style="min-width: 200px;"> Payer</a>#}
+                            <p class="bill-link">Your invoice is available, pay now and get your <span class="animated infinite pulse" style="color: #ef7000">support code.</span></p>
+                            <a href="{{ invoice_url }}" class="btn btn-outline-primary mobile-adjust" style="min-width: 200px;"> Payer</a>
+						{% endblocktrans %}
 						</div>
 					</div>
 				</div>
@@ -55,16 +60,15 @@
 			<div class="col-md-12 col-md-offset-1 mobile-adjust fisrt">
 				<div class="row custom_row"  style="padding-top: 5vh">
 					<div class="col-md-6 section-features-text second-on-mobile">
-						<h2 class="mobile-adjust" style="font-size: 1.6vw">Votre relation client entièrement automatisée</h2>
+						<h2 class="mobile-adjust" style="font-size: 1.6vw">{% trans "Your customer relationship fully automated!" %}</h2>
 						<p class="mobile-adjust">
-							Les clients sont partout,enregistrez les efficacement avec TSUNAMI et laissez le s'occuper du reste.
-							Invitez des gens dans vote communauté en partageant votre lien dès à présent.
+                            {% blocktrans %}
+                                Clients are just everywhere you know... Get them registered efficiently with TSUNAMI and let it take care of the rest.
+                                Invite people to <em>join</em> your community now by sharing your link.
+                            {% endblocktrans %}
 						</p>
-						<a href="#" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">Partager mon lien&nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
-					<!--
-						<a href="#"><i class="fa fa-facebook-square animated infinite pulse" style="font-size: 3vw"></i></a>
-						<a href="#"><i class="fa fa-twitter-square animated infinite pulse" style="font-size: 3vw"></i></a>
--->
+						<a href="http://ikwen.com/?join={{ service.project_name_slug }}" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans "Share my link" %}<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
+
 					</div>
 					<div class="col-md-6 col-sm-6 first-on-mobile">
 						<img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/fully_automated.png' %}" />
@@ -72,23 +76,30 @@
 				</div>
 				<div class="row custom_row"  style="padding-top: 5vh">
 					<div class="col-md-6 section-features-text second-on-mobile">
-						<h2 class="mobile-adjust" style="font-size: 1.6vw">Inbound marketing : attirez les clients à vous.</h2>
+						<h2 class="mobile-adjust" style="font-size: 1.6vw">Inbound marketing : {% trans "attract customer to you!" %}.</h2>
+                    {% blocktrans %}
 						<p class="mobile-adjust">
-							Fini les campagnes marketing à l'aveugles et peu efficaces, désormais vos prospects et clients ont 100 raisons de venir, rester et ramener des gens chez vous. TSUNAMI vous donne la possibilité d'offrir à chacun des coupons cadeaux à collectionner. Ils vont se bousculer pour s'enregistrer dans votre CCM*.
+                            No more blind and ineffective marketing campaigns, now your prospects and customers have 100 reasons to come, stay and bring people to you.
+                            TSUNAMI gives you the possibility to offer everybody free collectible coupons. They'll rush to register in your CCM*
 						</p>
-						<a href="#" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">En savoir plus sur les coupons&nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
-					</div>
+						<a href="http://blog.ikwen.com/about-continuous-rewarding/" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans "Read more about coupons" %}&nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
+					{% endblocktrans %}
+                    </div>
 					<div class="col-md-6 col-sm-6 first-on-mobile">
 						<img class="img-features" alt="img_inbound_marketing" src="{% static 'tsunami/img/inbound_marketing.png' %}" />
 					</div>
 				</div>
 				<div class="row custom_row"  style="padding-top: 5vh">
 					<div class="col-md-6 section-features-text second-on-mobile">
-						<h2 class="mobile-adjust" style="font-size: 1.6vw">Allez à la conquête du marché mondial</h2>
+						<h2 class="mobile-adjust" style="font-size: 1.6vw">{% trans "Conquer World market today!" %}</h2>
 						<p class="mobile-adjust">
-							Vous pouvez dès à présent commencer à vendre en ligne et être payé via Mobile money. Votre activité est ouverte 24/7, les clients peuvent acheter immédiatement vos produits et services à la suite des offres automatiques envoyées par TSUNAMI via mails et SMS.
+                            {% blocktrans %}
+                                You can start selling online now. Get paid via Mobile money. Your business work 24/7,
+                                and customers can buy from you immediately after they receive your automated offers sent by TSUNAMI via Emails and SMS.
+                            {% endblocktrans %}
+
 						</p>
-						<a href="#" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">Publier des produits&nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
+						<a href="{{ service.url }}/kako/products/" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans "Publish your products" %}&nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
 					</div>
 					<div class="col-md-6 col-sm-6 first-on-mobile">
 						<img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/glogal-market.png' %}" />
@@ -101,10 +112,10 @@
 			<div class="row section-banniere">
 				<div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 3vh">
 				  	<h1>
-						Des questions, besoin d'aide ?
+						{% trans "Need help ?" %}
 					</h1>
 					<h3>
-						Contactez nous:
+						{% trans "Contact us" %}
 					</h3>
 					<div>
 						<h4 class="contact-address">
