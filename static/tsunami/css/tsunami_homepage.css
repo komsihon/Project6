@@ -10,7 +10,6 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 
 .anchor { font-size: 4vw; padding-top: 6vh; }
 
-
 .container-fluid { margin-left: 0 !important; margin-right: 0 !important;}
 
 .img-features{ }
@@ -18,7 +17,7 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 .picto-features{ max-width: 100px; }
 
 
-.section-banniere { background: url(../img/Tsunami_banniere.jpg) center center;
+.section-banniere { background: url(../img/Tsunami_banniere.jpg) center center no-repeat;
 					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
 					background-size: cover; color: white; height: 250px; margin-top: 5vh; }
 .section-banniere-top { background: url(../img/Tsunami_banniere_top.jpg) center center;

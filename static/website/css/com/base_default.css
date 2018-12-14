@@ -19,6 +19,7 @@ a {text-decoration: none !important;}
 .success {background: #B6F1B6; border: 1px solid; border-radius: 3px; color: #039B03}
 .msg-tag.info {background: #dde9f1;border: 1px solid;border-radius: 3px;color: #1d2e9b}
 .failure, .floating-notice.error, .msg-tag.error {background: #FFB6C1; border: 1px solid; border-radius: 3px; color:  #F00}
+.btn { min-width: 200px !important; }
 .btn-outline-primary { color: #007bff; background-color: transparent; background-image: none; border-color: #007bff; }
 .btn-outline-primary:hover { color: #fff; background-color: #007bff; border-color: #007bff; }
 .btn-outline-primary:focus, .btn-outline-primary.focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }

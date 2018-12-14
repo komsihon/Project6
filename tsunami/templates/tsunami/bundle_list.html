@@ -2,7 +2,7 @@
 {% load i18n humanize static %}
 
 {% block page_title %}
-    <title> IKWEN - Tsunami Bundles</title>
+    <title> ikwen - Tsunami Bundles</title>
 {% endblock %}
 
 {% block head_style %}
@@ -26,7 +26,7 @@
                         <div class="pricingTable-header">
                             <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                             <h3 class="title">{{ bundle.name }}</h3>
-                            <span class="billing-cycle">{% trans 'Per quarter' %}</span>
+                            <span class="billing-cycle">{% trans '3 months' %}</span>
                         </div>
                         <ul class="pricing-content">
                         <hr class="features-separator">
@@ -34,11 +34,11 @@
                             {{ bundle.content | safe }}
                             <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
                         <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Revival items' %}</span>
+                            <span class="subtitle">{% trans 'For your revivals' %}</span>
                             <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
                             <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
                         <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Support set' %}</span>
+                            <span class="subtitle">{% trans 'Support' %}</span>
                             <li><strong>{% trans '2 weeks of phone support' %}</strong></li>
                             <li><strong>{% trans '2 x 2 hours of coaching onsite' %}</strong></li>
                         </ul>
@@ -49,7 +49,7 @@
                         <div class="pricingTable-header">
                             <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                             <h3 class="title">{{ bundle.name }}</h3>
-                            <span class="billing-cycle">{% trans 'Per quarter' %}</span>
+                            <span class="billing-cycle">{% trans '3 months' %}</span>
                         </div>
                         <ul class="pricing-content">
                         <hr class="features-separator">
@@ -57,11 +57,11 @@
                             {{ bundle.content | safe }}
                             <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
                         <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Revival items' %}</span>
+                            <span class="subtitle">{% trans 'For your revivals' %}</span>
                             <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
                             <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
                         <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Support set' %}</span>
+                            <span class="subtitle">{% trans 'Support' %}</span>
                             <li><strong>{% trans '1 month of phone support' %}</strong></li>
                             <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
                         </ul>
@@ -72,7 +72,7 @@
                         <div class="pricingTable-header">
                             <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                             <h3 class="title">{{ bundle.name }}</h3>
-                            <span class="billing-cycle">{% trans 'Per quarter' %}</span>
+                            <span class="billing-cycle">{% trans '3 months' %}</span>
                         </div>
                         <ul class="pricing-content">
                         <hr class="features-separator">
@@ -80,11 +80,11 @@
                             {{ bundle.content | safe }}
                             <li><strong>+1 {% trans 'eCommerce website  and domain name' %} </strong></li>
                         <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Revival items' %}</span>
+                            <span class="subtitle">{% trans 'For your revivals' %}</span>
                             <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
                             <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
                         <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Support set' %}</span>
+                            <span class="subtitle">{% trans 'Support' %}</span>
                             <li><strong>{% trans '1 month of phone support' %}</strong></li>
                             <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
                         </ul>
