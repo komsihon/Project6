@@ -91,8 +91,10 @@ margin-bottom: 30px;
 /* Landscape optimisation */
 @media only screen and (max-width: 900px) and (orientation: landscape) {
 	.anchor { display: none !important;}
+
+	.btn-outline-primary { margin-top: 5px !important; }
 	
-	button.mobile-adjust { margin-top: 0 !important;}
+	.btn.mobile-adjust { margin-top: 0 !important;}
 	
 	div.mobile-adjust{ padding-top: 2vh !important; margin: 0 !important; }
 	
@@ -118,11 +120,15 @@ margin-bottom: 30px;
 
 	.anchor { font-size: 8vw; padding-top: 6vh; }
 	
-	button.mobile-adjust { font-size: 3vw ; height: 5vh !important; width: 32vw !important;}
+	.btn.mobile-adjust { font-size: 3vw ; height: 5vh !important; width: 32vw !important;}
+
+	#container-general-view { display: none !important; }
+	#container-iPad-view { display: block !important; }
 	
 	.discover-link { font-size: 2.2vw !important; }
 	
 	#section-header-general-view {display: none !important;}
+
 	
 	h1.mobile-adjust { font-size: 5.5vw !important; padding-bottom: 2vh !important; }
 	h2.mobile-adjust { font-size: 4vw !important; line-height: 3vh; padding-bottom: 2vh !important; }
@@ -132,7 +138,7 @@ margin-bottom: 30px;
 	#section-header-iPad-view { display: block !important}  
 	.img-features { padding-top: 4vh !important; }
 	
-	.section-banniere > div { padding-top: 0 !important; }
+	.section-banniere > div { padding: 0 !important; }
 	.section-banniere > div > h1 { font-size: 5vw !important; }
 	
 	.section-banniere-top { display: none !important; }
@@ -151,7 +157,7 @@ margin-bottom: 30px;
 
 	.anchor { font-size: 6vw; padding-top: 6vh; }
 	
-	button.mobile-adjust { font-size: 2vw; height: 10vh !important; width: 25vw !important;}
+	.btn.mobile-adjust { font-size: 2.3vw; height: 7vh !important; width: 25vw !important;}
 	
 	div.mobile-adjust{ padding-top: 2vh !important; }
 	.discover-link { font-size: 2vw !important; }
@@ -166,7 +172,7 @@ margin-bottom: 30px;
 	.section-banniere-top { display: none !important; }
 	.section-banniere-top > h2 { font-size: 8vw !important; }
     #section-banniere-top-iPad-view { display: block !important; margin-top: 10vh !important; padding-top: 5vh !important; }
-	.section-features-text{ padding-top: 0 !important; }
+	/*.section-features-text{ padding-top: 0 !important; }*/
 	.section-header{ background: url(../img/Tsunami_entete_iPad_pro.png) center center;
                         -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;
                         height: 100vh;}
@@ -178,7 +184,7 @@ margin-bottom: 30px;
 
 	.anchor { font-size: 10vw; padding-top: 6vh; }
 	
-	button.mobile-adjust { font-size: 3vw !important; height: 5vh !important; width: 32vw !important;}
+	.btn.mobile-adjust { font-size: 3vw !important; height: 6vh !important; width: 32vw !important;}
 	
 	.discover-link { font-size: 3.2vw !important; }
 	
@@ -191,12 +197,13 @@ margin-bottom: 30px;
 	
 	#section-header-iPad-view { display: block !important}  
 	.img-features { display: none !important}
-	
+
+	.section-banniere { height: 255px; }
 	.section-banniere > div { padding-top: 0 !important; }
 	.section-banniere > div > h1 { font-size: 5vw !important; }
 	
 	.section-banniere-top { display: none !important; }
-	#section-banniere-top-iPad-view { display: block !important; margin-top: 0 !important;}
+	#section-banniere-top-iPad-view { display: block !important; height: 360px; margin-top: 0 !important;}
 	#section-banniere-top-iPad-view > div { padding-top: 5vh !important; }
 	#section-banniere-top-iPad-view > div > h1 { font-size: 5vw !important; }
 	.section-features-text{ padding-top: 0 !important; }
