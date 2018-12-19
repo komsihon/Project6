@@ -173,8 +173,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
                 -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }
 .navbar.active .icon-bar { background: #ffffff !important; }
 .navbar.active .glyphicon { color: #ffffff !important; }
-.navbar.active .navbar-brand { color: #ffffff !important;}
+.navbar.active .navbar-brand { display: block; color: #ffffff !important; }
 .navbar.active .navbar-nav>li>a { color: #ffffff !important; }
+.navbar-brand > img {height: 23px !important;}
 #navbar .glyphicon {color: #217dbb;cursor: pointer;font-size: 18px;}
 #navbar .back {display: none;float:left;font-size: 24px;margin: 12px 15px 0 10px;}
 .navbar-default .navbar-brand {padding: 18px 0 0 0;margin-left: 10px;}
@@ -187,7 +188,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
     margin-left: 2%;
     padding: 10px;
-    position: fixed;
+    position: fixed !important;
     top: 3px;
     width: 96%;
     z-index: 1001;
@@ -203,7 +204,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 #navbar-results .ik-li .full_name {text-transform: capitalize;color: #666;font-weight: 700;}
 #navbar-results .ik-li .info {margin-left: 6px;max-width: 220px}
 #navbar-results .ik-li .title {margin-top: 0;}
-#navbar-results .ik-li .about {height: 35px;margin-bottom: 0;overflow: hidden;}
+#navbar-results .ik-li .about {height: 35px; margin-bottom: 0;overflow: hidden;}
 
 
 #nav-xs > li {float: left;}
@@ -354,7 +355,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     #navbar-search {
         background: transparent;
         display: block;
-        margin: 0;
+        margin: 0 0 0 210px;
         padding-left: 0;
         padding-right: 0;
         position: static;
@@ -399,7 +400,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     .tiles {margin-left: -15px}
     .ik-li .select {margin: -25px}
     .tiles .ik-li > .content {padding: 10px}
-    #navbar-search {margin-left: 80px;width: 360px}
+    #navbar-search {margin-left: 210px;width: 360px}
     form#search .spinner {
         margin: 0 0 0 330px
     }
@@ -465,6 +466,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     #navbar .glyphicon {font-size: 2vw;}
     #navbar-search input { font-size: 2.5vw; width: 100% !important;}
 
+    .glyphicon-search:before { font-size: 18px !important; }
+
 
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2.5vw !important; }
@@ -481,6 +484,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     #navbar-search input { font-size: 2vw; width: 100% !important;}
 
     .navbar-nav>li>a {font-size: 2vw;}
+
+    .glyphicon-search:before { font-size: 18px !important; }
 
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2vw !important; }

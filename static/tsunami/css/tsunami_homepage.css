@@ -19,7 +19,7 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 
 .section-banniere { background: url(../img/Tsunami_banniere.jpg) center center no-repeat;
 					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
-					background-size: cover; color: white; height: 250px; margin-top: 5vh; }
+					background-size: cover; color: white; height: 251px; margin-top: 5vh; }
 .section-banniere-top { background: url(../img/Tsunami_banniere_top.jpg) center center;
 					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
 					background-size: cover; color: white; height: 300px; margin-top: 6.5vh !important; }
@@ -198,7 +198,7 @@ margin-bottom: 30px;
 	#section-header-iPad-view { display: block !important}  
 	.img-features { display: none !important}
 
-	.section-banniere { height: 255px; }
+	.section-banniere { height: 270px; }
 	.section-banniere > div { padding-top: 0 !important; }
 	.section-banniere > div > h1 { font-size: 5vw !important; }
 	
