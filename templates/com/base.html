@@ -233,6 +233,7 @@
         {#                </div>#}
                     </div>
                 </div>
+
                 <div class="footer-copyright mobile-adjust" style="padding: 3px 0; text-align: center;">
                     &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong style="color: #ffffff">{{ config.company_name }}</strong></a>.
                 </div>
@@ -301,6 +302,19 @@
                         $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
                         return false;
                     });
+
+                    $(window).scroll(function(e){
+					var scrollTop = $(window).scrollTop();
+					var docHeight = $(document).height();
+					var winHeight = $(window).height();
+					var scrollPercent = (scrollTop) / (docHeight - winHeight);
+					var scrollPercentRounded = Math.round(scrollPercent*100);
+					if (scrollPercentRounded >= 10) {
+						$('.back-to-top').removeClass('hiding').addClass('showing')
+					} else {
+						$('.back-to-top').removeClass('showing').addClass('hiding')
+					}
+				});
 
                     {% url 'ikwen:list_projects' as list_projects_url %}
                     var searchDescriptor = [{
