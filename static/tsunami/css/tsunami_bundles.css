@@ -1,6 +1,10 @@
 a { text-decoration: none !important }
 
-.heading-title {margin: 10vh 0;}
+.heading-title { font-weight: bolder; margin: 8vh 0 0vh 0;}
+.heading-subtitle { font-weight: bold;}
+
+.blockquote { border: none !important; }
+.bundle-list { margin-top: 1vh;}
 
 .features-separator { width: 80%; }
 
@@ -204,6 +208,10 @@ a { text-decoration: none !important }
 
 .navbar-left { display: none !important; }
 
+.faq-item { padding-bottom: 5vh;}
+.faq-question { font-weight: bold;}
+.faq-answer { color: #828282; }
+
 @media only screen and (max-width: 990px){
     .pricingTable{ margin-bottom: 30px; }
     .pricingTable .title { right: -40px !important; }
@@ -249,15 +257,37 @@ a { text-decoration: none !important }
 /* iPad pro optimisation */
 /* Portrait */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+
+    .heading-title { font-size: 5.5vw !important; }
+    .heading-subtitle { font-size: 3.5vw !important; }
+
     .pricingTable .billing-cycle { padding-left: 2.3vw; }
     .pricingTable .title { right: -20px !important; }
+    .pricingTable .subtitle { font-size: 25px; }
+    .pricingTable .pricing-content li{ font-size: 24px; }
+
+    .blockquote-footer { font-size: 3vw; }
+
+     .faq-answer { font-size: 2.5vw;}
+    .faq-question { font-size: 4vw;}
+
+    section.faq-general-view { display: none !important; }
+    section.faq-ipadPro-view { display: block !important; }
 }
 
 /* iPad optimisation */
 /* Portrait */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : portrait) {
     /*.pricingTable .pricing-content { font-size: 50vw !important; }*/
+
     .pricingTable .title { right: -40px !important; }
+    .pricingTable .subtitle { font-size: 25px; }
+    .pricingTable .pricing-content li{ font-size: 24px; }
+
+    .blockquote-footer { font-size: 3vw }
+
+     .faq-answer { font-size: 3.5vw;}
+    .faq-question { font-size: 5vw;}
 }
 /* landscape */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : landscape) {
