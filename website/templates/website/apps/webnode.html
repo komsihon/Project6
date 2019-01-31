@@ -102,7 +102,7 @@
             <div class="banner-title-cntr">
                 <h3 class="white-text-has-shade">{% trans "Create your website and improve your visibility in a few clicks." %}</h3>
             </div>
-        <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="{% url app.deployment_url_name %}">CREATE MY WEBSITE NOW</a></div>
+        <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="{{ app.deployment_url_name }}">CREATE MY WEBSITE NOW</a></div>
     </section>
     <section class="features site">
         <div class="container">
@@ -165,7 +165,7 @@
                     <h3>{% trans "Are you an individual" %}?</h3>
                     <p>{% trans "Whether you are a rising star, an expert, or just someone whose concern is to gain quality visibility on the web, with WebNode you now have a professional-quality digital identity, in 5 minutes chrono" %}</p>
                 </div>
-                <a id="deploy" class="btn btn-sm" href="{% url app.deployment_url_name %}">CREATE MY WEBSITE NOW</a>
+                <a id="deploy" class="btn btn-sm" href="{{ app.deployment_url_name }}">CREATE MY WEBSITE NOW</a>
             </div>
         </div>
     </section>
