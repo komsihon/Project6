@@ -290,6 +290,19 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .swiper-button-prev {left: 0 !important;border-top-right-radius: 3px;border-bottom-right-radius: 3px;}
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {pointer-events: visible !important;}
 
+.fa-chevron-circle-up { color: #319dd5; }
+
+/* Back to top button BEGIN */
+.back-to-top { font-size: 3.5vw; position: fixed; bottom: 1%; text-align: right; z-index: 1; transition: all 1s; }
+
+.hiding { opacity: 0; right: -100%; }
+
+.showing { opacity: 0.8; right: 20px; }
+/* Back to top button END */
+
+
+
+
 .footer { background-color: #233682;
             flex-shrink: 0;  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
             padding: 3px 0; }

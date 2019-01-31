@@ -11,6 +11,13 @@
     <link rel="stylesheet" type="text/css" href="{% static 'tsunami/css/tsunami_how_to.css' %}">
 {% endblock %}
 
+{% block header_brand %}
+    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
+        <img src="{% static "tsunami/img/logo_ikwen_web_header.png" %}"/>
+    </a>
+    <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
+{% endblock %}
+
 {% block content %}
     {% url 'billing:invoice_detail' invoice.id as invoice_url %}
     <body style="background-color: #f8f9fa">

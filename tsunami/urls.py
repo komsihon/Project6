@@ -10,4 +10,5 @@ urlpatterns = patterns(
     url(r'^bundles$', BundlesList.as_view(), name='bundles'),
     url(r'^go$', login_required(Go.as_view()), name='go'),
     url(r'^successful_deployment/(?P<service_id>[-\w]+)/$', login_required(SuccessfulDeployment.as_view()), name='successful_deployment'),
+    # url(r'^successful_deploy/$', SuccessfulDeployment.as_view(), name='successful_deployment'),
 )

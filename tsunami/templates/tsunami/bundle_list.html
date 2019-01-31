@@ -1,6 +1,19 @@
 {% extends 'com/base.html' %}
 {% load i18n humanize static %}
 
+{% block meta %}
+    {{ block.super }}
+    <link rel="shortcut icon" type="image/png" href="{% static "tsunami/img/favicon_Tsunami.ico" %}">
+    <meta name="theme-color" content="#233682">
+    <meta name="msapplication-navbutton-color" content="#233682">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#233682">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.ikwen.com/tsunami/" />
+    <meta property="og:image" content="{% static 'tsunami/img/customers_retention(og_image).jpg' %}" />
+    <meta property="og:title" content="{% trans "ikwen TSUNAMI, the cloud tools your business needs" %}"/>
+    <meta property="og:description" content="{% trans "Reach more customers and sell all your stocks with Tsunami" %}">
+{% endblock %}
+
 {% block page_title %}
     <title> ikwen - Tsunami Bundles</title>
 {% endblock %}
@@ -19,89 +32,292 @@
 {% endblock %}
 
 {% block content %}
-    <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center ;
+    <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center;
             -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 100vh; background-repeat: no-repeat">
-        <div class="container" style="font-family: Lato; margin-bottom: 10vh;">
+        <div class="container" style="font-family: Lato; margin-bottom: 10vh;" id="section-header-general-view">
             <div class="row text-center">
-                <h1 class="heading-title ">Tsunami Pricing Table</h1>
+                <h2 class="heading-title"> {% trans "Choose the bundles that best suits your needs and budget" %} </h2>
+                <p class="col-md-8 col-md-offset-2 text-center heading-subtitle">
+                    {% trans "An invoice will be generated, you don’t have to pay immediately, but you will have access to full functionalities of Tsunami. Keep in mind that early payments give you Mail and SMS bonus." %}
+                </p>
             </div>
-            <div class="row">
-            {% for bundle in bundle_list %}
-                <div class="col-md-4 col-sm-6">
-                {% if bundle.name == 'Standard' %}
-                    <div class="pricingTable green subtle-shade">
-                        <div class="pricingTable-header">
-                            <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
-                            <h3 class="title">{{ bundle.name }}</h3>
-                            <span class="billing-cycle">{% trans '3 months' %}</span>
+            <section class="bundle-list">
+                <div class="row">
+                {% for bundle in bundle_list %}
+                    <div class="col-md-4 col-sm-6">
+                    {% if bundle.name == 'Standard' %}
+                        <div class="pricingTable green subtle-shade">
+                            <div class="pricingTable-header">
+                                <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
+                                <h3 class="title">{{ bundle.name }}</h3>
+                                <span class="billing-cycle">{% trans '3 months' %}</span>
+                            </div>
+                            <ul class="pricing-content">
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'Cloud tools' %}</span>
+                                {{ bundle.content | safe }}
+                                <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'For your revivals' %}</span>
+                                <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
+                                <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'Support' %}</span>
+                                <li><strong>{% trans '2 weeks of phone support' %}</strong></li>
+                                <li><strong>{% trans '2 x 2 hours of coaching onsite' %}</strong></li>
+                            </ul>
+                            <a href="{% url 'tsunami:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
-                        <ul class="pricing-content">
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Cloud tools' %}</span>
-                            {{ bundle.content | safe }}
-                            <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'For your revivals' %}</span>
-                            <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
-                            <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Support' %}</span>
-                            <li><strong>{% trans '2 weeks of phone support' %}</strong></li>
-                            <li><strong>{% trans '2 x 2 hours of coaching onsite' %}</strong></li>
-                        </ul>
-                        <a href="{% url 'tsunami:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
-                    </div>
-                {% elif bundle.name == 'Business' %}
-                    <div class="pricingTable orange has-shade">
-                        <div class="pricingTable-header">
-                            <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
-                            <h3 class="title">{{ bundle.name }}</h3>
-                            <span class="billing-cycle">{% trans '3 months' %}</span>
+                    {% elif bundle.name == 'Business' %}
+                        <div class="pricingTable orange has-shade">
+                            <div class="pricingTable-header">
+                                <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
+                                <h3 class="title">{{ bundle.name }}</h3>
+                                <span class="billing-cycle">{% trans '3 months' %}</span>
+                            </div>
+                            <ul class="pricing-content">
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'Cloud tools' %}</span>
+                                {{ bundle.content | safe }}
+                                <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'For your revivals' %}</span>
+                                <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
+                                <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'Support' %}</span>
+                                <li><strong>{% trans '1 month of phone support' %}</strong></li>
+                                <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
+                            </ul>
+                            <a href="{% url 'tsunami:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
-                        <ul class="pricing-content">
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Cloud tools' %}</span>
-                            {{ bundle.content | safe }}
-                            <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'For your revivals' %}</span>
-                            <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
-                            <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Support' %}</span>
-                            <li><strong>{% trans '1 month of phone support' %}</strong></li>
-                            <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
-                        </ul>
-                        <a href="{% url 'tsunami:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
-                    </div>
-                {% else %}
-                    <div class="pricingTable purple subtle-shade">
-                        <div class="pricingTable-header">
-                            <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
-                            <h3 class="title">{{ bundle.name }}</h3>
-                            <span class="billing-cycle">{% trans '3 months' %}</span>
+                    {% else %}
+                        <div class="pricingTable purple subtle-shade">
+                            <div class="pricingTable-header">
+                                <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
+                                <h3 class="title">{{ bundle.name }}</h3>
+                                <span class="billing-cycle">{% trans '3 months' %}</span>
+                            </div>
+                            <ul class="pricing-content">
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'Cloud tools' %}</span>
+                                {{ bundle.content | safe }}
+                                <li><strong>+1 {% trans 'eCommerce website  and domain name' %} </strong></li>
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'For your revivals' %}</span>
+                                <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
+                                <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
+                            <hr class="features-separator">
+                                <span class="subtitle">{% trans 'Support' %}</span>
+                                <li><strong>{% trans '1 month of phone support' %}</strong></li>
+                                <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
+                            </ul>
+                            <a href="{% url 'tsunami:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
-                        <ul class="pricing-content">
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Cloud tools' %}</span>
-                            {{ bundle.content | safe }}
-                            <li><strong>+1 {% trans 'eCommerce website  and domain name' %} </strong></li>
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'For your revivals' %}</span>
-                            <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>
-                            <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>
-                        <hr class="features-separator">
-                            <span class="subtitle">{% trans 'Support' %}</span>
-                            <li><strong>{% trans '1 month of phone support' %}</strong></li>
-                            <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
-                        </ul>
-                        <a href="{% url 'tsunami:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                    {% endif %}
                     </div>
-                {% endif %}
+                {% endfor %}
                 </div>
-            {% endfor %}
-            </div>
+            </section>
+
+            <section class="faq faq-general-view" style="padding: 5vh 0;">
+                <div class="row">
+                    <div style="border-top: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
+                    <div class="text-center">
+                        <h1 class="col-md-2 col-md-offset-5 faq-title">F.A.Q</h1>
+                    </div>
+                    <div style=" float: left; width: 100%;">
+                        <div class="col-md-5 faq-item">
+                            <h4 class="faq-question">{% trans 'What is “Deploy” ? What do I get from Deploying ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Deploy simply means create your own online platform. What you get is the Tsunami suite under the name of your company.
+                                    From then, you can start adding contacts in your Cloud Customer Manager, and set all kinds of revivals.
+                                    You can publish your products on the platform and get customers to visit and buy online.
+                                    Your platform is immediately accessible with the link <cite title="Your online platform generated link takes the name of your company">http://go.ikwen.com/yourcompany</cite>.
+                                    You can further move to yourcompany.com or yourcompany.cm when you buy your own domain name.
+                                    See how to buy and configure domain name to discover how to do it.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'What I am paying for exactly ?' %}</h4>
+                            <div class="faq-answer">
+                                {% blocktrans %}
+                                    When you deploy your Tsunami platform, you get many business-effective online tools including :
+                                    <ul style="color: #828282; list-style-type: square;">
+                                        <li>
+                                            An e-commerce website with online payments.
+                                        </li>
+                                        <li>
+                                            An automated system to store your customer’s contacts and revive them by targeted Mail and SMS.
+                                        </li>
+                                        <li>
+                                            SMS and Email Packs to deliver SMS and mails to your customers.
+                                        </li>
+                                        <li>
+                                            A hosting package to get all that running.
+                                        </li>
+                                        <li>
+                                            Continuous Maintenance, Software updates, Data security, Backups and more...
+                                        </li>
+                                    </ul>
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div style=" float: left; width: 100%;">
+                        <div class="col-md-5 faq-item">
+                            <h4 class="faq-question">{% trans 'How do I pay ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Once you deploy your platform, you immediately receive an invoice by mail.
+                                    You can view the invoice and pay by MTN MoMo online. Once you have done the payment.
+                                    Your service is activated to run for 3 months.
+                                    You can print the generated for your accounting.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2 faq-item">
+                            <h4 class="faq-question">{% trans 'Do I pay once for all ? What happens after the 3 months ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Payment covers the first three months of service. For your service to continue after those 3 months,
+                                    you will have to pay for renewal fees that are always much lower than setup fees that cover another 3 months.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div style=" float: left; width: 100%;">
+                       <div class="col-md-5 faq-item">
+                            <h4 class="faq-question">{% trans 'What if I don’t pay at the end of the period, are my data deleted ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    When the end of the period is approaching, you receive at least 3 reminders with the new invoice to pay.
+                                    If you do not pay on time, you are given a consistent amount of extra time to do the payment.
+                                    After that period, your platform is shutdown, but all your data are kept.
+                                    Everything will be put back in place when you pay your invoice.
+                                    Your data are completely deleted after 3 months of inactivity.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="col-md-5 col-md-offset-2 faq-item">
+                            <h4 class="faq-question">{% trans 'Can I pay for a year ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Yes you can. You are highly encouraged to pay for a year as you will benefit a discount.
+                                    Switch to annual payment view to see how much it costs and get your platform for a year.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div style="border-bottom: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
+                </div>
+            </section>
+
+            <section class="faq faq-ipadPro-view" style=" display: none; padding: 5vh 0;">
+                <div class="row">
+                    <div style="border-top: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
+                    <div class="text-center">
+                        <h1 class="faq-title">F.A.Q</h1>
+                    </div>
+                    <div style=" float: left; width: 100%;">
+                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'What is “Deploy” ? What do I get from Deploying ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Deploy simply means create your own online platform. What you get is the Tsunami suite under the name of your company.
+                                    From then, you can start adding contacts in your Cloud Customer Manager, and set all kinds of revivals.
+                                    You can publish your products on the platform and get customers to visit and buy online.
+                                    Your platform is immediately accessible with the link <cite title="Your online platform generated link takes the name of your company">http://go.ikwen.com/yourcompany</cite>.
+                                    You can further move to yourcompany.com or yourcompany.cm when you buy your own domain name.
+                                    See how to buy and configure domain name to discover how to do it.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'What I am paying for exactly ?' %}</h4>
+                            <div class="faq-answer">
+                                {% blocktrans %}
+                                    When you deploy your Tsunami platform, you get many business-effective online tools including :
+                                    <ul style="border-left: 3px outset #999; color: #828282; list-style-type: none;">
+                                        <li>
+                                            An e-commerce website with online payments.
+                                        </li>
+                                        <li>
+                                            An automated system to store your customer’s contacts and revive them by targeted Mail and SMS.
+                                        </li>
+                                        <li>
+                                            SMS and Email Packs to deliver SMS and mails to your customers.
+                                        </li>
+                                        <li>
+                                            A hosting package to get all that running.
+                                        </li>
+                                        <li>
+                                            Continuous Maintenance, Software updates, Data security, Backups and more...
+                                        </li>
+                                    </ul>
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div style=" float: left; width: 100%;">
+                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'How do I pay ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Once you deploy your platform, you immediately receive an invoice by mail.
+                                    You can view the invoice and pay by MTN MoMo online. Once you have done the payment.
+                                    Your service is activated to run for 3 months.
+                                    You can print the generated for your accounting.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'Do I pay once for all ? What happens after the 3 months ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Payment covers the first three months of service. For your service to continue after those 3 months,
+                                    you will have to pay for renewal fees that are always much lower than setup fees that cover another 3 months.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div style=" float: left; width: 100%;">
+                       <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'What if I don’t pay at the end of the period, are my data deleted ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    When the end of the period is approaching, you receive at least 3 reminders with the new invoice to pay.
+                                    If you do not pay on time, you are given a consistent amount of extra time to do the payment.
+                                    After that period, your platform is shutdown, but all your data are kept.
+                                    Everything will be put back in place when you pay your invoice.
+                                    Your data are completely deleted after 3 months of inactivity.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
+                            <h4 class="faq-question">{% trans 'Can I pay for a year ?' %}</h4>
+                            <p class="faq-answer">
+                                {% blocktrans %}
+                                    Yes you can. You are highly encouraged to pay for a year as you will benefit a discount.
+                                    Switch to annual payment view to see how much it costs and get your platform for a year.
+                                {% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div style="border-bottom: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
+                </div>
+            </section>
+
+
+            <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
+                <i class="fa fa-chevron-circle-up"></i>
+            </a>
         </div>
+
 {% endblock %}
 
 {% block js %}

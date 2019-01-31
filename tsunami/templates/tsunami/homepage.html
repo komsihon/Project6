@@ -3,14 +3,15 @@
 
 {% block meta %}
     {{ block.super }}
+    <link rel="shortcut icon" type="image/png" href="{% static "tsunami/img/favicon_Tsunami.ico" %}">
     <meta name="theme-color" content="#233682">
     <meta name="msapplication-navbutton-color" content="#233682">
     <meta name="apple-mobile-web-app-status-bar-style" content="#233682">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.ikwen.com/tsunami/" />
     <meta property="og:image" content="{% static 'tsunami/img/customers_retention(og_image).jpg' %}" />
-    <meta property="og:title" content={% trans "ikwen TSUNAMI, the cloud tools your business needs" %}/>
-    <meta property="og:description" content={% trans "Reach more customers and sell all your stocks with Tsunami" %}>
+    <meta property="og:title" content="{% trans "ikwen TSUNAMI, the cloud tools your business needs" %}"/>
+    <meta property="og:description" content="{% trans "Reach more customers and sell all your stocks with Tsunami" %}">
 {% endblock %}
 
 {% block page_title %}
@@ -31,7 +32,7 @@
 {% endblock %}
 
 {% block content %}
-    <div id="section-header-general-view" class="container-fluid section-header" style="padding-top: 6vh;">
+    <div id="section-hecader-general-view" class="container-fluid section-header" style="padding-top: 6vh;">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center mobile-adjust" style="padding-top: 18vh">
                 <img style="max-width: 120px" alt="logo_ikwen_TSUNAMI" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}"/>
@@ -181,4 +182,10 @@
             </div>
         </div>
     </div>
+    <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
+        <i class="fa fa-chevron-circle-up"></i>
+    </a>
+
+
+
 {% endblock %}
