@@ -34,7 +34,7 @@
 {% block content %}
     <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center;
             -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 100vh; background-repeat: no-repeat">
-        <div class="container" style="font-family: Lato; margin-bottom: 10vh;">
+        <div class="container" style="font-family: Lato; margin-bottom: 10vh;" id="section-header-general-view">
             <div class="row text-center">
                 <h2 class="heading-title"> {% trans "Choose the bundles that best suits your needs and budget" %} </h2>
                 <p class="col-md-8 col-md-offset-2 text-center heading-subtitle">
@@ -311,7 +311,13 @@
                     <div style="border-bottom: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
                 </div>
             </section>
+
+
+            <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
+                <i class="fa fa-chevron-circle-up"></i>
+            </a>
         </div>
+
 {% endblock %}
 
 {% block js %}
