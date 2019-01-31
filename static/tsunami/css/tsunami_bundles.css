@@ -1,12 +1,14 @@
 a { text-decoration: none !important }
 
-.heading-title { font-weight: bolder; margin: 8vh 0 0vh 0;}
-.heading-subtitle { font-weight: bold;}
+.heading-title { font-weight: bolder; margin: 10vh 0 4vh 0;}
+.heading-subtitle { color: #828282; font-weight: bold; padding-bottom: 6vh;}
 
 .blockquote { border: none !important; }
-.bundle-list { margin-top: 1vh;}
+.bundle-list { margin: 1vh 0 10vh 0;}
 
+/*.faq-question { color: #83d5fa; }*/
 .features-separator { width: 80%; }
+
 
 .pricingTable{
     background: #fff;
@@ -208,6 +210,7 @@ a { text-decoration: none !important }
 
 .navbar-left { display: none !important; }
 
+.faq-title { background-color: #f8f9fa; margin-top: -9vh !important; padding: 0 0 5vh 0; }
 .faq-item { padding-bottom: 5vh;}
 .faq-question { font-weight: bold;}
 .faq-answer { color: #828282; }
@@ -216,6 +219,8 @@ a { text-decoration: none !important }
     .pricingTable{ margin-bottom: 30px; }
     .pricingTable .title { right: -40px !important; }
     .pricingTable .billing-cycle { margin-top: -47px !important; padding-left: 3.3vw !important;}
+
+    .faq-title { margin: -13vh 0 5vh 66vh !important; max-width: 25vw }
 }
 
 @media only screen and (max-width: 767px) and (orientation: portrait) {
@@ -228,6 +233,8 @@ a { text-decoration: none !important }
         top: -106%;
     }
     .pricingTable .title{ right: -40px !important; text-align: left !important; }
+
+    .faq-title { margin: -10vh 0 5vh 17vh !important; max-width: 40vw }
 }
 
 @media only screen and (max-width: 767px){
@@ -239,7 +246,6 @@ a { text-decoration: none !important }
         height: 270%;
         top: -106%;
     }
-    /*.pricingTable .title{ text-align: center; }*/
 }
 
 @media only screen and (max-width: 480px){
@@ -268,7 +274,8 @@ a { text-decoration: none !important }
 
     .blockquote-footer { font-size: 3vw; }
 
-     .faq-answer { font-size: 2.5vw;}
+    .faq-title { font-size: 7vw; margin: -9.5vh 0 5vh 26vh !important; max-width: 25vw !important; }
+    .faq-answer { font-size: 2.5vw;}
     .faq-question { font-size: 4vw;}
 
     section.faq-general-view { display: none !important; }
@@ -286,12 +293,14 @@ a { text-decoration: none !important }
 
     .blockquote-footer { font-size: 3vw }
 
-     .faq-answer { font-size: 3.5vw;}
+    .faq-title { font-size: 7vw; margin: -9.5vh 0 5vh 26vh !important; max-width: 25vw !important; }
+    .faq-answer { font-size: 3.5vw;}
     .faq-question { font-size: 5vw;}
 }
 /* landscape */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : landscape) {
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
     .pricingTable .title { right: -25px !important; }
+    .faq-title { margin: -9.5vh 0 5vh 53vh !important;}
 }
 
 
