@@ -30,7 +30,7 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 				background-size: cover; height: 100vh; }
 
 
-/* Media querry */
+/* Media query */
 
 @media all and (max-width: 980px) {
 /*** wrap row in a flex box ***/

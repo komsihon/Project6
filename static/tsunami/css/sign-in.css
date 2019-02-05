@@ -1,0 +1,25 @@
+/**
+    Document   : sign-in
+    Created on : November 17, 2018, 14:22
+    Author     : Kom Sihon & W1773ND
+    Description:
+        CSS Rules for the minimal sign in page and customisation for Tsunami redirect sign in.
+*/
+
+#navbar {display: none}
+html, body {height: 100%}
+body {background: url(../../tsunami/img/Tsunami_bundle_entete.png) no-repeat center fixed; background-size: cover;}
+
+.login-title { border-bottom: none; }
+.login-title img { height: 65px; }
+
+@media (min-width: 480px) {
+    #content.form.register #submit {float: right; width: 180px}
+}
+@media (max-width: 767px) {
+    #stage {width: 90%}
+    #content.form form {padding-left: 15px; padding-right: 15px}
+}
+@media (min-width: 992px) {
+    #content.form.register {padding-top: 7%;}
+}

@@ -1,10 +1,14 @@
 {% extends "core/base_bs.html" %}
 {% load i18n static auth_tokens %}
 
-{% block page_title %}<title>{{ service.project_name }} - {% trans "Register" %} </title>{% endblock %}
+{% block page_title %}<title>{{ service.project_name }} - {% trans "Sign in" %} </title>{% endblock %}
 {% block head_style %}
     {{ block.super }}
     <link rel='stylesheet' href="{% static 'ikwen/css/sign-in.css' %}" />
+    {% if request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" %}
+        <link rel='stylesheet' href="{% static 'tsunami/css/sign-in.css' %}" />
+    {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -13,19 +17,28 @@
         {% if messages %}
             {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
         {% endif %}
+        {% if request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
+            <div class="text-center">
+                <h3 style="color: #464646; padding-bottom: 2vh; line-height: 6vh;">{% trans "Please login to continue with TSUNAMI..." %}</h3>
+            </div>
+        {% endif %}
         <div id="stage" class="form-wrapper subtle-shade">
             <h3 class="login-title">
-                {% if config.logo.name %}
-                    <img src="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" alt="Logo {{ service.project_name }}"
-                         style="max-height: 40px"/>
-                {% endif %}
-                {% trans "Register" %}
+             {% if request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
+                <img src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}">
+            {% elif config.logo.name %}
+                <img src="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" alt="Logo {{ service.project_name }}"
+                     style="max-height: 40px"/>
+            {% endif %}
+            {% if not request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
+                {% trans "Login" %}
+            {% endif %}
             </h3>
             <form id="auth" action="{{ action }}" method="post">{% csrf_token %}
                 <div class="form-group row username">
-                    <label for="username" class="col-sm-5 col-md-4">{% trans "Email" %}</label>
+                    <label for="username" class="col-sm-5 col-md-4">{% trans "Username or email" %}</label>
                     <div class="col-sm-7 col-md-8">
-                        <input id="username" class="form-control input-sm" type="email" name="username" value="{{ username }}" autofocus />
+                        <input id="username" class="form-control input-sm" type="text" name="username" value="{{ username }}" autofocus />
                     </div>
                 </div>
                 <div class="form-group submit-username">
@@ -33,7 +46,7 @@
                         <button class="btn btn-primary btn-block btn-sm" type="button"> {% trans "Submit" %} </button>
                     {% else %}
                         <button class="btn btn-primary btn-block btn-sm login-with-ikwen" type="button">
-                            <img height="26" />
+                            <img height="26" src="{% static 'ikwen/img/logo_ikwen_symbol_30x30.png' %}" />
                             {% blocktrans %}Login with <strong>ikwen</strong>{% endblocktrans %}
                         </button>
                     {% endif %}
@@ -72,6 +85,19 @@
                             <input id="last-name" class="form-control input-sm" type="text" name="last_name"/>
                         </div>
                     </div>
+                    <div class="form-group row gender">
+                        <label for="last-name" class="col-sm-5 col-md-4">{% trans "Your are ..." %}</label>
+                        <div class="checkbox col-sm-3">
+                            <label>
+                                <input type="radio" name="gender" value="Female" /> {% trans "A woman" %}
+                            </label>
+                        </div>
+                        <div class="checkbox col-sm-3" style="margin-top: 10px">
+                            <label>
+                                <input type="radio" name="gender" value="Male" /> {% trans "A man" %}
+                            </label>
+                        </div>
+                    </div>
                     {% if settings.REGISTER_WITH_DOB %}
                         {% include "accesscontrol/snippets/dob_widget.html" %}
                     {% endif %}
@@ -84,23 +110,21 @@
                 </div>
                 <div class="terms">
                     <div class="form-group">
+                        {% url 'ikwen:terms_and_conditions' as ikwen_eula_url %}
                         {% if settings.IS_IKWEN %}
-                            <p id="terms-warning">
-                                {% trans "By creating an account you agree our " %} <a
-                                    href="{% url 'ikwen:terms_and_conditions' %}">{% trans "Terms & Conditions" %}</a>
-                            </p>
+                            <p id="terms-warning">{% blocktrans %}
+                                By creating an account you agree our
+                                <a href="{{ ikwen_eula_url }}">Terms & Conditions</a>
+                            {% endblocktrans %}</p>
                         {% else %}
-                            <p id="terms-warning">
-                            {% url 'ikwen:terms_and_conditions' as ikwen_eula_url %}
-                                {% trans "You are about to create an account managed by" %} <a
-                                    href="{{ settings.IKWEN_BASE_URL }}"
-                                    style="color: #999; text-decoration: underline"><strong>ikwen</strong></a>,
-                                {% trans "on" %} {{ service.project_name }}.
-                                {% trans "By doing so you accept" %} <a
-                                    href="{{ ikwen_eula_url|ikwenize }}"><strong>ikwen</strong> {% trans "Terms & Conditions" %}
-                            </a>, {% trans "as well as" %}
-                                <a href="{{ settings.AGREEMENT_URL }}">{{ service.project_name }} {% trans "Terms & Conditions" %}.</a>
-                            </p>
+                            <p id="terms-warning">{% blocktrans %}
+                                You are about to create an account managed by
+                                <a href="{{ settings.IKWEN_BASE_URL }}" style="color: #999; text-decoration: underline"><strong>ikwen</strong></a>,
+                                on {{ service.project_name }}. By doing so you accept
+                                <a href="{{ ikwen_eula_url|ikwenize }}"><strong>ikwen</strong> Terms & Conditions</a>,
+                                    as well as
+                                <a href="{{ settings.AGREEMENT_URL }}">{{ service.project_name }}Terms & Conditions.</a>
+                            {% endblocktrans %}</p>
                         {% endif %}
                     </div>
                     <div class="form-group row">
@@ -199,11 +223,9 @@
                     var username = $(this).val().trim().toLowerCase();
                     $(this).val(username);
                 }
-            }).blur(function() {
-                var username = $('#username').val()
-                testUsername(username)
-            });
-
+            }).blur(function() {testUsername()});
+            $('#email').blur(testEmail);
+            $('#phone').blur(testPhone);
             function testUsername(uname) {
                 $('.errorlist.username').remove();
                 var $username = $('#username'),
@@ -222,7 +244,6 @@
                     '<li>' + "{% trans "Please use at least 3 characters." %}" + '</li>' +
                     '<li>' + "{% trans "Start with a letter." %}" + '</li>' +
                     '</ul>').insertAfter('#username');
-                $username.val('')
                 $username.focus();
                 return false;
             }
@@ -233,11 +254,24 @@
                 $email.val(email);
                 if (email.isValidEmail()) return true;
                 $('<ul class="errorlist email"><li>' + "{% trans "Please, enter valid email" %}" + '</li></ul>')
-                        .insertAfter('#username');
+                        .insertAfter('#email');
                 $email.focus();
                 return false;
             }
-
+            function testPhone() {
+                $('.errorlist.phone').remove();
+                var $phone = $('#phone'),
+                    phone = $phone.val().replace(/ /g, '');
+                $phone.val(phone);
+                if (phone && phone.substr(0, 2) !== '00' && /\d{9,}/.test(phone)) return true;
+                $('<ul class="errorlist phone">' +
+                    '<li>' + "{% trans "Please use digits only." %}" + '</li>' +
+                    '<li>' + "{% trans "Prepend country code if you are not in Cameroon." %}" + '</li>' +
+                    '<li>' + "{% trans "DO NOT prepend 00." %}" + '</li>' +
+                    '</ul>').insertAfter('#phone');
+                $phone.focus();
+                return false;
+            }
             function testPassword() {
                 $('.errorlist.password, .errorlist.password2').remove();
                 var $pwd1 = $('#password'),
@@ -261,7 +295,9 @@
             }
 
             function checkUsername() {
-                var email = $('#username').val().toLowerCase();
+                var username = $('#username').val().toLowerCase();
+                if (!username) return false;
+                if (!testUsername(username)) return false;
                 $('#auth .spinner').css('visibility', 'visible');
                 $.ajax({
                     url: '{% url 'ikwen:sign_in' %}',
@@ -276,22 +312,22 @@
                         if (data.existing) {
                             location.hash = 'login';
                             $('#password').focus();
-                            $('#auth').prop('action', "{% url 'ikwen:do_sign_in' %}?{{ request.META.QUERY_STRING }}");
-                            if (email.isValidEmail()) {
-                                $('.forgotten-pwd').prop('href', '{{ forgotten_password_url|ikwenize }}' + '?' + 'email=' + email);
+                            $('#auth').prop('action', "{% url 'ikwen:do_sign_in' %}?{{ request.META.QUERY_STRING|safe }}");
+                            if (username.isValidEmail()) {
+                                $('.forgotten-pwd').prop('href', '{{ forgotten_password_url|ikwenize }}' + '?' + 'username=' + username);
                             }
                         } else {
                             $('#content').hide().addClass('register step1').fadeIn('normal', 'linear', function() {
                                 $('#password').focus();
                             });
                             $('#stage').removeClass('form-wrapper').addClass('col-sm-9 col-md-8');
-                            if (email.isValidEmail()) {
+                            if (username.isValidEmail()) {
                                 $('#email').val(username);
                                 $('.form-group.email').hide();
                             }
                             $('.form-group.password').prependTo('.create-account').find('label').text("{% trans "Choose a password" %}");
                             location.hash = 'register-step1';
-                            $('#auth').prop('action', "{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING }}");
+                            $('#auth').prop('action', "{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING|safe }}");
                         }
                     }
                 });

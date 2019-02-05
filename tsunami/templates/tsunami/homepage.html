@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block content %}
-    <div id="section-hecader-general-view" class="container-fluid section-header" style="padding-top: 6vh;">
+    <div id="section-header-general-view" class="container-fluid section-header" style="padding-top: 6vh;">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center mobile-adjust" style="padding-top: 18vh">
                 <img style="max-width: 120px" alt="logo_ikwen_TSUNAMI" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}"/>
@@ -186,7 +186,13 @@
     <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
         <i class="fa fa-chevron-circle-up"></i>
     </a>
+{% endblock %}
 
-
-
+{% block js %}
+    {{ block.super }}
+    <script>
+        (function () {
+            $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'tsunami:home' %}");
+        })()
+    </script>
 {% endblock %}

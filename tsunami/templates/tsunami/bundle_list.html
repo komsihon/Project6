@@ -323,6 +323,9 @@
 {% block js %}
     {{ block.super }}
     <script>
+        (function () {
+            $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'tsunami:bundles' %}");
+        })()
     </script>
 {% endblock %}
 
