@@ -41,7 +41,7 @@
                 <p class="mobile-adjust" style="">
                     {% trans 'Tsunami builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
                 </p>
-                <a href="{% url 'tsunami:bundles' %}" class="btn btn-outline-primary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</a>
+                <button type="button" class="btn btn-outline-primary animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
                 <div class="anchor">
                     <a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
                 </div>
@@ -56,7 +56,7 @@
                 <p class="mobile-adjust" style="">
                     {% trans 'Tsunami builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
                 </p>
-                <a href="{% url 'tsunami:bundles' %}" class="btn btn-outline-primary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</a>
+                <button type="button" class="btn btn-outline-primary animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
                 <div class="anchor">
                     <a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
                 </div>
@@ -67,13 +67,13 @@
         <div class="row section-banniere-top" style="margin-top: 0;">
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 7vh">
               <h1>{% trans 'Go digital with Tsunami' %} </h1>
-                <a href="{% url 'tsunami:bundles' %}" class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;"><span style="">{% trans 'Deploy Tsunami' %}</span></a>
+                <button type="button" class="btn btn-outline-white animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
             </div>
         </div>
         <div id="section-banniere-top-iPad-view" class="row section-banniere-top" style="display: none">
             <div class="col-md-8 col-md-offset-2 text-center">
               <h1>Passez au digital avec Tsunami </h1>
-                <a href="{% url 'tsunami:bundles' %}" class="btn btn-outline-secondary mobile-adjust" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</a>
+                <button type="button" class="btn btn-outline-white animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
             </div>
         </div>
     </div>
@@ -179,13 +179,37 @@
         <div class="row section-banniere">
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 3.5vh">
               <h1>{% trans 'Go digital with Tsunami' %}</h1>
-                <a href="{% url 'tsunami:bundles' %}" class="btn btn-outline-secondary animated pulse mobile-adjust" style="font-weight: bold; margin: 20px; height: 45px;"><span style="">{% trans 'Deploy <b>Tsunami</b>' %}</span></a>
+                <button type="button" class="btn btn-outline-white animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
             </div>
         </div>
     </div>
     <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
         <i class="fa fa-chevron-circle-up"></i>
     </a>
+
+{# Modal definition :BEGIN #}
+    <div id="modal-get-email" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-get-email">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog modal-m vertical-align-center" role="document">
+                <div class="modal-content" style="text-align: center">
+                    <div class="modal-header no-border " style="background: #233682; color: #ffffff">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #ffffff">&times;</span></button>
+                        <h4 class="modal-title" style="text-align: center">{% trans "Please, enter your email before proceeding..." %}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <input id="visitor-email" type="email" required placeholder="Email" aria-describedby="input-email" class="form-control" >
+                        </form>
+                    </div>
+                    <div class="modal-footer no-border" style="padding-top: 0 !important; text-align: center !important;">
+                        <a href="{% url 'tsunami:bundles' %}" class="btn btn-outline-primary btn-process mobile-adjust ">{% trans "Continue" %}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{# Modal definition :BEGIN #}
+
 {% endblock %}
 
 {% block js %}
@@ -193,6 +217,13 @@
     <script>
         (function () {
             $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'tsunami:home' %}");
+            $('.btn-process').click(function () {
+                var visitor_email = $('#visitor-email').val();
+                $('#visitor-email').val('great');
+                var params = {action:'send_mail_to_visitor', visitor_email:visitor_email}
+
+            });
+
         })()
     </script>
 {% endblock %}

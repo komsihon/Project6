@@ -5,7 +5,7 @@
 {% block head_style %}
     {{ block.super }}
     <link rel='stylesheet' href="{% static 'ikwen/css/sign-in.css' %}" />
-    {% if request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" %}
+    {% if request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" or request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
         <link rel='stylesheet' href="{% static 'tsunami/css/sign-in.css' %}" />
     {% endif %}
 
@@ -17,7 +17,7 @@
         {% if messages %}
             {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
         {% endif %}
-        {% if request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
+        {% if request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" or request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
             <div class="text-center">
                 <h3 style="color: #464646; padding-bottom: 2vh; line-height: 6vh;">{% trans "Please login to continue with TSUNAMI..." %}</h3>
             </div>
@@ -30,7 +30,7 @@
                 <img src="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" alt="Logo {{ service.project_name }}"
                      style="max-height: 40px"/>
             {% endif %}
-            {% if not request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
+            {% if not request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" or request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
                 {% trans "Login" %}
             {% endif %}
             </h3>

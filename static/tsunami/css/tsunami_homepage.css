@@ -16,6 +16,8 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 
 .picto-features{ max-width: 100px; }
 
+.no-border { border: none !important; }
+
 
 .section-banniere { background: url(../img/Tsunami_banniere.jpg) center center no-repeat;
 					-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;

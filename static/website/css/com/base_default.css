@@ -19,13 +19,31 @@ a {text-decoration: none !important;}
 .success {background: #B6F1B6; border: 1px solid; border-radius: 3px; color: #039B03}
 .msg-tag.info {background: #dde9f1;border: 1px solid;border-radius: 3px;color: #1d2e9b}
 .failure, .floating-notice.error, .msg-tag.error {background: #FFB6C1; border: 1px solid; border-radius: 3px; color:  #F00}
+
 .btn { min-width: 200px !important; }
+
 .btn-outline-primary { color: #007bff; background-color: transparent; background-image: none; border-color: #007bff; }
-.btn-outline-primary:hover { color: #fff; background-color: #007bff; border-color: #007bff; }
-.btn-outline-primary:focus, .btn-outline-primary.focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
-.btn-outline-secondary { color: #ffffff; background-color: transparent; background-image: none; border-color: #FFFFFF; }
-.btn-outline-secondary:hover { color: #000000; background-color: #ffffff; border-color: #ffffff; }
-.btn-outline-secondary:focus, .btn-outline-secondary.focus { box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
+.btn-outline-primary:hover { color: #fff !important; background-color: #007bff; border-color: #007bff; }
+.btn-outline-primary:focus, .btn-outline-primary.focus { color: #007bff; box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+.btn-outline-primary.disabled, .btn-outline-primary:disabled { color: #007bff; background-color: transparent; }
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle { color: #fff; background-color: #007bff; border-color: #007bff; }
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+
+.btn-outline-white { color: #ffffff; background-color: transparent; background-image: none; border-color: #ffffff; }
+.btn-outline-white:hover { color: #000000 !important; background-color: #ffffff; border-color: #ffffff; }
+.btn-outline-white:focus, .btn-outline-white.focus { color: #ffffff; box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
+.btn-outline-white.disabled, .btn-outline-white:disabled { color: #ffffff; background-color: transparent; }
+.btn-outline-white:not(:disabled):not(.disabled):active,
+.btn-outline-white:not(:disabled):not(.disabled).active,
+.show > .btn-outline-white.dropdown-toggle { color: #fff; background-color: #ffffff; border-color: #ffffff; }
+.btn-outline-white:not(:disabled):not(.disabled):active:focus,
+.btn-outline-white:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-white.dropdown-toggle:focus { box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
+
 .clear {clear: both}
 .container { flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */ }
 .text-muted {color: #888}
@@ -54,8 +72,25 @@ a {text-decoration: none !important;}
 .payment-method {display: block;cursor: pointer;margin-bottom: 1em;}
 .payment-method .logo {display: block; text-align: center}
 .om-instructions {display: none; margin-top: 10px;}
+
 .modal-backdrop {background: #fff}
 .modal-backdrop.in {opacity: .7; filter: Alpha(opacity=70)}
+
+/* Modal vertical alignment trick : BEGIN */
+.vertical-alignment-helper { display:table; height: 100%; width: 100%; }
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+/* Modal vertical alignment trick : END */
 
 .spinner-container {-webkit-animation: rotate 2s linear infinite; animation: rotate 2s linear infinite; z-index: 2}
 .spinner-container .path {
@@ -456,6 +491,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     h4.footer-mobile-adjust { font-size: 5.5vw !important; }
     img.footer-mobile-adjust { max-width: 25vw !important; }
 
+    .modal-m { width: auto;}
 
     .footer-copyright { font-size: 3vw !important; }
 }
@@ -466,6 +502,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     div.footer-mobile-adjust > ul { font-size: 2vw !important; }
     h4.footer-mobile-adjust { font-size: 5.5vw !important; }
     img.footer-mobile-adjust { max-width: 13vw !important; }
+
+    .modal-m { width: 600px;}
 
     .footer-copyright { font-size: 2.5vw !important; }
 }
@@ -481,6 +519,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 
     .glyphicon-search:before { font-size: 18px !important; }
 
+    .modal-m { width: 800px;}
 
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2.5vw !important; }
@@ -500,6 +539,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 
     .glyphicon-search:before { font-size: 18px !important; }
 
+    .modal-m { width: 800px;}
+
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2vw !important; }
     div.footer-mobile-adjust > ul { font-size: 1.5vw !important; }
@@ -518,6 +559,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     #navbar .glyphicon {font-size: 3vw;}
     #navbar-search input { font-size: 2.5vw; width: 100% !important;}
 
+
+    .modal-m { width: 600px;}
+
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 3vw !important; }
     div.footer-mobile-adjust > ul { font-size: 2.5vw !important; }
@@ -531,6 +575,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     /* Header */
 
 
+
+    .modal-m { width: 600px;}
 
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2vw !important; }
