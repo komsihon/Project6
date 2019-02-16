@@ -41,7 +41,7 @@
                 <p class="mobile-adjust" style="">
                     {% trans 'Tsunami builds for you a persistent customer base and offers your products to this community via continuous automated Mail and SMS reminders.You should consider increasing your available stocks.... ' %}
                 </p>
-                <button type="button" class="btn btn-outline-primary animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
+                <button type="button" class="btn btn-outline-primary btn-deploy animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
                 <div class="anchor">
                     <a class="js-scrollTo" href="#banniere-top" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>
                 </div>
@@ -73,13 +73,13 @@
         <div id="section-banniere-top-iPad-view" class="row section-banniere-top" style="display: none">
             <div class="col-md-8 col-md-offset-2 text-center">
               <h1>Passez au digital avec Tsunami </h1>
-                <button type="button" class="btn btn-outline-white animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
+                <button type="button" class="btn btn-outline-white btn-deploy animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
             </div>
         </div>
     </div>
 
     <div class="container" id="container-general-view">
-        <div class="row custom_row"  style="padding-top: 5vh">
+        <div class="row row-custom" style="padding-top: 5vh">
             <div class="col-md-6 section-features-text second-on-mobile">
                 <img class="picto-features" alt="picto_better_customer_compréhension" src="{% static 'tsunami/img/best_buddy_list_exploitation_picto.png' %}" />
                 <h2 class="mobile-adjust" style="font-size: 3vw">{% trans 'Efficient use of the customer directory' %}</h2>
@@ -92,7 +92,7 @@
                 <img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/best_buddy_list_exploitation.png' %}" />
             </div>
         </div>
-        <div class="row custom_row">
+        <div class="row row-custom">
             <div class="col-md-6 col-sm-6 first-on-mobile">
                 <img class="img-features" alt="img_client_retention" src="{% static 'tsunami/img/customers_retention.png' %}" />
             </div>
@@ -105,7 +105,7 @@
                 <a href="http://blog.ikwen.com/continuous-rewarding-a-propos-de/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Continuous Rewarding' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
             </div>
         </div>
-        <div class="row custom_row">
+        <div class="row row-custom">
             <div class="col-md-6 section-features-text second-on-mobile">
                 <img class="picto-features" alt="picto_sold_everywhere" src="{% static 'tsunami/img/sold_everywhere_picto.png' %}" />
                 <h2 class="mobile-adjust">{% trans 'Sell everywhere, sell everytime... Sell online' %}</h2>
@@ -118,7 +118,7 @@
                 <img class="img-features" alt="img_client_list_exploitation" src="{% static 'tsunami/img/sold_everywhere.png' %}" />
             </div>
         </div>
-        <div class="row custom_row">
+        <div class="row row-custom">
             <div class="col-md-6 first-on-mobile">
                 <img class="img-features" alt="img_smartphone_accessibility" src="{% static 'tsunami/img/smartphone-accessibility.png' %}" />
             </div>
@@ -134,7 +134,7 @@
     </div>
 
     <div class="container" id="container-iPad-view" style="display: none;">
-        <div class="row custom_row"  style="padding-top: 7vh">
+        <div class="row row-custom" style="padding-top: 7vh">
             <div class="col-md-10 col-md-offset-1 section-features-text">
                 <img class="picto-features" alt="picto_better_customer_compréhension" src="{% static 'tsunami/img/best_buddy_list_exploitation_picto.png' %}" />
                 <h2 class="mobile-adjust" style="font-size: 3vw">{% trans 'Efficient use of the customer directory' %}</h2>
@@ -144,7 +144,7 @@
                 <a href="http://blog.ikwen.com/notion-dinbound-marketing-marketing-entrant/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Cloud Customer Manager' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
             </div>
         </div>
-        <div class="row custom_row">
+        <div class="row row-custom">
             <div class="col-md-10 col-md-offset-1" style="padding-top: 7vh;">
                 <img class="picto-features" alt="picto_client_retention" src="{% static 'tsunami/img/client_retention_picto.png' %}" />
                 <h2 class="mobile-adjust">{% trans 'Customer retention made easy' %}</h2>
@@ -154,7 +154,7 @@
                 <a href="http://blog.ikwen.com/continuous-rewarding-a-propos-de/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover Continuous Rewarding' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
             </div>
         </div>
-        <div class="row custom_row">
+        <div class="row row-custom">
             <div class="col-md-10 col-md-offset-1" style="padding-top: 7vh;">
                 <img class="picto-features" alt="picto_sold_everywhere" src="{% static 'tsunami/img/sold_everywhere_picto.png' %}" />
                 <h2 class="mobile-adjust">{% trans 'Sell everywhere, sell everytime... Sell online' %}</h2>
@@ -164,7 +164,7 @@
                 <a href="http://blog.ikwen.com/kakocase-le-e-commerce-par-ikwen/" target="_blank" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link">{% trans 'Discover KAKOCASE' %}&nbsp;<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i></a>
             </div>
         </div>
-        <div class="row custom_row">
+        <div class="row row-custom">
             <div class="col-md-10 col-md-offset-1" style="padding-top: 7vh;">
                 <img class="picto-features" alt="picto_smartphone_accessibility" src="{% static 'tsunami/img/smartphone-accessibility_picto.png' %}" />
                 <h2 class="mobile-adjust">{% trans 'Be on your customers Smartphones' %} </h2>
@@ -179,7 +179,7 @@
         <div class="row section-banniere">
             <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 3.5vh">
               <h1>{% trans 'Go digital with Tsunami' %}</h1>
-                <button type="button" class="btn btn-outline-white animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
+                <button type="button" class="btn btn-outline-white btn-deploy animated pulse mobile-adjust" data-toggle="modal" data-target="#modal-get-email" style="margin-top: 20px; height: 45px;">{% trans 'Deploy <b>Tsunami</b>' %}</button>
             </div>
         </div>
     </div>
@@ -191,14 +191,14 @@
     <div id="modal-get-email" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-get-email">
         <div class="vertical-alignment-helper">
             <div class="modal-dialog modal-m vertical-align-center" role="document">
-                <div class="modal-content" style="text-align: center">
-                    <div class="modal-header no-border " style="background: #233682; color: #ffffff">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #ffffff">&times;</span></button>
+                <div class="modal-content" style=" background: url({% static 'tsunami/img/get_email-modal_background.png' %}); border: 0.2px solid #ccc; border-radius: 4px; text-align: center;">
+                    <div class="modal-header no-border " style="color: #464646">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: #d32f2f">&times;</span></button>
                         <h4 class="modal-title" style="text-align: center">{% trans "Please, enter your email before proceeding..." %}</h4>
                     </div>
                     <div class="modal-body">
                         <form>
-                            <input id="visitor-email" type="email" required placeholder="Email" aria-describedby="input-email" class="form-control" >
+                            <input id="visitor-email" type="email" required placeholder="Email" aria-describedby="input-email" class="form-control-custom">
                         </form>
                     </div>
                     <div class="modal-footer no-border" style="padding-top: 0 !important; text-align: center !important;">
@@ -216,11 +216,19 @@
     {{ block.super }}
     <script>
         (function () {
+            // redirect to Tsunami signIn page
             $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'tsunami:home' %}");
+
+            // set focus when modal is opened
+            $('#modal-get-email').on('shown.bs.modal', function () {
+                $("#visitor-email").focus();
+            });
+
+            // get the email for Tsunami relaunch mails
             $('.btn-process').click(function () {
                 var visitor_email = $('#visitor-email').val();
-                $('#visitor-email').val('great');
-                var params = {action:'send_mail_to_visitor', visitor_email:visitor_email}
+                var params = {action:'send_mail_to_visitor', visitor_email:visitor_email};
+                $('#visitor-email').val('')
 
             });
 

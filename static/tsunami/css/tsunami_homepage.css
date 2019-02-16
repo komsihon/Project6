@@ -31,12 +31,19 @@ p { font-family: PT sans; font-size: 1vw; line-height: 3.5vh;}
 				-webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover;
 				background-size: cover; height: 100vh; }
 
+.form-control-custom{ background-color: #ffffff99; background-image: none; border: 1px solid #ccc; color: #464646;
+					display: block; font-size: 14px;  height: 34px; line-height: 1.42857143;
+					border-radius: 4px; -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+					text-align: center; transition: border-color ease-in-out .15s, box-shadow;
+					-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s; width: 100%; padding: 6px 12px;
+}
+
 
 /* Media query */
 
 @media all and (max-width: 980px) {
 /*** wrap row in a flex box ***/
-.custom_row {
+.row-custom {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -58,7 +65,7 @@ order: 1;
 order: 2;
 }
 /*** add margin to last column ***/
-.custom_row:last-child .et_pb_column:last-child {
+.row-custom:last-child .et_pb_column:last-child {
 margin-bottom: 30px;
 }
  

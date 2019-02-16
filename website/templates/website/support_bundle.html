@@ -1,0 +1,120 @@
+{% extends 'core/base_bs.html' %}
+{% load i18n static %}
+
+{% block meta %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:type" content="Website" />
+    <meta property="og:title" content="IKWEN" />
+    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+    <meta property="og:description" content="Web Apps to empower your small or big business" />
+    <meta property="description" content="Web Apps to empower your small or big business" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+{% endblock %}
+
+{% block page_title %}
+    <title>IKWEN - Bundles</title>
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+    <!-- Custom css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/support_bundle.css' %}">
+{% endblock %}
+
+{#{% block header_brand %}#}
+{#    <a class="navbar-brand hidden-xs" href="{{ service.url }}">#}
+{#        <img src="{% static "tsunami/img/logo_ikwen_web_header.png" %}"/>#}
+{#    </a>#}
+{#    <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>#}
+{#{% endblock %}#}
+
+{% block content %}
+    <body style="background-color: #f8f9fa">
+		<div class="container" style="padding-top: 20vh">
+			<div class="col-md-12 col-md-offset-1 mobile-adjust fisrt">
+				<div class="row row-custom" style="padding-top: 5vh">
+					<div class="col-md-6 section-features-text second-on-mobile">
+						<h2 class="mobile-adjust" style="font-size: 1.6vw">{% trans "Do you need some technical support ?" %}</h2>
+						<p class="mobile-adjust">
+                            {% blocktrans %}
+                                The platforms deployed on ikwen benefit from the latest in cloud technology available at a lower cost.
+                                Our integrated advice and tutorials allow you to make the most of them effortless.
+                                However, if you would like our help in publishing and putting your content online, you only need to purchase the corresponding bundle.
+                            {% endblocktrans %}
+						</p>
+						<a href="#" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link payment-start" data-product-id="{{ support.id }}">{% trans "Claim a technical assistance " %} &nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
+
+					</div>
+					<div class="col-md-6 col-sm-6 first-on-mobile">
+						<img class="img-features img-responsive" alt="img_client_list_exploitation" src="{% static 'website/img/Technical_support.png' %}" />
+					</div>
+				</div>
+				<div class="row row-custom" style="padding-top: 5vh">
+					<div class="col-md-6 section-features-text second-on-mobile">
+						<h2 class="mobile-adjust" style="font-size: 1.6vw"> {% trans "Do you need graphic expertise ?" %}</h2>
+                    {% blocktrans %}
+						<p class="mobile-adjust">
+                            Internet users will only be interested in your products and services if they are presented in the best possible way.
+                            If you do not have a graphic designer skilled in web publishing,
+                            we strongly recommend that you acquire the services of one via our "Graphic Assistance" bundle.
+						</p>
+						<a href="#" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link payment-start" data-product-id="{{ support.id }}">Claim a graphical assistance &nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
+					{% endblocktrans %}
+                    </div>
+					<div class="col-md-6 col-sm-6 first-on-mobile">
+						<img class="img-features img-responsive" alt="img_inbound_marketing" src="{% static 'website/img/Graphical_support.png' %}" />
+					</div>
+				</div>
+				<div class="row row-custom" style="padding-top: 5vh">
+					<div class="col-md-6 section-features-text second-on-mobile">
+						<h2 class="mobile-adjust" style="font-size: 1.6vw">{% trans "Do you need a marketing advice ?" %}</h2>
+						<p class="mobile-adjust">
+                            {% blocktrans %}
+                                Digital marketing offers far more possibilities than conventional marketing.
+                                If you are not familiar with concepts such as inbound marketing and cyclical reminders, let us guide you through the maze of e-commerce 2.0.
+                                Our experts can teach you the right marketing reflexes to have when you start your business.
+                            {% endblocktrans %}
+
+						</p>
+						<a href="#" style="font-size: 15px; font-weight: bold; margin-top: 10px; text-decoration: none;" class="discover-link payment-start" data-product-id="{{ support.id }}">{% trans "Claim a marketing support " %}&nbsp;<i class="fa fa-arrow-circle-right animated slideInLeft"></i></a>
+					</div>
+					<div class="col-md-6 col-sm-6 first-on-mobile">
+						<img class="img-features img-responsive" alt="img_client_list_exploitation" src="{% static 'website/img/Marketing_support.png ' %}" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row section-banniere">
+				<div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 text-center" style="padding-top: 3vh">
+				  	<h1>
+						{% trans "Need help ?" %}
+					</h1>
+					<h3>
+						{% trans "Contact us" %}
+					</h3>
+					<div>
+						<h4 class="contact-address">
+							<i class="fab fa-whatsapp"></i> &nbsp;(+237) 656 123 522 <br>
+							<i class="fas fa-envelope"></i> &nbsp;support@ikwen.com
+						</h4>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+{% endblock %}
+    {% with payment_conf='support_bundle' %}
+        {% include 'billing/snippets/modal_payment_options.html' %}
+    {% endwith %}
+{% block js %}
+    {{ block.super }}
+    <script>
+        (function () {
+            $('<input type="hidden" name="type" value="SUPPORT" />').appendTo('#payment-start-flow');
+        })();
+    </script>
+{% endblock %}

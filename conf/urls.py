@@ -3,7 +3,7 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 # from ikwen.flatpages.views import FlatPageView
 
-from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms
+from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle
 
 admin.autodiscover()
 
@@ -13,6 +13,7 @@ urlpatterns = patterns(
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', Home.as_view(), name='home'),
     url(r'^about$', About.as_view(), name='about'),
+    url(r'^support_bundle$', Bundle.as_view(), name='support_bundle'),
     url(r'^terms$', Terms.as_view(), name='terms_and_conditions'),
     url(r'^webnode$', Webnode.as_view(), name='webnode'),
     url(r'^kakocase$', Kakocase.as_view(), name='kakocase'),
@@ -24,7 +25,7 @@ urlpatterns = patterns(
     url(r'^theming/', include('ikwen.theming.urls', namespace='theming')),
     # url(r'^cashout/', include('ikwen.cashout.urls', namespace='cashout')),
     # url(r'^retail/', include('ikwen.partnership.urls', namespace='partnership')),
-    # url(r'^theming/', include('ikwen.theming.urls', namespace='theming')),
+    url(r'^theming/', include('ikwen.theming.urls', namespace='theming')),
     url(r'^kakocase/', include('ikwen_kakocase.kakocase.urls', namespace='kakocase')),
     url(r'^kako/', include('ikwen_kakocase.kako.urls', namespace='kako')),
     url(r'^rewarding/', include('ikwen.rewarding.urls', namespace='rewarding')),

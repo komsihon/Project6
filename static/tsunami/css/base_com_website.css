@@ -28,6 +28,30 @@ body {color: #545454}
     margin-left: 6px;
     text-decoration: none;
     }
+
+.btn-outline-primary { color: #007bff; background-color: transparent; background-image: none; border-color: #007bff; }
+.btn-outline-primary:hover { color: #fff !important; background-color: #007bff; border-color: #007bff; }
+.btn-outline-primary:focus, .btn-outline-primary.focus { color: #007bff; box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+.btn-outline-primary.disabled, .btn-outline-primary:disabled { color: #007bff; background-color: transparent; }
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle { color: #fff; background-color: #007bff; border-color: #007bff; }
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-primary.dropdown-toggle:focus { box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5); }
+
+.btn-outline-white { color: #ffffff; background-color: transparent; background-image: none; border-color: #ffffff; }
+.btn-outline-white:hover { color: #000000 !important; background-color: #ffffff; border-color: #ffffff; }
+.btn-outline-white:focus, .btn-outline-white.focus { color: #ffffff; box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
+.btn-outline-white.disabled, .btn-outline-white:disabled { color: #ffffff; background-color: transparent; }
+.btn-outline-white:not(:disabled):not(.disabled):active,
+.btn-outline-white:not(:disabled):not(.disabled).active,
+.show > .btn-outline-white.dropdown-toggle { color: #fff; background-color: #ffffff; border-color: #ffffff; }
+.btn-outline-white:not(:disabled):not(.disabled):active:focus,
+.btn-outline-white:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-white.dropdown-toggle:focus { box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.5); }
+
+
 .modal .actions {clear: both}
 .actions .glyphicon, .glyphicon.action {border: 1px solid #ddd; border-radius: 3px}
 .cta {font-family: "PT Sans", Lato, sans-serif;font-weight: 700;letter-spacing: 0.5px;text-transform: uppercase;}

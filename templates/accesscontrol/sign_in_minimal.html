@@ -24,7 +24,7 @@
         {% endif %}
         <div id="stage" class="form-wrapper subtle-shade">
             <h3 class="login-title">
-             {% if request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
+             {% if request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" or request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
                 <img src="{% static 'tsunami/img/Logo-IKWEN-Tsunami.png' %}">
             {% elif config.logo.name %}
                 <img src="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" alt="Logo {{ service.project_name }}"
