@@ -21,6 +21,8 @@
     <link href="{% static 'website/css/transparent-navbar-darkbg.css' %}" rel="stylesheet">
     <style>
         a {color: #fff}
+        a:hover {text-decoration: none}
+        .orange {color: #fcbd20;}
         .resume {margin-top: 155px}
         footer {color: #fff; bottom: 12px; margin: 0; position: absolute; width: 100%}
         footer strong {color: #fff}
@@ -96,13 +98,13 @@
             <div class="row h-100">
                 <div class="col-sm-7 hidden-xs resume">
                     <div class="header-content">
-                        {% if request.GET.project_name_slug %}
-                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <strong><a href="{% url 'home' %}">{{ project_name }}</a></strong></h2>
+                        {% if request.GET.join %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <span class="orange">{{ project_name }}</span>  on <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
                         {% else %}
                             <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
                         {% endif %}
-                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
-                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
+                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for  <strong class="">free</strong> {% endblocktrans %} </h2>
+                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of  <strong class="">gifts</strong> {% endblocktrans %}  !</h2>
                         <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
 
                     </div>

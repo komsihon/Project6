@@ -10,7 +10,7 @@ from django.views.generic.base import TemplateView
 from ikwen.accesscontrol.backends import UMBRELLA
 from ikwen.billing.mtnmomo.views import MTN_MOMO
 from ikwen.core.utils import get_service_instance, get_mail_content
-from ikwen.core.models import Application
+from ikwen.core.models import Application, Service
 from ikwen.revival.models import MemberProfile
 
 
@@ -70,6 +70,10 @@ class Home(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
+        if self.request.GET.get('join'):
+            project_name_slug = self.request.GET.get('join')
+            service = Service.objects.using('umbrella').get(project_name_slug=project_name_slug)
+            context['project_name'] = service.project_name
         return context
 
     # def get(self, request, *args, **kwargs):
