@@ -283,6 +283,12 @@
                         }
                     }));
 
+                    $('body').on('click', '#whatsapp-share .btn.ok', function() {
+                        var msg = $('#whatsapp-share-msg').val(),
+                            url = $('.wsap-link').data('url');
+                        window.location = 'https://api.whatsapp.com/send?text=' + url + '%0A%0A' + msg;
+                    });
+
                     $(window).on("scroll", function() {
                         if($(window).scrollTop() > 150) {
                             $(".navbar").addClass("active");
@@ -313,7 +319,7 @@
 					} else {
 						$('.back-to-top').removeClass('showing').addClass('hiding')
 					}
-				});
+				    });
 
                     {% url 'ikwen:list_projects' as list_projects_url %}
                     var searchDescriptor = [{
