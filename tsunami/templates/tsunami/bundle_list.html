@@ -34,11 +34,11 @@
 {% block content %}
     <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center;
             -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 100vh; background-repeat: no-repeat">
-        <div class="container" style="font-family: Lato; margin-bottom: 10vh;" id="section-header-general-view">
-            <div class="row text-center">
-                <h2 class="heading-title"> {% trans "Choose the bundles that best suits your needs and budget" %} </h2>
-                <p class="col-md-8 col-md-offset-2 text-center heading-subtitle">
-                    {% trans "An invoice will be generated, you don’t have to pay immediately, but you will have access to full functionalities of Tsunami. Keep in mind that early payments give you Mail and SMS bonus." %}
+        <div class="container" style="font-family: Lato; margin-bottom: 10vh; padding-top: 20vh;" id="section-header-general-view">
+            <div class="container-fluid text-center">
+                <h1 class="heading-title"> {% trans "Choose the bundles that best suits your needs and budget" %} </h1>
+                <p class="col-md-10 col-md-offset-1 text-center heading-subtitle">
+                    {% trans "You don’t have to pay immediately but you will have access to full functionalities of Tsunami. An invoice will be generated, keep in mind that early payments give you Mail and SMS bonus." %}
                 </p>
             </div>
             <section class="bundle-list">
@@ -241,7 +241,7 @@
                             <div class="faq-answer">
                                 {% blocktrans %}
                                     When you deploy your Tsunami platform, you get many business-effective online tools including :
-                                    <ul style="border-left: 3px outset #999; color: #828282; list-style-type: none;">
+                                    <ul style="color: #828282; list-style-type: square;">
                                         <li>
                                             An e-commerce website with online payments.
                                         </li>

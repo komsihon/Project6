@@ -1,7 +1,7 @@
 a { text-decoration: none !important }
 
-.heading-title { font-weight: bolder; margin: 10vh 0 4vh 0;}
-.heading-subtitle { color: #828282; font-weight: bold; padding-bottom: 6vh;}
+.heading-title { font-weight: bolder; margin: 5vh 0 6vh 0;}
+.heading-subtitle { color: #6f6f6f; font-size: 18px; padding-bottom: 10vh;}
 
 .blockquote { border: none !important; }
 .bundle-list { margin: 1vh 0 10vh 0;}
@@ -20,7 +20,7 @@ a { text-decoration: none !important }
 }
 
 .pricingTable .pricingTable-header{
-    margin-bottom: 40px;
+    margin-bottom: 6vh;
     position: relative;
     z-index: 1;
 }
@@ -223,6 +223,11 @@ a { text-decoration: none !important }
     .faq-title { margin: -13vh 0 5vh 66vh !important; max-width: 25vw }
 }
 
+/* Landscape */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    .pricingTable .pricingTable-header{ margin-bottom: 30vh; }
+}
+
 @media only screen and (max-width: 767px) and (orientation: portrait) {
     .pricingTable .pricingTable-header:before{
         height: 300%;
@@ -240,11 +245,11 @@ a { text-decoration: none !important }
 @media only screen and (max-width: 767px){
     .pricingTable .pricingTable-header:before{
         height: 300%;
-        top: -267%;
+        top: -333%;
     }
     .pricingTable .pricingTable-header:after{
         height: 270%;
-        top: -106%;
+        top: -123%;
     }
 }
 
@@ -255,7 +260,7 @@ a { text-decoration: none !important }
 @media only screen and (max-width: 479px){
     .pricingTable .pricingTable-header:before{
         height: 200%;
-        top: -120%;
+        top: -130%;
         left: -20%;
     }
 }
@@ -287,6 +292,8 @@ a { text-decoration: none !important }
 @media only screen and (min-device-width : 768px) and (max-device-width : 1020px) and (orientation : portrait) {
     /*.pricingTable .pricing-content { font-size: 50vw !important; }*/
 
+    .heading-subtitle { font-size: 3.5vw !important; }
+
     .pricingTable .title { right: -40px !important; }
     .pricingTable .subtitle { font-size: 25px; }
     .pricingTable .pricing-content li{ font-size: 24px; }
@@ -304,7 +311,7 @@ a { text-decoration: none !important }
 }
 
 
-/* Animation set */
+/* Animation set *8
 .animated {
 	-webkit-animation-duration: 1.3s;
 	animation-duration: 1.3s;

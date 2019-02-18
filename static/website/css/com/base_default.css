@@ -385,6 +385,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     }
     .bottom-shade-xs {box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1)}
     .ik-li .date {position: absolute; right: 6px}
+
 }
 @media (min-width: 768px) {
     .modal .actions {margin-top: 2em}
@@ -439,6 +440,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     .nav > .tab > a {padding: 10px 15px}
     .ik-li .date {float: right}
     .payment-method {display: inline}
+
 }
 @media (max-width: 991px) {
     #navbar .navbar-nav .open .dropdown-menu {max-height: 450px;overflow: auto;min-width: 200px;}
@@ -494,6 +496,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     .modal-m { width: auto;}
 
     .footer-copyright { font-size: 3vw !important; }
+
+    .back-to-top { font-size: 10vw }
 }
 /* Landscape */
 @media only screen and (max-width: 900px) and (orientation: landscape) {
@@ -506,6 +510,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     .modal-m { width: 600px;}
 
     .footer-copyright { font-size: 2.5vw !important; }
+
+    .back-to-top { font-size: 6.5vw; }
 }
 
 
@@ -520,6 +526,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     .glyphicon-search:before { font-size: 18px !important; }
 
     .modal-m { width: 800px;}
+
+    .back-to-top { font-size: 8vw }
 
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2.5vw !important; }
@@ -541,6 +549,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 
     .modal-m { width: 800px;}
 
+    .back-to-top { font-size: 5vw }
+
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 2vw !important; }
     div.footer-mobile-adjust > ul { font-size: 1.5vw !important; }
@@ -561,6 +571,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 
 
     .modal-m { width: 600px;}
+
+    .back-to-top { font-size: 8vw }
 
     /* Footer */
     div.footer-mobile-adjust > h5 { font-size: 3vw !important; }
