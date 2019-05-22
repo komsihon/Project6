@@ -1,0 +1,16 @@
+{% extends "website/base.html" %}
+<title>ikwen' services links</title>
+{% block page_content %}
+    <div style="display:block">
+        <div style="display:block;text-align:center;margin:0 auto">
+            <div style="display:inline-block;">
+               <ul style="list-style: none;">
+    {#           text-align: center#}
+                    {% for service in service_list %}
+                        <li style="{% if forloop.counter == 0 %}margin-top: 20px;{% else %}margin-top:40px{% endif %}"><a href="{{ service.url }}">{{ service }}</a></li>
+                    {% endfor %}
+               </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
