@@ -14,6 +14,7 @@ from ikwen_kakocase.kakocase.models import TsunamiBundle
 from ikwen.accesscontrol.models import Member, DEFAULT_GHOST_PWD
 from ikwen.core.utils import get_service_instance, get_mail_content
 from ikwen.revival.models import ProfileTag, MemberProfile
+from ikwen.core.models import Service
 
 TSUNAMI = 'tsunami'
 logger = logging.getLogger('ikwen')
@@ -32,7 +33,7 @@ class Home(TemplateView):
         service = get_service_instance()
         config = service.config
         visitor_email = request.GET.get('visitor_email')
-        if not  visitor_email:
+        if not visitor_email:
             response = {'error': 'No Email found'}
             return HttpResponse(json.dumps(response), 'content-type: text/json')
         try:
@@ -50,10 +51,9 @@ class Home(TemplateView):
         member_profile.tag_fk_list.extend(tag_fk_list)
         member_profile.save()
 
-
         try:
             subject = _("Do more with Tsunami !")
-            html_content = get_mail_content(subject, template_name='tsunami/mails/first_contact.html',)
+            html_content = get_mail_content(subject, template_name='tsunami/mails/first_contact.html', )
             sender = '%s <no-reply@%s>' % (config.company_name, service.domain)
             msg = EmailMessage(subject, html_content, sender, visitor_email)
             msg.content_subtype = "html"
@@ -82,3 +82,13 @@ class BundlesList(TemplateView):
         if action == 'get_bundle':
             return self.get_bundle(request)
         return super(BundlesList, self).get(request, *args, **kwargs)
+
+
+class ServicesLinks(TemplateView):
+    template_name = 'core/seo_links.html'
+
+    def get_context_data(self, **kwargs):
+        service_list = Service.objects.all()
+        context = super(ServicesLinks, self).get_context_data(**kwargs)
+        context['service_list'] = service_list
+        return context
