@@ -76,21 +76,6 @@ class Home(TemplateView):
             context['project_name'] = service.project_name
         return context
 
-    # def get(self, request, *args, **kwargs):
-    #     customer = self.request.user
-    #     if customer.is_authenticated():
-    #         pending_campaigns = ComCampaign.objects.filter(member=customer, status=ComCampaign.PAID)
-    #         if pending_campaigns:
-    #             campaign = pending_campaigns[0]
-    #             return HttpResponseRedirect(reverse('tsunami:checkout', kwargs={'campaign_id': campaign.id}))
-    #     return render(self.request, self.template_name, self.get_context_data())
-
-    def get(self, request, *args, **kwargs):
-        if request.user.is_authenticated():
-            next_url = reverse('ikwen:console')
-            return HttpResponseRedirect(next_url)
-        return super(Home, self).get(request, *args, **kwargs)
-
 
 class About(TemplateView):
     template_name = 'website/about.html'
@@ -138,3 +123,7 @@ class Shavida(TemplateView):
 
 class PinsView(TemplateView):
     template_name = 'website/apps/pinsview.html'
+
+
+class Foulassi(TemplateView):
+    template_name = 'website/apps/foulassi.html'
