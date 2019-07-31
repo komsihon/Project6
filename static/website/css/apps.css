@@ -41,7 +41,7 @@ div.cloud-deploy {position: absolute; bottom: 100px; width: 100%}
     section.site {margin-top: 20px; padding-bottom: 10px}
     .contact-img {text-align: center}
     .contact-address {text-align: center}
-    footer div {float: left; padding-bottom: 25px; width: 100%}
+    footer div {float: left;padding-bottom: 25px;width: 100%;}
     #bottom-menu li {float: left; clear: both; width: 100%}
     #bottom-menu a {float: left;margin-top: 5px; padding: 10px 0; width: 100%}
     .section-header img {float: left;clear: both; margin-top: 30px; width: 80%}
