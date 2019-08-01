@@ -1,7 +1,7 @@
 import os, sys
 
 
-sys.path.append('/home/roddy/PycharmProjects/Website/conf')
+sys.path.append('/home/komsihon/Dropbox/PycharmProjects/ikwenWebsite/conf')
 from conf import monitor
 
 monitor.start(interval=1.0)
