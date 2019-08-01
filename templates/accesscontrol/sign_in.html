@@ -39,7 +39,7 @@
             <form id="login-form" action="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" method="post">{% csrf_token %}
                 <div class="form-group" style="margin-top: .4em">
                     <label for="lg-username">{% trans "Email or phone" %}</label>
-                    <input id="lg-username" class="form-control input-sm username" type="text" name="username" autofocus
+                    <input id="lg-username" class="form-control input-md username" type="text" name="username" autofocus
                            value="{{ request.GET.username }}{{ request.GET.phone }}" /> {#Only username or phone will be output depending on what is available#}
                 </div>
                 <div class="form-group">
@@ -81,19 +81,6 @@
                 var username = $(this).val().replace(/ /g, '').toLowerCase();
                 $(this).val(username);
             });
-            function testUsername() {
-                $('.errorlist.username').remove();
-                var $username = $('#lg-username'),
-                    username = $username.val().replace(/ /g, '').toLowerCase();
-                $username.val(username);
-                if (username.isValidEmail()) return true;
-                if (username && username.substr(0, 2) !== '00' && /\d{9,}/.test(username)) return true;
-                $('<ul class="errorlist username"><li>' + "{% trans "Please, enter valid email or phone" %}" + '</li></ul>')
-                        .insertAfter('#lg-username');
-                $username.focus();
-                return false;
-            }
-            $('#login-form').submit(testUsername);
         })()
     </script>
     {{ config.scripts|safe }}

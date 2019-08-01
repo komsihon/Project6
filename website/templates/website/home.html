@@ -190,23 +190,4 @@
 {% block js %}
     {{ block.super }}
     <script src="{% static 'website/js/ikwen-website.js' %}"></script>
-	  <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript">
-        (function() {
-            function testUsername() {
-                $('.errorlist.username').remove();
-                var $username = $('#username'),
-                    username = $username.val().replace(/ /g, '').toLowerCase();
-                $username.val(username);
-                if (username.isValidEmail()) return true;
-                if (username && username.substr(0, 2) !== '00' && /\d{9,}/.test(username)) return true;
-                $('<ul class="errorlist username"><li>' + "{% trans "Please, enter valid email or phone" %}" + '</li></ul>')
-                        .insertAfter('#username');
-                $username.focus();
-                return false;
-            }
-            $('#login').submit(testUsername);
-        })()
-    </script>
-
 {% endblock %}
