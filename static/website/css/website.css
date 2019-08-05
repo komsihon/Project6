@@ -22,9 +22,8 @@
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
 #navbar .glyphicon {color: #203e96}
 
-
 .lang-switcher {float: right; margin: 30px 20px}
-.lang-switcher i { margin: 3px 35px; position: absolute}
+.lang-switcher i {color: #fff; font-size: 23px; margin-left: -42px; position: absolute}
 .lang-switcher select {background: transparent; border: none; color: #FFF}
 
 
@@ -54,7 +53,7 @@
     #bottom-menu li {margin-left: 25px}
     .choices > div {margin-top: 35px}
     .main-nav .lang-switcher {float: right; margin: 15px 0 20px 0}
-    .main-nav .lang-switcher select {background: transparent;border: none;color: #243681; border-radius: 3px;font-size: 14px;padding: 5px;width: 57px;}
+    .main-nav .lang-switcher select {background: transparent;border: none;color: #243681; border-radius: 3px;font-size: 15px;padding: 5px;width: 45px;}
 }
 
 @media only screen and (min-width : 768px){
