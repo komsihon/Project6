@@ -12,7 +12,6 @@ urlpatterns = patterns(
 
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', Home.as_view(), name='home'),
-    url(r'^/(?P<join>[\w-]+)/$', Home.as_view(), name='home'),
     url(r'^about$', About.as_view(), name='about'),
     url(r'^support_bundle$', Bundle.as_view(), name='support_bundle'),
     url(r'^terms$', Terms.as_view(), name='terms_and_conditions'),

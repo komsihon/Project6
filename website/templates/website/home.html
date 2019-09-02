@@ -101,10 +101,12 @@
                         {% endif %}
                         <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for  <strong class="">free</strong> {% endblocktrans %} </h2>
                         <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of  <strong class="">gifts</strong> {% endblocktrans %}  !</h2>
-                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
-
+                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">
+                            {% if user.is_anonymous %}{% trans "Register" %}{% else %}{% trans "Get in !" %}{% endif %}
+                        </a>
                     </div>
                 </div>
+                {% if user.is_anonymous %}
                 <div class="col-sm-5">
                     <div id="loginbox" class="mainbox col-sm-12 loginbox">
                         <div class="card border-primary" >
@@ -146,7 +148,7 @@
                         </div>
                     </div>
                 </div>
-
+                {% endif %}
                 <div class="col-sm-7 visible-xs resume">
                     <div class="header-content">
                         {% if request.GET.project_name_slug %}
@@ -156,7 +158,9 @@
                         {% endif %}
                         <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
                         <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
-                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">{% trans "Register" %}</a>
+                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">
+                            {% if user.is_anonymous %}{% trans "Register" %}{% else %}{% trans "Get in !" %}{% endif %}
+                        </a>
                     </div>
                 </div>
             </div>
