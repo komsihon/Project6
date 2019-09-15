@@ -1,9 +1,9 @@
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
-# from ikwen.flatpages.views import FlatPageView
 
-from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle, Foulassi
+from ikwen.core.views import Offline
+
+from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle
 
 admin.autodiscover()
 
@@ -12,6 +12,7 @@ urlpatterns = patterns(
 
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', Home.as_view(), name='home'),
+    url(r'^offline.html$', Offline.as_view(), name='offline'),
     url(r'^about$', About.as_view(), name='about'),
     url(r'^support_bundle$', Bundle.as_view(), name='support_bundle'),
     url(r'^terms$', Terms.as_view(), name='terms_and_conditions'),

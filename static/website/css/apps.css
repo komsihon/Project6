@@ -12,7 +12,7 @@ a:hover, a:focus,a:active {color: #4263ac; text-decoration: none}
 a.btn {background: #fe7400;border: #fe7400;color: #fff;font-size: 20px;margin: auto;padding: 10px 40px;text-align: center;width: 300px;}
 a.btn:hover {background: #dc6e00; color: #fff; }
 #navbar {top: 0}
-section.site {float: left; font-size: 28px; line-height: 45px; font-weight:300; text-align: center; min-height: 400px; padding: 100px 0; width: 100%}
+section.site {float: left;font-size: 28px;line-height: 45px;font-weight:300;text-align: center;min-height: 400px;padding: 100px 0;width: 100%;}
 section.site.header {background-size: cover;  float: left; height: 900px; padding: 20px 0;  width: 100%}
 section.site.header .logo {float: left; margin: 75px 50px }
 section.site.main-feat {background-size: cover;background-attachment: fixed; height: 900px; }

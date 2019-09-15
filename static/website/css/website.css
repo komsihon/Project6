@@ -42,8 +42,7 @@
     .main-title {margin-top: 42%}
 }
 
-@media only screen and
-(max-width: 767px) {
+@media only screen and (max-width: 767px) {
     #footer {background: #fff; color: #b7b7b7;bottom: 0; font-size: 13px; position: absolute; padding: 7px 0; text-align: center; width: 85%;}
     #footer a {color: #b7b7b7; font-size: 13px;}
     .main-title {font-size: 2.3em; line-height: 45px}
@@ -83,7 +82,7 @@
     .pricing-header {padding: 1.9em 0 1.6em;}
     .price .currency, .price .duration {font-size: 1rem}
     .price .value {font-size: 4rem}
-    #navbar-search {width: 370px;}
+    #navbar-search {width: 370px;margin-left: 24px;}
     .main-nav .lang-switcher {float: right; margin: 15px 0 20px 0}
     .main-nav .lang-switcher select {background: transparent;border: none;color: #243681; border-radius: 3px;font-size: 13px;padding: 5px;width: 47px;}
 }

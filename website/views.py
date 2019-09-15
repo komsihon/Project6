@@ -76,6 +76,13 @@ class Home(TemplateView):
             context['project_name'] = service.project_name
         return context
 
+    def get(self, request, *args, **kwargs):
+        target = request.GET.get('target')
+        if target == 'foulassi':
+            next_url = reverse('ikwen:sign_in') + '?next=' + reverse('foulassi:kid_list')
+            return HttpResponseRedirect(next_url)
+        return super(Home, self).get(request, *args, **kwargs)
+
 
 class About(TemplateView):
     template_name = 'website/about.html'
