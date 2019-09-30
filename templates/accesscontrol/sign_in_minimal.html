@@ -4,7 +4,7 @@
 {% block page_title %}<title>{{ service.project_name }} - {% trans "Sign in" %} </title>{% endblock %}
 {% block head_style %}
     {{ block.super }}
-    <link rel='stylesheet' href="{% static 'ikwen/css/sign-in.css' %}?19.8.1" />
+    <link rel='stylesheet' href="{% static 'ikwen/css/sign-in.css' %}?19.9.30" />
     {% if request.META.HTTP_REFERER|slice:"-16:" == "/tsunami/bundles" or request.META.HTTP_REFERER|slice:"-9:" == "/tsunami/" %}
         <link rel='stylesheet' href="{% static 'tsunami/css/sign-in.css' %}" />
     {% endif %}
@@ -43,16 +43,16 @@
                 </div>
                 <div class="form-group submit-username">
                     {% if settings.IS_UMBRELLA %}
-                        <button class="btn btn-primary btn-block btn-md" type="button"> {% trans "Submit" %} </button>
+                        <button class="btn btn-primary btn-block btn-md" type="button">
+                            {% include 'core/snippets/button_spinner.html' %}
+                            <span>{% trans "Submit" %}</span>
+                        </button>
                     {% else %}
                         <button class="btn btn-primary btn-block btn-md login-with-ikwen" type="button">
                             <img height="26" src="{% static 'ikwen/img/logo_ikwen_symbol_30x30.png' %}" />
                             {% blocktrans %}Login with <strong>ikwen</strong>{% endblocktrans %}
                         </button>
                     {% endif %}
-                    <div class="spinner">
-                        <i class="fa fa-circle-o-notch fa-spin fa-2x"></i>
-                    </div>
                 </div>
                 <div class="create-account">
                     <div class="form-group row password2">
@@ -138,7 +138,10 @@
                 <div class="form-group submit">
                     <button id="cancel" class="btn btn-default btn-md hidden-xs" type="button"> {% trans "Back" %} </button>
                     <button id="continue" class="btn btn-primary btn-block btn-md continue" type="button"> {% trans "Continue" %} </button>
-                    <button id="submit" class="btn btn-success btn-block btn-md cta" type="submit"> {% trans "Submit" %} </button>
+                    <button id="submit" class="btn btn-success btn-block btn-md cta" type="submit">
+                        {% include 'core/snippets/button_spinner.html' %}
+                        <span>{% trans "Submit" %}</span>
+                    </button>
                     {% url 'ikwen:forgotten_password' as forgotten_password_url %}
                     <a class="forgotten-pwd" href="{{ forgotten_password_url|ikwenize }}">{% trans "Forgotten password ?" %}</a>
                     <div class="clearfix"></div>
@@ -189,17 +192,23 @@
                 } else $('#submit').prop('disabled', true).addClass('default')
             }).on('click', '#submit', function() {
                 if ($('#content').hasClass('register step2')) {
+                    if ($(this).hasClass('processing')) return false;
                     $('.errorlist').remove();
                     {% if settings.REGISTER_WITH_DOB %}
                         if (!checkDOB()) return false;
                     {% endif %}
                     if (!$('#accept-terms').prop('checked')) return false;
+                    $(this).addClass('processing');
                 }
             }).on('keydown', '#auth input, #auth select', function(e) {
                 // This Manages what happens when we press enter in the form
                 // returning false on $(form).submit() does not prevent the
                 // form from being submitted, so we use this hack instead.
                 if (e.keyCode === 13) {
+                    if ($('#submit').hasClass('processing')) {
+                        e.preventDefault();
+                        return;
+                    }
                     $('.errorlist').remove();
                     if ($('#content').hasClass('init')) {
                         e.preventDefault();
@@ -215,6 +224,7 @@
                             if (!checkDOB()) e.preventDefault();
                         {% endif %}
                         if (!$('#accept-terms').prop('checked')) e.preventDefault();
+                        $('#submit').addClass('processing');
                     }
                 }
             });
@@ -289,19 +299,21 @@
             }
 
             function checkUsername() {
-                var username = $('#username').val().toLowerCase();
+                var username = $('#username').val().toLowerCase(),
+                    _$btn = $('.submit-username .btn');
                 if (!username) return false;
                 if (!testUsername(username)) return false;
-                $('#auth .spinner').css('visibility', 'visible');
+                if (_$btn.hasClass('processing')) return false;
+                _$btn.addClass('processing');
                 $.ajax({
                     url: '{% url 'ikwen:sign_in' %}',
                     data: {username: username},
                     error: function(req, status, error) {
-                        $('#auth .spinner').css('visibility', 'hidden');
+                        _$btn.removeClass('processing');
                         $('#content .failure').show().html("{% trans "Oops! An error occurred. Check your internet." %}");
                     },
                     success: function(data) {
-                        $('#auth .spinner').css('visibility', 'hidden');
+                        _$btn.removeClass('processing');
                         $('#content').removeClass('init');
                         if (data.existing) {
                             location.hash = 'login';
