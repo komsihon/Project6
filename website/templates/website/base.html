@@ -13,7 +13,7 @@
 {% endblock %}
 {% block head_style %}
     {{ block.super }}
-    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?v=19.9.15" />
+    <link rel='stylesheet' href="{% static 'website/css/website.css' %}" />
     <style>
         .edge-panel-left .wrapper {padding-top: 0}
         body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -33,7 +33,7 @@
 
 {% block header_brand %}
     <a class="navbar-brand hidden-xs" href="{{ service.url }}">
-        <img src="{% static "website/img/logo_ikwen_web_header.png" %}" style="height: 30px; ">
+        <img src="{% static "website/img/logo-ikwen_for-header.png" %}" style="height: 30px; ">
     </a>
     <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
 {% endblock %}
