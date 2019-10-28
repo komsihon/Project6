@@ -84,7 +84,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="masthead">
+    <div class="masthead" style="{% if not user.is_anonymous %}height: inherit;{% endif %}">
         <div id="animatedBackground1" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_1.png' %});background-size: cover; position: absolute; width: 100%;"></div>
         <div id="animatedBackground2" class="animated2 infinite flash" style="background-image: url({% static 'website/img/bg-2_2.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
         <div id="animatedBackground3" class="animated3 infinite fadeIn" style="background-image: url({% static 'website/img/bg-2_3.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
