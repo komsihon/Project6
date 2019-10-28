@@ -35,6 +35,9 @@ urlpatterns = patterns(
     url(r'^foulassi/school/', include('ikwen_foulassi.school.urls', namespace='school')),
     url(r'^foulassi/', include('ikwen_foulassi.foulassi.urls', namespace='foulassi')),
 
+    # Daraja URLs
+    url(r'^daraja/', include('daraja.urls', namespace='daraja')),
+
     url(r'^', include('ikwen.core.urls', namespace='ikwen')),
     # url(r'^page/(?P<url>[-\w]+)/$', FlatPageView.as_view(), name='flatpage'),
 )
