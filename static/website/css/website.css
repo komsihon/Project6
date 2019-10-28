@@ -1,12 +1,21 @@
 /**
     Document   : base
     Created on : May 10, 2018, 13:40
-    Author     : Roddy Mbogning
+    Author     : Roddy Mbogning & W1773ND (wilfriedwillend@gmail.com)
     Description:
         Additional basic display rules for Ikwen apps
 */
 
 /* Website edge panel style */
+
+.dropdown-menu { left: 0 !important; top: 75% !important; }
+li.dropdown:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-menu>li>a { color: #fff !important; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: #eeeeee2b;
+}
 
 .top-edge-panel {float: left; height: 200px; width: 100%}
 .edge-panel-left .wrapper {padding-top: 0}

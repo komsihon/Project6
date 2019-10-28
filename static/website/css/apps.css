@@ -38,6 +38,7 @@ div.cloud-deploy {position: absolute; bottom: 100px; width: 100%}
     #bottom-menu li a {float: left; width: 100%}
     div.container {margin-top: 0}
     .app-logo img {width: 75%}
+    section.site .cover { padding: 25vh 0 !important;}
     section.site {margin-top: 20px; padding-bottom: 10px}
     .contact-img {text-align: center}
     .contact-address {text-align: center}
