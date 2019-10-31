@@ -22,7 +22,7 @@
 {% block head_style %}
     {{ block.super }}
     <!-- Custom css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'tsunami/css/tsunami_homepage.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'tsunami/css/tsunami_homepage.css' %}?V=29.10.19.16.43">
     <style>
         div#email-error {display: none}
     </style>
@@ -36,6 +36,7 @@
 {% endblock %}
 
 {% block content %}
+    {{ block.super }}
     <div id="section-header-general-view" class="container-fluid section-header" style="padding-top: 6vh;">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center mobile-adjust" style="padding-top: 18vh">
@@ -243,11 +244,10 @@
     </div>
 
 {% endblock %}
-
 {% block js %}
     {{ block.super }}
     <script>
-        (function () {
+        (() => {
             // redirect to Tsunami signIn page
             $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'tsunami:home' %}");
 
@@ -258,7 +258,7 @@
 
             $('#visitor-email').focusin(function () {
                 $('div#email-error').fadeOut().hide()
-            })
+            });
 
             // get the email for Tsunami relaunch mails
             $('.btn-process').click(function () {
@@ -270,7 +270,17 @@
                 }
 
             });
-
+            // navbar transition
+            let scrollBreakPoint = 90;
+            $(window).scroll((event) => {
+                let scrollTop = $(this).scrollTop();
+                if (scrollTop > scrollBreakPoint){
+                    let opacity = Math.abs(scrollBreakPoint - scrollTop) / 100;
+                    $('#navbar').css("background-color", `rgba(35, 54, 130, ${opacity})`);
+                } else {
+                    $('#navbar').css("background-color", "transparent");
+                }
+            });
         })()
     </script>
 {% endblock %}

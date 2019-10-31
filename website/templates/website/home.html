@@ -4,13 +4,20 @@
 
 {% block meta %}
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:type" content="Website" />
-    <meta property="og:title" content="IKWEN" />
-    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
-    <meta property="og:description" content="Web Apps to empower your small or big business" />
-    <meta property="description" content="Web Apps to empower your small or big business" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="ikwen." >
+    <link rel="shortcut icon" type="image/png" href="{% static "website/img/favicon_ikwen.ico" %}">
+    <meta name="theme-color" content="#28a745">
+    <meta name="msapplication-navbutton-color" content="#233682">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#233682">
+    <meta property="description" content="{% trans "Web Apps to empower your small or big business" %}" />
     <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{% url 'about' %}" />
+    <meta property="og:image" content="{% static 'website/img/ikwen logo_without-slogan.png' %}" />
+    <meta property="og:title" content="{% trans "IKWEN" %}"/>
+    <meta property="og:description" content="{% trans "Web Apps to empower your small or big business" %}">
 {% endblock %}
 
 {% block head_style %}
@@ -51,6 +58,9 @@
         @media only screen
         and (max-width : 768px) {
              #loginbox {width: 100%}
+            li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
+            .dropdown-menu>li>a { color: #217DBB !important; }
+            .dropdown-menu .username { color: #233682 }
         }
         @media only screen
         and (max-width : 425px) {
@@ -74,7 +84,7 @@
 
             .resume {margin-top: 45px}
              #bottom-menu {display: none}
-             #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 100px; padding: 0;}
+             #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 70px; padding: 0;}
             footer {margin-top: -25px; position: relative; width: 100%}
             {#ul#nav-xs.navbar-right li a {display: none}#}
             .icon-bar {background: #fff}

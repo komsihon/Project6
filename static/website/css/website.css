@@ -8,18 +8,20 @@
 
 /* Website edge panel style */
 
-.dropdown-menu { left: 0 !important; top: 75% !important; }
-li.dropdown:hover > ul.dropdown-menu {
-    display: block;
-}
+.dropdown-menu-daraja { top: 75% !important; }
+/*.dropdown-menu-daraja { left: 0 !important; top: 75% !important; }*/
+li.dropdown:hover > ul.dropdown-menu { background: transparent }
+/*li.dropdown:hover > ul.dropdown-menu { background: transparent; display: block; }*/
 .dropdown-menu>li>a { color: #fff !important; }
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    background-color: #eeeeee2b;
-}
+/*.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #eeeeee2b; }*/
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #eeeeee40}
+.has-shade {box-shadow: 1px 1px 9px 4px rgba(0, 0, 0, .1)}
+.dropdown-menu .username { color: #FFF }
+.fas { font-size: 20px}
 
 .top-edge-panel {float: left; height: 200px; width: 100%}
 .edge-panel-left .wrapper {padding-top: 0}
-.panel-top {background-size: cover;height: 200px; }
+.panel-top {background-size: cover;height: 200px; padding-top: 2vh }
 #side-nav .panel-top .cover {background: rgba(0, 0, 0, 0.52);height: 200px;padding: 10px; width: 100%}
 #side-nav .nav-stacked li a {font-weight: 700;color: #676767;font-size: 15px;padding: 15px 25px;}
 .ik-logo {background-size: 100% auto; background-repeat: no-repeat; height: 80px; width: 190px;}
@@ -27,9 +29,9 @@ li.dropdown:hover > ul.dropdown-menu {
 .divider {height: 1px; margin: 9px 0; overflow: hidden;background-color: #e5e5e5; width: 100%;}
 #side-nav .nav {padding-bottom: 200px;float: left; height: 300px; overflow: scroll; width: 100%;}
 #navbar .navbar-brand{font-weight: 700;}
-.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #203e96}
+#navbar .navbar-brand img { height: 30px}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #217dbb}
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
-#navbar .glyphicon {color: #203e96}
 
 .lang-switcher {float: right; margin: 30px 20px}
 .lang-switcher i {color: #fff; font-size: 23px; margin-left: -42px; position: absolute}
@@ -52,50 +54,203 @@ li.dropdown:hover > ul.dropdown-menu {
 }
 
 @media only screen and (max-width: 767px) {
-    #footer {background: #fff; color: #b7b7b7;bottom: 0; font-size: 13px; position: absolute; padding: 7px 0; text-align: center; width: 85%;}
-    #footer a {color: #b7b7b7; font-size: 13px;}
-    .main-title {font-size: 2.3em; line-height: 45px}
-    #site-menu .kakocase, #site-menu .tsunami {display: none}
-     #bottom-menu li {margin-left: 0}
-     #bottom-menu {bottom: inherit; left: 0; margin-left: 0; margin-top: 100px; text-align: center}
-    #bottom-menu li {margin-left: 25px}
-    .choices > div {margin-top: 35px}
-    .main-nav .lang-switcher {float: right; margin: 15px 0 20px 0}
-    .main-nav .lang-switcher select {background: transparent;border: none;color: #243681; border-radius: 3px;font-size: 15px;padding: 5px;width: 45px;}
+    #footer {
+        background: #fff;
+        color: #b7b7b7;
+        bottom: 0;
+        font-size: 13px;
+        position: absolute;
+        padding: 7px 0;
+        text-align: center;
+        width: 85%;
+    }
+
+    #footer a {
+        color: #b7b7b7;
+        font-size: 13px;
+    }
+
+    .main-title {
+        font-size: 2.3em;
+        line-height: 45px
+    }
+
+    #site-menu .kakocase, #site-menu .tsunami {
+        display: none
+    }
+
+    #bottom-menu li {
+        margin-left: 0
+    }
+
+    #bottom-menu {
+        bottom: inherit;
+        left: 0;
+        margin-left: 0;
+        margin-top: 100px;
+        text-align: center
+    }
+
+    #bottom-menu li {
+        margin-left: 25px
+    }
+
+    .choices > div {
+        margin-top: 35px
+    }
+
+    .main-nav .lang-switcher {
+        float: right;
+        margin: 15px 0 20px 0
+    }
+
+    .main-nav .lang-switcher select {
+        background: transparent;
+        border: none;
+        color: #243681;
+        border-radius: 3px;
+        font-size: 15px;
+        padding: 5px;
+        width: 45px;
+    }
+
+    .navbar-right .dropdown-menu {
+        top: 50px;
+    }
 }
 
-@media only screen and (min-width : 768px){
-    .navbar-default .navbar-brand {padding: 14px 15px 19px 0;}
-    .main-title {font-size: 4em; margin: 180px 0 75px;  text-indent: 14px;}
-    #bottom-menu li {float: right;}
-    #bottom-menu li {margin-left: 25px}
-    #navbar-search input {background: rgba(102, 102, 102, 0.22); color: #233682}
-    .navbar li a {font-size: 14px}
-    #navbar .glyphicon.glyphicon-search {color: #FFF}
-    .navbar-default .navbar-nav >.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {background-color:rgba(199, 199, 199, 0.33)}
-    .dropdown-menu>li>a {color: #233682}
-    #navbar .navbar-nav .open .dropdown-menu {border-radius: 4px; top: 3px; right: 3px;}
-    #navbar-search {width: 273px}
+    @media only screen and (min-width: 768px) {
+        .navbar-default .navbar-brand {
+            padding: 14px 15px 19px 0;
+        }
+        .navbar-nav>li>a:not(.icon) {
+            line-height: 25px;
+        }
 
-    .pricing-header h2 {font-size:25px }
-    .pricing-header {padding: 12px 0 10px}
-    .price .currency, .price .duration {font-size: .8rem}
-    .price .value {font-size: 2rem}
-    .main-nav .lang-switcher {float: right; margin: 15px 0 20px 0}
-    .main-nav .lang-switcher select {background: transparent;border: none; color:#243681; border-radius: 3px;font-size: 12px;padding: 5px;width: 47px;}
-}
+        .main-title {
+            font-size: 4em;
+            margin: 180px 0 75px;
+            text-indent: 14px;
+        }
 
-@media only screen and (min-width : 992px) and (orientation: landscape) {
-    .main-title {margin-top: 25%}
-    .pricing-header h2 {font-size:30px }
-    .pricing-header {padding: 1.9em 0 1.6em;}
-    .price .currency, .price .duration {font-size: 1rem}
-    .price .value {font-size: 4rem}
-    #navbar-search {width: 370px;margin-left: 24px;}
-    .main-nav .lang-switcher {float: right; margin: 15px 0 20px 0}
-    .main-nav .lang-switcher select {background: transparent;border: none;color: #243681; border-radius: 3px;font-size: 13px;padding: 5px;width: 47px;}
-}
+        #bottom-menu li {
+            float: right;
+        }
 
-@media only screen and (min-width : 1200px) {
-    #navbar-search {width: 450px;}
-}
+        #bottom-menu li {
+            margin-left: 25px
+        }
+
+        #navbar-search input {
+            background: rgba(102, 102, 102, 0.22);
+            color: #233682
+        }
+
+        #navbar i.fa-search {
+            font-size: 15px;
+            margin: 10px 0 0 10px;
+            position: absolute;
+        }
+
+        .navbar li a {
+            font-size: 14px
+        }
+
+        .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+            background-color: rgba(199, 199, 199, 0.33)
+        }
+
+        .dropdown-menu > li > a {
+            color: #233682
+        }
+
+        #navbar .navbar-nav .open .dropdown-menu {
+            border-radius: 4px;
+            top: 3px;
+            right: 3px;
+        }
+
+        #navbar-search {
+            padding: 15px;
+            width: 273px
+        }
+
+        .pricing-header h2 {
+            font-size: 25px
+        }
+
+        .pricing-header {
+            padding: 12px 0 10px
+        }
+
+        .price .currency, .price .duration {
+            font-size: .8rem
+        }
+
+        .price .value {
+            font-size: 2rem
+        }
+
+        .main-nav .lang-switcher {
+            float: right;
+            margin: 15px 0 20px 0
+        }
+
+        .main-nav .lang-switcher select {
+            background: transparent;
+            border: none;
+            color: #243681;
+            border-radius: 3px;
+            font-size: 12px;
+            padding: 5px;
+            width: 47px;
+        }
+    }
+
+    @media only screen and (min-width: 992px) and (orientation: landscape) {
+        .main-title {
+            margin-top: 25%
+        }
+
+        .pricing-header h2 {
+            font-size: 30px
+        }
+
+        .pricing-header {
+            padding: 1.9em 0 1.6em;
+        }
+
+        .price .currency, .price .duration {
+            font-size: 1rem
+        }
+
+        .price .value {
+            font-size: 4rem
+        }
+
+        #navbar-search {
+            width: 370px;
+            margin-left: 24px;
+        }
+
+        .main-nav .lang-switcher {
+            float: right;
+            margin: 15px 0 20px 0
+        }
+
+        .main-nav .lang-switcher select {
+            background: transparent;
+            border: none;
+            color: #243681;
+            border-radius: 3px;
+            font-size: 13px;
+            padding: 5px;
+            width: 47px;
+        }
+    }
+
+    @media only screen and (min-width: 1200px) {
+        #navbar-search {
+            width: 450px;
+        }
+    }

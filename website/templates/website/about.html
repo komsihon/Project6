@@ -15,7 +15,7 @@
     <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{% url 'about' %}" />
-    <meta property="og:image" content="{% static 'website/img/ikwen logo(without slogan).png' %}" />
+    <meta property="og:image" content="{% static 'website/img/ikwen logo_without-slogan.png' %}" />
     <meta property="og:title" content="{% trans "IKWEN" %}"/>
     <meta property="og:description" content="{% trans "Web Apps to empower your small or big business" %}">
 {% endblock %}
@@ -24,14 +24,21 @@
     {{ block.super }}
     <link rel='stylesheet' href="{% static 'ikwen/css/flatly.bootstrap.min.css' %}" />
     <link rel='stylesheet' href="{% static 'website/css/animation.css' %}" />
-    <link rel='stylesheet' href="{% static 'website/css/about.css' %}" />
+    <link rel='stylesheet' href="{% static 'website/css/about.css' %}?V=31.10.19.19.09" />
     <style>
         #section-header-general-view {
             background: url("{% static 'website/img/ikwen-about_header.png' %}") center bottom no-repeat;
         }
     </style>
 {% endblock %}
+{% block header_brand %}
+    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
+        <img src="{% static "website/img/logo-ikwen_for-header.png" %}">
+    </a>
+    <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
+{% endblock %}
 {% block content %}
+    {{ block.super }}
     <section id="section-header-general-view">
         <div class="container-fluid text-center">
             {% blocktrans %}
@@ -56,7 +63,9 @@
         </div>
     </section>
     <div id="banner-top" class="container-fluid banner-top text-center">
-        <h1 class="banner-top-catchy">{% trans 'Discover our featured Apps' %}</h1>
+        <div class=" row catchy-overlay">
+            <h1 class="banner-top-catchy">{% trans 'Discover our featured Apps' %}</h1>
+        </div>
     </div>
     <section id="section-apps" class="section">
         <div class="container">
@@ -140,11 +149,15 @@
 {% endblock %}
 {% block footer %}
     <footer class="container-fluid" style="">
-        &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong style="color: #FFF">{{ config.company_name }}</strong></a>.
-        {% trans "All rights reserved." %}
-        {% if config.legal_mentions_url %}
-        - <a href="{{ config.legal_mentions_url }}" style="color: #FFF; text-decoration: none">{% trans "Legal mentions" %}</a>
-        {% endif %}
+        <div class="row footer-overlay">
+            <p style="color: #464646; margin-top: 10vh">
+            &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong style="color: #3a3a3a; font-weight: 700">{{ config.company_name }}</strong></a>.
+            {% trans "All rights reserved." %}
+            {% if config.legal_mentions_url %}
+            - <a href="{{ config.legal_mentions_url }}" style="color: #FFF; text-decoration: none">{% trans "Legal mentions" %}</a>
+            {% endif %}
+            </p>
+        </div>
     </footer>
 {% endblock %}
 

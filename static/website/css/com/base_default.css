@@ -53,16 +53,17 @@ a {text-decoration: none !important;}
 .arrow.up div:first-child {border-right: 1px solid; transform: skewX(-30deg); transform-origin: 10px 0 0}
 .arrow.up div:last-child {border-left: 1px solid; margin-left: -1px; transform: skewX(30deg); transform-origin: 10px 0 0}
 .tpl, .hide {display: none}
-.actions .glyphicon, .glyphicon.action {
+.actions {
     border: 1px solid transparent;
     color: #888;
     cursor: pointer;
     margin-left: 6px;
     text-decoration: none;
     }
+.fas { font-size: 20px}
 .modal .actions {clear: both}
 .no-border { border: none !important; }
-.actions .glyphicon, .glyphicon.action {border: 1px solid #ddd; border-radius: 3px}
+.actions {border: 1px solid #ddd; border-radius: 3px}
 .cta {font-family: "PT Sans", Lato, sans-serif;font-weight: 700;letter-spacing: 0.5px}
 .stretched {height: 100%; width: 100%}
 .errorlist {color: #e74c3c}
@@ -142,25 +143,14 @@ a {text-decoration: none !important;}
 .member .full_name, .ik-li .name, .ik-li .title {cursor: pointer;color: #333;font-size: 15px;padding: 5px 0 0;}
 .member .about, .ik-li .about {color: #888;font-size: 13px;}
 .ik-li .select {background: #fff;color:#9433ff; border-radius: 10px;display: none; height: 20px;position: absolute;width: 20px;margin: -20px 0 0 -10px;}
-.ik-li .select .glyphicon {margin: 2px}
 .ik-li.selected .select {background: #9433ff; color: #fff; display: block}
 .ik-li .date {font-size: 11px}
 
-.ik-li .actions .glyphicon, #selection-control .glyphicon {
-    background: #fff;
-    box-sizing: content-box;
-    padding: 5px;
-    border: 1px solid transparent;
-}
-.ik-li .actions .glyphicon:hover, #selection-control .glyphicon:hover {border: 1px solid #ddd; border-radius: 3px}
 .ik-li.selected {border: 3px solid #9433ff; transition: border .1s}
 .ik-li.selected + .ik-li.selected {border-top: none}
 .ik-li .actions {display: none;float: right;}
 .ik-li:hover .select, .ik-li:not(.selected):hover .actions {display: block}
 time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;}
-.ik-li .glyphicon.check {background: #fff; border-radius: 20px;color: #999;cursor: pointer;float: left;margin-right: 24px;margin-top: 18px;border: 1px solid;}
-.ik-li .glyphicon.check.active {border-color: transparent; background: #40af00;color: #fff;font-size: 9px}
-.ik-li .glyphicon.check.active:hover {border-color: transparent;background: #59c51b;}
 
 .tiles {margin-top: -15px}
 .tiles .ik-li {height: 280px;width: 100%;border-bottom: none;}
@@ -175,7 +165,6 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .tiles .ik-li:hover, .tiles .ik-li.active {background: none}
 .tiles .ik-li .image {height: 200px;width: 100%;}
 .tiles .ik-li .info {margin: 7px 0 0 0; max-width: 70%;}
-.ik-li.tile .glyphicon.check {margin: -208px 0 0 -88px}
 
 .tiles .sortable-placeholder {
     border: 3px dashed #777;
@@ -208,11 +197,9 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .navbar.active { background: #233682 !important; -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
                 -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); }
 .navbar.active .icon-bar { background: #ffffff !important; }
-.navbar.active .glyphicon { color: #ffffff !important; }
 .navbar.active .navbar-brand { display: block; color: #ffffff !important; }
 .navbar.active .navbar-nav>li>a { color: #ffffff !important; }
 .navbar-brand > img {height: 23px !important;}
-#navbar .glyphicon {color: #217dbb;cursor: pointer;font-size: 18px;}
 #navbar .back {display: none;float:left;font-size: 24px;margin: 12px 15px 0 10px;}
 .navbar-default .navbar-brand {padding: 18px 0 0 0;margin-left: 10px;}
 .letter-i {color: #26C6DA;float: none;}
@@ -229,7 +216,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     width: 96%;
     z-index: 1001;
 }
-#navbar-search .hide-search {color: #bbb;float: left;font-size: 20px;margin-top: 6px;}
+#navbar-search .hide-search {color: #bbb;float: left;font-size: 24px;margin-top: 5px;}
 #navbar-search input {background: none;border: none;float: left !important; width: 88% !important;}
 .navbar-brand { display: none; color: #217dbb !important; }
 .navbar-nav>li>a {color: #217dbb !important; /*font-size: 1.5vw;*/}
@@ -246,7 +233,6 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 #nav-xs > li {float: left;}
 #nav-xs {padding: 0;margin: 0}
 #site-menu {background: #2c3e50;padding: 0;}
-.glyphicon + .label {margin: -15px 0 0 12px;position: absolute;}
 
 #content {padding: 55px 0 0;}
 #content.form {padding-top: 15%;}
@@ -304,8 +290,14 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .social-sharing .dropdown-menu a i.fa-google-plus {color: #FF5722; font-size: 22px}
 .social-sharing .fa-comment {color: #FFC107;}
 
+li.dropdown:hover > ul.dropdown-menu { background: transparent }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #7b8a8b;background-color: #eee}
-.btn .glyphicon, .btn .fa {margin: 0 10px 0 -10px}
+.dropdown-menu>li>a { color: #217DBB !important; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #FFF !important;background-color: #217DBB !important;}
+.dropdown-menu .username { color: #233682 }
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover { color: #1f356a!important; }
+
+.btn .fa {margin: 0 10px 0 -10px}
 
 
 
@@ -351,8 +343,6 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     .ik-li.img-lg .image {height: 100px; width: 130px;}
     .ik-li.img-lg .info {margin-left: 10px;width: 160px;}
     .ik-li .meta {display: block}
-    .ik-li .actions .glyphicon, #selection-control .glyphicon {font-size: 21px;margin-left: 15px;}
-    .ik-li .actions .glyphicon:first-child, #selection-control .glyphicon:first-child {margin-left: 0}
     .ik-li:not(.selected):hover .actions {background: #fff;border-radius: 3px;box-shadow: -1px 1px 7px 3px rgba(0, 0, 0, .1);margin-top: 0;position: absolute;padding: 3px 3px 5px;}
     .input-sm {font-size: 15px}
     #nav-xs.navbar-nav>li>a {padding: 16px 12px;float: left;}
@@ -373,7 +363,7 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
         position: absolute;
     }
     .navbar-default #nav-xs.navbar-nav .open .dropdown-menu>li>a {color: #3498db;line-height: 35px;}
-    .navbar-right .dropdown-menu {left: auto;right: 3px;top: 10px;}
+    .navbar-right .dropdown-menu {left: auto;right: 3px;top: 40px;}
     #navbar-results {border-top: 1px solid #eee}
     .nav-tabs.swiper-wrapper {background: #f8f6f6; border-bottom: none}
     .nav-tabs > .tab {margin-bottom: -2px}
@@ -384,8 +374,14 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
         border-bottom: 2px solid #1b6d85;
         color: #555
     }
+    .nav>li>a {font-size: 16px; font-weight: 700; padding: 10px 30px }
     .bottom-shade-xs {box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .1)}
     .ik-li .date {position: absolute; right: 6px}
+
+    .footer-logo { max-width: 20vw !important; }
+    footer h5 { font-size: 4vw !important; margin-top: 4vh !important; }
+    footer h4 { font-size: 5vw !important; }
+    footer ul { font-size: 3.5vw !important; }
 
 }
 @media (min-width: 768px) {
@@ -401,7 +397,6 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     #user-menu-xs {display: none}
     .navbar-default .navbar-brand {padding: 22px 15px 19px 0;}
     .navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {margin-left: 0}
-    #navbar .glyphicon.glyphicon-search {color: #d2d2d2;font-size: 15px;margin: 25px 0 0 10px;position: absolute;}
     #navbar-search {
         background: transparent;
         display: block;
@@ -422,6 +417,10 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
         padding-left: 35px;
     }
 
+    #navbar i.fa-search {
+        color: rgba(33, 125, 187, 0.5); font-size: 15px; margin: 15px 0 0 10px; position: absolute;
+    }
+
     form#search .spinner {
         margin: 0 0 0 280px;
     }
@@ -430,14 +429,11 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
     #navbar-results {margin-top: 1px;float: left; width: 100%}
     #navbar-results .stage {background: #fff;box-shadow: 1px 1px 9px 4px rgba(0, 0, 0, .1)}
     #navbar-results .ik-li {padding: 3px}
-    #navbar .glyphicon {font-size: 1.4vw;}
     #site-menu {background:none; }
     .navbar-nav>li>a:not(.icon) {line-height: 25px;}
-    .glyphicon + .label {margin: -15px 0 0 15px;position: absolute;}
     #content.container {padding-top: 75px;}
     .edge-panel-right {display: block;margin-right: 0;z-index: 20;}
     .tiles .ik-li {height: 280px;width: 33.33%;}
-    .tiles .ik-li .glyphicon-edit {display: none}
     .nav > .tab > a {padding: 10px 15px}
     .ik-li .date {float: right}
     .payment-method {display: inline}
@@ -521,10 +517,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
     /* Header */
     .navbar-nav>li>a {font-size: 2.5vw;}
-    #navbar .glyphicon {font-size: 2vw;}
     #navbar-search input { font-size: 2.5vw; width: 100% !important;}
 
-    .glyphicon-search:before { font-size: 18px !important; }
 
     .modal-m { width: 800px;}
 
@@ -541,12 +535,10 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 /* Landscape */
 @media only screen and (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
     /* Header */
-    #navbar .glyphicon {font-size: 2vw;}
     #navbar-search input { font-size: 2vw; width: 100% !important;}
 
     .navbar-nav>li>a {font-size: 2vw;}
 
-    .glyphicon-search:before { font-size: 18px !important; }
 
     .modal-m { width: 800px;}
 
@@ -567,7 +559,6 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
     /* Header */
     .navbar-nav>li>a { font-size: 3.5vw; }
-    #navbar .glyphicon {font-size: 3vw;}
     #navbar-search input { font-size: 2.5vw; width: 100% !important;}
 
 
