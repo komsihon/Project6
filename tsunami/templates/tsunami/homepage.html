@@ -3,12 +3,9 @@
 
 {% block meta %}
     {{ block.super }}
-    <link rel="shortcut icon" type="image/png" href="{% static "tsunami/img/favicon_Tsunami.ico" %}">
-    <meta name="theme-color" content="#233682">
-    <meta name="msapplication-navbutton-color" content="#233682">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#233682">
+    {% include 'tsunami/snippets/color_and_icons.html' %}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.ikwen.com/tsunami/" />
+    <meta property="og:url" content="{% url 'tsunami:home' %}" />
     <meta property="og:image" content="{% static 'tsunami/img/Logo-IKWEN-Tsunami_og.png' %}" />
     <meta property="og:title" content="{% trans "ikwen TSUNAMI, the cloud tools your business needs" %}"/>
     <meta property="og:description" content="{% trans "Reach more csustomers and sell all your stocks with Tsunami" %}">

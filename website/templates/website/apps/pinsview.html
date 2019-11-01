@@ -4,6 +4,7 @@
 
 {% block meta %}
     {{ block.super }}
+    {% include 'website/snippets/pinsview/color_and_icons.html' %}
     <meta property="og:title" content="PinsView - Geographic visualization for effective business" />
     <meta property="og:image" content="{% get_static_prefix %}/website/pinsview.png" />
     <meta property="og:description" content="{% trans "PinsView lets you follow your assets on the field in real-time. Your agents pinpoint and describe your interests when they are out for a campaign or intervention. The history module lets you set events on elements on your map. Gone are the days where you were wondering what is going on out" %}" />

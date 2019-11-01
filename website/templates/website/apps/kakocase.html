@@ -4,6 +4,7 @@
 
 {% block meta %}
     {{ block.super }}
+    {% include 'website/snippets/kakocase/color_and_icons.html' %}
     <meta property="og:title" content="Kakocase" />
     <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
     <meta property="og:description" content="{% trans "Kakocase lets you create an e-commerce website in a few clicks. Your website accepts Mobile Money payments right out of the box. PayPal is also supported to handle payments with Credit/Debit cards. With our integrated Facebook communication module, launch your marketing campaign and drive thousands of visitors and buyers to your website." %}" />
