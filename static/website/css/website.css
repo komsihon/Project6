@@ -54,6 +54,9 @@ li.dropdown:hover > ul.dropdown-menu { background: transparent }
 }
 
 @media only screen and (max-width: 767px) {
+    li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
+    .dropdown-menu>li>a { color: #217DBB !important; }
+    .dropdown-menu .username { color: #233682 }
     #footer {
         background: #fff;
         color: #b7b7b7;
@@ -119,7 +122,7 @@ li.dropdown:hover > ul.dropdown-menu { background: transparent }
     }
 }
 
-    @media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) {
         .navbar-default .navbar-brand {
             padding: 14px 15px 19px 0;
         }
@@ -207,7 +210,7 @@ li.dropdown:hover > ul.dropdown-menu { background: transparent }
         }
     }
 
-    @media only screen and (min-width: 992px) and (orientation: landscape) {
+@media only screen and (min-width: 992px) and (orientation: landscape) {
         .main-title {
             margin-top: 25%
         }
@@ -249,8 +252,10 @@ li.dropdown:hover > ul.dropdown-menu { background: transparent }
         }
     }
 
-    @media only screen and (min-width: 1200px) {
-        #navbar-search {
-            width: 450px;
-        }
-    }
+@media (max-width: 991px) {
+    li.dropdown:hover > ul.dropdown-menu { max-height: 450px; overflow: auto; }
+}
+
+@media only screen and (min-width: 1200px) {
+        #navbar-search { width: 300px; }
+}

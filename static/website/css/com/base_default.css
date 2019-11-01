@@ -337,6 +337,10 @@ li.dropdown:hover > ul.dropdown-menu { background: transparent }
 .footer-copyright { color: #ffffff}
 
 @media (max-width: 767px) {
+    li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
+    .dropdown-menu>li>a { color: #217DBB !important; }
+    .dropdown-menu .username { color: #233682 }
+
     .card-xs {padding: 0}
     .modal .actions .action, .modal .actions .btn {margin-top: .6em}
     .ik-li.img-lg {padding: 8px 6px}
@@ -440,7 +444,7 @@ li.dropdown:hover > ul.dropdown-menu { background: transparent }
 
 }
 @media (max-width: 991px) {
-    #navbar .navbar-nav .open .dropdown-menu {max-height: 450px;overflow: auto;min-width: 200px;}
+    li.dropdown:hover > ul.dropdown-menu { max-height: 450px; overflow: auto; }
     .dropdown-menu>li>a {line-height: 35px;}
 }
 @media (min-width: 992px) {
