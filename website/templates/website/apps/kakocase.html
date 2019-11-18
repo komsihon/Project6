@@ -4,6 +4,7 @@
 
 {% block meta %}
     {{ block.super }}
+    {% include 'website/snippets/kakocase/color_and_icons.html' %}
     <meta property="og:title" content="Kakocase" />
     <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
     <meta property="og:description" content="{% trans "Kakocase lets you create an e-commerce website in a few clicks. Your website accepts Mobile Money payments right out of the box. PayPal is also supported to handle payments with Credit/Debit cards. With our integrated Facebook communication module, launch your marketing campaign and drive thousands of visitors and buyers to your website." %}" />
@@ -12,8 +13,13 @@
 {% endblock %}
 {% block head_style %}
     {{ block.super }}
-    <link rel='stylesheet' href="{% static 'website/css/apps.css' %}" />
+    <link rel='stylesheet' href="{% static 'website/css/apps.css' %}?V=31.10.19.19.09" />
     <style type="text/css">
+        li.dropdown:hover > ul.dropdown-menu { background: rgba(255, 255, 255, 0.7) }
+        .dropdown-menu>li>a { color: #217DBB !important; }
+        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #FFF !important;background-color: #217DBB !important;}
+        .dropdown-menu .username { color: #233682 }
+
         section.header {background: url("{% static 'website/img/bann_kakocase_web.jpg' %}"); background-size: cover;}
         section.main-feat {background-image:url("{% static 'website/img/commarketing.jpg' %}");background-size: cover;}
         section.address {float: left; margin-top: 0; height: 670px;}
@@ -22,9 +28,7 @@
         section.address a {color: #2f2f2f;}
         section.address .cover {height: 670px}
         .white-text-has-shade {text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.7)}
-        #navbar .glyphicon.glyphicon-search {color: #555}
 
-        #navbar-search input {background: rgba(210, 210, 210, 0.22);}
         #bottom-menu .lang-switcher {margin: 0 0 0 50px;}
         #bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px}
         #bottom-menu li a {color: #203e96;}
@@ -70,17 +74,11 @@
             section.site .cover {margin-top: -11px;line-height: 40px}
             section.site.main-feat {height: 650px}
             section.main-feat .cover {height: 650px}
-            #navbar-search input {background: rgba(247, 241, 241, 0.22)}
         }
-         @media only screen
-        and (min-width : 768px){
-            #navbar .navbar-brand {padding-top: 5px}
-        }
+
         @media only screen and (min-width : 992px) {
-        #navbar .navbar-brand {padding-top: 5px;}
             section.address {float: left; height: 560px; width: 100%}
             section.address .cover {height: 560px}
-            #navbar-search input {background: rgba(210, 210, 210, 0.22);}
             section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 130px;}
             section.header h1 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px;}
             section.header {height: 900px}
@@ -97,7 +95,7 @@
 
 {% block header_brand %}
     <a class="navbar-brand hidden-xs" href="{{ service.url }}">
-        <img src="{% static "website/img/logo-ikwen-150.png" %}">
+        <img src="{% static "website/img/logo-ikwen_for-header.png" %}">
     </a>
     <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
 {% endblock %}
