@@ -45,7 +45,7 @@
                 <div class="row">
                 {% for bundle in bundle_list %}
                     <div class="col-md-4 col-sm-6">
-                    {% if bundle.name == 'Discover' %}
+                    {% if forloop.counter == 1 %}
                         <div class="pricingTable green subtle-shade">
                             <div class="pricingTable-header">
                                 <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
@@ -66,14 +66,14 @@
                                 <li><strong>{% trans '2 weeks of phone support' %}</strong></li>
                                 <li><strong>{% trans '2 x 2 hours of coaching onsite' %}</strong></li>
                             </ul>
-                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            <a href="{% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
-                    {% elif bundle.name == 'Explore' %}
+                    {% elif forloop.counter == 2 %}
                         <div class="pricingTable orange has-shade">
                             <div class="pricingTable-header">
                                 <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                                 <h3 class="title">{{ bundle.name }}</h3>
-                                <span class="billing-cycle">{% trans '3 months' %}</span>
+                                <span class="billing-cycle">{% trans '6 months' %}</span>
                             </div>
                             <ul class="pricing-content">
                             <hr class="features-separator">
@@ -89,14 +89,14 @@
                                 <li><strong>{% trans '1 month of phone support' %}</strong></li>
                                 <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
                             </ul>
-                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            <a href="{% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
                     {% else %}
                         <div class="pricingTable purple subtle-shade">
                             <div class="pricingTable-header">
                                 <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
                                 <h3 class="title">{{ bundle.name }}</h3>
-                                <span class="billing-cycle">{% trans '3 months' %}</span>
+                                <span class="billing-cycle">{% trans '12 months' %}</span>
                             </div>
                             <ul class="pricing-content">
                             <hr class="features-separator">
@@ -112,7 +112,7 @@
                                 <li><strong>{% trans '1 month of phone support' %}</strong></li>
                                 <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
                             </ul>
-                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            <a href="{% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
                     {% endif %}
                     </div>
