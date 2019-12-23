@@ -45,7 +45,7 @@
                 <div class="row">
                 {% for bundle in bundle_list %}
                     <div class="col-md-4 col-sm-6">
-                    {% if bundle.name == 'Standard' %}
+                    {% if bundle.name == 'Discover' %}
                         <div class="pricingTable green subtle-shade">
                             <div class="pricingTable-header">
                                 <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
@@ -66,9 +66,9 @@
                                 <li><strong>{% trans '2 weeks of phone support' %}</strong></li>
                                 <li><strong>{% trans '2 x 2 hours of coaching onsite' %}</strong></li>
                             </ul>
-                            <a href="{% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
-                    {% elif bundle.name == 'Business' %}
+                    {% elif bundle.name == 'Explore' %}
                         <div class="pricingTable orange has-shade">
                             <div class="pricingTable-header">
                                 <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
@@ -89,7 +89,7 @@
                                 <li><strong>{% trans '1 month of phone support' %}</strong></li>
                                 <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
                             </ul>
-                            <a href="{% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
                     {% else %}
                         <div class="pricingTable purple subtle-shade">
@@ -112,7 +112,7 @@
                                 <li><strong>{% trans '1 month of phone support' %}</strong></li>
                                 <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
                             </ul>
-                            <a href="{% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}?bundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
                         </div>
                     {% endif %}
                     </div>

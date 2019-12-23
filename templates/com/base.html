@@ -146,14 +146,14 @@
                             <div id="site-menu" class="collapse navbar-collapse hidden-sm hidden-md hidden-lg">
                                 <div class="container-fluid">
                                     <ul class="nav navbar-nav navbar-right main-nav" style="margin: 0 -15px 0 0">
-                                        {% comment %}<li class="dropdown daraja visible-md visible-lg">
+                                        <li class="dropdown daraja visible-md visible-lg">
                                           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Daraja <b class="caret"></b> </a>
                                           <ul class="dropdown-menu" style="background: transparent">
                                             <li><a href="{% url 'daraja:home' %}">{% trans "Community" %}</a></li>
                                             <li><a href="{% url 'daraja:for_businesses' %}">{% trans "Enterprise" %}</a></li>
                                           </ul>
-                                        </li>{% endcomment %}
-                                        <li class="daraja visible-md visible-lg"><a href="{% url 'daraja:home' %}"> Daraja</a></li>
+                                        </li>
+{#                                        <li class="daraja visible-md visible-lg"><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
                                         <li class="tsunami visible-md visible-lg"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
                                         <li class="foulassi visible-md visible-lg"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
                                         <li class="kakocase visible-lg"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
@@ -172,7 +172,13 @@
                                                 <i class="glyphicon glyphicon-th-list"></i>
                                             </a>
                                             <ul class="dropdown-menu" aria-labelledby="ik-apps">
-                                                <li class="daraja"><a href="#"> Daraja</a></li>
+                                                <li class="dropdown daraja visible-md">
+                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Daraja <b class="caret"></b> </a>
+                                                  <ul class="dropdown-menu" style="background: transparent">
+                                                    <li><a href="{% url 'daraja:home' %}">{% trans "Community" %}</a></li>
+                                                    <li><a href="{% url 'daraja:for_businesses' %}" style="line-height: 3">{% trans "Enterprise" %}</a></li>
+                                                  </ul>
+                                                </li>
                                                 <li class="tsunami"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
                                                 <li class="foulassi"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
                                                 <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase </a></li>
