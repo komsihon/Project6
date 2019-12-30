@@ -28,8 +28,9 @@ urlpatterns = patterns(
     url(r'^kakocase/', include('ikwen_kakocase.kakocase.urls', namespace='kakocase')),
     url(r'^kako/', include('ikwen_kakocase.kako.urls', namespace='kako')),
     url(r'^rewarding/', include('ikwen.rewarding.urls', namespace='rewarding')),
+    url(r'^revival/', include('ikwen.revival.urls', namespace='revival')),
     url(r'^webnode/', include('ikwen_webnode.webnode.urls', namespace='webnode')),
-    url(r'^rewarding/', include('ikwen.rewarding.urls', namespace='rewarding')),
+    url(r'^smartevent/', include('smartevent.urls', namespace='smartevent')),
 
     # Foulassi URLs
     url(r'^foulassi/school/', include('ikwen_foulassi.school.urls', namespace='school')),
