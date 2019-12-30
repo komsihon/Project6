@@ -42,7 +42,8 @@ class Home(TemplateView):
             member = Member.objects.filter(email=visitor_email)[0]
         except Member.DoesNotExist:
             username = visitor_email
-            member = Member.objects.create_user(username, DEFAULT_GHOST_PWD, email=visitor_email, is_ghost=True)
+            member = Member.objects.create_user(username, DEFAULT_GHOST_PWD, email=visitor_email, phone=visitor_email,
+                                                is_ghost=True)
         tag_fk_list = []
         tag = TSUNAMI
         tsunami_tag = ProfileTag.objects.get(slug=tag)
