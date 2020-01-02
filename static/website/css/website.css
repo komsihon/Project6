@@ -9,12 +9,15 @@
 /* Website edge panel style */
 
 .dropdown-menu-daraja { top: 75% !important; }
-/*.dropdown-menu-daraja { left: 0 !important; top: 75% !important; }*/
 li.dropdown:hover > ul.dropdown-menu { background: transparent }
-/*li.dropdown:hover > ul.dropdown-menu { background: transparent; display: block; }*/
 .dropdown-menu>li>a { color: #fff !important; }
-/*.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #eeeeee2b; }*/
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #eeeeee40}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover { color: #26C6DA!important; }
+li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important; }
+.dropdown-menu.page-scrolled>li>a:hover, .dropdown-menu>li>a:focus {color: #7b8a8b;background-color: #eee}
+.dropdown-menu.page-scrolled>li>a { color: #217DBB !important; }
+.dropdown-menu.page-scrolled>li>a:hover, .dropdown-menu>li>a:focus {color: #FFF !important;background-color: #217DBB !important;}
+.dropdown-menu.page-scrolled .username { color: #233682 }
 .has-shade {box-shadow: 1px 1px 9px 4px rgba(0, 0, 0, .1)}
 .dropdown-menu .username { color: #FFF }
 .fas { font-size: 20px}

@@ -13,7 +13,7 @@
 		{% block head_style %}
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
             <link rel='stylesheet' href="{% static 'ikwen/css/flatly.bootstrap.min.css' %}" />
-            <link rel='stylesheet' href="{% static 'website/css/com/base_default.css' %}?V=19.11.1.13.36" />
+            <link rel='stylesheet' href="{% static 'website/css/com/base_default.css' %}?V=20.01.02.17.26" />
 		{% endblock %}
         {% block head_js %}
             <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -346,17 +346,6 @@
                         window.location = 'https://api.whatsapp.com/send?text=' + url + '%0A%0A' + msg;
                     });
 
-                    $(window).on("scroll", function() {
-                        if($(window).scrollTop() > 150) {
-                            $(".navbar").addClass("active");
-                            $("#navbar-search").addClass("active");
-
-                        } else {
-                            //remove the background property so it comes transparent again (defined in your css)
-                           $(".navbar").removeClass("active");
-                           $("#navbar-search").removeClass("active");
-                        }
-                    });
                     $('.navbar .dropdown').hover(function() {
                         $(this).find('.dropdown-menu').first().stop(true, true).slideDown(150);
                         }, function() {
@@ -378,10 +367,16 @@
 					let winHeight = $(window).height();
 					let scrollPercent = (scrollTop) / (docHeight - winHeight);
 					let scrollPercentRounded = Math.round(scrollPercent*100);
-					if (scrollPercentRounded >= 10) {
-						$('.back-to-top').removeClass('hiding').addClass('showing')
+					if (scrollPercentRounded >= 5) {
+                        $(".navbar").addClass("active");
+                        $("#navbar-search").addClass("active");
+						$('.back-to-top').removeClass('hiding').addClass('showing');
+                        $('ul.dropdown-menu').addClass('page-scrolled')
 					} else {
-						$('.back-to-top').removeClass('showing').addClass('hiding')
+					    $(".navbar").removeClass("active");
+                        $("#navbar-search").removeClass("active");
+						$('.back-to-top').removeClass('showing').addClass('hiding');
+                        $('ul.dropdown-menu').removeClass('page-scrolled')
 					}
 				    });
 

@@ -291,11 +291,13 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .social-sharing .fa-comment {color: #FFC107;}
 
 li.dropdown:hover > ul.dropdown-menu { background: transparent }
+li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #7b8a8b;background-color: #eee}
 .dropdown-menu>li>a { color: #217DBB !important; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #FFF !important;background-color: #217DBB !important;}
 .dropdown-menu .username { color: #233682 }
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover { color: #1f356a!important; }
+.navbar-default.active .navbar-brand:hover, .navbar-default.active .navbar-nav>li>a:hover { color: #26C6DA!important; }
 
 .btn .fa {margin: 0 10px 0 -10px}
 
