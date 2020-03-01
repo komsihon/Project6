@@ -156,7 +156,7 @@
     <script type="text/javascript">
         {% get_current_language as LANGUAGE_CODE %}
         (function() {
-            var pwdMinLength = 4; //Length for auto-generated password
+            let pwdMinLength = 4; //Length for auto-generated password
             $(window).on('hashchange', function() {
                 if (location.hash.length < 1) {
                     $('.form-group.password').insertBefore('.terms').find('label').text("{% trans "Password" %}");
@@ -173,7 +173,7 @@
                 window.history.back();
             }).on('click', '#continue', function() {
                 $('.errorlist').remove();
-                var goToNext = true;
+                let goToNext = true;
                 if (!testUsername()) goToNext = false;
                 if (!testPassword()) goToNext = false;
                 if ($('#email').hasClass('required')) {
@@ -230,7 +230,7 @@
             });
             $('#username').keyup(function(e) {
                 if (e.key === ' ') {
-                    var username = $(this).val().trim().toLowerCase();
+                    let username = $(this).val().trim().toLowerCase();
                     $(this).val(username);
                 }
             }).blur(function() {testUsername()});
@@ -238,13 +238,13 @@
             $('#phone').blur(testPhone);
             function testUsername(uname) {
                 $('.errorlist.username').remove();
-                var $username = $('#username'),
+                let $username = $('#username'),
                     username = $username.val();
                 username = username.replace(/ /g, '').toLowerCase();
                 $username.val(username);
                 if (uname) username = uname;
                 if (username.isValidEmail()) return true;
-                if (username.substr(0, 2) !== '00') username = username.substr(2);
+                if (username.substr(0, 2) === '00') username = username.substr(2);
                 if (/\d{9,}/.test(username)) return true;
                 $('<ul class="errorlist username"><li>' + "{% trans "Please, enter valid email or phone" %}" + '</li></ul>')
                         .insertAfter('#username');
@@ -253,7 +253,7 @@
             }
             function testEmail() {
                 $('.errorlist.email').remove();
-                var $email = $('#email'),
+                let $email = $('#email'),
                     email = $email.val().replace(/ /g, '').toLowerCase();
                 $email.val(email);
                 if (email.isValidEmail()) return true;
@@ -264,7 +264,7 @@
             }
             function testPhone() {
                 $('.errorlist.phone').remove();
-                var $phone = $('#phone'),
+                let $phone = $('#phone'),
                     phone = $phone.val().replace(/ /g, '');
                 $phone.val(phone);
                 if (phone && phone.substr(0, 2) !== '00' && /\d{9,}/.test(phone)) return true;
@@ -278,7 +278,7 @@
             }
             function testPassword() {
                 $('.errorlist.password, .errorlist.password2').remove();
-                var $pwd1 = $('#password'),
+                let $pwd1 = $('#password'),
                     pwd1 = $pwd1.val(),
                     pwd2 = $('#password2').val();
                 if (pwd1.length < pwdMinLength) {
@@ -299,7 +299,7 @@
             }
 
             function checkUsername() {
-                var username = $('#username').val().toLowerCase(),
+                let username = $('#username').val().toLowerCase(),
                     _$btn = $('.submit-username .btn');
                 if (!username) return false;
                 if (!testUsername(username)) return false;
@@ -340,7 +340,7 @@
             }
             function checkDOB() {
                 $('.errorlist.dob').remove();
-                var day = parseInt($('#day').val()),
+                let day = parseInt($('#day').val()),
                     month = parseInt($('#month').val()),
                     year = parseInt($('#year').val()),
                     d = new Date(year + '/' + month + '/' + day);
