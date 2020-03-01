@@ -177,7 +177,7 @@
                     username = $username.val();
                 if (uname) username = uname;
                 if (username.isValidEmail()) return true;
-                if (username.substr(0, 2) !== '00') username = username.substr(2);
+                if (username.substr(0, 2) === '00') username = username.substr(2);
                 if (/\d{9,}/.test(username)) return true;
                 $('<ul class="errorlist username"><li>' + "{% trans "Please, enter valid email or phone" %}" + '</li></ul>')
                         .insertAfter('#rg-username');
