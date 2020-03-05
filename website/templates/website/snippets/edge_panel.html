@@ -13,8 +13,12 @@
                         <li class="dropdown">
                           <a href="javascript:;" data-toggle="collapse" data-target="#daraja-version" aria-expanded="false">Daraja <b class="caret"></b> </a>
                           <ul id="daraja-version" class="collapse" style="list-style: none">
-                            <li role="presentation"><a href="{% url 'daraja:home' %}">{% trans "Community" %}</a></li>
-                            <li role="presentation"><a href="{% url 'daraja:for_businesses' %}">{% trans "Enterprise" %}</a></li>
+                            <li role="presentation" style="height: 42px; padding: 10px 0">
+                                <a href="{% url 'daraja:home' %}">{% trans "Community" %}</a>
+                            </li>
+                            <li role="presentation" style="height: 42px; padding: 10px 0">
+                                <a href="{% url 'daraja:for_businesses' %}">{% trans "Enterprise" %}</a>
+                            </li>
                           </ul>
                         </li>
 {#                        <li><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
