@@ -18,7 +18,7 @@ urlpatterns = patterns(
     url(r'^terms$', Terms.as_view(), name='terms_and_conditions'),
     url(r'^webnode/$', Webnode.as_view(), name='webnode'),
     url(r'^kakocase/$', Kakocase.as_view(), name='kakocase'),
-    url(r'^shavida/$', Shavida.as_view(), name='shavida'),
+    # url(r'^shavida/$', Shavida.as_view(), name='shavida'),
     url(r'^pinsview/$', PinsView.as_view(), name='pinsview'),
     url(r'^tsunami/', include('tsunami.urls', namespace='tsunami')),
     url(r'^laakam/', include(admin.site.urls)),
@@ -28,6 +28,7 @@ urlpatterns = patterns(
     url(r'^kakocase/', include('ikwen_kakocase.kakocase.urls', namespace='kakocase')),
     url(r'^kako/', include('ikwen_kakocase.kako.urls', namespace='kako')),
     url(r'^rewarding/', include('ikwen.rewarding.urls', namespace='rewarding')),
+    url(r'^partnership/', include('ikwen.partnership.urls', namespace='partnership')),
     url(r'^revival/', include('ikwen.revival.urls', namespace='revival')),
     url(r'^webnode/', include('ikwen_webnode.webnode.urls', namespace='webnode')),
     url(r'^smartevent/', include('smartevent.urls', namespace='smartevent')),
@@ -35,6 +36,11 @@ urlpatterns = patterns(
     # Foulassi URLs
     url(r'^foulassi/school/', include('ikwen_foulassi.school.urls', namespace='school')),
     url(r'^foulassi/', include('ikwen_foulassi.foulassi.urls', namespace='foulassi')),
+
+
+    # Echo URLs
+    url(r'^echo/', include('echo.urls', namespace='echo')),
+
 
 
     # Daraja URLs

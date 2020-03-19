@@ -1,7 +1,10 @@
 import os, sys
 
 
-sys.path.append('/home/w177/PycharmProjects/ikwenWebsite/conf')
+path = '/home/w177/MEGAsync/PycharmProjects/ikwenWebsite/conf'
+if path not in sys.path:
+    sys.path.append(path)
+
 from conf import monitor
 
 monitor.start(interval=1.0)
