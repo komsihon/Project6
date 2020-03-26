@@ -83,13 +83,3 @@ class BundlesList(TemplateView):
         if action == 'get_bundle':
             return self.get_bundle(request)
         return super(BundlesList, self).get(request, *args, **kwargs)
-
-
-class ServicesLinks(TemplateView):
-    template_name = 'core/seo_links.html'
-
-    def get_context_data(self, **kwargs):
-        service_list = Service.objects.all()
-        context = super(ServicesLinks, self).get_context_data(**kwargs)
-        context['service_list'] = service_list
-        return context

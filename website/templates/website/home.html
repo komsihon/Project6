@@ -190,6 +190,7 @@
                 <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
             </ul>
         </div>
+        <a style="display: none" href="{% url 'service_indexes' 0 %}">Service Indexes</a>
         <div>
             &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
             {% trans "All rights reserved." %}

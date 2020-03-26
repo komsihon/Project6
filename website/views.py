@@ -114,6 +114,19 @@ class Webnode(TemplateView):
         return super(Webnode, self).get(request, *args, **kwargs)
 
 
+class ServiceIndexes(TemplateView):
+    template_name = 'website/service_indexes.html'
+
+    def get_context_data(self, **kwargs):
+        start = kwargs['start']
+        end = int(start) + 1000
+        service_list = Service.objects.filter(is_public=True)[start:end]
+        context = super(ServiceIndexes, self).get_context_data(**kwargs)
+        context['service_list'] = service_list
+        context['end'] = end
+        return context
+
+
 class Kakocase(TemplateView):
     template_name = 'website/apps/kakocase.html'
 

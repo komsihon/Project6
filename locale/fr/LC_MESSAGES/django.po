@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-31 12:55+0100\n"
+"POT-Creation-Date: 2020-03-26 11:24+0100\n"
 "PO-Revision-Date: 2019-12-31 13:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -326,13 +326,13 @@ msgstr "Recherche"
 
 #: templates/com/base.html:152 templates/com/base.html.py:178
 #: website/templates/website/base.html:150
-#: website/templates/website/snippets/edge_panel.html:16
+#: website/templates/website/snippets/edge_panel.html:17
 msgid "Community"
 msgstr "Communauté"
 
 #: templates/com/base.html:153 templates/com/base.html.py:179
 #: website/templates/website/base.html:151
-#: website/templates/website/snippets/edge_panel.html:17
+#: website/templates/website/snippets/edge_panel.html:20
 msgid "Enterprise"
 msgstr "Entreprise"
 
@@ -421,7 +421,7 @@ msgstr ""
 #: website/templates/website/home_deprecated.html:132
 #: website/templates/website/apps/shavida.html:92
 #: website/templates/website/snippets/address_section.html:39
-#: website/templates/website/snippets/edge_panel.html:28
+#: website/templates/website/snippets/edge_panel.html:32
 msgid "Blog"
 msgstr "Blog"
 
@@ -1066,7 +1066,7 @@ msgstr ""
 "\n"
 "                    "
 
-#: tsunami/views.py:55
+#: tsunami/views.py:56
 msgid "Do more with Tsunami !"
 msgstr "Faites plus avec Tsunami"
 
@@ -1127,7 +1127,7 @@ msgstr "Un site de e-commerce"
 #: website/templates/website/home_deprecated.html:133
 #: website/templates/website/apps/shavida.html:93
 #: website/templates/website/snippets/address_section.html:40
-#: website/templates/website/snippets/edge_panel.html:29
+#: website/templates/website/snippets/edge_panel.html:33
 msgid "Support"
 msgstr "Support"
 
@@ -1756,20 +1756,20 @@ msgstr "Et réalisons ensemble votre incroyable projet"
 #: tsunami/templates/tsunami/snippets/address_section.html:31
 #: tsunami/templates/tsunami/snippets/edge_panel.html:57
 #: website/templates/website/about.html:155
-#: website/templates/website/home.html:195
+#: website/templates/website/home.html:196
 #: website/templates/website/apps/shavida.html:85
 #: website/templates/website/snippets/address_section.html:31
-#: website/templates/website/snippets/edge_panel.html:55
+#: website/templates/website/snippets/edge_panel.html:59
 msgid "All rights reserved."
 msgstr "Tous droits réservés"
 
 #: tsunami/templates/tsunami/snippets/address_section.html:33
 #: tsunami/templates/tsunami/snippets/edge_panel.html:59
 #: website/templates/website/about.html:157
-#: website/templates/website/home.html:197
+#: website/templates/website/home.html:198
 #: website/templates/website/apps/shavida.html:87
 #: website/templates/website/snippets/address_section.html:33
-#: website/templates/website/snippets/edge_panel.html:57
+#: website/templates/website/snippets/edge_panel.html:61
 msgid "Legal mentions"
 msgstr "Mentions légales"
 
@@ -1778,7 +1778,7 @@ msgstr "Mentions légales"
 #: website/templates/website/home_deprecated.html:135
 #: website/templates/website/apps/shavida.html:95
 #: website/templates/website/snippets/address_section.html:42
-#: website/templates/website/snippets/edge_panel.html:30
+#: website/templates/website/snippets/edge_panel.html:34
 msgid "About"
 msgstr "À propos"
 
@@ -1968,7 +1968,7 @@ msgstr "<strong>Gagne</strong> des tonnes de cadeaux"
 #: website/templates/website/home.html:189
 #: website/templates/website/home_deprecated.html:136
 #: website/templates/website/snippets/address_section.html:41
-#: website/templates/website/snippets/edge_panel.html:31
+#: website/templates/website/snippets/edge_panel.html:35
 msgid "Terms & conditions"
 msgstr "Conditions d'utilisation"
 

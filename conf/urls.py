@@ -3,7 +3,7 @@ from django.contrib import admin
 
 from ikwen.core.views import Offline
 
-from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle
+from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle, ServiceIndexes
 
 admin.autodiscover()
 
@@ -16,6 +16,7 @@ urlpatterns = patterns(
     url(r'^about$', About.as_view(), name='about'),
     url(r'^support_bundle$', Bundle.as_view(), name='support_bundle'),
     url(r'^terms$', Terms.as_view(), name='terms_and_conditions'),
+    url(r'^serviceIndexes/(?P<start>[\d]+)/$', ServiceIndexes.as_view(), name='service_indexes'),
     url(r'^webnode/$', Webnode.as_view(), name='webnode'),
     url(r'^kakocase/$', Kakocase.as_view(), name='kakocase'),
     # url(r'^shavida/$', Shavida.as_view(), name='shavida'),
@@ -34,14 +35,10 @@ urlpatterns = patterns(
     url(r'^smartevent/', include('smartevent.urls', namespace='smartevent')),
 
     # Foulassi URLs
-    url(r'^foulassi/school/', include('ikwen_foulassi.school.urls', namespace='school')),
     url(r'^foulassi/', include('ikwen_foulassi.foulassi.urls', namespace='foulassi')),
-
 
     # Echo URLs
     url(r'^echo/', include('echo.urls', namespace='echo')),
-
-
 
     # Daraja URLs
     url(r'^daraja/', include('daraja.urls', namespace='daraja')),

@@ -5,10 +5,12 @@
         <div style="display:block;text-align:center;margin:0 auto">
             <div style="display:inline-block;">
                <ul style="list-style: none;">
-    {#           text-align: center#}
-                    {% for service in service_list %}
-                        <li style="{% if forloop.counter == 0 %}margin-top: 20px;{% else %}margin-top:40px{% endif %}"><a href="{{ service.url }}">{{ service }}</a></li>
-                    {% endfor %}
+                   {% for service in service_list %}
+                       <li><a href="{{ service.url }}">{{ service }}</a></li>
+                   {% endfor %}
+                   {% if service_list %}
+                       <li><a href="{% url 'service_indexes' end %}">Next</a></li>
+                   {% endif %}
                </ul>
             </div>
         </div>
