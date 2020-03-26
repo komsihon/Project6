@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-03-26 11:24+0100\n"
-"PO-Revision-Date: 2019-12-31 13:08+0100\n"
+"PO-Revision-Date: 2020-03-26 11:36+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -1946,11 +1946,11 @@ msgstr "<strong>Joins</strong> tes entreprises préférées"
 
 #: website/templates/website/home.html:111
 msgid "<strong>Collect</strong> coupons for  <strong class=\"\">free</strong> "
-msgstr "<strong>Collectionnez gratuitement des</strong> coupons"
+msgstr "<strong>Collectionne gratuitement des</strong> coupons"
 
 #: website/templates/website/home.html:112
 msgid "<strong>Earn</strong> tons of  <strong class=\"\">gifts</strong> "
-msgstr "<strong>Gagnez</strong> des tonnes de cadeaux"
+msgstr "<strong>Gagne</strong> des tonnes de cadeaux"
 
 #: website/templates/website/home.html:114
 #: website/templates/website/home.html:171
