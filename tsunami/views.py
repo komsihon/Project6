@@ -48,7 +48,7 @@ class Home(TemplateView):
         tag = TSUNAMI
         tsunami_tag = ProfileTag.objects.get(slug=tag)
         tag_fk_list.append(tsunami_tag.id)
-        member_profile = MemberProfile.objects.get(member=member)
+        member_profile, update = MemberProfile.objects.get_or_create(member=member)
         member_profile.tag_fk_list.extend(tag_fk_list)
         member_profile.save()
 
