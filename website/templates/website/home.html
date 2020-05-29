@@ -91,6 +91,18 @@
     </style>
 {% endblock %}
 
+{% block head_js %}
+    <script>
+        navigator.serviceWorker.getRegistrations().then(
+            function(registrations) {
+                for(let registration of registrations) {
+                    if (registration.active.scriptURL.indexOf('service-worker.js') > 0) registration.unregister();
+                }
+        });
+    </script>
+    {{ block.super }}
+{% endblock %}
+
 {% block content %}
     <div class="masthead" style="{% if not user.is_anonymous %}height: inherit;{% endif %}">
         <div id="animatedBackground1" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_1.png' %});background-size: cover; position: absolute; width: 100%;"></div>
@@ -183,10 +195,10 @@
     <footer>
         <div id="bottom-menu" class="hidden-xs">
             <ul>
-                {% include 'tsunami/snippets/language_switcher.html' %}
+                {% include 'core/snippets/language_switcher.html' %}
                 <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
                 <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
-               <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
                 <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
             </ul>
         </div>
@@ -202,6 +214,7 @@
 {% endblock %}
 
 {% block js %}
+    <script src="{% static 'ikwen/js/pwa-main.js' %}?v=20.5.28"></script>
     {{ block.super }}
     <script src="{% static 'website/js/ikwen-website.js' %}"></script>
 {% endblock %}
