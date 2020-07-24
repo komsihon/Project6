@@ -21,73 +21,14 @@
 
 {% block head_style %}
     {{ block.super }}
-{#    <link href="{% static 'website/css/ikwen-form.css' %}" rel="stylesheet" type="text/css">#}
-{#	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">#}
-    <link href="{% static 'website/css/ikwen-website.css' %}" rel="stylesheet">
-    <link href="{% static 'website/css/transparent-navbar-darkbg.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/ikwen-website.css' %}?V=20.07.24.20.43" rel="stylesheet">
     <style>
-        a {color: #fff}
-        a:hover {text-decoration: none}
-        .orange {color: #fcbd20;}
-        .resume {margin-top: 155px}
-        footer {color: #fff; bottom: 12px; margin: 0; position: absolute; width: 100%}
-        footer strong {color: #fff}
-        #navbar {z-index: 5}
-        label {color: #696969;}
-        .card-header {background-color: #007eff; padding: 1px 5px 7px 10px;}
-        .forgot-password {font-size: 12px;text-align: right;}
-        #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0;}
-        #stage {padding: 15px 30px 15px;}
-        .btn.login  {display: none}
-        #bottom-menu {bottom: 15px; position: absolute; right: 35px}
-        #bottom-menu li {list-style-type: none}
-        #bottom-menu li a {color: #fff; display: block; font-size: 12px}
-
-        @media (min-width: 768px){
-            ul.nav.navbar-nav li .cta {display: none}
-            .navbar-default {background-color: transparent;}
-            #navbar-search input {background: rgba(4, 10, 33, 0.26);}
-             .form-wrapper {width: 100%}
-            #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0; width: 360px}
-            {##stage {padding: 15px 30px 15px;}#}
-            .register {margin-top: 40px;}
-            #bottom-menu .lang-switcher select {color: #fff}
-            #navbar-search {display: block}
-        }
-        @media only screen and (max-width : 767px) {
-             #loginbox {width: 100%}
-            li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
-            .dropdown-menu>li>a { color: #217DBB !important; }
-            .dropdown-menu .username { color: #233682 }
-        }
-        @media only screen
-        and (max-width : 425px) {
-            #navbar {background: #141d5a}
-            #navbar .glyphicon {color: #fff}
-            .masthead .btn-xl.register {margin-top: 30px}
-            .masthead .header-content {margin-bottom: 20px}
-            .edge-panel-left {background: #fff; height: 100%; top: 0; width: 85%}
-            .edge-panel-left .wrapper {padding-top: 0}
-            .edge-panel-left .stage {padding: 0 0 90px; width: 100%;}
-            .top-edge-panel {float: left;height: 200px;width: 100%;}
-            .panel-top {background-size: cover;height: 200px;}
-            #side-nav .panel-top .cover {background: rgba(0, 0, 0, 0.52);height: 200px;padding: 10px; width: 100%;}
-            .lang-switcher {float: right;margin: 30px 20px;}
-            .ik-logo {background-size: 100% auto;background-repeat: no-repeat;height: 80px;width: 190px;}
-            .masthead .header-content h2 {font-size: 24px;}
-            .divider {height: 1px;margin: 9px 0;overflow: hidden;background-color: #e5e5e5;width: 100%;}
-            #side-nav .nav-stacked li a {font-weight: 700;color: #676767;font-size: 14px;padding: 10px 25px;}
-            .lang-switcher select {background: transparent;border: none;color: #FFF;}
-            .lang-switcher i {margin: 3px 35px;position: absolute;}
-
-            .resume {margin-top: 45px}
-             #bottom-menu {display: none}
-             #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 70px; padding: 0;}
-            footer {margin-top: -25px; position: relative; width: 100%}
-            {#ul#nav-xs.navbar-right li a {display: none}#}
-            .icon-bar {background: #fff}
-            .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #FFF}
-        }
+    #navbar {
+        background: -moz-linear-gradient(180deg, rgba(221, 221, 221, 1) 36%, rgba(238, 237, 237, 0.6839110644257703) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(221, 221, 221, 1) 36%, rgba(238, 237, 237, 0.6839110644257703) 100%);
+        background: linear-gradient(180deg, rgba(221, 221, 221, 1) 36%, rgba(238, 237, 237, 0.6839110644257703) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dddddd", endColorstr="#eeeded", GradientType=1);
+    }
     </style>
 {% endblock %}
 
@@ -102,119 +43,381 @@
     </script>
     {{ block.super }}
 {% endblock %}
+{% block header_brand %}
+    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
+        <img src="{% static 'website/img/logo-ikwen_for-header.png' %}">
+    </a>
+    <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
+{% endblock %}
 
 {% block content %}
-    <div class="masthead" style="{% if not user.is_anonymous %}height: inherit;{% endif %}">
-        <div id="animatedBackground1" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_1.png' %});background-size: cover; position: absolute; width: 100%;"></div>
-        <div id="animatedBackground2" class="animated2 infinite flash" style="background-image: url({% static 'website/img/bg-2_2.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
-        <div id="animatedBackground3" class="animated3 infinite fadeIn" style="background-image: url({% static 'website/img/bg-2_3.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
-        <div id="animatedBackground4" class="animated4 infinite flash" style="background-image: url({% static 'website/img/bg-2_4.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
-        <div id="animatedBackground5" class="animated4 infinite flash" style="background-image: url({% static 'website/img/bg-2_5.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
-        <div id="animatedBackground6" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_6.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
-        <div class="container h-100">
-            <div class="row h-100">
-                <div class="col-sm-7 hidden-xs resume">
-                    <div class="header-content">
-                        {% if request.GET.join %}
-                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <span class="orange">{{ project_name }}</span>  on <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
-                        {% else %}
-                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
-                        {% endif %}
-                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for  <strong class="">free</strong> {% endblocktrans %} </h2>
-                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of  <strong class="">gifts</strong> {% endblocktrans %}  !</h2>
-                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">
-                            {% if user.is_anonymous %}{% trans "Register" %}{% else %}{% trans "Get in !" %}{% endif %}
-                        </a>
-                    </div>
-                </div>
-                {% if user.is_anonymous %}
-                <div class="col-sm-5">
-                    <div id="loginbox" class="mainbox col-sm-12 loginbox">
-                        <div class="card border-primary" >
-                            <div class="card-header text-white bg-primary hidden-xs">
-                                <div class="card-title">
-                                <h1>Sign In</h1>
-                                </div>
-                                {% url 'ikwen:forgotten_password' as forgotten_password_url %}
-                                <div class="forgot-password"> <a style="color: #FFFFFF" href="{{ forgotten_password_url|ikwenize }}">Forgot password?</a> </div>
-                            </div>
-                            <div id='stage' class="card-body panel-pad">
-                                {% if login_form.errors %}
-                                <p class="failure" style="font-size: 1em; padding: 9px">{{ error_message }}</p>
-                                {% elif request.GET.msg %}
-                                <p class="failure" style="font-size: 1em; padding: 9px">{{ request.GET.msg }}</p>
-                                {% elif request.GET.successfulPasswordReset %}
-                                <p class="success" style="font-size: 1em; padding: 9px">{% trans "Your password was successfully reset, login now." %}</p>
-                                {% endif %}
-                                {% if messages %}
-                                {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
-                                {% endif %}
-                                <div id="login" class="form-wrapper">
-                                    <form id="auth" action="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" method="post">{% csrf_token %}
-                                        <div class="form-group" style="margin-top: .4em">
-                                            <label for="email">{% trans "Email or phone" %}</label>
-                                            <input id="email" class="form-control input-md username" type="text" name="username" autofocus value="{{ request.GET.username }}{{ request.GET.phone }}" /> {#Only username or phone will be output depending on what is available#}
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="lg-password">{% trans "Password" %}</label>
-                                            <input id="lg-password" class="form-control input-md password" type="password" name="password" />
-                                        </div>
-                                        <div class="form-group">
-                                            <button class="btn btn-primary btn-block btn-md"> {% trans "Submit" %} </button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endif %}
-                <div class="col-sm-7 visible-xs resume">
-                    <div class="header-content">
-                        {% if request.GET.project_name_slug %}
-                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <strong><a href="{% url 'home' %}">{{ project_name }}</a></strong></h2>
-                        {% else %}
-                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
-                        {% endif %}
-                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
-                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
-                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">
-                            {% if user.is_anonymous %}{% trans "Register" %}{% else %}{% trans "Get in !" %}{% endif %}
-                        </a>
-                    </div>
+    <div class="container-fluid main-home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1 text-center">
+                    <h1 class="title-main">{% trans "From the real world to the Cloud... Go digital!" %} </h1>
+                    <h4 class="title-seccondary">
+                        {% blocktrans %}
+                            Discover the first social platform designed for your business
+                        {% endblocktrans %}
+                    </h4>
                 </div>
             </div>
         </div>
+        <div id="content" class="form container init" style="clear: both">
+            <p class="failure" style="display: none; font-size: 1em; padding: 9px"></p>
+            {% if messages %}
+                {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
+            {% endif %}
+            <div id="stage" class="form-wrapper bag-shade">
+                <form id="auth" action="{{ action }}" method="post">{% csrf_token %}
+                    <div class="input-group username">
+                      <input id="username" class="form-control" type="text" name="username" placeholder="{% trans "Enter your email address to start..." %}" value="{{ username }}" autofocus />
+                      <span class="input-group-btn submit-username">
+                          <button class="btn btn-primary btn-embed" type="button">
+                              {% include 'core/snippets/button_spinner.html' %}
+                              <span>{% trans "Let's go!" %}</span>
+                          </button>
+                      </span>
+                    </div>
+                    <span id="error"></span>
+                    <div class="create-account">
+                        <div class="form-group row password2">
+                            <label for="password2" class="col-sm-5 col-md-4">{% trans "Confirm password" %}</label>
+                            <div class="col-sm-7 col-md-8">
+                                <input id="password2" class="form-control input-md confirm-password" type="password" name="password2" />
+                            </div>
+                        </div>
+                        <div class="form-group row email">
+                            <label for="email" class="col-sm-5 col-md-4">{% trans "E-mail" %}</label>
+                            <div class="col-sm-7 col-md-8">
+                                <input id="email" class="form-control input-md required" type="email" name="email"/>
+                            </div>
+                        </div>
+                        <div class="form-group row phone">
+                            <label for="phone" class="col-sm-5 col-md-4">{% trans "Phone number" %}</label>
+                            <div class="col-sm-7 col-md-8">
+                                <input id="phone" class="form-control input-md required" type="text" name="phone"/>
+                            </div>
+                        </div>
+                        <div class="form-group row first-name">
+                            <label for="first-name" class="col-sm-5 col-md-4">{% trans "First name" %}</label>
+                            <div class="col-sm-7 col-md-8">
+                                <input id="first-name" class="form-control input-md" type="text" name="first_name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row last-name">
+                            <label for="last-name" class="col-sm-5 col-md-4">{% trans "Last name" %}</label>
+                            <div class="col-sm-7 col-md-8">
+                                <input id="last-name" class="form-control input-md" type="text" name="last_name"/>
+                            </div>
+                        </div>
+                        <div class="form-group row gender">
+                            <label for="last-name" class="col-sm-5 col-md-4">{% trans "Your are ..." %}</label>
+                            <div class="checkbox col-sm-3">
+                                <label>
+                                    <input type="radio" name="gender" value="Female" /> {% trans "A woman" %}
+                                </label>
+                            </div>
+                            <div class="checkbox col-sm-3" style="margin-top: 10px">
+                                <label>
+                                    <input type="radio" name="gender" value="Male" /> {% trans "A man" %}
+                                </label>
+                            </div>
+                        </div>
+                        {% if settings.REGISTER_WITH_DOB %}
+                            {% include "accesscontrol/snippets/dob_widget.html" %}
+                        {% endif %}
+                    </div>
+                    <div class="form-group row password">
+                        <label for="password" class="col-sm-5 col-md-4">{% trans "Password" %}</label>
+                        <div class="col-sm-7 col-md-8">
+                            <input id="password" class="form-control input-md" type="password" name="password" />
+                        </div>
+                    </div>
+                    <div class="terms">
+                        <div class="form-group">
+                            {% url 'ikwen:terms_and_conditions' as ikwen_eula_url %}
+                            {% if settings.IS_IKWEN %}
+                                <p id="terms-warning">{% blocktrans %}
+                                    By creating an account you agree our
+                                    <a href="{{ ikwen_eula_url }}">Terms & Conditions</a>
+                                {% endblocktrans %}</p>
+                            {% else %}
+                                <p id="terms-warning">{% blocktrans with project_name=service.project_name ikwen_eula=ikwen_eula_url|ikwenize agreement_url=settings.AGREEMENT_URL %}
+                                    You are about to create an account managed by
+                                    <a href="http://ikwen.com" style="color: #999; text-decoration: underline"><strong>ikwen</strong></a>,
+                                    on {{ project_name }}. By doing so you accept
+                                    <a href="{{ ikwen_eula }}"><strong>ikwen</strong> Terms & Conditions</a>,
+                                        as well as
+                                    <a href="{{ agreement_url }}">{{ project_name }}Terms & Conditions.</a>
+                                {% endblocktrans %}</p>
+                            {% endif %}
+                        </div>
+                        <div class="form-group row">
+                            <div class="checkbox" style="padding-left: 15px">
+                                <label>
+                                    <input id="accept-terms" type="checkbox" checked/> {% trans "Yes, I read and accept." %}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group submit">
+                        <button id="cancel" class="btn btn-default btn-md hidden-xs back" type="button"> {% trans "Back" %} </button>
+                        <button id="continue" class="btn btn-primary btn-block btn-md continue" type="button"> {% trans "Continue" %} </button>
+                        <button id="submit" class="btn btn-primary btn-block btn-md cta" type="submit">
+                            {% include 'core/snippets/button_spinner.html' %}
+                            <span>{% trans "Submit" %}</span>
+                        </button>
+                        {% url 'ikwen:forgotten_password' as forgotten_password_url %}
+                        <a class="forgotten-pwd" href="{{ forgotten_password_url|ikwenize }}">{% trans "Forgotten password ?" %}</a>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="clear"></div>
+        </div>
     </div>
+
     <!-- Custom scripts-->
     {% include 'website/snippets/edge_panel.html' %}
 {% endblock %}
 
 {% block footer %}
-    <footer>
-        <div id="bottom-menu" class="hidden-xs">
+    <footer class="footer" class="hidden-xs">
+        <div id="bottom-menu" >
+            <ul class="social-square" style="float: left">
+                <li><a href="{{ config.facebook_link }}" target="_blank" class="ico-facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="{{ config.twitter_link }}" target="_blank" class="ico-twitter" title="Twitter"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="{{ config.linkedin_link }}" target="_blank" class="ico-linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA" target="_blank" class="ico-youtube" title="YouTube"><i class="fab fa-youtube-square"></i></a></li>
+            </ul>
             <ul>
                 {% include 'core/snippets/language_switcher.html' %}
-                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
-                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
-                <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
                 <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
+                <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
             </ul>
+            <span class="col-md-3 col-md-offset-3" >
+                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                {% trans "All rights reserved." %}
+                {% if config.legal_mentions_url %}
+                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                {% endif %}
+            </span>
         </div>
         <a style="display: none" href="{% url 'service_indexes' 0 %}">Service Indexes</a>
-        <div>
-            &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
-            {% trans "All rights reserved." %}
-            {% if config.legal_mentions_url %}
-            - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
-            {% endif %}
-        </div>
     </footer>
 {% endblock %}
 
 {% block js %}
     <script src="{% static 'ikwen/js/pwa-main.js' %}?v=20.5.28"></script>
     {{ block.super }}
-    <script src="{% static 'website/js/ikwen-website.js' %}"></script>
+{#    <script src="{% static 'website/js/ikwen-website.js' %}"></script>#}
+    <script type="text/javascript">
+        {% get_current_language as LANGUAGE_CODE %}
+        (function() {
+            const pwdMinLength = 4; //Length for auto-generated password
+            $(window).on('hashchange', function() {
+                if (location.hash.length < 1) {
+                    $('.form-group.password').insertBefore('.terms').find('label').text("{% trans "Password" %}");
+                    $('#stage').addClass('form-wrapper').removeClass('col-sm-9 col-md-8');
+                    $('#content').addClass('init').removeClass('register');
+                    $('#username').focus();
+                } else if (location.hash.indexOf('step1') > 0) {
+                    $('#content').removeClass('step2').addClass('step1');
+                    $('#password').focus();
+                }
+            });
+            $('body').on('click', '.submit-username .btn', checkUsername)
+            .on('click', '#cancel', function() {
+                window.history.back();
+                $('.btn-embed').removeClass('processing');
+            }).on('click', '#continue', function() {
+                $('.errorlist').remove();
+                var goToNext = true;
+                if (!testUsername()) goToNext = false;
+                if (!testPassword()) goToNext = false;
+                if ($('#email').hasClass('required')) {
+                    if (!testEmail()) goToNext = false;
+                }
+                if ($('#phone').hasClass('required') || $('#phone').val()) {
+                    if (!testPhone()) goToNext = false;
+                }
+                if (!goToNext) return;
+                $('#content').removeClass('step1').addClass('step2');
+                $('#first-name').focus();
+                location.hash = 'register-step2';
+            }).on('click', '#accept-terms', function() {
+                if ($(this).prop('checked')) {
+                    $('#submit').removeProp('disabled').removeClass('default')
+                } else $('#submit').prop('disabled', true).addClass('default')
+            }).on('click', '#submit:not(.processing)', function() {
+                if ($('#content').hasClass('register step2')) {
+                    $('.errorlist').remove();
+                    {% if settings.REGISTER_WITH_DOB %}
+                        if (!checkDOB()) return false;
+                    {% endif %}
+                    if (!$('#accept-terms').prop('checked')) return false;
+                }
+                $(this).addClass('processing').css('text-align', 'right');
+            }).on('keydown', '#auth input, #auth select', function(e) {
+                // This Manages what happens when we press enter in the form
+                // returning false on $(form).submit() does not prevent the
+                // form from being submitted, so we use this hack instead.
+                if (e.keyCode === 13) {
+                    $('.errorlist').remove();
+                    if ($('#content').hasClass('init')) {
+                        e.preventDefault();
+                        checkUsername();
+                    }
+                    if ($('#content').hasClass('register step1')) {
+                        e.preventDefault();
+                        $('#continue').click();
+                        return;
+                    }
+                    if ($('#content').hasClass('register step2')) {
+                        {% if settings.REGISTER_WITH_DOB %}
+                            if (!checkDOB()) e.preventDefault();
+                        {% endif %}
+                        if (!$('#accept-terms').prop('checked')) e.preventDefault();
+                    }
+                    if ($('#submit').hasClass('processing')) e.preventDefault();
+                }
+            });
+            $('#username').keyup(function(e) {
+                if (e.key === ' ') {
+                    var username = $(this).val().trim().toLowerCase();
+                    $(this).val(username);
+                }
+            }).blur(function() {testUsername()});
+            $('#email').blur(testEmail);
+            $('#phone').blur(testPhone);
+            function testUsername(uname) {
+                $('.errorlist.username').remove();
+                let $username = $('#username'),
+                    username = $username.val();
+                username = username.replace(/ /g, '').toLowerCase();
+                $username.val(username);
+                if (uname) username = uname;
+                if (username.indexOf('@') > 0) {
+                    if (username.isValidEmail()) return true;
+                    $('<ul class="errorlist username"><li>' + "{% trans "Please, enter valid email" %}" + '</li></ul>')
+                            .insertAfter('#error');
+                    return false
+                }
+                if (username.length >= 3 && /[a-z]{1}/.test(username.substr(0, 1))) return true;
+                $('<ul class="errorlist username">' +
+                    '<li>' + "{% trans "Please use at least 3 characters." %}" + '</li>' +
+                    '<li>' + "{% trans "Start with a letter." %}" + '</li>' +
+                    '</ul>').insertAfter('#error');
+                $username.focus();
+                return false;
+            }
+            function testEmail() {
+                $('.errorlist.email').remove();
+                var $email = $('#email'),
+                    email = $email.val().replace(/ /g, '').toLowerCase();
+                $email.val(email);
+                if (email.isValidEmail()) return true;
+                $('<ul class="errorlist email"><li>' + "{% trans "Please, enter valid email" %}" + '</li></ul>')
+                        .insertAfter('#email');
+                $email.focus();
+                return false;
+            }
+            function testPhone() {
+                $('.errorlist.phone').remove();
+                var $phone = $('#phone'),
+                    phone = $phone.val().replace(/ /g, '');
+                $phone.val(phone);
+                if (phone && phone.substr(0, 2) !== '00' && /\d{9,}/.test(phone)) return true;
+                $('<ul class="errorlist phone">' +
+                    '<li>' + "{% trans "Please use digits only." %}" + '</li>' +
+                    '<li>' + "{% trans "Prepend country code if you are not in Cameroon." %}" + '</li>' +
+                    '<li>' + "{% trans "DO NOT prepend 00." %}" + '</li>' +
+                    '</ul>').insertAfter('#phone');
+                $phone.focus();
+                return false;
+            }
+            function testPassword() {
+                $('.errorlist.password, .errorlist.password2').remove();
+                var $pwd1 = $('#password'),
+                    pwd1 = $pwd1.val(),
+                    pwd2 = $('#password2').val();
+                if (pwd1.length < pwdMinLength) {
+                    $('<ul class="errorlist password">' +
+                        '<li>' + "{% trans "Password too short. Use at least 6 characters." %}" + '</li>' +
+                        '</ul>').insertAfter('#password');
+                    $pwd1.focus();
+                    return false
+                }
+                if (pwd1 !== pwd2) {
+                    $('<ul class="errorlist password2">' +
+                        '<li>' + "{% trans "Passwords mismatch! Please check." %}" + '</li>' +
+                        '</ul>').insertAfter('#password2');
+                    $pwd1.focus();
+                    return false
+                }
+                return true;
+            }
+
+            function checkUsername() {
+                let username = $('#username').val().toLowerCase(),
+                    _$btn = $('.submit-username .btn');
+                if (!username) return false;
+                if (!testUsername(username)) return false;
+                if (_$btn.hasClass('processing')) return false;
+                _$btn.addClass('processing');
+                $.ajax({
+                    url: '{% url 'ikwen:sign_in' %}',
+                    data: {username: username},
+                    error: function(req, status, error) {
+                        _$btn.removeClass('processing');
+                        $('#content .failure').show().html("{% trans "Oops! An error occurred. Check your internet." %}");
+                    },
+                    success: function(data) {
+                        if (data.existing) {
+                            $('#auth').prop('action', "{% url 'ikwen:do_sign_in' %}?{{ request.META.QUERY_STRING|safe }}");
+                            if (data.no_password && !data.is_staff) {
+                                $('#password').val('---');  // --- is just a random password not to leave the field blank
+                                $('#submit').click();
+                                return
+                            }
+                            location.hash = 'login';
+                            _$btn.removeClass('processing');
+                            $('#content').removeClass('init');
+                            $('#password').focus();
+                            if (username.isValidEmail()) {
+                                $('.forgotten-pwd').prop('href', '{{ forgotten_password_url|ikwenize }}' + '?' + 'username=' + username);
+                            }
+                        } else {
+                            $('#content').hide().removeClass('init').addClass('register step1').fadeIn('normal', 'linear', function() {
+                                $('#password').focus();
+                            });
+                            $('#stage').removeClass('form-wrapper').addClass('col-sm-9 col-md-8');
+                            if (username.isValidEmail()) {
+                                $('#email').val(username);
+                                $('.form-group.email').hide();
+                            }
+                            $('.form-group.password').prependTo('.create-account').find('label').text("{% trans "Choose a password" %}");
+                            location.hash = 'register-step1';
+                            $('#auth').prop('action', "{% url 'ikwen:register' %}?{{ request.META.QUERY_STRING|safe }}");
+                        }
+                    }
+                });
+            }
+            function checkDOB() {
+                $('.errorlist.dob').remove();
+                var day = parseInt($('#day').val()),
+                    month = parseInt($('#month').val()),
+                    year = parseInt($('#year').val()),
+                    d = new Date(year + '/' + month + '/' + day);
+                if (d.getDate() === day && d.getMonth() === (month - 1) && d.getFullYear() === year) return true;
+                $('<p class="errorlist dob">' + "{% trans "Invalid date. Please check." %}" + '</p>').appendTo('#dob');
+                return false;
+            }
+        })()
+    </script>
+    {{ config.scripts|safe }}
 {% endblock %}

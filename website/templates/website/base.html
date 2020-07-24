@@ -11,7 +11,10 @@
 {% endblock %}
 {% block head_style %}
     {{ block.super }}
-    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.01.02.17.26" />
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
+    <link rel='stylesheet' href="{% static 'website/css/bootstrap-select.min.css' %}" />
+    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.07.24.20.51" />
+    <link rel='stylesheet' href="{% static 'website/css/ikwen-website.css' %}?V=20.07.24.20.50" />
     <style>
         .edge-panel-left .wrapper {padding-top: 0}
         body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -27,6 +30,11 @@
         }
     </style>
 
+{% endblock %}
+
+{% block head_js %}
+    {{ block.super }}
+    <script src="{% static 'website/js/bootstrap-select.min.js' %}"></script>
 {% endblock %}
 
 
@@ -153,7 +161,14 @@
                                 </li>
 {#                                <li class="daraja visible-md visible-lg"><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
                                 <li class="tsunami visible-md visible-lg"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                                <li class="foulassi visible-md visible-lg"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
+                                <li class="dropdown foulassi visible-md visible-lg">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foulassi <b class="caret"></b> </a>
+                                  <ul class="dropdown-menu" style="background: transparent">
+                                    <li><a href="{% url 'foulassi:home' %}">{% trans "Parent" %}</a></li>
+                                    <li><a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a></li>
+                                  </ul>
+                                </li>
+{#                                <li class="foulassi visible-md visible-lg"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
                                 <li class="kakocase visible-lg"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
                                 <li class="pinsview visible-lg"><a href="{% url 'pinsview' %}"> PinsView</a></li>
                                 <li id="ik-apps" class="visible-md dropdown">
@@ -268,6 +283,10 @@
                 $('ul.dropdown-menu').removeClass('page-scrolled')
             }
             });
+            $('.selectpicker').selectpicker();
+            $('.flag-icon-en').removeClass('flag-icon-en').addClass('flag-icon-us');
+            $('.lang-switcher .dropdown-toggle').addClass('flag-lang-switcher');
+            $('.lang-switcher .dropdown-menu').addClass('flag-lang-switcher').css('width', '55px');
         })()
     </script>
 {% endblock %}

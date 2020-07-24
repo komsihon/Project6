@@ -42,6 +42,9 @@ urlpatterns = patterns(
     # Daraja URLs
     url(r'^daraja/', include('daraja.urls', namespace='daraja')),
 
+    # STAFF URLs
+
+
     url(r'^', include('ikwen.core.urls', namespace='ikwen')),
     # url(r'^page/(?P<url>[-\w]+)/$', FlatPageView.as_view(), name='flatpage'),
 )

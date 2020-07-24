@@ -23,7 +23,18 @@
                         </li>
 {#                        <li><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
                         <li><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                        <li><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
+                        <li class="dropdown">
+                          <a href="javascript:;" data-toggle="collapse" data-target="#foulassi-version" aria-expanded="false">Foulassi <b class="caret"></b> </a>
+                          <ul id="foulassi-version" class="collapse" style="list-style: none">
+                            <li role="presentation" style="height: 42px; padding: 10px 0">
+                                <a href="{% url 'foulassi:home' %}">{% trans "Parent" %}</a>
+                            </li>
+                            <li role="presentation" style="height: 42px; padding: 10px 0">
+                                <a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a>
+                            </li>
+                          </ul>
+                        </li>
+{#                        <li><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
                         <li><a href="{% url 'kakocase' %}"> Kakocase</a></li>
                         <li><a href="{% url 'pinsview' %}"> PinsView</a></li>
 {#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'webnode' %}"> Webnode</a></li>#}
@@ -41,20 +52,17 @@
                         </div>
                     </ul>
                     <div class="clearfix"></div>
+
                     <div class="social-icon">
-                        {% if config.facebook_link %}
-                            <a href="{{ config.facebook_link }}" target="_blank"><i class="fa fa-facebook-official"></i></a>
-                        {% endif %}
-                        {% if config.instagram_link %}<a href="{{ config.instagram_link }}" target="_blank"><i class="fa fa-instagram"></i></a>{% endif %}
-                        {% if config.twitter_link %}<a href="{{ config.twitter_link }}" target="_blank"><i class="fa fa-twitter-square"></i></a>{% endif %}
-                        {% if config.google_plus_link %}
-                            <a href="{{ config.google_plus_link }}" target="_blank"><i class="fa fa-google-plus-square"></i></a>{% endif %}
-                        {% if config.linkedin_link %}<a href="{{ config.linkedin_link }}" target="_blank"><i class="fa fa-linkedin-square"></i></a>{% endif %}
+                        <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.linkedin.com/company/18357139/"target="_blank" class="ico ico-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://twitter.com/ikwenSARL"target="_blank" class="ico ico-twitter"><i class="fab fa-twitter"></i></a>
+                        <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.facebook.com/Ikwen.SARL" target="_blank" class="ico ico-facebook"><i class="fab fa-facebook"></i></a>
+                        <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA"target="_blank" class="ico ico-youtube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div id="footer">
+            <div id="footer" class="text-muted">
                 &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
                 {% trans "All rights reserved." %}
                 {% if config.legal_mentions_url %}

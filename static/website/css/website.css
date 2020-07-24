@@ -36,16 +36,19 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #217dbb}
 .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {color: #1f356a}
 
-.lang-switcher {float: right; margin: 30px 20px}
+.lang-switcher {float: right;margin: 30px 20px;}
 .lang-switcher i {color: #fff; font-size: 23px; margin-left: -42px; position: absolute}
-.lang-switcher select {background: transparent; border: none; color: #FFF}
+.lang-switcher select {background: transparent;border: none;/* color: #FFF */}
+.flag-lang-switcher {background: transparent!important;border: none!important;padding: 0!important;/* width: 50px !important; */}
 
+.social-icon { font-size: 25px; padding: 3vh 0 0 26px }
+.ico { color: #676767 }
 
-#bottom-menu .lang-switcher { margin: 0 0 0 50px;  }
-#bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px;}
+#bottom-menu .lang-switcher {margin: 0 0 0 25px;}
+#bottom-menu .lang-switcher select {/* color: #203e96; */font-size: 12px;width: 45px;}
 
 .apps ul a {padding: 10px 20px; width: 100%}
-#navbar {background-color: #FFF}
+#navbar {background-color: #FFF;}
 .icon-bar {background: #1f356a}
 
 @media only screen and (orientation: landscape) {
@@ -60,6 +63,9 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
     li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
     .dropdown-menu>li>a { color: #217DBB !important; }
     .dropdown-menu .username { color: #233682 }
+    .lang-switcher {float: right; margin: 30px 20px}
+    .lang-switcher i {color: #676767; font-size: 23px; margin-left: -42px; position: absolute}
+    .lang-switcher select {background: transparent; border: none; color: #676767}
     #footer {
         background: #fff;
         color: #b7b7b7;

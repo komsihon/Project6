@@ -1,0 +1,230 @@
+home.html{% extends "website/base.html" %}
+{% load i18n humanize static auth_tokens  %}
+{% block page_title %}<title>ikwen - {% trans 'Home' %} </title>{% endblock %}
+
+{% block meta %}
+    {{ block.super }}
+    {% include 'website/snippets/color_and_icons.html' %}
+
+    <link rel="shortcut icon" type="image/png" href="{% static "website/img/favicon_ikwen.ico" %}">
+    <meta name="theme-color" content="#28a745">
+    <meta name="msapplication-navbutton-color" content="#233682">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#233682">
+    <meta property="description" content="{% trans "Web Apps to empower your small or big business" %}" />
+    <meta name="abstract" content="IKWEN provides you with very simple Cloud Apps to take your business to digital world hassle free."/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{% url 'about' %}" />
+    <meta property="og:image" content="{% static 'website/img/ikwen logo_without-slogan.png' %}" />
+    <meta property="og:title" content="{% trans "IKWEN" %}"/>
+    <meta property="og:description" content="{% trans "Web Apps to empower your small or big business" %}">
+{% endblock %}
+
+{% block head_style %}
+    {{ block.super }}
+{#    <link href="{% static 'website/css/ikwen-form.css' %}" rel="stylesheet" type="text/css">#}
+{#	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">#}
+    <link href="{% static 'website/css/ikwen-website.css' %}" rel="stylesheet">
+    <link href="{% static 'website/css/transparent-navbar-darkbg.css' %}" rel="stylesheet">
+    <style>
+        a {color: #fff}
+        a:hover {text-decoration: none}
+        .orange {color: #fcbd20;}
+        .resume {margin-top: 155px}
+        footer {color: #fff; bottom: 12px; margin: 0; position: absolute; width: 100%}
+        footer strong {color: #fff}
+        #navbar {z-index: 5}
+        label {color: #696969;}
+        .card-header {background-color: #007eff; padding: 1px 5px 7px 10px;}
+        .forgot-password {font-size: 12px;text-align: right;}
+        #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0;}
+        #stage {padding: 15px 30px 15px;}
+        .btn.login  {display: none}
+        #bottom-menu {bottom: 15px; position: absolute; right: 35px}
+        #bottom-menu li {list-style-type: none}
+        #bottom-menu li a {color: #fff; display: block; font-size: 12px}
+
+        @media (min-width: 768px){
+            ul.nav.navbar-nav li .cta {display: none}
+            .navbar-default {background-color: transparent;}
+            #navbar-search input {background: rgba(4, 10, 33, 0.26);}
+             .form-wrapper {width: 100%}
+            #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 200px; padding: 0; width: 360px}
+            {##stage {padding: 15px 30px 15px;}#}
+            .register {margin-top: 40px;}
+            #bottom-menu .lang-switcher select {color: #fff}
+            #navbar-search {display: block}
+        }
+        @media only screen and (max-width : 767px) {
+             #loginbox {width: 100%}
+            li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
+            .dropdown-menu>li>a { color: #217DBB !important; }
+            .dropdown-menu .username { color: #233682 }
+        }
+        @media only screen
+        and (max-width : 425px) {
+            #navbar {background: #141d5a}
+            #navbar .glyphicon {color: #fff}
+            .masthead .btn-xl.register {margin-top: 30px}
+            .masthead .header-content {margin-bottom: 20px}
+            .edge-panel-left {background: #fff; height: 100%; top: 0; width: 85%}
+            .edge-panel-left .wrapper {padding-top: 0}
+            .edge-panel-left .stage {padding: 0 0 90px; width: 100%;}
+            .top-edge-panel {float: left;height: 200px;width: 100%;}
+            .panel-top {background-size: cover;height: 200px;}
+            #side-nav .panel-top .cover {background: rgba(0, 0, 0, 0.52);height: 200px;padding: 10px; width: 100%;}
+            .lang-switcher {float: right;margin: 30px 20px;}
+            .ik-logo {background-size: 100% auto;background-repeat: no-repeat;height: 80px;width: 190px;}
+            .masthead .header-content h2 {font-size: 24px;}
+            .divider {height: 1px;margin: 9px 0;overflow: hidden;background-color: #e5e5e5;width: 100%;}
+            #side-nav .nav-stacked li a {font-weight: 700;color: #676767;font-size: 14px;padding: 10px 25px;}
+            .lang-switcher select {background: transparent;border: none;color: #FFF;}
+            .lang-switcher i {margin: 3px 35px;position: absolute;}
+
+            .resume {margin-top: 45px}
+             #bottom-menu {display: none}
+             #loginbox {background: #fff; border-radius: 4px; float: none; margin-top: 70px; padding: 0;}
+            footer {margin-top: -25px; position: relative; width: 100%}
+            {#ul#nav-xs.navbar-right li a {display: none}#}
+            .icon-bar {background: #fff}
+            .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {color: #FFF}
+        }
+    </style>
+{% endblock %}
+
+{% block head_js %}
+    <script>
+        navigator.serviceWorker.getRegistrations().then(
+            function(registrations) {
+                for(let registration of registrations) {
+                    if (registration.active.scriptURL.indexOf('service-worker.js') > 0) registration.unregister();
+                }
+        });
+    </script>
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    <div class="masthead" style="{% if not user.is_anonymous %}height: inherit;{% endif %}">
+        <div id="animatedBackground1" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_1.png' %});background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground2" class="animated2 infinite flash" style="background-image: url({% static 'website/img/bg-2_2.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground3" class="animated3 infinite fadeIn" style="background-image: url({% static 'website/img/bg-2_3.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground4" class="animated4 infinite flash" style="background-image: url({% static 'website/img/bg-2_4.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground5" class="animated4 infinite flash" style="background-image: url({% static 'website/img/bg-2_5.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div id="animatedBackground6" class="animated infinite flash" style="background-image: url({% static 'website/img/bg-2_6.png' %}); background-size: cover; position: absolute; width: 100%;"></div>
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-sm-7 hidden-xs resume">
+                    <div class="header-content">
+                        {% if request.GET.join %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <span class="orange">{{ project_name }}</span>  on <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        {% else %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        {% endif %}
+                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for  <strong class="">free</strong> {% endblocktrans %} </h2>
+                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of  <strong class="">gifts</strong> {% endblocktrans %}  !</h2>
+                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">
+                            {% if user.is_anonymous %}{% trans "Register" %}{% else %}{% trans "Get in !" %}{% endif %}
+                        </a>
+                    </div>
+                </div>
+                {% if user.is_anonymous %}
+                <div class="col-sm-5">
+                    <div id="loginbox" class="mainbox col-sm-12 loginbox">
+                        <div class="card border-primary" >
+                            <div class="card-header text-white bg-primary hidden-xs">
+                                <div class="card-title">
+                                <h1>Sign In</h1>
+                                </div>
+                                {% url 'ikwen:forgotten_password' as forgotten_password_url %}
+                                <div class="forgot-password"> <a style="color: #FFFFFF" href="{{ forgotten_password_url|ikwenize }}">Forgot password?</a> </div>
+                            </div>
+                            <div id='stage' class="card-body panel-pad">
+                                {% if login_form.errors %}
+                                <p class="failure" style="font-size: 1em; padding: 9px">{{ error_message }}</p>
+                                {% elif request.GET.msg %}
+                                <p class="failure" style="font-size: 1em; padding: 9px">{{ request.GET.msg }}</p>
+                                {% elif request.GET.successfulPasswordReset %}
+                                <p class="success" style="font-size: 1em; padding: 9px">{% trans "Your password was successfully reset, login now." %}</p>
+                                {% endif %}
+                                {% if messages %}
+                                {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
+                                {% endif %}
+                                <div id="login" class="form-wrapper">
+                                    <form id="auth" action="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" method="post">{% csrf_token %}
+                                        <div class="form-group" style="margin-top: .4em">
+                                            <label for="email">{% trans "Email or phone" %}</label>
+                                            <input id="email" class="form-control input-md username" type="text" name="username" autofocus value="{{ request.GET.username }}{{ request.GET.phone }}" /> {#Only username or phone will be output depending on what is available#}
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lg-password">{% trans "Password" %}</label>
+                                            <input id="lg-password" class="form-control input-md password" type="password" name="password" />
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-primary btn-block btn-md"> {% trans "Submit" %} </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="col-sm-7 visible-xs resume">
+                    <div class="header-content">
+                        {% if request.GET.project_name_slug %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> {% endblocktrans %} <strong><a href="{% url 'home' %}">{{ project_name }}</a></strong></h2>
+                        {% else %}
+                            <h2 class="mb-4">{% blocktrans %}<strong>Join</strong> your favorite companies on {% endblocktrans %} <strong><a href="{% url 'home' %}">ikwen</a></strong></h2>
+                        {% endif %}
+                        <h2 class="mb-4">{% blocktrans %}<strong>Collect</strong> coupons for free {% endblocktrans %} </h2>
+                        <h2 class="mb-5">{% blocktrans %}<strong>Earn</strong> tons of gifts {% endblocktrans %}  !</h2>
+                        <a href="{% url 'ikwen:sign_in' %}?{{ request.META.QUERY_STRING }}" class="btn btn-outline btn-xl register">
+                            {% if user.is_anonymous %}{% trans "Register" %}{% else %}{% trans "Get in !" %}{% endif %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Custom scripts-->
+    {% include 'website/snippets/edge_panel.html' %}
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <div id="bottom-menu" class="hidden-xs">
+            <ul>
+{#                {% include 'core/snippets/language_switcher.html' %}#}
+                <form class="lang-switcher" method="POST" action="{% url 'set_language' %}">{% csrf_token %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_current_language as LANGUAGE_CODE %}
+                    <label class="sr-only">{% trans "Language" %}</label>
+                    <select name="language" class="selectpicker" data-width="fit" onchange="$(this).parents('form').submit()">
+                        {% for lang in LANGUAGES %}
+                            <option value="{{ lang.0 }}"{% if LANGUAGE_CODE == lang.0 %} selected="selected"{% endif %} data-content='<div class="flag-icon-background flag-icon-{% if lang.0 == 'en' %}us {% else %}{{ lang.0 }}{% endif %}" style="width:30px; height:20px"></div>'></option>
+                        {% endfor %}
+                    </select>
+                </form>
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+                <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
+            </ul>
+        </div>
+        <a style="display: none" href="{% url 'service_indexes' 0 %}">Service Indexes</a>
+        <div>
+            &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+            {% trans "All rights reserved." %}
+            {% if config.legal_mentions_url %}
+            - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+            {% endif %}
+        </div>
+    </footer>
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'ikwen/js/pwa-main.js' %}?v=20.5.28"></script>
+    {{ block.super }}
+    <script src="{% static 'website/js/ikwen-website.js' %}"></script>
+{% endblock %}

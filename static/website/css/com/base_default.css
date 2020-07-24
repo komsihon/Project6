@@ -60,7 +60,7 @@ a {text-decoration: none !important;}
     margin-left: 6px;
     text-decoration: none;
     }
-.fas { font-size: 20px}
+/*.fab { font-size: 25px}*/
 .modal .actions {clear: both}
 .no-border { border: none !important; }
 .actions {border: 1px solid #ddd; border-radius: 3px}
@@ -93,6 +93,7 @@ a {text-decoration: none !important;}
     margin: 0 auto;
 }
 /* Modal vertical alignment trick : END */
+
 
 .spinner-container {-webkit-animation: rotate 2s linear infinite; animation: rotate 2s linear infinite; z-index: 2}
 .spinner-container .path {
@@ -151,6 +152,8 @@ a {text-decoration: none !important;}
 .ik-li .actions {display: none;float: right;}
 .ik-li:hover .select, .ik-li:not(.selected):hover .actions {display: block}
 time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;}
+
+#side-nav .nav {padding-bottom: 200px;float: left; height: 330px; overflow: scroll; width: 100%;}
 
 .tiles {margin-top: -15px}
 .tiles .ik-li {height: 280px;width: 100%;border-bottom: none;}
@@ -290,6 +293,8 @@ time {color: #888;float: right;font-size: 11px; font-weight: normal; padding: 0;
 .social-sharing .dropdown-menu a i.fa-google-plus {color: #FF5722; font-size: 22px}
 .social-sharing .fa-comment {color: #FFC107;}
 
+.social-icon { font-size: 25px; padding: 3vh 0 0 30px }
+
 li.dropdown:hover > ul.dropdown-menu { background: transparent }
 li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #7b8a8b;background-color: #eee}
@@ -333,9 +338,11 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
 
 
 
-.footer { background-color: #233682;
+.footer {
+            background-color: #233682;
             flex-shrink: 0;  /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
-            padding: 3px 0; }
+            padding: 3px 0;
+            }
 .footer-copyright { color: #ffffff}
 
 @media (max-width: 767px) {

@@ -13,7 +13,21 @@
 		{% block head_style %}
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
             <link rel='stylesheet' href="{% static 'ikwen/css/flatly.bootstrap.min.css' %}" />
-            <link rel='stylesheet' href="{% static 'website/css/com/base_default.css' %}?V=20.01.02.17.26" />
+            <link rel='stylesheet' href="{% static 'website/css/com/base_default.css' %}?V=20.05.29.17.10" />
+            <style>
+                .edge-panel-left .wrapper {padding-top: 0}
+                body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
+                section.address {background-image: url("{% static 'website/img/map.svg' %}"); background-size: 100% auto; color: #080808; font-size: 22px; font-weight: 400;height: 600px; margin-top: 120px;}
+                .modal.fade.show {opacity: 1}
+                .lead {font-weight: 400}
+                .btn.login {background: #233682;color: #FFF;font-weight: 600; width: 100px;}
+                .navbar-brand img {height: 50px}
+                @media only screen
+                and (max-width : 425px) {
+                    .edge-panel-left {background: #fff; height: 100%; top: 0; width: 85%}
+                     #bottom-menu {display: none}
+                }
+            </style>
 		{% endblock %}
         {% block head_js %}
             <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -155,7 +169,14 @@
                                         </li>
 {#                                        <li class="daraja visible-md visible-lg"><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
                                         <li class="tsunami visible-md visible-lg"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                                        <li class="foulassi visible-md visible-lg"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
+                                <li class="dropdown foulassi visible-md visible-lg">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foulassi <b class="caret"></b> </a>
+                                  <ul class="dropdown-menu" style="background: transparent">
+                                    <li><a href="{% url 'foulassi:home' %}">{% trans "Parent" %}</a></li>
+                                    <li><a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a></li>
+                                  </ul>
+                                </li>
+{#                                        <li class="foulassi visible-md visible-lg"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
                                         <li class="kakocase visible-lg"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
                                         <li class="pinsview visible-lg"><a href="{% url 'pinsview' %}"> PinsView</a></li>
                                         <li id="ik-apps" class="visible-md dropdown">
@@ -180,7 +201,14 @@
                                                   </ul>
                                                 </li>
                                                 <li class="tsunami"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                                                <li class="foulassi"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
+                                                <li class="dropdown foulassi visible-md visible-lg">
+                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foulassi <b class="caret"></b> </a>
+                                                  <ul class="dropdown-menu" style="background: transparent">
+                                                    <li><a href="{% url 'foulassi:home' %}">{% trans "Parent" %}</a></li>
+                                                    <li><a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a></li>
+                                                  </ul>
+                                                </li>
+{#                                                <li class="foulassi"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
                                                 <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase </a></li>
                                                 <li class="tsunami"><a href="{% url 'pinsview' %}"> PinsView</a></li>
                                             </ul>
@@ -268,7 +296,13 @@
                             <ul style=" font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
                                 <li><a style="color: #d2d1d1;" href="http://www.ikwen.com/about" target="_blank">{% trans 'Our Company' %}</a></li>
         {#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Contact us' %}</a></li>#}
-                                <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Reviews' %}</a></li>
+{#                                <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Reviews' %}</a></li>#}
+                                <li>
+                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.linkedin.com/company/18357139/"target="_blank" class="ico-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://twitter.com/ikwenSARL"target="_blank" class="ico-twitter"><i class="fab fa-twitter"></i></a>
+{#                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="#"target="_blank" class="ico-facebook"><i class="fab fa-facebook"></i></a>#}
+                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA"target="_blank" class="ico-youtube"><i class="fab fa-youtube"></i></a>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-sm-3 col-xs-4 footer-mobile-adjust">
@@ -279,14 +313,14 @@
         {#                        <li><a style="color: #d2d1d1; text-decoration: none" href="#" target="_blank">Forums</a></li>#}
                             </ul>
                         </div>
-        {#                <div class="col-sm-3 footer-mobile-adjust">#}
-        {#                    <div class="social-networks" style="padding-bottom: 16px; padding-top: 30px; text-align: center">#}
-        {#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="twitter"><i class="fa fa-twitter"></i></a>#}
-        {#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="facebook"><i class="fa fa-facebook"></i></a>#}
-        {#                        <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="google"><i class="fa fa-google-plus"></i></a>#}
-        {#                    </div>#}
-        {#                    <button type="button" class="btn btn-default">Contact us</button>#}
-        {#                </div>#}
+{#                        <div class="col-sm-3 footer-mobile-adjust">#}
+{#                            <div class="social-networks" style="padding-bottom: 16px; padding-top: 30px; text-align: center">#}
+{#                                <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="twitter"><i class="fas fa-twitter"></i></a>#}
+{#                                <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="facebook"><i class="fas fa-facebook"></i></a>#}
+{#                                <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="google"><i class="fas fa-google-plus"></i></a>#}
+{#                            </div>#}
+{#                            <button type="button" class="btn btn-default">Contact us</button>#}
+{#                        </div>#}
                     </div>
                 </div>
 
