@@ -47,9 +47,6 @@
                         {% if agreement_page %}
 {#                            <li><a href="{% url 'flatpage' agreement_page.url %}">{{ agreement_page.title }}</a></li>#}
                         {% endif %}
-                        <div class="text-right">
-                            {% include 'core/snippets/language_switcher.html' %}
-                        </div>
                     </ul>
                     <div class="clearfix"></div>
 
@@ -58,6 +55,7 @@
                         <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://twitter.com/ikwenSARL"target="_blank" class="ico ico-twitter"><i class="fab fa-twitter"></i></a>
                         <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.facebook.com/Ikwen.SARL" target="_blank" class="ico ico-facebook"><i class="fab fa-facebook"></i></a>
                         <a style="padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA"target="_blank" class="ico ico-youtube"><i class="fab fa-youtube"></i></a>
+                        {% include 'core/snippets/language_switcher.html' %}
                     </div>
                 </div>
             </div>

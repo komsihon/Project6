@@ -95,7 +95,7 @@ select#month {text-transform: capitalize}
 
 @media (max-width: 767px) {
     body {background: none}
-    .main-home {padding: 15vh 0 120px;height: auto !important;min-height: 100vh;}
+    .main-home { background-position-x: 33%; padding: 15vh 0 120px;height: auto !important;min-height: 100vh;}
     .login-title {border-bottom: none; font-size: 21px}
     #stage {box-shadow: none; width: 90%}
     #content {padding: 0 0 0 0 !important;}
@@ -105,6 +105,7 @@ select#month {text-transform: capitalize}
     .login-with-ikwen {height: 50px}
     #stage {margin-top: 3vh !important;width: 90%;}
     #content.form form {padding-left: 15px; padding-right: 15px}
+    .lang-switcher { margin-right: 15px!important; margin-top: -5px !important; }
     .footer { padding-top: 0 }
 }
 @media (min-width: 992px) {
