@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-24 21:31+0100\n"
-"PO-Revision-Date: 2020-07-24 22:05+0100\n"
+"PO-Revision-Date: 2020-07-27 04:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -1928,7 +1928,7 @@ msgstr ""
 
 #: website/templates/website/home.html:58
 msgid "From the real world to the Cloud... Go digital!"
-msgstr "Du monde réel au Cloud... Passez au digital !"
+msgstr "Du classique au Cloud... Passez au digital !"
 
 #: website/templates/website/home.html:60
 msgid ""

@@ -72,7 +72,7 @@
             <div id="stage" class="form-wrapper bag-shade">
                 <form id="auth" action="{{ action }}" method="post">{% csrf_token %}
                     <div class="input-group username">
-                      <input id="username" class="form-control" type="text" name="username" placeholder="{% trans "Enter your email address to start..." %}" value="{{ username }}" autofocus />
+                      <input id="username" class="form-control" type="text" name="username" placeholder="{% trans "Enter your email address to start..." %}" value="{{ username }}" />
                       <span class="input-group-btn submit-username">
                           <button class="btn btn-primary btn-embed" type="button">
                               {% include 'core/snippets/button_spinner.html' %}
