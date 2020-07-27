@@ -158,11 +158,11 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
         /*    color: #233682*/
         /*}*/
 
-        /*#navbar i.fa-search {*/
-        /*    font-size: 15px;*/
-        /*    margin: 10px 0 0 10px;*/
-        /*    position: absolute;*/
-        /*}*/
+        #navbar i.fa-search {
+            font-size: 15px;
+            margin: 13px 0 0 10px;
+            position: absolute;
+        }
 
         .navbar li a {
             font-size: 14px
@@ -181,11 +181,7 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
             top: 3px;
             right: 3px;
         }
-
-        /*#navbar-search {*/
-        /*    padding: 15px;*/
-        /*    width: 273px*/
-        /*}*/
+        
 
         .pricing-header h2 {
             font-size: 25px
@@ -240,10 +236,10 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
             font-size: 4rem
         }
 
-        /*#navbar-search {*/
-        /*    width: 370px;*/
-        /*    margin-left: 24px;*/
-        /*}*/
+        #navbar-search {
+            width: 450px;
+            margin-left: 24px;
+        }
 
         .main-nav .lang-switcher {
             float: right;
@@ -265,6 +261,6 @@ li.dropdown:hover > ul.dropdown-menu.page-scrolled { background: #FFF !important
     li.dropdown:hover > ul.dropdown-menu { max-height: 450px; overflow: auto; }
 }
 
-/*@media only screen and (min-width: 1200px) {*/
-/*        #navbar-search { width: 300px; }*/
-/*}*/
+@media only screen and (min-width: 1200px) {
+        #navbar-search {width: 500px;}
+}

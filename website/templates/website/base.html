@@ -13,8 +13,8 @@
     {{ block.super }}
     <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <link rel='stylesheet' href="{% static 'website/css/bootstrap-select.min.css' %}" />
-    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.07.24.20.51" />
-    <link rel='stylesheet' href="{% static 'website/css/ikwen-website.css' %}?V=20.07.24.20.50" />
+    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.07.27.16.38" />
+    <link rel='stylesheet' href="{% static 'website/css/ikwen-website.css' %}?V=20.07.27.16.33" />
     <style>
         .edge-panel-left .wrapper {padding-top: 0}
         body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -124,7 +124,7 @@
                     <form id="search" autocomplete="off" onsubmit="return false">
                         <i class="fas fa-chevron-left hide-search visible-xs"></i>
                         <i class="fas fa-search hidden-xs"></i>
-                        <input type="text" name="radix" class="form-control input-sm" placeholder="{% trans "Search" %}">
+                        <input type="text" name="radix" class="form-control input-md" placeholder="{% trans "Search" %}">
                         <input type="hidden" name="q">
                         <span class="spinner" style="display: none"></span>
                     </form>

@@ -18,7 +18,7 @@ h4.title-seccondary { }
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a, .dropdown-menu>li>a { color: #217DBB!important; }
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #217DBB !important; color: #FFF !important }
 
-#navbar-search input { background: #f6f6f6; }
+#navbar-search input {background: #f6f6f659;color: #95a5a6;}
 
 .login-title { border-bottom: none; }
 .login-title img { height: 65px; }
