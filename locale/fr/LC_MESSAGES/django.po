@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-24 21:31+0100\n"
-"PO-Revision-Date: 2020-07-27 04:04+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2020-09-08 04:54+0100\n"
+"PO-Revision-Date: 2020-09-08 05:21+0100\n"
+"Last-Translator: Wilfried FUTCHEA <wilfriedwillend@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -26,8 +26,7 @@ msgstr "Anglais"
 msgid "French"
 msgstr "Français"
 
-#: templates/base.html:69 templates/com/base.html:289
-#: tsunami/templates/tsunami/base_com_website.html:139
+#: templates/base.html:69 tsunami/templates/tsunami/base_com_website.html:139
 #: tsunami/templates/tsunami/base_com_website.html:200
 #: tsunami/templates/tsunami/checkout.html:157
 #: tsunami/templates/tsunami/snippets/edge_panel.html:25
@@ -42,13 +41,13 @@ msgstr "Français"
 msgid "Home"
 msgstr "Accueil"
 
-#: templates/base.html:97 templates/com/base.html:116
-#: templates/com/base.html.py:254 tsunami/templates/tsunami/base.html:98
+#: templates/base.html:97 templates/com/base.html:118
+#: templates/com/base.html.py:256 tsunami/templates/tsunami/base.html:98
 #: tsunami/templates/tsunami/base_com_website.html:89
 #: tsunami/templates/tsunami/base_com_website.html:167
 #: tsunami/templates/tsunami/checkout.html:185
-#: website/templates/website/base.html:108
-#: website/templates/website/base.html:233
+#: website/templates/website/base.html:102
+#: website/templates/website/base.html:227
 #: website/templates/website/website_base.html:227
 #: website/templates/website/website_base.html:304
 #: website/templates/website/apps/apps_base.html:90
@@ -56,13 +55,13 @@ msgstr "Accueil"
 msgid "Account setup"
 msgstr "Infos compte"
 
-#: templates/base.html:99 templates/com/base.html:118
-#: templates/com/base.html.py:256 tsunami/templates/tsunami/base.html:100
+#: templates/base.html:99 templates/com/base.html:120
+#: templates/com/base.html.py:258 tsunami/templates/tsunami/base.html:100
 #: tsunami/templates/tsunami/base_com_website.html:91
 #: tsunami/templates/tsunami/base_com_website.html:169
 #: tsunami/templates/tsunami/checkout.html:187
-#: website/templates/website/base.html:110
-#: website/templates/website/base.html:235
+#: website/templates/website/base.html:104
+#: website/templates/website/base.html:229
 #: website/templates/website/website_base.html:229
 #: website/templates/website/website_base.html:306
 #: website/templates/website/apps/apps_base.html:92
@@ -71,13 +70,13 @@ msgid "Logout"
 msgstr "Déconnexion"
 
 #: templates/base.html:105 templates/accesscontrol/sign_in.html:36
-#: templates/accesscontrol/sign_in_minimal.html:34 templates/com/base.html:123
-#: templates/com/base.html.py:261 tsunami/templates/tsunami/base.html:106
+#: templates/accesscontrol/sign_in_minimal.html:34 templates/com/base.html:125
+#: templates/com/base.html.py:263 tsunami/templates/tsunami/base.html:106
 #: tsunami/templates/tsunami/base_com_website.html:96
 #: tsunami/templates/tsunami/base_com_website.html:174
 #: tsunami/templates/tsunami/checkout.html:193
-#: website/templates/website/base.html:115
-#: website/templates/website/base.html:240
+#: website/templates/website/base.html:109
+#: website/templates/website/base.html:234
 #: website/templates/website/website_base.html:234
 #: website/templates/website/website_base.html:311
 #: website/templates/website/apps/apps_base.html:159
@@ -100,55 +99,55 @@ msgstr "Email ou téléphone"
 
 #: templates/accesscontrol/register.html:37
 #: templates/accesscontrol/sign_in_minimal.html:334
-#: website/templates/website/home.html:403
+#: website/templates/website/home.html:483
 msgid "Choose a password"
 msgstr "Choisissez un mot de passe"
 
 #: templates/accesscontrol/register.html:44
 #: templates/accesscontrol/sign_in_minimal.html:59
-#: website/templates/website/home.html:86
+#: website/templates/website/home.html:110
 msgid "Confirm password"
 msgstr "Confirmer le mot de passe"
 
 #: templates/accesscontrol/register.html:51
 #: templates/accesscontrol/sign_in_minimal.html:65
-#: website/templates/website/home.html:92
+#: website/templates/website/home.html:116
 msgid "E-mail"
 msgstr "E-mail"
 
 #: templates/accesscontrol/register.html:59
 #: templates/accesscontrol/sign_in_minimal.html:71
-#: website/templates/website/home.html:98
+#: website/templates/website/home.html:122
 msgid "Phone number"
 msgstr "Téléphone"
 
 #: templates/accesscontrol/register.html:68
 #: templates/accesscontrol/sign_in_minimal.html:77
-#: website/templates/website/home.html:104
+#: website/templates/website/home.html:128
 msgid "First name"
 msgstr "Prénom"
 
 #: templates/accesscontrol/register.html:75
 #: templates/accesscontrol/sign_in_minimal.html:83
-#: website/templates/website/home.html:110
+#: website/templates/website/home.html:134
 msgid "Last name"
 msgstr "Nom"
 
 #: templates/accesscontrol/register.html:82
 #: templates/accesscontrol/sign_in_minimal.html:89
-#: website/templates/website/home.html:116
+#: website/templates/website/home.html:140
 msgid "Your are ..."
 msgstr "Vous êtes ..."
 
 #: templates/accesscontrol/register.html:85
 #: templates/accesscontrol/sign_in_minimal.html:92
-#: website/templates/website/home.html:119
+#: website/templates/website/home.html:143
 msgid "A woman"
 msgstr "Une femme"
 
 #: templates/accesscontrol/register.html:90
 #: templates/accesscontrol/sign_in_minimal.html:97
-#: website/templates/website/home.html:124
+#: website/templates/website/home.html:148
 msgid "A man"
 msgstr "Un homme"
 
@@ -180,7 +179,7 @@ msgstr "aussi bien que"
 
 #: templates/accesscontrol/register.html:120
 #: templates/accesscontrol/sign_in_minimal.html:133
-#: website/templates/website/home.html:160
+#: website/templates/website/home.html:184
 msgid "Yes, I read and accept."
 msgstr "Oui, J'ai lu et j'accepte."
 
@@ -190,7 +189,8 @@ msgstr "Oui, J'ai lu et j'accepte."
 #: templates/accesscontrol/sign_in_minimal.html:143
 #: tsunami/templates/tsunami/checkout.html:275
 #: tsunami/templates/tsunami/cloud_cash_in.html:84
-#: website/templates/website/home.html:170 website/templates/website/home[Join
+#: website/templates/website/home.html:95
+#: website/templates/website/home.html:194 website/templates/website/home[Join
 #: campaign].html:163
 msgid "Submit"
 msgstr "Envoyer"
@@ -202,44 +202,44 @@ msgstr "Veuillez entrer un email valide"
 
 #: templates/accesscontrol/register.html:193
 #: templates/accesscontrol/sign_in_minimal.html:260
-#: website/templates/website/home.html:306
-#: website/templates/website/home.html:324
+#: website/templates/website/home.html:384
+#: website/templates/website/home.html:402
 msgid "Please, enter valid email"
 msgstr "S'il vous plaît, entrez un email valide"
 
 #: templates/accesscontrol/register.html:205
 #: templates/accesscontrol/sign_in_minimal.html:272
-#: website/templates/website/home.html:336
+#: website/templates/website/home.html:414
 msgid "Please use digits only."
 msgstr "Utilisez les chiffres uniquement SVP."
 
 #: templates/accesscontrol/register.html:206
 #: templates/accesscontrol/sign_in_minimal.html:273
-#: website/templates/website/home.html:337
+#: website/templates/website/home.html:415
 msgid "Prepend country code if you are not in Cameroon."
 msgstr "Préfixez par le code du pays si vous n'êtes pas au Cameroun."
 
 #: templates/accesscontrol/register.html:207
 #: templates/accesscontrol/sign_in_minimal.html:274
-#: website/templates/website/home.html:338
+#: website/templates/website/home.html:416
 msgid "DO NOT prepend 00."
 msgstr "NE PAS préfixer par 00."
 
 #: templates/accesscontrol/register.html:219
 #: templates/accesscontrol/sign_in_minimal.html:293
-#: website/templates/website/home.html:357
+#: website/templates/website/home.html:435
 msgid "Passwords mismatch! Please check."
 msgstr "Mots de passe incompatibles! Vérifiez s'il vous plaît."
 
 #: templates/accesscontrol/register.html:226
 #: templates/accesscontrol/sign_in_minimal.html:286
-#: website/templates/website/home.html:350
+#: website/templates/website/home.html:428
 msgid "Password too short. Use at least 6 characters."
 msgstr "Mot de passe trop court. Utilisez au moins 6 caractères."
 
 #: templates/accesscontrol/register.html:240
 #: templates/accesscontrol/sign_in_minimal.html:348
-#: website/templates/website/home.html:417
+#: website/templates/website/home.html:497
 msgid "Invalid date. Please check."
 msgstr "Date non valide. Veuillez vérifier."
 
@@ -256,20 +256,21 @@ msgstr "Votre mot de passe a été réinitialisé, connectez-vous maintenant."
 #: templates/accesscontrol/sign_in.html:45
 #: templates/accesscontrol/sign_in_minimal.html:106
 #: templates/accesscontrol/sign_in_minimal.html:162
-#: website/templates/website/home.html:133
-#: website/templates/website/home.html:224 website/templates/website/home[Join
+#: website/templates/website/home.html:157
+#: website/templates/website/home.html:302 website/templates/website/home[Join
 #: campaign].html:159
 msgid "Password"
 msgstr "Mot de passe"
 
 #: templates/accesscontrol/sign_in.html:57
 #: templates/accesscontrol/sign_in_minimal.html:53
+#: website/templates/website/home.html:101
 msgid "Login with <strong>ikwen</strong>"
 msgstr "Se connecter avec <strong> ikwen</strong>"
 
 #: templates/accesscontrol/sign_in.html:61
 #: templates/accesscontrol/sign_in_minimal.html:146
-#: website/templates/website/home.html:173
+#: website/templates/website/home.html:197
 msgid "Forgotten password ?"
 msgstr "Mot de passe oublié ?"
 
@@ -329,82 +330,112 @@ msgstr ""
 "                            "
 
 #: templates/accesscontrol/sign_in_minimal.html:139
-#: website/templates/website/home.html:166
+#: website/templates/website/home.html:190
 msgid "Back"
 msgstr "Retour"
 
 #: templates/accesscontrol/sign_in_minimal.html:140
 #: tsunami/templates/tsunami/homepage.html:236
-#: website/templates/website/home.html:167
+#: website/templates/website/home.html:191
 #: website/templates/website/admin/change_mailcampaign.html:217
 msgid "Continue"
 msgstr "Continuer"
 
 #: templates/accesscontrol/sign_in_minimal.html:313
-#: website/templates/website/home.html:377
+#: website/templates/website/home.html:457
 msgid "Oops! An error occurred. Check your internet."
 msgstr "Oups! Une erreur est survenue. Vérifiez votre connexion internet."
 
-#: templates/com/base.html:135
+#: templates/com/base.html:137
 #: tsunami/templates/tsunami/base_com_website.html:108
-#: website/templates/website/base.html:127
+#: website/templates/website/base.html:121
 #: website/templates/website/website_base.html:245
 msgid "Search"
 msgstr "Recherche"
 
-#: templates/com/base.html:166 templates/com/base.html.py:199
-#: website/templates/website/base.html:158
+#: templates/com/base.html:168 templates/com/base.html.py:201
+#: website/templates/website/base.html:152
 #: website/templates/website/admin/dashboard.html:106
 #: website/templates/website/snippets/edge_panel.html:17
 msgid "Community"
 msgstr "Communauté"
 
-#: templates/com/base.html:167 templates/com/base.html.py:200
-#: website/templates/website/base.html:159
+#: templates/com/base.html:169 templates/com/base.html.py:202
+#: website/templates/website/base.html:153
 #: website/templates/website/snippets/edge_panel.html:20
 msgid "Enterprise"
 msgstr "Entreprise"
 
-#: templates/com/base.html:175 templates/com/base.html.py:207
-#: website/templates/website/base.html:167
+#: templates/com/base.html:177 templates/com/base.html.py:209
+#: website/templates/website/base.html:161
 #: website/templates/website/snippets/edge_panel.html:30
 msgid "Parent"
 msgstr ""
 
-#: templates/com/base.html:176 templates/com/base.html.py:208
-#: website/templates/website/base.html:168
+#: templates/com/base.html:178 templates/com/base.html.py:210
+#: website/templates/website/base.html:162
 #: website/templates/website/snippets/edge_panel.html:33
 msgid "School"
 msgstr ""
 
-#: templates/com/base.html:287 tsunami/templates/tsunami/home.html:3
-#: tsunami/templates/tsunami/home.html:45
-#: tsunami/templates/tsunami/home.html:47
-#: website/templates/website/apps/kakocase.html:3
-#: website/templates/website/apps/kakocase.html:108
-#: website/templates/website/apps/kakocase.html:161
-#: website/templates/website/apps/pinsview.html:3
-#: website/templates/website/apps/pinsview.html:146
-msgid "Get started"
-msgstr "Lancez-vous"
+#: templates/com/base.html:290 website/templates/website/base.html:263
+#: website/templates/website/home[Join campaign].html:212
+msgid "About ikwen"
+msgstr "À propos de ikwen"
 
-#: templates/com/base.html:290
-msgid "Sign In"
-msgstr "Se connecter"
+#: templates/com/base.html:291 website/templates/website/base.html:264
+#: website/templates/website/home[Join campaign].html:211
+#: website/templates/website/home_deprecated.html:136
+#: website/templates/website/snippets/address_section.html:41
+#: website/templates/website/snippets/edge_panel.html:46
+msgid "Terms & conditions"
+msgstr "Conditions d'utilisation"
 
-#: templates/com/base.html:295
-#: tsunami/templates/tsunami/base_com_website.html:206
-msgid "About us"
-msgstr "À propos"
+#: templates/com/base.html:292 tsunami/templates/tsunami/bundle_list.html:65
+#: tsunami/templates/tsunami/bundle_list.html:88
+#: tsunami/templates/tsunami/bundle_list.html:111
+#: tsunami/templates/tsunami/snippets/address_section.html:40
+#: tsunami/templates/tsunami/snippets/edge_panel.html:33
+#: website/templates/website/base.html:265 website/templates/website/home[Join
+#: campaign].html:210 website/templates/website/home_deprecated.html:133
+#: website/templates/website/apps/shavida.html:93
+#: website/templates/website/snippets/address_section.html:40
+#: website/templates/website/snippets/edge_panel.html:44
+msgid "Support"
+msgstr "Support"
+
+#: templates/com/base.html:293
+#: tsunami/templates/tsunami/snippets/address_section.html:39
+#: tsunami/templates/tsunami/snippets/edge_panel.html:32
+#: website/templates/website/base.html:266 website/templates/website/home[Join
+#: campaign].html:209 website/templates/website/home_deprecated.html:132
+#: website/templates/website/apps/shavida.html:92
+#: website/templates/website/snippets/address_section.html:39
+#: website/templates/website/snippets/edge_panel.html:43
+msgid "Blog"
+msgstr "Blog"
 
 #: templates/com/base.html:297
-msgid "Our Company"
-msgstr "Notre Entreprise"
+#: tsunami/templates/tsunami/snippets/address_section.html:31
+#: tsunami/templates/tsunami/snippets/edge_panel.html:56
+#: website/templates/website/about.html:155
+#: website/templates/website/base.html:270 website/templates/website/home[Join
+#: campaign].html:218 website/templates/website/apps/shavida.html:85
+#: website/templates/website/snippets/address_section.html:31
+#: website/templates/website/snippets/edge_panel.html:65
+msgid "All rights reserved."
+msgstr "Tous droits réservés."
 
-#: templates/com/base.html:312
-#: tsunami/templates/tsunami/base_com_website.html:217
-msgid "Help desk"
-msgstr "Aide"
+#: templates/com/base.html:299
+#: tsunami/templates/tsunami/snippets/address_section.html:33
+#: tsunami/templates/tsunami/snippets/edge_panel.html:58
+#: website/templates/website/about.html:157
+#: website/templates/website/base.html:272 website/templates/website/home[Join
+#: campaign].html:220 website/templates/website/apps/shavida.html:87
+#: website/templates/website/snippets/address_section.html:33
+#: website/templates/website/snippets/edge_panel.html:67
+msgid "Legal mentions"
+msgstr "Mentions légales"
 
 #: templates/core/terms_and_conditions.html:3
 msgid "Terms and conditions"
@@ -1047,6 +1078,10 @@ msgstr "Faites plus avec Tsunami !"
 msgid "Sign up"
 msgstr "Connexion"
 
+#: tsunami/templates/tsunami/base_com_website.html:206
+msgid "About us"
+msgstr "À propos"
+
 #: tsunami/templates/tsunami/base_com_website.html:208
 msgid "Company Information"
 msgstr "Info Entreprise"
@@ -1054,6 +1089,10 @@ msgstr "Info Entreprise"
 #: tsunami/templates/tsunami/base_com_website.html:210
 msgid "Reviews"
 msgstr "Avis"
+
+#: tsunami/templates/tsunami/base_com_website.html:217
+msgid "Help desk"
+msgstr "Aide"
 
 #: tsunami/templates/tsunami/bundle_list.html:13
 #: tsunami/templates/tsunami/homepage.html:10
@@ -1094,19 +1133,6 @@ msgstr "Outils Cloud"
 #: tsunami/templates/tsunami/bundle_list.html:82
 msgid "eCommerce website"
 msgstr "Site de e-commerce"
-
-#: tsunami/templates/tsunami/bundle_list.html:65
-#: tsunami/templates/tsunami/bundle_list.html:88
-#: tsunami/templates/tsunami/bundle_list.html:111
-#: tsunami/templates/tsunami/snippets/address_section.html:40
-#: tsunami/templates/tsunami/snippets/edge_panel.html:33
-#: website/templates/website/home.html:199 website/templates/website/home[Join
-#: campaign].html:210 website/templates/website/home_deprecated.html:133
-#: website/templates/website/apps/shavida.html:93
-#: website/templates/website/snippets/address_section.html:40
-#: website/templates/website/snippets/edge_panel.html:44
-msgid "Support"
-msgstr "Support"
 
 #: tsunami/templates/tsunami/bundle_list.html:66
 msgid "2 weeks of phone support"
@@ -1472,6 +1498,16 @@ msgstr "Montant"
 msgid "Your payment was successfully procceded; Thank for your concern"
 msgstr "Paiement réussi. Merci pour votre confiance"
 
+#: tsunami/templates/tsunami/home.html:3 tsunami/templates/tsunami/home.html:45
+#: tsunami/templates/tsunami/home.html:47
+#: website/templates/website/apps/kakocase.html:3
+#: website/templates/website/apps/kakocase.html:108
+#: website/templates/website/apps/kakocase.html:161
+#: website/templates/website/apps/pinsview.html:3
+#: website/templates/website/apps/pinsview.html:146
+msgid "Get started"
+msgstr "Lancez-vous"
+
 #: tsunami/templates/tsunami/home.html:9 tsunami/templates/tsunami/home.html:10
 msgid "Tsunami"
 msgstr "Tsunami"
@@ -1731,36 +1767,6 @@ msgstr "Contactez-nous"
 msgid "And let us bring to reality your world-changing project."
 msgstr "Et réalisons ensemble votre incroyable projet."
 
-#: tsunami/templates/tsunami/snippets/address_section.html:31
-#: tsunami/templates/tsunami/snippets/edge_panel.html:56
-#: website/templates/website/about.html:155
-#: website/templates/website/home.html:204 website/templates/website/home[Join
-#: campaign].html:218 website/templates/website/apps/shavida.html:85
-#: website/templates/website/snippets/address_section.html:31
-#: website/templates/website/snippets/edge_panel.html:67
-msgid "All rights reserved."
-msgstr "Tous droits réservés."
-
-#: tsunami/templates/tsunami/snippets/address_section.html:33
-#: tsunami/templates/tsunami/snippets/edge_panel.html:58
-#: website/templates/website/about.html:157
-#: website/templates/website/home.html:206 website/templates/website/home[Join
-#: campaign].html:220 website/templates/website/apps/shavida.html:87
-#: website/templates/website/snippets/address_section.html:33
-#: website/templates/website/snippets/edge_panel.html:69
-msgid "Legal mentions"
-msgstr "Mentions légales"
-
-#: tsunami/templates/tsunami/snippets/address_section.html:39
-#: tsunami/templates/tsunami/snippets/edge_panel.html:32
-#: website/templates/website/home.html:200 website/templates/website/home[Join
-#: campaign].html:209 website/templates/website/home_deprecated.html:132
-#: website/templates/website/apps/shavida.html:92
-#: website/templates/website/snippets/address_section.html:39
-#: website/templates/website/snippets/edge_panel.html:43
-msgid "Blog"
-msgstr "Blog"
-
 #: tsunami/templates/tsunami/snippets/address_section.html:42
 #: tsunami/templates/tsunami/snippets/edge_panel.html:34
 #: website/templates/website/home_deprecated.html:135
@@ -1870,10 +1876,33 @@ msgid ""
 "                </h3>\n"
 "            "
 msgstr ""
+"\n"
+"                <h1 class=\"section-header hidden-xs\">\n"
+"                    Nous sommes une entreprise de <span class=\"blue\">cloud "
+"computing.</span><br>\n"
+"                    Notre mission est de <span class=\"yellow\">vous "
+"fournir</span> de <br>\n"
+"                    <span class=\"orange\">puissantes applications</span> à "
+"l'usage intuitif, <br>\n"
+"                    vous permettant de <span class=\"green\">déployer votre "
+"activité sur internet.</span>\n"
+"                </h1>\n"
+"                <h3 class=\"section-header visible-xs\">\n"
+"                    Nous sommes une entreprise de <br>\n"
+"<span class=\"blue\">cloud computing.</span><br>\n"
+"                    Notre mission est de<br>\n"
+"                    <span class=\"yellow\">vous fournir </span>de<br>\n"
+"                    <span class=\"orange\">puissantes applications</span> à "
+"l'usage intuitif,\n"
+"                    vous permettant de<br>\n"
+"                    <span class=\"green\">déployer votre activité sur "
+"internet.</span>\n"
+"                </h3>\n"
+"            "
 
 #: website/templates/website/about.html:67
 msgid "Discover our featured Apps"
-msgstr "Découvrez applications phares"
+msgstr "Découvrez nos applications phares"
 
 #: website/templates/website/about.html:104
 #: website/templates/website/about.html:107
@@ -1926,11 +1955,11 @@ msgid ""
 "                            "
 msgstr ""
 
-#: website/templates/website/home.html:58
+#: website/templates/website/home.html:59
 msgid "From the real world to the Cloud... Go digital!"
-msgstr "Du classique au Cloud... Passez au digital !"
+msgstr "Du classique au digital.. Passez au Cloud !"
 
-#: website/templates/website/home.html:60
+#: website/templates/website/home.html:61
 msgid ""
 "\n"
 "                            Discover the first social platform designed for "
@@ -1942,15 +1971,19 @@ msgstr ""
 "pour votre business\n"
 "                        "
 
-#: website/templates/website/home.html:75
+#: website/templates/website/home.html:76
 msgid "Enter your email address to start..."
 msgstr "Entrez votre email pour commencer..."
 
-#: website/templates/website/home.html:79
+#: website/templates/website/home.html:80
 msgid "Let's go!"
 msgstr "C'est parti !"
 
-#: website/templates/website/home.html:142
+#: website/templates/website/home.html:86
+msgid "Username or email"
+msgstr "Nom d'utilisateur ou email"
+
+#: website/templates/website/home.html:166
 #, python-format
 msgid ""
 "\n"
@@ -1965,7 +1998,7 @@ msgstr ""
 "Conditions</a>\n"
 "                            "
 
-#: website/templates/website/home.html:147
+#: website/templates/website/home.html:171
 #, python-format
 msgid ""
 "\n"
@@ -1995,23 +2028,62 @@ msgstr ""
 "Conditions de %(project_name)s.</a>\n"
 "                                "
 
-#: website/templates/website/home.html:197 website/templates/website/home[Join
-#: campaign].html:212
-msgid "About ikwen"
-msgstr "À propos"
+#: website/templates/website/home.html:212
+msgid "Cloud technologies for everyone"
+msgstr "Des technologies Cloud pour tous"
 
-#: website/templates/website/home.html:198 website/templates/website/home[Join
-#: campaign].html:211 website/templates/website/home_deprecated.html:136
-#: website/templates/website/snippets/address_section.html:41
-#: website/templates/website/snippets/edge_panel.html:46
-msgid "Terms & conditions"
-msgstr "Conditions d'utilisation"
+#: website/templates/website/home.html:219
+msgid "Head of school"
+msgstr "Responsable d'établissement"
 
-#: website/templates/website/home.html:312
+#: website/templates/website/home.html:224
+#: website/templates/website/home.html:239
+msgid "ikwen Foulassi logo"
+msgstr ""
+
+#: website/templates/website/home.html:227
+msgid "Take your school to the Cloud and improve your performance."
+msgstr ""
+"Déployez votre école dans le Cloud et optimisez vos performances à moindre "
+"coût."
+
+#: website/templates/website/home.html:234
+msgid "Parents"
+msgstr ""
+
+#: website/templates/website/home.html:242
+msgid "Connect to your childreen's school career."
+msgstr "Connectez-vous au parcours scolaire de vos enfants."
+
+#: website/templates/website/home.html:251
+msgid "Entrepreneur"
+msgstr ""
+
+#: website/templates/website/home.html:256
+msgid "ikwen Tsunami logo"
+msgstr "Logo ikwen TSUNAMI"
+
+#: website/templates/website/home.html:259
+msgid "Build your customers community and sell online 24/7."
+msgstr "Fidélisez votre clientèle et vendez en ligne non-stop."
+
+#: website/templates/website/home.html:266
+msgid "Influencer"
+msgstr "Influenceur"
+
+#: website/templates/website/home.html:271
+msgid "ikwen Daraja logo"
+msgstr "Logo ikwen Daraja"
+
+#: website/templates/website/home.html:274
+msgid "Earn money through your followers with ease."
+msgstr "Gagnez de l'argent grâce à vos followers en toute simplicité."
+
+#: website/templates/website/home.html:390
 msgid "Please use at least 3 characters."
 msgstr "Utilisez au moins 3 caractères SVP."
 
-#: website/templates/website/home.html:313
+#: website/templates/website/home.html:391
 msgid "Start with a letter."
 msgstr "Commencez par une lettre."
 
@@ -2167,17 +2239,19 @@ msgstr "Contactez-nous"
 #: website/templates/website/admin/admin_home.html:32
 #: website/templates/website/admin/dashboard.html:25
 msgid "Welcome "
-msgstr ""
+msgstr "Bienvennue"
 
 #: website/templates/website/admin/admin_home.html:34
 msgid ""
 "Manage your platform, your customer wallet and your relaunch campaigns to "
 "make the most of your services"
 msgstr ""
+"Adminitrez votre plateforme, votre portefeuille client et vos campagnes de "
+"relance pour tirer le meilleur de vos services"
 
 #: website/templates/website/admin/admin_home.html:36
 msgid "Manage "
-msgstr ""
+msgstr "Adminitrer"
 
 #: website/templates/website/admin/admin_home.html:36
 msgid " website."
@@ -2185,7 +2259,7 @@ msgstr " Site Web."
 
 #: website/templates/website/admin/admin_home.html:43
 msgid "Orders and customer requests"
-msgstr ""
+msgstr "Commandes & requêtes clients"
 
 #: website/templates/website/admin/admin_home.html:54
 msgid ""
@@ -2201,15 +2275,15 @@ msgstr ""
 
 #: website/templates/website/admin/admin_home.html:61
 msgid "Pending orders"
-msgstr ""
+msgstr "Commandes en attente"
 
 #: website/templates/website/admin/admin_home.html:62
 msgid "Paid orders"
-msgstr ""
+msgstr "Commandes payées"
 
 #: website/templates/website/admin/admin_home.html:63
 msgid "Reported orders"
-msgstr ""
+msgstr "Commandes reportées"
 
 #: website/templates/website/admin/admin_home.html:69
 msgid "Customers contacts and community"
@@ -2323,28 +2397,28 @@ msgstr "Configurez votre site web"
 
 #: website/templates/website/admin/admin_home.html:276
 msgid "Remind me later"
-msgstr ""
+msgstr "Me le rappeler"
 
 #: website/templates/website/admin/admin_home.html:276
 msgid "Got it!"
-msgstr ""
+msgstr "Compris !"
 
 #: website/templates/website/admin/admin_home.html:276
 msgid "Show Help"
-msgstr ""
+msgstr "Aide"
 
 #: website/templates/website/admin/change_mailcampaign.html:5
 #: website/templates/website/admin/change_mailcampaign.html:68
 msgid "Email campaign"
-msgstr ""
+msgstr "Campagne Mail"
 
 #: website/templates/website/admin/change_mailcampaign.html:64
 msgid "Remaining mail : "
-msgstr ""
+msgstr "Mail restant : "
 
 #: website/templates/website/admin/change_mailcampaign.html:65
 msgid "Refill ? "
-msgstr ""
+msgstr "Recharger ?"
 
 #: website/templates/website/admin/change_mailcampaign.html:81
 #: website/templates/website/admin/change_mailcampaign.html:91
@@ -2362,15 +2436,15 @@ msgstr ""
 #: website/templates/website/admin/change_mailcampaign.html:107
 #: website/templates/website/admin/change_mailcampaign.html:112
 msgid "To"
-msgstr ""
+msgstr "À"
 
 #: website/templates/website/admin/change_mailcampaign.html:133
 msgid "Subject"
-msgstr ""
+msgstr "Sujet"
 
 #: website/templates/website/admin/change_mailcampaign.html:139
 msgid "Pre-Header"
-msgstr ""
+msgstr "Entête"
 
 #: website/templates/website/admin/change_mailcampaign.html:155
 msgid "Message"
@@ -2378,15 +2452,15 @@ msgstr ""
 
 #: website/templates/website/admin/change_mailcampaign.html:201
 msgid "Call-to-action button title"
-msgstr ""
+msgstr "Titre du bouton d'action"
 
 #: website/templates/website/admin/change_mailcampaign.html:203
 msgid "Ex: Buy now"
-msgstr ""
+msgstr "Ex : Acheter"
 
 #: website/templates/website/admin/change_mailcampaign.html:208
 msgid "Call-to-action url link"
-msgstr ""
+msgstr "Lien url du bouton d'action"
 
 #: website/templates/website/admin/change_mailcampaign.html:210
 msgid "Ex: http://www.mysite.com/product/your_product"
@@ -2395,7 +2469,7 @@ msgstr ""
 #: website/templates/website/admin/change_mailcampaign.html:221
 #: website/templates/website/admin/change_package.html:105
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: website/templates/website/admin/change_mailcampaign.html:233
 msgid "Send a mail test"
@@ -2420,7 +2494,7 @@ msgstr "Test réussis"
 #: website/templates/website/admin/change_package.html:5
 #: website/templates/website/admin/change_package.html:87
 msgid "New"
-msgstr ""
+msgstr "Nouveau"
 
 #: website/templates/website/admin/dashboard.html:5
 msgid "Dashboard"
@@ -2663,7 +2737,7 @@ msgstr ""
 
 #: website/templates/website/apps/kakocase.html:106
 msgid "Build your customers community and sell online"
-msgstr "Construisez votre communauté de client et vendez en ligne"
+msgstr "Fidélisez votre clientèle et vendez en ligne"
 
 #: website/templates/website/apps/kakocase.html:112
 #: website/templates/website/apps/webnode.html:109
@@ -2818,7 +2892,7 @@ msgstr ""
 "PinsView ne se limite pas à la visualisation de l’état actuel des éléments, "
 "vous pouvez renseigner et garder\n"
 " l’historique des événements sur chacun d’entre eux au gré de leur évolution "
-"et à mesure que le temps passe."
+"et à mesure que le temps passe.n"
 
 #: website/templates/website/apps/shavida.html:3
 #: website/templates/website/apps/webnode.html:3
@@ -2922,6 +2996,27 @@ msgstr ""
 "vous avez maintenant une identité numérique de qualité professionnelle en 5 "
 "minutes chrono"
 
+#~ msgid "WhatsApp Us"
+#~ msgstr "WhatsApp"
+
+#~ msgid "Sign In"
+#~ msgstr "Se connecter"
+
+#~ msgid "Our Company"
+#~ msgstr "Notre Entreprise"
+
+#~ msgid "Share"
+#~ msgstr "Partager"
+
+#~ msgid "DEPLOY"
+#~ msgstr "DÉPLOYER"
+
+#~ msgid "CONNECT"
+#~ msgstr "CONNECTER"
+
+#~ msgid "BECOME"
+#~ msgstr "DEVENIR"
+
 #~ msgid "Apps"
 #~ msgstr "Apps"
 
@@ -2945,9 +3040,6 @@ msgstr ""
 
 #~ msgid "Comments"
 #~ msgstr "Commentaires"
-
-#~ msgid "Username or email"
-#~ msgstr "Nom d'utilisateur ou email"
 
 #~ msgid "For your revivals"
 #~ msgstr "Pour vos relances"

@@ -11,9 +11,11 @@
         {% endblock %}
 		{% block page_title %}{% endblock %}
 		{% block head_style %}
+            <link rel='stylesheet' href="{% static 'website/css/bootstrap-select.min.css' %}" />
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
             <link rel='stylesheet' href="{% static 'ikwen/css/flatly.bootstrap.min.css' %}" />
-            <link rel='stylesheet' href="{% static 'website/css/com/base_default.css' %}?V=20.05.29.17.10" />
+            <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.08.30.04.37" />
+            <link rel='stylesheet' href="{% static 'website/css/com/base_default.css' %}?V=20.08.30.04.37" />
             <style>
                 .edge-panel-left .wrapper {padding-top: 0}
                 body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -274,59 +276,31 @@
         {% include 'website/snippets/edge_panel.html' %}
         {% endblock %}
         {% block footer %}
-            <footer class="footer">
-                <div class="container">
-                    <div class="row" style="margin-bottom: 15px">
-                        <div class="col-sm-3" style="margin-top: 4vh; text-align: center;">
-                            <a href="{% url 'tsunami:home' %}">
-                                <img class="footer-mobile-adjust" src="{% static 'tsunami/img/Logo-IKWEN-Tsunami(niveau-de-blanc).png' %}" style="max-width: 7vw;"/>
-                                <h4 style="color: #ffffff; font-size: 1.8vw; text-align: center;" class="logo footer-mobile-adjust">Tsunami</h4>
-                            </a>
-                        </div>
-                        <div class="col-sm-3 col-xs-4 footer-mobile-adjust">
-                            <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">{% trans 'Get started' %}</h5>
-                            <ul style="font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
-                                <li><a style="color: #d2d1d1;" href="{% url 'tsunami:home' %}">{% trans 'Home' %}</a></li>
-                                <li><a style="color: #d2d1d1;" href="http://www.ikwen.com/" target="_blank">{% trans 'Sign In' %}</a></li>
-        {#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Downloads' %}</a></li>#}
-                            </ul>
-                        </div>
-                        <div class="col-sm-3 col-xs-4 footer-mobile-adjust">
-                            <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">{% trans 'About us' %}</h5>
-                            <ul style=" font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
-                                <li><a style="color: #d2d1d1;" href="http://www.ikwen.com/about" target="_blank">{% trans 'Our Company' %}</a></li>
-        {#                        <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Contact us' %}</a></li>#}
-{#                                <li><a style="color: #d2d1d1;" href="#" target="_blank">{% trans 'Reviews' %}</a></li>#}
-                                <li>
-                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.linkedin.com/company/18357139/"target="_blank" class="ico-linkedin"><i class="fab fa-linkedin-in"></i></a>
-                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://twitter.com/ikwenSARL"target="_blank" class="ico-twitter"><i class="fab fa-twitter"></i></a>
-{#                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="#"target="_blank" class="ico-facebook"><i class="fab fa-facebook"></i></a>#}
-                                    <a style="color: #f9f9f9; padding-right: 10px; text-decoration: none; transition: 0.2s;" href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA"target="_blank" class="ico-youtube"><i class="fab fa-youtube"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-3 col-xs-4 footer-mobile-adjust">
-                            <h5 style="color: #ffffff; font-weight: bold; font-size: 2vw; margin-top: 5vh;">Support</h5>
-                            <ul style="font-size: 1.2vw; line-height: 1.7; list-style-type: none; padding-left: 0">
-                                <li><a style="color: #d2d1d1;" href="http://blog.ikwen.com/" target="_blank">Blog</a></li>
-                                <li><a style="color: #d2d1d1;" href="http://support.ikwen.com/" target="_blank">{% trans 'Help desk' %}</a></li>
-        {#                        <li><a style="color: #d2d1d1; text-decoration: none" href="#" target="_blank">Forums</a></li>#}
-                            </ul>
-                        </div>
-{#                        <div class="col-sm-3 footer-mobile-adjust">#}
-{#                            <div class="social-networks" style="padding-bottom: 16px; padding-top: 30px; text-align: center">#}
-{#                                <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="twitter"><i class="fas fa-twitter"></i></a>#}
-{#                                <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="facebook"><i class="fas fa-facebook"></i></a>#}
-{#                                <a style="color: #f9f9f9; padding: 10px; text-decoration: none; transition: 0.2s;" href="#" class="google"><i class="fas fa-google-plus"></i></a>#}
-{#                            </div>#}
-{#                            <button type="button" class="btn btn-default">Contact us</button>#}
-{#                        </div>#}
-                    </div>
+            <div class="clearfix"></div>
+            <footer class="footer" class="hidden-xs">
+                <div id="bottom-menu" >
+                    <ul class="social-square" style="float: left">
+                        <li><a href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA" target="_blank" class="ico-youtube" title="YouTube"><i class="fab fa-youtube-square"></i></a></li>
+                        <li><a href="{{ config.linkedin_link }}" target="_blank" class="ico-linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="{{ config.twitter_link }}" target="_blank" class="ico-twitter" title="Twitter"><i class="fab fa-twitter-square"></i></a></li>
+                        <li><a href="{{ config.facebook_link }}" target="_blank" class="ico-facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
+                    </ul>
+                    <ul>
+                        {% include 'core/snippets/language_switcher.html' %}
+                        <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
+                        <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                        <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+                        <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+                    </ul>
+                    <span class="col-md-3 col-md-offset-3" >
+                        &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                        {% trans "All rights reserved." %}
+                        {% if config.legal_mentions_url %}
+                        - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                        {% endif %}
+                    </span>
                 </div>
-
-                <div class="footer-copyright mobile-adjust" style="padding: 3px 0; text-align: center;">
-                    &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong style="color: #ffffff">{{ config.company_name }}</strong></a>.
-                </div>
+                <a style="display: none" href="{% url 'service_indexes' 0 %}">Service Indexes</a>
             </footer>
         {% endblock %}
         <div class="edge-swipe-overlay"></div>

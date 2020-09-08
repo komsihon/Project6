@@ -11,10 +11,8 @@
 {% endblock %}
 {% block head_style %}
     {{ block.super }}
-    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" />
     <link rel='stylesheet' href="{% static 'website/css/bootstrap-select.min.css' %}" />
-    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.07.27.16.38" />
-    <link rel='stylesheet' href="{% static 'website/css/ikwen-website.css' %}?V=20.07.27.16.33" />
+    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.08.30.04.37" />
     <style>
         .edge-panel-left .wrapper {padding-top: 0}
         body {background: #F6F6F6; font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -32,10 +30,6 @@
 
 {% endblock %}
 
-{% block head_js %}
-    {{ block.super }}
-    <script src="{% static 'website/js/bootstrap-select.min.js' %}"></script>
-{% endblock %}
 
 
 
@@ -253,6 +247,36 @@
     {% block page_content %} {% endblock %}
     {% include 'website/snippets/edge_panel.html' %}
 {% endblock %}
+
+{% block footer %}
+    <div class="clearfix"></div>
+    <footer class="footer" class="hidden-xs">
+        <div id="bottom-menu" >
+            <ul class="social-square" style="float: left">
+                <li><a href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA" target="_blank" class="ico-youtube" title="YouTube"><i class="fab fa-youtube-square"></i></a></li>
+                <li><a href="{{ config.linkedin_link }}" target="_blank" class="ico-linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="{{ config.twitter_link }}" target="_blank" class="ico-twitter" title="Twitter"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="{{ config.facebook_link }}" target="_blank" class="ico-facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
+            </ul>
+            <ul>
+                {% include 'core/snippets/language_switcher.html' %}
+                <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
+                <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="http://support.ikwen.com">{% trans 'Support' %}</a> </li>
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+            </ul>
+            <span class="col-md-3 col-md-offset-3" >
+                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                {% trans "All rights reserved." %}
+                {% if config.legal_mentions_url %}
+                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                {% endif %}
+            </span>
+        </div>
+        <a style="display: none" href="{% url 'service_indexes' 0 %}">Service Indexes</a>
+    </footer>
+{% endblock %}
+
 {% block js %}
     {{ block.super }}
     <script>
@@ -265,28 +289,43 @@
                 e.stopPropagation();
             });
 
+
+            let lastScrollTop = 0;
             $(window).scroll(function(e){
-            let scrollTop = $(window).scrollTop();
-            let docHeight = $(document).height();
-            let winHeight = $(window).height();
-            let scrollPercent = (scrollTop) / (docHeight - winHeight);
-            let scrollPercentRounded = Math.round(scrollPercent*100);
-            if (scrollPercentRounded >= 5) {
-                $(".navbar").addClass("active");
-                $("#navbar-search").addClass("active");
-                $('.back-to-top').removeClass('hiding').addClass('showing');
-                $('ul.dropdown-menu').addClass('page-scrolled')
-            } else {
-                $(".navbar").removeClass("active");
-                $("#navbar-search").removeClass("active");
-                $('.back-to-top').removeClass('showing').addClass('hiding');
-                $('ul.dropdown-menu').removeClass('page-scrolled')
-            }
+                let scrollTop = $(window).scrollTop();
+                let docHeight = $(document).height();
+                let winHeight = $(window).height();
+                let scrollPercent = (scrollTop) / (docHeight - winHeight);
+                let scrollPercentRounded = Math.round(scrollPercent*100);
+                if (scrollPercentRounded > 9) {
+                    $(".navbar").addClass("active");
+                    $("#navbar-search").addClass("active");
+                    $('ul.dropdown-menu').addClass('page-scrolled');
+                } else {
+                    $(".navbar").removeClass("active");
+                    $("#navbar-search").removeClass("active");
+                    $('ul.dropdown-menu').removeClass('page-scrolled')
+                }
+                if (scrollPercentRounded > 21) {
+                    $('.back-to-top').removeClass('hiding').addClass('showing');
+                } else {
+                    $('.back-to-top').removeClass('showing').addClass('hiding');
+                }
+                if (scrollPercentRounded > 40) {
+                    $('.anchor').hide();
+                }
+                if ($(window).width() < 768) {
+                    const st = window.pageYOffset +1 || document.documentElement.scrollTop;
+                    if (st  > lastScrollTop ) { $('.anchor').hide() }
+                    lastScrollTop = st;
+                }
             });
-            $('.selectpicker').selectpicker();
-            $('.flag-icon-en').removeClass('flag-icon-en').addClass('flag-icon-us');
-            $('.lang-switcher .dropdown-toggle').addClass('flag-lang-switcher');
-            $('.lang-switcher .dropdown-menu').addClass('flag-lang-switcher').css('width', '55px');
+            $('.js-scrollTo').on('click', function() {
+                let page = $(this).attr('href');
+                let speed = 750;
+                $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+                return false;
+            });
         })()
     </script>
 {% endblock %}

@@ -86,7 +86,7 @@ span.green { color: #0c9731 }
     li.dropdown:hover > ul.dropdown-menu { background: #FFF !important; }
     .anchor { position: absolute; bottom: 0; right: 50% }
     .banner-top { height: 150px }
-    h1.banner-top-catchy { font-size: 50px }
+    h1.banner-top-catchy {font-size: 35px;padding-top: 5%;}
     h3.section-header { line-height: 1.5 }
     section#section-header-general-view { padding-top: 15vh }
     section .product-logo { padding-bottom: 5vh}
