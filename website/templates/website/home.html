@@ -21,7 +21,7 @@
 
 {% block head_style %}
     {{ block.super }}
-    <link href="{% static 'website/css/ikwen-website.css' %}?V=20.9.8.5.40" rel="stylesheet">
+    <link href="{% static 'website/css/ikwen-website.css' %}?V=20.9.9.1.47" rel="stylesheet">
     <style>
     #navbar {
         background: -moz-linear-gradient(180deg, rgba(221, 221, 221, 1) 36%, rgba(237, 237, 237, 0.6839110644257703) 100%);
@@ -103,7 +103,6 @@
                             {% endif %}
                         </div>
                     </div>
-
                     <span id="error"></span>
                     <div class="create-account">
                         <div class="form-group row password2">
@@ -213,7 +212,7 @@
             </div>
             <div class="row">
                 <figure class="col-md-6 item">
-                    <a href="{% url 'foulassi:home_saas' %}">
+                    <a href="{% url 'foulassi:home_saas' %}" class="glow hang">
                         <img class="img-responsive" src="{% static 'website/img/ikwen-head-of-school.png' %}" alt="" />
                         <div>
                             <h1 class=" name text-has-shade">{% trans "Head of school" %}</h1>
@@ -228,7 +227,7 @@
                     </div>
                 </figure>
                 <figure class="col-md-6 item">
-                    <a href="{% url 'foulassi:home' %}">
+                    <a href="{% url 'foulassi:home' %}" class="glow hang">
                         <img class="img-responsive" src="{% static 'website/img/ikwen-parent.png' %}" alt="" />
                         <div>
                             <h1 class=" name text-has-shade">{% trans "Parents" %}</h1>
@@ -245,7 +244,7 @@
             </div>
             <div class="row">
                 <figure class="col-md-6 item">
-                    <a href="{% url 'tsunami:home' %}">
+                    <a href="{% url 'tsunami:home' %}" class="glow hang">
                         <img class="img-responsive" src="{% static 'website/img/ikwen-entrepreneur.png' %}" alt="" />
                         <div>
                             <h1 class=" name text-has-shade">{% trans "Entrepreneur" %}</h1>
@@ -260,7 +259,7 @@
                     </div>
                 </figure>
                 <figure class="col-md-6 item">
-                    <a href="{% url 'daraja:home' %}">
+                    <a href="{% url 'daraja:home' %}" class="glow hang">
                         <img class="img-responsive" src="{% static 'website/img/ikwen-influencer.png' %}" alt="" />
                         <div>
                             <h1 class=" name text-has-shade">{% trans "Influencer" %}</h1>
