@@ -16,7 +16,6 @@ h4.title-secondary { }
 .anchor > a { color: #007bff }
 .main-home { background: url("../img/ikwen-Website-background-(Foulassi).png") center center no-repeat; background-size: cover; height: 100vh; }
 
-button#continue { width: 180px; }
 .btn-embed { padding-left: 35px; padding-right: 35px }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a, .dropdown-menu>li>a { color: #217DBB!important; }
@@ -290,6 +289,7 @@ figure .item-description p {color: #464646;font-size: 24px;margin: 2vh 0;}
 }
 
 @media (min-width: 992px) {
+    button#continue { width: 180px; }
     #content.form.register {padding-top: 1%;}
 }
 
