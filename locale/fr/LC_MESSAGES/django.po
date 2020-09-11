@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-08 04:54+0100\n"
+"POT-Creation-Date: 2020-09-11 17:19+0100\n"
 "PO-Revision-Date: 2020-09-08 05:21+0100\n"
 "Last-Translator: Wilfried FUTCHEA <wilfriedwillend@gmail.com>\n"
 "Language-Team: \n"
@@ -99,55 +99,55 @@ msgstr "Email ou téléphone"
 
 #: templates/accesscontrol/register.html:37
 #: templates/accesscontrol/sign_in_minimal.html:334
-#: website/templates/website/home.html:483
+#: website/templates/website/home.html:482
 msgid "Choose a password"
 msgstr "Choisissez un mot de passe"
 
 #: templates/accesscontrol/register.html:44
 #: templates/accesscontrol/sign_in_minimal.html:59
-#: website/templates/website/home.html:110
+#: website/templates/website/home.html:109
 msgid "Confirm password"
 msgstr "Confirmer le mot de passe"
 
 #: templates/accesscontrol/register.html:51
 #: templates/accesscontrol/sign_in_minimal.html:65
-#: website/templates/website/home.html:116
+#: website/templates/website/home.html:115
 msgid "E-mail"
 msgstr "E-mail"
 
 #: templates/accesscontrol/register.html:59
 #: templates/accesscontrol/sign_in_minimal.html:71
-#: website/templates/website/home.html:122
+#: website/templates/website/home.html:121
 msgid "Phone number"
 msgstr "Téléphone"
 
 #: templates/accesscontrol/register.html:68
 #: templates/accesscontrol/sign_in_minimal.html:77
-#: website/templates/website/home.html:128
+#: website/templates/website/home.html:127
 msgid "First name"
 msgstr "Prénom"
 
 #: templates/accesscontrol/register.html:75
 #: templates/accesscontrol/sign_in_minimal.html:83
-#: website/templates/website/home.html:134
+#: website/templates/website/home.html:133
 msgid "Last name"
 msgstr "Nom"
 
 #: templates/accesscontrol/register.html:82
 #: templates/accesscontrol/sign_in_minimal.html:89
-#: website/templates/website/home.html:140
+#: website/templates/website/home.html:139
 msgid "Your are ..."
 msgstr "Vous êtes ..."
 
 #: templates/accesscontrol/register.html:85
 #: templates/accesscontrol/sign_in_minimal.html:92
-#: website/templates/website/home.html:143
+#: website/templates/website/home.html:142
 msgid "A woman"
 msgstr "Une femme"
 
 #: templates/accesscontrol/register.html:90
 #: templates/accesscontrol/sign_in_minimal.html:97
-#: website/templates/website/home.html:148
+#: website/templates/website/home.html:147
 msgid "A man"
 msgstr "Un homme"
 
@@ -179,7 +179,7 @@ msgstr "aussi bien que"
 
 #: templates/accesscontrol/register.html:120
 #: templates/accesscontrol/sign_in_minimal.html:133
-#: website/templates/website/home.html:184
+#: website/templates/website/home.html:183
 msgid "Yes, I read and accept."
 msgstr "Oui, J'ai lu et j'accepte."
 
@@ -190,7 +190,7 @@ msgstr "Oui, J'ai lu et j'accepte."
 #: tsunami/templates/tsunami/checkout.html:275
 #: tsunami/templates/tsunami/cloud_cash_in.html:84
 #: website/templates/website/home.html:95
-#: website/templates/website/home.html:194 website/templates/website/home[Join
+#: website/templates/website/home.html:193 website/templates/website/home[Join
 #: campaign].html:163
 msgid "Submit"
 msgstr "Envoyer"
@@ -202,44 +202,44 @@ msgstr "Veuillez entrer un email valide"
 
 #: templates/accesscontrol/register.html:193
 #: templates/accesscontrol/sign_in_minimal.html:260
-#: website/templates/website/home.html:384
-#: website/templates/website/home.html:402
+#: website/templates/website/home.html:383
+#: website/templates/website/home.html:401
 msgid "Please, enter valid email"
 msgstr "S'il vous plaît, entrez un email valide"
 
 #: templates/accesscontrol/register.html:205
 #: templates/accesscontrol/sign_in_minimal.html:272
-#: website/templates/website/home.html:414
+#: website/templates/website/home.html:413
 msgid "Please use digits only."
 msgstr "Utilisez les chiffres uniquement SVP."
 
 #: templates/accesscontrol/register.html:206
 #: templates/accesscontrol/sign_in_minimal.html:273
-#: website/templates/website/home.html:415
+#: website/templates/website/home.html:414
 msgid "Prepend country code if you are not in Cameroon."
 msgstr "Préfixez par le code du pays si vous n'êtes pas au Cameroun."
 
 #: templates/accesscontrol/register.html:207
 #: templates/accesscontrol/sign_in_minimal.html:274
-#: website/templates/website/home.html:416
+#: website/templates/website/home.html:415
 msgid "DO NOT prepend 00."
 msgstr "NE PAS préfixer par 00."
 
 #: templates/accesscontrol/register.html:219
 #: templates/accesscontrol/sign_in_minimal.html:293
-#: website/templates/website/home.html:435
+#: website/templates/website/home.html:434
 msgid "Passwords mismatch! Please check."
 msgstr "Mots de passe incompatibles! Vérifiez s'il vous plaît."
 
 #: templates/accesscontrol/register.html:226
 #: templates/accesscontrol/sign_in_minimal.html:286
-#: website/templates/website/home.html:428
+#: website/templates/website/home.html:427
 msgid "Password too short. Use at least 6 characters."
 msgstr "Mot de passe trop court. Utilisez au moins 6 caractères."
 
 #: templates/accesscontrol/register.html:240
 #: templates/accesscontrol/sign_in_minimal.html:348
-#: website/templates/website/home.html:497
+#: website/templates/website/home.html:496
 msgid "Invalid date. Please check."
 msgstr "Date non valide. Veuillez vérifier."
 
@@ -256,8 +256,8 @@ msgstr "Votre mot de passe a été réinitialisé, connectez-vous maintenant."
 #: templates/accesscontrol/sign_in.html:45
 #: templates/accesscontrol/sign_in_minimal.html:106
 #: templates/accesscontrol/sign_in_minimal.html:162
-#: website/templates/website/home.html:157
-#: website/templates/website/home.html:302 website/templates/website/home[Join
+#: website/templates/website/home.html:156
+#: website/templates/website/home.html:301 website/templates/website/home[Join
 #: campaign].html:159
 msgid "Password"
 msgstr "Mot de passe"
@@ -270,7 +270,7 @@ msgstr "Se connecter avec <strong> ikwen</strong>"
 
 #: templates/accesscontrol/sign_in.html:61
 #: templates/accesscontrol/sign_in_minimal.html:146
-#: website/templates/website/home.html:197
+#: website/templates/website/home.html:196
 msgid "Forgotten password ?"
 msgstr "Mot de passe oublié ?"
 
@@ -330,19 +330,19 @@ msgstr ""
 "                            "
 
 #: templates/accesscontrol/sign_in_minimal.html:139
-#: website/templates/website/home.html:190
+#: website/templates/website/home.html:189
 msgid "Back"
 msgstr "Retour"
 
 #: templates/accesscontrol/sign_in_minimal.html:140
 #: tsunami/templates/tsunami/homepage.html:236
-#: website/templates/website/home.html:191
+#: website/templates/website/home.html:190
 #: website/templates/website/admin/change_mailcampaign.html:217
 msgid "Continue"
 msgstr "Continuer"
 
 #: templates/accesscontrol/sign_in_minimal.html:313
-#: website/templates/website/home.html:457
+#: website/templates/website/home.html:456
 msgid "Oops! An error occurred. Check your internet."
 msgstr "Oups! Une erreur est survenue. Vérifiez votre connexion internet."
 
@@ -1983,7 +1983,7 @@ msgstr "C'est parti !"
 msgid "Username or email"
 msgstr "Nom d'utilisateur ou email"
 
-#: website/templates/website/home.html:166
+#: website/templates/website/home.html:165
 #, python-format
 msgid ""
 "\n"
@@ -1998,7 +1998,7 @@ msgstr ""
 "Conditions</a>\n"
 "                            "
 
-#: website/templates/website/home.html:171
+#: website/templates/website/home.html:170
 #, python-format
 msgid ""
 "\n"
@@ -2028,62 +2028,62 @@ msgstr ""
 "Conditions de %(project_name)s.</a>\n"
 "                                "
 
-#: website/templates/website/home.html:212
+#: website/templates/website/home.html:211
 msgid "Cloud technologies for everyone"
 msgstr "Des technologies Cloud pour tous"
 
-#: website/templates/website/home.html:219
+#: website/templates/website/home.html:218
 msgid "Head of school"
 msgstr "Responsable d'établissement"
 
-#: website/templates/website/home.html:224
-#: website/templates/website/home.html:239
+#: website/templates/website/home.html:223
+#: website/templates/website/home.html:238
 msgid "ikwen Foulassi logo"
 msgstr ""
 
-#: website/templates/website/home.html:227
+#: website/templates/website/home.html:226
 msgid "Take your school to the Cloud and improve your performance."
 msgstr ""
 "Déployez votre école dans le Cloud et optimisez vos performances à moindre "
 "coût."
 
-#: website/templates/website/home.html:234
+#: website/templates/website/home.html:233
 msgid "Parents"
 msgstr ""
 
-#: website/templates/website/home.html:242
+#: website/templates/website/home.html:241
 msgid "Connect to your childreen's school career."
 msgstr "Connectez-vous au parcours scolaire de vos enfants."
 
-#: website/templates/website/home.html:251
+#: website/templates/website/home.html:250
 msgid "Entrepreneur"
 msgstr ""
 
-#: website/templates/website/home.html:256
+#: website/templates/website/home.html:255
 msgid "ikwen Tsunami logo"
 msgstr "Logo ikwen TSUNAMI"
 
-#: website/templates/website/home.html:259
+#: website/templates/website/home.html:258
 msgid "Build your customers community and sell online 24/7."
 msgstr "Fidélisez votre clientèle et vendez en ligne non-stop."
 
-#: website/templates/website/home.html:266
+#: website/templates/website/home.html:265
 msgid "Influencer"
 msgstr "Influenceur"
 
-#: website/templates/website/home.html:271
+#: website/templates/website/home.html:270
 msgid "ikwen Daraja logo"
 msgstr "Logo ikwen Daraja"
 
-#: website/templates/website/home.html:274
+#: website/templates/website/home.html:273
 msgid "Earn money through your followers with ease."
 msgstr "Gagnez de l'argent grâce à vos followers en toute simplicité."
 
-#: website/templates/website/home.html:390
+#: website/templates/website/home.html:389
 msgid "Please use at least 3 characters."
 msgstr "Utilisez au moins 3 caractères SVP."
 
-#: website/templates/website/home.html:391
+#: website/templates/website/home.html:390
 msgid "Start with a letter."
 msgstr "Commencez par une lettre."
 
