@@ -21,7 +21,7 @@
 
 {% block head_style %}
     {{ block.super }}
-    <link href="{% static 'website/css/ikwen-website.css' %}?V=20.9.10.20.15" rel="stylesheet">
+    <link href="{% static 'website/css/ikwen-website.css' %}?V=20.9.16.19.41" rel="stylesheet">
     <style>
     #navbar {
         background: -moz-linear-gradient(180deg, rgba(221, 221, 221, 1) 36%, rgba(237, 237, 237, 0.6839110644257703) 100%);
@@ -29,6 +29,7 @@
         background: linear-gradient(180deg, rgba(221, 221, 221, 1) 36%, rgba(237, 237, 237, 0.6839110644257703) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#dddddd", endColorstr="#eeeded", GradientType=1);
     }
+    .icon-bar { background: #217DBB; }
     </style>
 {% endblock %}
 
@@ -70,6 +71,7 @@
             {% if messages %}
                 {% for msg in messages %}<p class="msg-tag {{ msg.tags }}" style="font-size: 1em; padding: 9px">{{ msg }}</p>{% endfor %}
             {% endif %}
+            {% if not user.is_authenticated %}
             <div id="stage" class="form-wrapper bag-shade">
                 <form id="auth" action="{{ action }}" method="post">{% csrf_token %}
                     <div class="input-group username hidden-sm hidden-xs no-mobile">
@@ -198,8 +200,9 @@
                     </div>
                 </form>
             </div>
+            {% endif %}
             <div class="clearfix"></div>
-            <div class=" text-center anchor">
+            <div class=" text-center anchor" {% if user.is_authenticated %} style="margin-bottom: 5vh" {% endif %}>
                 <a class="js-scrollTo" href="#audienceSection" style="text-decoration: none; display: flex; flex-flow: column ">
                     <i class="fas fa-chevron-down chevron-first animated bounceAlpha"></i>
                     <i class="fas fa-chevron-down chevron-second animated bounceAlpha-second"></i>
@@ -292,7 +295,7 @@
         (function() {
             const pwdMinLength = 4; //Length for auto-generated password
             if ($(window).width() < 768) {
-                $('.no-mobile').remove()
+                $('.no-mobile').remove();
             } else {
                 $('.is-mobile').remove()
             }
