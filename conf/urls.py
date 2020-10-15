@@ -3,6 +3,8 @@ from django.contrib import admin
 
 from ikwen.core.views import Offline
 
+from ikwen_foulassi.foulassi.views import Home as MyKids, HomeSaaS as ScolarFleet
+
 from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle, ServiceIndexes
 
 admin.autodiscover()
@@ -34,6 +36,8 @@ urlpatterns = patterns(
     url(r'^smartevent/', include('smartevent.urls', namespace='smartevent')),
 
     # Foulassi URLs
+    url(r'^scolarfleet$', ScolarFleet.as_view(), name='scolarfleet'),
+    url(r'^mykids$', MyKids.as_view(), name='mykids'),
     url(r'^foulassi/', include('ikwen_foulassi.foulassi.urls', namespace='foulassi')),
 
     # Echo URLs

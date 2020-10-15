@@ -23,19 +23,20 @@
                         </li>
 {#                        <li><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
                         <li><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                        <li class="dropdown">
-                          <a href="javascript:;" data-toggle="collapse" data-target="#foulassi-version" aria-expanded="false">Foulassi <b class="caret"></b> </a>
-                          <ul id="foulassi-version" class="collapse" style="list-style: none">
-                            <li role="presentation" style="height: 42px; padding: 10px 0">
-                                <a href="{% url 'foulassi:home' %}">{% trans "MyKids" %}</a>
-                            </li>
-                            <li role="presentation" style="height: 42px; padding: 10px 0">
-                                <a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a>
-                            </li>
-                          </ul>
-                        </li>
-{#                        <li><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
-                        <li><a href="{% url 'kakocase' %}"> Kakocase</a></li>
+{#                        <li class="dropdown">#}
+{#                          <a href="javascript:;" data-toggle="collapse" data-target="#foulassi-version" aria-expanded="false">Foulassi <b class="caret"></b> </a>#}
+{#                          <ul id="foulassi-version" class="collapse" style="list-style: none">#}
+{#                            <li role="presentation" style="height: 42px; padding: 10px 0">#}
+{#                                <a href="{% url 'foulassi:home' %}">{% trans "MyKids" %}</a>#}
+{#                            </li>#}
+{#                            <li role="presentation" style="height: 42px; padding: 10px 0">#}
+{#                                <a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a>#}
+{#                            </li>#}
+{#                          </ul>#}
+{#                        </li>#}
+                        <li class="foulassi"><a href="{% url 'scolarfleet' %}"> ScolarFleet</a></li>
+                        <li class="foulassi"><a href="{% url 'mykids' %}"> MyKids</a></li>
+{#                        <li><a href="{% url 'kakocase' %}"> Kakocase</a></li>#}
                         <li><a href="{% url 'pinsview' %}"> PinsView</a></li>
 {#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'webnode' %}"> Webnode</a></li>#}
 {#                        <li class="kakocase"><a href="{% url 'ikwen:company_profile' 'shavida' %}"> Shavida</a></li>#}

@@ -159,114 +159,102 @@
                             </div>
                         </div>
                         {% block site_menu %}
-                            <div id="site-menu" class="collapse navbar-collapse hidden-sm hidden-md hidden-lg">
-                                <div class="container-fluid">
-                                    <ul class="nav navbar-nav navbar-right main-nav" style="margin: 0 -15px 0 0">
-                                        <li class="dropdown daraja visible-md visible-lg">
-                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Daraja <b class="caret"></b> </a>
-                                          <ul class="dropdown-menu" style="background: transparent">
-                                            <li><a href="{% url 'daraja:home' %}">{% trans "Community" %}</a></li>
-                                            <li><a href="{% url 'daraja:for_businesses' %}">{% trans "Enterprise" %}</a></li>
-                                          </ul>
-                                        </li>
-{#                                        <li class="daraja visible-md visible-lg"><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
-                                        <li class="tsunami visible-md visible-lg"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                                <li class="dropdown foulassi visible-md visible-lg">
-                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foulassi <b class="caret"></b> </a>
-                                  <ul class="dropdown-menu" style="background: transparent">
-                                    <li><a href="{% url 'foulassi:home' %}">{% trans "Parent" %}</a></li>
-                                    <li><a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a></li>
-                                  </ul>
-                                </li>
-{#                                        <li class="foulassi visible-md visible-lg"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
-                                        <li class="kakocase visible-lg"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
-                                        <li class="pinsview visible-lg"><a href="{% url 'pinsview' %}"> PinsView</a></li>
-                                        <li id="ik-apps" class="visible-md dropdown">
-                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="glyphicon glyphicon-th-list"></i>
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="ik-apps">
-                                                <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
-                                                <li class="pinsview"><a href="{% url 'pinsview' %}"> PinsView</a></li>
-                                            </ul>
-                                        </li>
-                                        <li id="ik-apps" class="visible-sm dropdown">
-                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="glyphicon glyphicon-th-list"></i>
-                                            </a>
-                                            <ul class="dropdown-menu" aria-labelledby="ik-apps">
-                                                <li class="dropdown daraja visible-md">
-                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Daraja <b class="caret"></b> </a>
-                                                  <ul class="dropdown-menu" style="background: transparent">
-                                                    <li><a href="{% url 'daraja:home' %}">{% trans "Community" %}</a></li>
-                                                    <li><a href="{% url 'daraja:for_businesses' %}" style="line-height: 3">{% trans "Enterprise" %}</a></li>
-                                                  </ul>
-                                                </li>
-                                                <li class="tsunami"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
-                                                <li class="dropdown foulassi visible-md visible-lg">
-                                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foulassi <b class="caret"></b> </a>
-                                                  <ul class="dropdown-menu" style="background: transparent">
-                                                    <li><a href="{% url 'foulassi:home' %}">{% trans "Parent" %}</a></li>
-                                                    <li><a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a></li>
-                                                  </ul>
-                                                </li>
-{#                                                <li class="foulassi"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>#}
-                                                <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase </a></li>
-                                                <li class="tsunami"><a href="{% url 'pinsview' %}"> PinsView</a></li>
-                                            </ul>
-                                        </li>
-                                        {% if user.is_authenticated %}
-                                            {% if collaborates_on|length == 1 %}
-                                                <li id="user-apps" class="visible-lg">
-                                                    <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
-                                                </li>
-                                            {% endif %}
-                                            {% if collaborates_on|length >= 1 %}
-                                                <li id="user-apps" class="dropdown{% if collaborates_on|length == 1 %} hidden-lg{% endif %}">
-                                                    <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="fas fa-th"></i>
-                                                    </a>
-                                                    <ul class="dropdown-menu" aria-labelledby="apps">
-                                                        {% for app in collaborates_on %}
-                                                            <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
-                                                        {% endfor %}
-                                                    </ul>
-                                                </li>
-                                            {% endif %}
-                                            <li id="user-home">
-                                                <a href="{{ settings.IKWEN_CONSOLE_URL }}">
-                                                    <i class="fas fa-bell"></i>
-                                                    {% if user.get_notice_count > 0 %}
-                                                        {% if user.get_notice_count >= 100 %}
-                                                            <span class="label label-danger" style="margin-top: -18px">99+</span>
-                                                        {% else %}
-                                                            <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
-                                                        {% endif %}
-                                                    {% endif %}
-                                                </a>
-                                            </li>
-                                            <li id="user-menu" class="dropdown">
-                                                <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-user"></i>
-                                                </a>
-                                                <ul class="dropdown-menu has-shade" aria-labelledby="user-menu">
-                                                    <li class="username" style="padding: 3px 20px"> {{ user.get_short_name }} </li>
-                                                    <li role="separator" class="divider"></li>
-                                                    <li>
-                                                        <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
-                                                    </li>
-                                                    <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
-                                                </ul>
-                                            </li>
-                                        {% else %}
-                                            <li class="hidden-xs">
-                                                <a href="{% url 'ikwen:sign_in' %}" class="cta">{% trans "Login" %}</a>
+                        <div id="site-menu" class="collapse navbar-collapse hidden-sm hidden-md hidden-lg">
+                            <div class="container-fluid">
+                                <ul class="nav navbar-nav navbar-right main-nav" style="margin: 0 -15px 0 0">
+                                    <li class="dropdown daraja visible-md visible-lg">
+                                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Daraja <b class="caret"></b> </a>
+                                      <ul class="dropdown-menu" style="background: transparent">
+                                        <li><a href="{% url 'daraja:home' %}">{% trans "Community" %}</a></li>
+                                        <li><a href="{% url 'daraja:for_businesses' %}">{% trans "Enterprise" %}</a></li>
+                                      </ul>
+                                    </li>
+    {#                                <li class="daraja visible-md visible-lg"><a href="{% url 'daraja:home' %}"> Daraja</a></li>#}
+                                    <li class="tsunami visible-md visible-lg"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
+    {#                                <li class="dropdown foulassi visible-md visible-lg">#}
+    {#                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Foulassi <b class="caret"></b> </a>#}
+    {#                                  <ul class="dropdown-menu" style="background: transparent">#}
+    {#                                    <li><a href="{% url 'foulassi:home' %}">{% trans "MyKids" %}</a></li>#}
+    {#                                    <li><a href="{% url 'foulassi:home_saas' %}">{% trans "School" %}</a></li>#}
+    {#                                  </ul>#}
+    {#                                </li>#}
+                                    <li class="foulassi visible-md visible-lg"><a href="{% url 'scolarfleet' %}"> ScolarFleet</a></li>
+                                    <li class="foulassi visible-md visible-lg"><a href="{% url 'mykids' %}"> MyKids</a></li>
+    {#                                <li class="kakocase visible-lg"><a href="{% url 'kakocase' %}"> Kakocase</a></li>#}
+                                    <li class="pinsview visible-lg"><a href="{% url 'pinsview' %}"> PinsView</a></li>
+                                    <li id="ik-apps" class="visible-md dropdown">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-th"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="ik-apps">
+                                            <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase</a></li>
+                                            <li class="pinsview"><a href="{% url 'pinsview' %}"> PinsView</a></li>
+                                        </ul>
+                                    </li>
+                                    <li id="ik-apps" class="visible-sm dropdown">
+                                        <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-th"></i>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="ik-apps">
+                                            <li class="daraja"><a href="#"> Daraja</a></li>
+                                            <li class="tsunami"><a href="{% url 'tsunami:home' %}"> Tsunami</a></li>
+                                            <li class="foulassi"><a href="{% url 'foulassi:home' %}"> Foulassi</a></li>
+                                            <li class="kakocase"><a href="{% url 'kakocase' %}"> Kakocase </a></li>
+                                            <li class="tsunami"><a href="{% url 'pinsview' %}"> PinsView</a></li>
+                                        </ul>
+                                    </li>
+                                    {% if user.is_authenticated %}
+                                        {% if collaborates_on|length == 1 %}
+                                            <li id="user-apps" class="visible-lg">
+                                                <a href="{{ collaborates_on.0.admin_url }}">{{ collaborates_on.0.project_name }}</a>
                                             </li>
                                         {% endif %}
-                                    </ul>
-                                </div>
+                                        {% if collaborates_on|length >= 1 %}
+                                            <li id="user-apps" class="dropdown{% if collaborates_on|length == 1 %} hidden-lg{% endif %}">
+                                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-th"></i>
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="apps">
+                                                    {% for app in collaborates_on %}
+                                                        <li><a href="{{ app.admin_url }}">{{ app.project_name }}</a></li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </li>
+                                        {% endif %}
+                                        <li id="user-home">
+                                            <a href="{{ settings.IKWEN_CONSOLE_URL }}">
+                                                <i class="fas fa-bell"></i>
+                                                {% if user.get_notice_count > 0 %}
+                                                    {% if user.get_notice_count >= 100 %}
+                                                        <span class="label label-danger" style="margin-top: -18px">99+</span>
+                                                    {% else %}
+                                                        <span class="label label-danger" style="margin-top: -18px">{{ user.get_notice_count }}</span>
+                                                    {% endif %}
+                                                {% endif %}
+                                            </a>
+                                        </li>
+                                        <li id="user-menu" class="dropdown">
+                                            <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-user"></i>
+                                            </a>
+                                            <ul class="dropdown-menu has-shade" aria-labelledby="user-menu">
+                                                <li class="username" style="padding: 3px 20px"> {{ user.get_short_name }} </li>
+                                                <li role="separator" class="divider"></li>
+                                                <li>
+                                                    <a href="{{ account_setup_url|ikwenize }}">{% trans "Account setup" %}</a>
+                                                </li>
+                                                <li><a href="{% url "ikwen:logout" %}">{% trans "Logout" %}</a> </li>
+                                            </ul>
+                                        </li>
+                                    {% else %}
+                                        <li class="hidden-xs">
+                                            <a href="{% url 'ikwen:sign_in' %}" class="cta">{% trans "Login" %}</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
                             </div>
-                        {% endblock %}
+                        </div>
+                    {% endblock %}
                     </div>
                 </nav>
             {% endwith %}
