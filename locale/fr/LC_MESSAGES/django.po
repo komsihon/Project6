@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-16 20:23+0100\n"
-"PO-Revision-Date: 2020-10-16 20:23+0100\n"
+"POT-Creation-Date: 2020-10-29 23:34+0100\n"
+"PO-Revision-Date: 2020-10-29 23:35+0100\n"
 "Last-Translator: Wilfried FUTCHEA <wilfriedwillend@gmail.com>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -2076,8 +2076,8 @@ msgid "Parents"
 msgstr ""
 
 #: website/templates/website/home.html:244
-msgid "Connect to your childreen's school career."
-msgstr "Connectez-vous au parcours scolaire de vos enfants."
+msgid "Follow your kids at school in real time."
+msgstr "Suivez vos enfants à l'école en temps réel."
 
 #: website/templates/website/home.html:253
 msgid "Entrepreneur"
@@ -2526,6 +2526,9 @@ msgstr ""
 "le souci est d'obtenir une visibilité de qualité sur le web, avec WebNode "
 "vous avez maintenant une identité numérique de qualité professionnelle en 5 "
 "minutes chrono"
+
+#~ msgid "Connect to your childreen's school career."
+#~ msgstr "Connectez-vous au parcours scolaire de vos enfants."
 
 #~ msgid "WHAT DO YOU WANT "
 #~ msgstr "QUE VOULEZ-VOUS "
