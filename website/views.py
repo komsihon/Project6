@@ -137,6 +137,14 @@ class Kakocase(TemplateView):
         return context
 
 
+class KakocaseFaq(TemplateView):
+    template_name = 'website/kakocase_faq.html'
+
+    # def get_context_data(self, **kwargs):
+    #     context = super(KakocaseFaq, self).get_context_data(**kwargs)
+    #     return context
+
+
 class Shavida(TemplateView):
     template_name = 'website/apps/shavida.html'
 

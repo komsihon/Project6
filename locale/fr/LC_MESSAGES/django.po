@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-29 23:34+0100\n"
+"POT-Creation-Date: 2021-02-03 19:40+0100\n"
 "PO-Revision-Date: 2020-10-29 23:35+0100\n"
 "Last-Translator: Wilfried FUTCHEA <wilfriedwillend@gmail.com>\n"
 "Language-Team: \n"
@@ -18,11 +18,111 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: conf/settings.py:177
+#: kakocase.html:3 kakocase.html.py:107 kakocase.html.py:160
+#: tsunami/templates/tsunami/home.html:3 tsunami/templates/tsunami/home.html:45
+#: tsunami/templates/tsunami/home.html:47
+#: website/templates/website/apps/kakocase.html:52
+#: website/templates/website/apps/pinsview.html:3
+#: website/templates/website/apps/pinsview.html:146
+msgid "Get started"
+msgstr "Lancez-vous"
+
+#: kakocase.html:9 kakocase.html.py:10
+#: website/templates/website/apps/kakocase.html:10
+#: website/templates/website/apps/kakocase.html:11
+msgid ""
+"Kakocase lets you create an e-commerce website in a few clicks. Your website "
+"accepts Mobile Money payments right out of the box. PayPal is also supported "
+"to handle payments with Credit/Debit cards. With our integrated Facebook "
+"communication module, launch your marketing campaign and drive thousands of "
+"visitors and buyers to your website."
+msgstr ""
+"Kakocase vous permet de créer un site Web de e-commerce en quelques clics. "
+"Votre site Web intègre les paiements Mobile Money . PayPal est également "
+"pris en charge pour gérer les paiements avec les cartes de crédit / débit. "
+"Avec notre module de communication Facebook intégré, lancez votre campagne "
+"marketing et conduisez des milliers de visiteurs et d'acheteurs sur votre "
+"site web."
+
+#: kakocase.html:11 website/templates/website/about.html:14
+#: website/templates/website/about.html:20
+#: website/templates/website/home.html:13
+#: website/templates/website/home.html:19 website/templates/website/home[Join
+#: campaign].html:13 campaign].html:19
+#: website/templates/website/apps/kakocase.html:12
+msgid "Web Apps to empower your small or big business"
+msgstr "Applications Web pour autonomiser votre petite ou grande entreprise"
+
+#: kakocase.html:105 website/templates/website/apps/kakocase.html:41
+msgid "Build your customers community and sell online"
+msgstr "Fidélisez votre clientèle et vendez en ligne"
+
+#: kakocase.html:111 website/templates/website/apps/webnode.html:109
+msgid "Features"
+msgstr "Fonctionnalités"
+
+#: kakocase.html:115 kakocase.html.py:119
+#: website/templates/website/apps/kakocase.html:333
+#: website/templates/website/apps/webnode.html:114
+#: website/templates/website/apps/webnode.html:118
+msgid "Easy setup"
+msgstr "Mise sur pied facile"
+
+#: kakocase.html:121 website/templates/website/apps/kakocase.html:335
+msgid ""
+"You create your website by filling a simple form, then choosing the template "
+"that suits your brand and voilà ! Your business is online."
+msgstr ""
+"Vous créez votre site web en remplissant un simple formulaire, puis en "
+"choisissant le modèle qui correspond à votre marque et voilà! Votre "
+"entreprise est en ligne."
+
+#: kakocase.html:127 kakocase.html.py:132
+msgid "Mobile Money"
+msgstr "Mobile Money"
+
+#: kakocase.html:134
+msgid ""
+"Your website accepts online payment from MTN Mobile Money and Orange Money. "
+"You have detailed report of transactions on your website."
+msgstr ""
+"Votre site Web intègre les paiements en ligne de MTN Mobile Money et Orange "
+"Money. Vous avez un rapport détaillé des transactions sur votre site Web."
+
+#: kakocase.html:140 kakocase.html.py:144
+#: website/templates/website/apps/kakocase.html:345
+msgid "Integrated Communication"
+msgstr "Communication intégrée"
+
+#: kakocase.html:146 website/templates/website/apps/kakocase.html:347
+msgid ""
+"You can advert your website on Facebook with the plan that matches your "
+"goal. Drive thousands of visitors and buyers to your website with a few "
+"clicks."
+msgstr ""
+"Vous pouvez lancer des PUB de votre site Web sur Facebook avec des plans "
+"correspondant à vos objectifs. Conduisez des milliers de visiteurs et "
+"d'acheteurs sur votre site web en quelques clics."
+
+#: kakocase.html:156
+msgid "Take your business online today."
+msgstr "Allez en ligne dès maintenant."
+
+#: kakocase.html:158
+msgid ""
+"There are more than 4.2 billion people out there on internet. Go to them "
+"with the right e-commerce website and communication campaign. Access a whole "
+"new market by starting today."
+msgstr ""
+"Il y a plus de 4,2 milliards de personnes sur Internet. Allez vers eux avec "
+"le bons site de e-commerce et la bonne  campagne de communication. Accédez à "
+"un tout nouveau marché en commençant aujourd'hui."
+
+#: conf/settings.py:178
 msgid "English"
 msgstr "Anglais"
 
-#: conf/settings.py:178
+#: conf/settings.py:179
 msgid "French"
 msgstr "Français"
 
@@ -31,19 +131,20 @@ msgstr "Français"
 #: tsunami/templates/tsunami/checkout.html:157
 #: tsunami/templates/tsunami/snippets/edge_panel.html:25
 #: website/templates/website/home.html:3 website/templates/website/home[Join
-#: campaign].html:3 website/templates/website/website_base.html:276
+#: campaign].html:3 website/templates/website/home_deprecated.html:3
+#: website/templates/website/website_base.html:276
 #: website/templates/website/apps/apps_base.html:123
 #: website/templates/website/snippets/edge_panel.html:12
 msgid "Home"
 msgstr "Accueil"
 
 #: templates/base.html:97 templates/com/base.html:118
-#: templates/com/base.html.py:244 tsunami/templates/tsunami/base.html:98
+#: templates/com/base.html.py:245 tsunami/templates/tsunami/base.html:98
 #: tsunami/templates/tsunami/base_com_website.html:89
 #: tsunami/templates/tsunami/base_com_website.html:167
 #: tsunami/templates/tsunami/checkout.html:185
 #: website/templates/website/base.html:102
-#: website/templates/website/base.html:228
+#: website/templates/website/base.html:229
 #: website/templates/website/website_base.html:227
 #: website/templates/website/website_base.html:304
 #: website/templates/website/apps/apps_base.html:90
@@ -52,12 +153,12 @@ msgid "Account setup"
 msgstr "Infos compte"
 
 #: templates/base.html:99 templates/com/base.html:120
-#: templates/com/base.html.py:246 tsunami/templates/tsunami/base.html:100
+#: templates/com/base.html.py:247 tsunami/templates/tsunami/base.html:100
 #: tsunami/templates/tsunami/base_com_website.html:91
 #: tsunami/templates/tsunami/base_com_website.html:169
 #: tsunami/templates/tsunami/checkout.html:187
 #: website/templates/website/base.html:104
-#: website/templates/website/base.html:230
+#: website/templates/website/base.html:231
 #: website/templates/website/website_base.html:229
 #: website/templates/website/website_base.html:306
 #: website/templates/website/apps/apps_base.html:92
@@ -67,12 +168,12 @@ msgstr "Déconnexion"
 
 #: templates/base.html:105 templates/accesscontrol/sign_in.html:36
 #: templates/accesscontrol/sign_in_minimal.html:34 templates/com/base.html:125
-#: templates/com/base.html.py:251 tsunami/templates/tsunami/base.html:106
+#: templates/com/base.html.py:252 tsunami/templates/tsunami/base.html:106
 #: tsunami/templates/tsunami/base_com_website.html:96
 #: tsunami/templates/tsunami/base_com_website.html:174
 #: tsunami/templates/tsunami/checkout.html:193
 #: website/templates/website/base.html:109
-#: website/templates/website/base.html:235
+#: website/templates/website/base.html:236
 #: website/templates/website/website_base.html:234
 #: website/templates/website/website_base.html:311
 #: website/templates/website/apps/apps_base.html:159
@@ -358,120 +459,68 @@ msgstr "Communauté"
 msgid "Enterprise"
 msgstr "Entreprise"
 
-#: templates/com/base.html:278 website/templates/website/base.html:264
+#: templates/com/base.html:279 website/templates/website/base.html:265
 #: website/templates/website/home[Join campaign].html:212
+#: website/templates/website/apps/kakocase.html:429
 msgid "About ikwen"
 msgstr "À propos de ikwen"
 
-#: templates/com/base.html:279 website/templates/website/base.html:265
+#: templates/com/base.html:280 website/templates/website/base.html:266
 #: website/templates/website/home[Join campaign].html:211
+#: website/templates/website/home_deprecated.html:136
+#: website/templates/website/apps/kakocase.html:430
 #: website/templates/website/snippets/address_section.html:41
 #: website/templates/website/snippets/edge_panel.html:47
 msgid "Terms & conditions"
 msgstr "Conditions d'utilisation"
 
-#: templates/com/base.html:280 tsunami/templates/tsunami/bundle_list.html:65
-#: tsunami/templates/tsunami/bundle_list.html:88
-#: tsunami/templates/tsunami/bundle_list.html:111
+#: templates/com/base.html:281
 #: tsunami/templates/tsunami/snippets/address_section.html:40
 #: tsunami/templates/tsunami/snippets/edge_panel.html:33
-#: website/templates/website/base.html:266 website/templates/website/home[Join
-#: campaign].html:210 website/templates/website/apps/shavida.html:93
+#: website/templates/website/base.html:267 website/templates/website/home[Join
+#: campaign].html:210 website/templates/website/home_deprecated.html:133
+#: website/templates/website/apps/kakocase.html:431
+#: website/templates/website/apps/shavida.html:93
 #: website/templates/website/snippets/address_section.html:40
 #: website/templates/website/snippets/edge_panel.html:45
 msgid "Support"
 msgstr "Support"
 
-#: templates/com/base.html:281 templates/core/app_base_admin.html:71
+#: templates/com/base.html:282
 #: tsunami/templates/tsunami/snippets/address_section.html:39
 #: tsunami/templates/tsunami/snippets/edge_panel.html:32
-#: website/templates/website/base.html:267 website/templates/website/home[Join
-#: campaign].html:209 website/templates/website/apps/shavida.html:92
+#: website/templates/website/base.html:268 website/templates/website/home[Join
+#: campaign].html:209 website/templates/website/home_deprecated.html:132
+#: website/templates/website/apps/kakocase.html:432
+#: website/templates/website/apps/shavida.html:92
 #: website/templates/website/snippets/address_section.html:39
 #: website/templates/website/snippets/edge_panel.html:44
 msgid "Blog"
 msgstr "Blog"
 
-#: templates/com/base.html:285
+#: templates/com/base.html:286
 #: tsunami/templates/tsunami/snippets/address_section.html:31
 #: tsunami/templates/tsunami/snippets/edge_panel.html:56
 #: website/templates/website/about.html:155
-#: website/templates/website/base.html:271 website/templates/website/home[Join
-#: campaign].html:218 website/templates/website/apps/shavida.html:85
+#: website/templates/website/base.html:272 website/templates/website/home[Join
+#: campaign].html:218 website/templates/website/apps/kakocase.html:436
+#: website/templates/website/apps/shavida.html:85
 #: website/templates/website/snippets/address_section.html:31
 #: website/templates/website/snippets/edge_panel.html:66
 msgid "All rights reserved."
 msgstr "Tous droits réservés."
 
-#: templates/com/base.html:287
+#: templates/com/base.html:288
 #: tsunami/templates/tsunami/snippets/address_section.html:33
 #: tsunami/templates/tsunami/snippets/edge_panel.html:58
 #: website/templates/website/about.html:157
-#: website/templates/website/base.html:273 website/templates/website/home[Join
-#: campaign].html:220 website/templates/website/apps/shavida.html:87
+#: website/templates/website/base.html:274 website/templates/website/home[Join
+#: campaign].html:220 website/templates/website/apps/kakocase.html:438
+#: website/templates/website/apps/shavida.html:87
 #: website/templates/website/snippets/address_section.html:33
 #: website/templates/website/snippets/edge_panel.html:68
 msgid "Legal mentions"
 msgstr "Mentions légales"
-
-#: templates/core/app_base_admin.html:12
-msgid "Dashboard"
-msgstr "Tableau de bord"
-
-#: templates/core/app_base_admin.html:23
-msgid "Apps"
-msgstr "Apps"
-
-#: templates/core/app_base_admin.html:31
-msgid "Services"
-msgstr "Services"
-
-#: templates/core/app_base_admin.html:37
-#, fuzzy
-msgid "Products"
-msgstr "Gestion des produits"
-
-#: templates/core/app_base_admin.html:41
-msgid "Subscriptions"
-msgstr "Abonnements"
-
-#: templates/core/app_base_admin.html:45
-msgid "Invoices"
-msgstr "Factures"
-
-#: templates/core/app_base_admin.html:49
-msgid "Invoice Admin"
-msgstr "Admin Factures"
-
-#: templates/core/app_base_admin.html:53
-#, fuzzy
-msgid "Payments"
-msgstr "Commentaires"
-
-#: templates/core/app_base_admin.html:60
-msgid "Homepage"
-msgstr "Accueil"
-
-#: templates/core/app_base_admin.html:63
-msgid "Menus"
-msgstr "Menus"
-
-#: templates/core/app_base_admin.html:66
-msgid "Items"
-msgstr ""
-
-#: templates/core/app_base_admin.html:77
-#, fuzzy
-msgid "Blog categories"
-msgstr "Gestion des catégories"
-
-#: templates/core/app_base_admin.html:80
-msgid "Posts"
-msgstr "Posts"
-
-#: templates/core/app_base_admin.html:84
-msgid "Comments"
-msgstr "Commentaires"
 
 #: templates/core/terms_and_conditions.html:3
 msgid "Terms and conditions"
@@ -1127,296 +1176,218 @@ msgid "Help desk"
 msgstr "Aide"
 
 #: tsunami/templates/tsunami/bundle_list.html:13
-#: tsunami/templates/tsunami/homepage.html:10
-msgid "ikwen TSUNAMI, the cloud tools your business needs"
+#, fuzzy
+msgid "ikwen Kakocase, the cloud tools your business needs"
 msgstr "ikwen TSUNAMI, le service cloud pour vos besoins d'entreprise"
 
 #: tsunami/templates/tsunami/bundle_list.html:14
-#: tsunami/templates/tsunami/homepage.html:41
-#: tsunami/templates/tsunami/homepage.html:63
-msgid "Reach more customers and sell all your stocks with Tsunami"
+#, fuzzy
+msgid "Reach more customers and sell all your stocks with Kakocase"
 msgstr "Touchez plus de clients et vendez tous vos stocks avec Tsunami"
 
-#: tsunami/templates/tsunami/bundle_list.html:39
+#: tsunami/templates/tsunami/bundle_list.html:40
 msgid "Choose the bundles that best suits your needs and budget"
 msgstr "Choisissez les offres qui satisfont vos besoins et votre budget"
 
-#: tsunami/templates/tsunami/bundle_list.html:41
+#: tsunami/templates/tsunami/bundle_list.html:42
+#, fuzzy
 msgid ""
 "You don’t have to pay immediately but you will have access to full "
-"functionalities of Tsunami. An invoice will be generated, keep in mind that "
+"functionalities of Kakocase. An invoice will be generated, keep in mind that "
 "early payments give you Mail and SMS bonus."
 msgstr ""
 "Vous n'aurez pas besoin de payer immédiatement, mais vous aurez accès à "
 "toutes les offres de Tsunami. Une facture sera générée, et souvenez vous que "
 "payer à temps vous offre des bonus Mail et SMS."
 
-#: tsunami/templates/tsunami/bundle_list.html:53
-msgid "3 months"
-msgstr "3 mois"
+#: tsunami/templates/tsunami/bundle_list.html:50
+msgid ""
+"\n"
+"                            <h4>Website + Online Store</h4>\n"
+"                            Website, presentation of products to the "
+"customer, shopping cart, purchasing process\n"
+"                        "
+msgstr ""
 
-#: tsunami/templates/tsunami/bundle_list.html:57
+#: tsunami/templates/tsunami/bundle_list.html:56
+msgid ""
+"\n"
+"                            <h4>Online payment</h4>\n"
+"                            Integrate the possibility of secure payment on "
+"the site by MTN MoMo and Orange Money\n"
+"                        "
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:62
+msgid ""
+"\n"
+"                            <h4>Pinsview</h4>\n"
+"                            Geographical visualization of your agencies, "
+"clients, prospects with photos, details, history and smart coloring\n"
+"                        "
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:68
+msgid ""
+"\n"
+"                            <h4>Administration of Digital Assets</h4>\n"
+"                            On the administration panel you have activity "
+"reports, database and customer movements, transaction details, etc. with "
+"visualization in the form of tables and graphs.\n"
+"                        "
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:74
+#, fuzzy
+msgid ""
+"\n"
+"                            <h4>Security SSL Certificate</h4>\n"
+"                            Encryption of data between the site and users to "
+"prevent hacking of any kind\n"
+"                        "
+msgstr ""
+"\n"
+"                                En créant un compte vous acceptez nos\n"
+"                                <a href=\"%(ikwen_eula_url)s\">Termes & "
+"Conditions</a>\n"
+"                            "
+
 #: tsunami/templates/tsunami/bundle_list.html:80
-#: tsunami/templates/tsunami/bundle_list.html:103
-msgid "Cloud tools"
-msgstr "Outils Cloud"
+msgid ""
+"\n"
+"                            <h4>Android Mobile Application</h4>\n"
+"                            Application downloadable by your customers from "
+"the site and able to send notifications\n"
+"                            with images\n"
+"                        "
+msgstr ""
 
-#: tsunami/templates/tsunami/bundle_list.html:59
-#: tsunami/templates/tsunami/bundle_list.html:82
-msgid "eCommerce website"
-msgstr "Site de e-commerce"
+#: tsunami/templates/tsunami/bundle_list.html:87
+msgid ""
+"\n"
+"                            <h4>Pack of 4,000 emails</h4>\n"
+"                            Emails used for any confirmation sent from your "
+"website with your brand:\n"
+"                            Ex: Confirmation of registration, purchase, "
+"etc...\n"
+"                        "
+msgstr ""
 
-#: tsunami/templates/tsunami/bundle_list.html:66
-msgid "2 weeks of phone support"
-msgstr "2 semaines de support téléphonique"
+#: tsunami/templates/tsunami/bundle_list.html:94
+msgid ""
+"\n"
+"                            <h4>Notifications (4,000)</h4>\n"
+"                            Notifications sent to customers for various "
+"transactions. Promo, New product, etc.\n"
+"                        "
+msgstr ""
 
-#: tsunami/templates/tsunami/bundle_list.html:67
-msgid "2 x 2 hours of coaching onsite"
-msgstr "2 x 2 heures de coaching sur place"
+#: tsunami/templates/tsunami/bundle_list.html:100
+msgid ""
+"\n"
+"                            <h4>Promotion Module</h4>\n"
+"                            Allows you to set up percentage promotions on "
+"your site. The prices are automatically recalculated and the old price is "
+"shown crossed out.\n"
+"                        "
+msgstr ""
 
-#: tsunami/templates/tsunami/bundle_list.html:69
-#: tsunami/templates/tsunami/bundle_list.html:92
-#: tsunami/templates/tsunami/bundle_list.html:115
+#: tsunami/templates/tsunami/bundle_list.html:106
+msgid ""
+"\n"
+"                            <h4>Customer Retention Module</h4>\n"
+"                            A system for distributing gift coupons to your "
+"customers according to their actions\n"
+"                            (purchase, recommendations, etc.).\n"
+"                        "
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:113
+#, fuzzy
+msgid ""
+"\n"
+"                            <h4>Payment on credit</h4>\n"
+"                            A module that allows you to grant purchase "
+"credits to your best customers\n"
+"                            so that they buy online using this credit.\n"
+"                            They are reminded when due and pay their debt by "
+"cell phone.\n"
+"                        "
+msgstr ""
+"\n"
+"                                Le CC-I est un utilitaire qui vous permet de "
+"sauvegarder les paiements en espèces effectués par vos clients.\n"
+"                                Il a un formulaire qui enregistre le montant "
+"d'une vente et l'attribue au profile client\n"
+"                                précédemment enregistré dans votre CCM pour "
+"déclencher le processus de récompense CR.\n"
+"                            "
+
+#: tsunami/templates/tsunami/bundle_list.html:121
+#: tsunami/templates/tsunami/bundle_list.html:393
+msgid ""
+"\n"
+"                            <h4>Online training (04 x 1H)</h4>\n"
+"                            Training of a staff dedicated to website "
+"administration techniques,\n"
+"                            provision of online documentation and various "
+"resources to carry out the assigned tasks.\n"
+"                        "
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:128
+msgid ""
+"\n"
+"                            <h4>Online support 02 months (02h per week)</"
+"h4>\n"
+"                            An agent will answer you for any difficulty "
+"encountered,\n"
+"                            a cumulative of 2 hours per week online.\n"
+"                        "
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:135
+#, fuzzy
+msgid ""
+"\n"
+"                            <h4>Troubleshooting</h4>\n"
+"                            Fix of all bugs encountered on the site.\n"
+"                        "
+msgstr ""
+"\n"
+"                                En créant un compte vous acceptez nos\n"
+"                                <a href=\"%(ikwen_eula_url)s\">Termes & "
+"Conditions</a>\n"
+"                            "
+
+#: tsunami/templates/tsunami/bundle_list.html:157
+msgid "Monthly"
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:158
+msgid "Yearly"
+msgstr ""
+
+#: tsunami/templates/tsunami/bundle_list.html:373
+#: tsunami/templates/tsunami/bundle_list.html:379
+#: tsunami/templates/tsunami/bundle_list.html:385
 msgid "I Want"
 msgstr "Je Veux"
 
-#: tsunami/templates/tsunami/bundle_list.html:76
-msgid "6 months"
-msgstr "6 mois"
-
-#: tsunami/templates/tsunami/bundle_list.html:89
-#: tsunami/templates/tsunami/bundle_list.html:112
-msgid "1 month of phone support"
-msgstr "1 Mois de support téléphonique"
-
-#: tsunami/templates/tsunami/bundle_list.html:90
-#: tsunami/templates/tsunami/bundle_list.html:113
-msgid "4 x 2 hours of coaching onsite"
-msgstr "4 x 2 heures de coaching sur place"
-
-#: tsunami/templates/tsunami/bundle_list.html:99
-msgid "12 months"
-msgstr "12 mois"
-
-#: tsunami/templates/tsunami/bundle_list.html:105
-msgid "eCommerce website  and domain name"
-msgstr "Site de eCommerce et nom de domaine"
-
-#: tsunami/templates/tsunami/bundle_list.html:131
-#: tsunami/templates/tsunami/bundle_list.html:227
-msgid "What is “Deploy” ? What do I get from Deploying ?"
+#: tsunami/templates/tsunami/bundle_list.html:408
+msgid "You are in good hands !!!"
 msgstr ""
-"Qu’est ce que c’est “Déployer” ? Qu’est ce que j’obtiens en Déployant ?"
 
-#: tsunami/templates/tsunami/bundle_list.html:133
-#: tsunami/templates/tsunami/bundle_list.html:229
+#: tsunami/templates/tsunami/bundle_list.html:410
 msgid ""
 "\n"
-"                                    Deploy simply means create your own "
-"online platform. What you get is the Tsunami suite under the name of your "
-"company.\n"
-"                                    From then, you can start adding contacts "
-"in your Cloud Customer Manager, and set all kinds of revivals.\n"
-"                                    You can publish your products on the "
-"platform and get customers to visit and buy online.\n"
-"                                    Your platform is immediately accessible "
-"with the link <cite title=\"Your online platform generated link takes the "
-"name of your company\">http://go.ikwen.com/yourcompany</cite>.\n"
-"                                    You can further move to yourcompany.com "
-"or yourcompany.cm when you buy your own domain name.\n"
-"                                    See how to buy and configure domain name "
-"to discover how to do it.\n"
-"                                "
+"                            We have a solid experience built up year after "
+"year. Today we have excellent applications,\n"
+"                            each of which provides answers to problems in "
+"both B2B and B2C.\n"
+"                            Join these organizations with peace of mind.\n"
+"                        "
 msgstr ""
-"\n"
-"                                Déployer veut simplement dire créer sa "
-"plateforme en ligne. Ce que vous obtenez c’est la suite Tsunami sous le nom "
-"de votre entreprise. \n"
-"\t\t\t\tDe là, vous pouvez commencez à ajouter les contacts dans votre Cloud "
-"Customer Manager, et effectuez tous types de relances. \n"
-"\t\t\t\tVous pouvez publiez vos produits sur la plateforme et avoir des "
-"clients qui visiteront et achèteront en ligne. \n"
-"\t\t\t\tVotre plateforme est directement accessible via l’adresse <cite "
-"title=\"L'adresse de votre plateforme générée en ligne aura le nom de votre "
-"entreprise \">http://go.ikwen.com/votreentreprise<cite>. \n"
-"\t\t\t\tVous pourriez plus tard le changer pour votreentreprise.com or "
-"votreentreprise.cm lorsque vous achetez votre propre nom de  domaine.\n"
-"\t\t\t\tRegardez comment acheter et configurer le nom de domaine pour "
-"découvrir comment le faire. \n"
-"                                "
-
-#: tsunami/templates/tsunami/bundle_list.html:144
-#: tsunami/templates/tsunami/bundle_list.html:240
-msgid "What I am paying for exactly ?"
-msgstr "Qu’est ce que je paye exactement ?"
-
-#: tsunami/templates/tsunami/bundle_list.html:146
-#: tsunami/templates/tsunami/bundle_list.html:242
-msgid ""
-"\n"
-"                                    When you deploy your Tsunami platform, "
-"you get many business-effective online tools including :\n"
-"                                    <ul style=\"color: #828282; list-style-"
-"type: square;\">\n"
-"                                        <li>\n"
-"                                            An e-commerce website with "
-"online payments.\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            An automated system to store "
-"your customer’s contacts and revive them by targeted Mail and SMS.\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            SMS and Email Packs to deliver "
-"SMS and mails to your customers.\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            A hosting package to get all "
-"that running.\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            Continuous Maintenance, Software "
-"updates, Data security, Backups and more...\n"
-"                                        </li>\n"
-"                                    </ul>\n"
-"                                "
-msgstr ""
-"\n"
-"                                    Quand vous déployez votre plateforme "
-"Tsunami, vous obtenez en ligne plusieurs outils efficaces sur le plan "
-"commercial à savoir :\n"
-"                                    <ul style=\"color: #828282; list-style-"
-"type: square;\">\n"
-"                                        <li>\n"
-"                                            Un site de e-commerce avec des "
-"méthodes de payement en ligne intégrés\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            Un système automatisé pour "
-"sauvegarder vos contacts client et pour les relancer par des Mail et SMS "
-"ciblés\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                           Les Packs SMS et Email pour "
-"envoyer des SMS et mails à vos clients\n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            Un forfait d’hébergement pour "
-"que tout puisse fonctionner. \n"
-"                                        </li>\n"
-"                                        <li>\n"
-"                                            Maintenance Continue, Mise à "
-"jour Logiciels, Sécurisation des Données, Sauvegardes, etc.\n"
-"                                        </li>\n"
-"                                    </ul>\n"
-"                                "
-
-#: tsunami/templates/tsunami/bundle_list.html:171
-#: tsunami/templates/tsunami/bundle_list.html:267
-msgid "How do I pay ?"
-msgstr "Comment dois-je payer ?"
-
-#: tsunami/templates/tsunami/bundle_list.html:173
-#: tsunami/templates/tsunami/bundle_list.html:269
-msgid ""
-"\n"
-"                                    Once you deploy your platform, you "
-"immediately receive an invoice by mail.\n"
-"                                    You can view the invoice and pay by MTN "
-"MoMo online. Once you have done the payment.\n"
-"                                    Your service is activated to run for 3 "
-"months.\n"
-"                                    You can print the generated for your "
-"accounting.\n"
-"                                "
-msgstr ""
-"\n"
-"                                Une fois que vous déployez votre plateforme, "
-"vous pouvez immédiatement recevoir une facture par mail. \n"
-"\t\t\t\tVous pouvez voir la facture et payer en ligne par MTN MoMo. \n"
-"\t\t\t\tDès que vous avez effectué le paiement, votre service est activé "
-"pour fonctionner pendant 3 mois. \n"
-"\t\t\t\tVous pouvez imprimer la facture générée pour votre comptabilité.\n"
-"\t\t\t\t"
-
-#: tsunami/templates/tsunami/bundle_list.html:182
-#: tsunami/templates/tsunami/bundle_list.html:278
-msgid "Do I pay once for all ? What happens after the 3 months ?"
-msgstr "Dois-je payer une fois pour toute ? Que se passe t-il après 3 mois ?"
-
-#: tsunami/templates/tsunami/bundle_list.html:184
-#: tsunami/templates/tsunami/bundle_list.html:280
-msgid ""
-"\n"
-"                                    Payment covers the first three months of "
-"service. For your service to continue after those 3 months,\n"
-"                                    you will have to pay for renewal fees "
-"that are always much lower than setup fees that cover another 3 months.\n"
-"                                "
-msgstr ""
-"\n"
-"\t\t\t\tLe paiement couvre le premier trimestre de service. Pour que votre "
-"service puisse continuer après cette période,\n"
-"\t\t\t \tvous devez payer pour les frais de recharge qui sont toujours plus "
-"bas que les frais d’acquisition qui couvrent encore un autre trimestre.\n"
-"\t\t\t\t"
-
-#: tsunami/templates/tsunami/bundle_list.html:193
-#: tsunami/templates/tsunami/bundle_list.html:289
-msgid "What if I don’t pay at the end of the period, are my data deleted ?"
-msgstr ""
-"Que se passe t-il si je ne paye pas à la fin de la période, est-ce que mes "
-"données seront supprimées ?"
-
-#: tsunami/templates/tsunami/bundle_list.html:195
-#: tsunami/templates/tsunami/bundle_list.html:291
-msgid ""
-"\n"
-"                                    When the end of the period is "
-"approaching, you receive at least 3 reminders with the new invoice to pay.\n"
-"                                    If you do not pay on time, you are given "
-"a consistent amount of extra time to do the payment.\n"
-"                                    After that period, your platform is "
-"shutdown, but all your data are kept.\n"
-"                                    Everything will be put back in place "
-"when you pay your invoice.\n"
-"                                    Your data are completely deleted after 3 "
-"months of inactivity.\n"
-"                                "
-msgstr ""
-"\n"
-"\t\t\t\tÀ l’approche de la date limite, vous recevez au moins 3 rappels avec "
-"la nouvelle facture à payer. \n"
-"\t\t\t\tEt si vous ne payer pas à temps, vous disposez d’un temps "
-"supplémentaire raisonnable pour payer. \n"
-"\t\t\t\tCe temps écoulé, votre plateforme sera indisponible, mais vos "
-"données seront sauvegardées. \n"
-"\t\t\t\tTout sera remis en place quand vous payerez votre facture. \n"
-"\t\t\t\tVos données seront complètement supprimées après 3 mois "
-"d’inactivité.\n"
-"\t\t\t\t"
-
-#: tsunami/templates/tsunami/bundle_list.html:205
-#: tsunami/templates/tsunami/bundle_list.html:301
-msgid "Can I pay for a year ?"
-msgstr "Pourrais-je payer pour un an ?"
-
-#: tsunami/templates/tsunami/bundle_list.html:207
-#: tsunami/templates/tsunami/bundle_list.html:303
-msgid ""
-"\n"
-"                                    Yes you can. You are highly encouraged "
-"to pay for a year as you will benefit a discount.\n"
-"                                    Switch to annual payment view to see how "
-"much it costs and get your platform for a year.\n"
-"                                "
-msgstr ""
-"\n"
-"\t\t\t\tOui, vous pouvez. Vous êtes vivement encouragé à payer pour un an "
-"afin que vous bénéficierez d’un retrait. \n"
-"\t\t\t\tPassez à la vue paiement annuel en haut de page pour voir combien ça "
-"coûte, et obtenez votre plateforme pour un an.\n"
-"\t\t\t\t"
 
 #: tsunami/templates/tsunami/checkout.html:4
 msgid "Checkout"
@@ -1530,16 +1501,6 @@ msgstr "Montant"
 msgid "Your payment was successfully procceded; Thank for your concern"
 msgstr "Paiement réussi. Merci pour votre confiance"
 
-#: tsunami/templates/tsunami/home.html:3 tsunami/templates/tsunami/home.html:45
-#: tsunami/templates/tsunami/home.html:47
-#: website/templates/website/apps/kakocase.html:3
-#: website/templates/website/apps/kakocase.html:108
-#: website/templates/website/apps/kakocase.html:161
-#: website/templates/website/apps/pinsview.html:3
-#: website/templates/website/apps/pinsview.html:146
-msgid "Get started"
-msgstr "Lancez-vous"
-
 #: tsunami/templates/tsunami/home.html:9 tsunami/templates/tsunami/home.html:10
 msgid "Tsunami"
 msgstr "Tsunami"
@@ -1646,9 +1607,20 @@ msgstr ""
 "déclencher le processus de récompense CR.\n"
 "                            "
 
+#: tsunami/templates/tsunami/homepage.html:10
+#: website/templates/website/kakocase_faq.html:13
+msgid "ikwen TSUNAMI, the cloud tools your business needs"
+msgstr "ikwen TSUNAMI, le service cloud pour vos besoins d'entreprise"
+
 #: tsunami/templates/tsunami/homepage.html:11
 #: tsunami/templates/tsunami/homepage.html:12
 msgid "Reach more csustomers and sell all your stocks with Tsunami"
+msgstr "Touchez plus de clients et vendez tous vos stocks avec Tsunami"
+
+#: tsunami/templates/tsunami/homepage.html:41
+#: tsunami/templates/tsunami/homepage.html:63
+#: website/templates/website/kakocase_faq.html:14
+msgid "Reach more customers and sell all your stocks with Tsunami"
 msgstr "Touchez plus de clients et vendez tous vos stocks avec Tsunami"
 
 #: tsunami/templates/tsunami/homepage.html:43
@@ -1681,6 +1653,8 @@ msgstr "Passer au digital avec Tsunami"
 
 #: tsunami/templates/tsunami/homepage.html:106
 #: tsunami/templates/tsunami/homepage.html:161
+#: website/templates/website/apps/kakocase.html:143
+#: website/templates/website/apps/kakocase.html:154
 msgid "Efficient use of the customer directory"
 msgstr "Une exploitation efficace de votre repertoire client"
 
@@ -1705,6 +1679,8 @@ msgstr "Découvrez Cloud Customer Manager"
 
 #: tsunami/templates/tsunami/homepage.html:122
 #: tsunami/templates/tsunami/homepage.html:171
+#: website/templates/website/apps/kakocase.html:210
+#: website/templates/website/apps/kakocase.html:222
 msgid "Customer retention made easy"
 msgstr "Fidéliser le client devient facile"
 
@@ -1724,6 +1700,8 @@ msgstr "Découvrez Continuous Rewarding"
 
 #: tsunami/templates/tsunami/homepage.html:132
 #: tsunami/templates/tsunami/homepage.html:181
+#: website/templates/website/apps/kakocase.html:72
+#: website/templates/website/apps/kakocase.html:84
 msgid "Sell everywhere, sell everytime... Sell online"
 msgstr "Vendez partout, vendez tout le temps... Vendez en ligne"
 
@@ -1801,11 +1779,18 @@ msgstr "Et réalisons ensemble votre incroyable projet."
 
 #: tsunami/templates/tsunami/snippets/address_section.html:42
 #: tsunami/templates/tsunami/snippets/edge_panel.html:34
+#: website/templates/website/home_deprecated.html:135
 #: website/templates/website/apps/shavida.html:95
 #: website/templates/website/snippets/address_section.html:42
 #: website/templates/website/snippets/edge_panel.html:46
 msgid "About"
 msgstr "À propos"
+
+#: tsunami/templates/tsunami/snippets/language_switcher.html:6
+#: website/templates/website/home[Join campaign].html:202
+#: website/templates/website/snippets/language_switcher.html:6
+msgid "Language"
+msgstr "Langue"
 
 #: tsunami/templates/tsunami/snippets/modals.html:6
 msgid "Confirm coupon usage"
@@ -1846,12 +1831,17 @@ msgstr ""
 "Un ou plusieurs champs sont non renseignés, Veuillez vérifier et relancer SVP"
 
 #: tsunami/templates/tsunami/snippets/modals.html:58
+#: website/templates/website/kakocase_faq.html:253
 msgid "OK"
 msgstr "OK"
 
 #: tsunami/templates/tsunami/snippets/user_coupon_list.html:28
 msgid "Use this coupon"
 msgstr "Utiliser ce coupon"
+
+#: website/test_referrer_notification.py:52
+msgid "Your Dara request was accepted"
+msgstr ""
 
 #: website/views.py:54
 msgid "Get your support code"
@@ -1860,15 +1850,6 @@ msgstr "Recevez votre code de support"
 #: website/templates/website/about.html:3
 msgid "About Us"
 msgstr "À propos"
-
-#: website/templates/website/about.html:14
-#: website/templates/website/about.html:20
-#: website/templates/website/home.html:13
-#: website/templates/website/home.html:19 website/templates/website/home[Join
-#: campaign].html:13 campaign].html:19
-#: website/templates/website/apps/kakocase.html:12
-msgid "Web Apps to empower your small or big business"
-msgstr "Applications Web pour autonomiser votre petite ou grande entreprise"
 
 #: website/templates/website/about.html:19
 #: website/templates/website/home.html:18 website/templates/website/home[Join
@@ -2139,9 +2120,246 @@ msgstr "<strong>Collectionne</strong> gratuitement des coupons "
 msgid "<strong>Earn</strong> tons of gifts "
 msgstr "<strong>Gagne</strong> des tonnes de cadeaux "
 
-#: website/templates/website/home[Join campaign].html:202
-msgid "Language"
-msgstr "Langue"
+#: website/templates/website/home_deprecated.html:97
+msgid "WHAT DO YOU WANT "
+msgstr "QUE VOULEZ-VOUS "
+
+#: website/templates/website/home_deprecated.html:104
+#: website/templates/website/home_deprecated.html:116
+msgid "A website"
+msgstr "Un site web"
+
+#: website/templates/website/home_deprecated.html:109
+#: website/templates/website/home_deprecated.html:121
+msgid "More customers"
+msgstr "Plus de clients"
+
+#: website/templates/website/kakocase_faq.html:48
+#: website/templates/website/kakocase_faq.html:144
+msgid "What is “Deploy” ? What do I get from Deploying ?"
+msgstr ""
+"Qu’est ce que c’est “Déployer” ? Qu’est ce que j’obtiens en Déployant ?"
+
+#: website/templates/website/kakocase_faq.html:50
+#: website/templates/website/kakocase_faq.html:146
+msgid ""
+"\n"
+"                                    Deploy simply means create your own "
+"online platform. What you get is the Tsunami suite under the name of your "
+"company.\n"
+"                                    From then, you can start adding contacts "
+"in your Cloud Customer Manager, and set all kinds of revivals.\n"
+"                                    You can publish your products on the "
+"platform and get customers to visit and buy online.\n"
+"                                    Your platform is immediately accessible "
+"with the link <cite title=\"Your online platform generated link takes the "
+"name of your company\">http://go.ikwen.com/yourcompany</cite>.\n"
+"                                    You can further move to yourcompany.com "
+"or yourcompany.cm when you buy your own domain name.\n"
+"                                    See how to buy and configure domain name "
+"to discover how to do it.\n"
+"                                "
+msgstr ""
+"\n"
+"                                Déployer veut simplement dire créer sa "
+"plateforme en ligne. Ce que vous obtenez c’est la suite Tsunami sous le nom "
+"de votre entreprise. \n"
+"\t\t\t\tDe là, vous pouvez commencez à ajouter les contacts dans votre Cloud "
+"Customer Manager, et effectuez tous types de relances. \n"
+"\t\t\t\tVous pouvez publiez vos produits sur la plateforme et avoir des "
+"clients qui visiteront et achèteront en ligne. \n"
+"\t\t\t\tVotre plateforme est directement accessible via l’adresse <cite "
+"title=\"L'adresse de votre plateforme générée en ligne aura le nom de votre "
+"entreprise \">http://go.ikwen.com/votreentreprise<cite>. \n"
+"\t\t\t\tVous pourriez plus tard le changer pour votreentreprise.com or "
+"votreentreprise.cm lorsque vous achetez votre propre nom de  domaine.\n"
+"\t\t\t\tRegardez comment acheter et configurer le nom de domaine pour "
+"découvrir comment le faire. \n"
+"                                "
+
+#: website/templates/website/kakocase_faq.html:61
+#: website/templates/website/kakocase_faq.html:157
+msgid "What I am paying for exactly ?"
+msgstr "Qu’est ce que je paye exactement ?"
+
+#: website/templates/website/kakocase_faq.html:63
+#: website/templates/website/kakocase_faq.html:159
+msgid ""
+"\n"
+"                                    When you deploy your Tsunami platform, "
+"you get many business-effective online tools including :\n"
+"                                    <ul style=\"color: #828282; list-style-"
+"type: square;\">\n"
+"                                        <li>\n"
+"                                            An e-commerce website with "
+"online payments.\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            An automated system to store "
+"your customer’s contacts and revive them by targeted Mail and SMS.\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            SMS and Email Packs to deliver "
+"SMS and mails to your customers.\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            A hosting package to get all "
+"that running.\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            Continuous Maintenance, Software "
+"updates, Data security, Backups and more...\n"
+"                                        </li>\n"
+"                                    </ul>\n"
+"                                "
+msgstr ""
+"\n"
+"                                    Quand vous déployez votre plateforme "
+"Tsunami, vous obtenez en ligne plusieurs outils efficaces sur le plan "
+"commercial à savoir :\n"
+"                                    <ul style=\"color: #828282; list-style-"
+"type: square;\">\n"
+"                                        <li>\n"
+"                                            Un site de e-commerce avec des "
+"méthodes de payement en ligne intégrés\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            Un système automatisé pour "
+"sauvegarder vos contacts client et pour les relancer par des Mail et SMS "
+"ciblés\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                           Les Packs SMS et Email pour "
+"envoyer des SMS et mails à vos clients\n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            Un forfait d’hébergement pour "
+"que tout puisse fonctionner. \n"
+"                                        </li>\n"
+"                                        <li>\n"
+"                                            Maintenance Continue, Mise à "
+"jour Logiciels, Sécurisation des Données, Sauvegardes, etc.\n"
+"                                        </li>\n"
+"                                    </ul>\n"
+"                                "
+
+#: website/templates/website/kakocase_faq.html:88
+#: website/templates/website/kakocase_faq.html:184
+msgid "How do I pay ?"
+msgstr "Comment dois-je payer ?"
+
+#: website/templates/website/kakocase_faq.html:90
+#: website/templates/website/kakocase_faq.html:186
+msgid ""
+"\n"
+"                                    Once you deploy your platform, you "
+"immediately receive an invoice by mail.\n"
+"                                    You can view the invoice and pay by MTN "
+"MoMo online. Once you have done the payment.\n"
+"                                    Your service is activated to run for 3 "
+"months.\n"
+"                                    You can print the generated for your "
+"accounting.\n"
+"                                "
+msgstr ""
+"\n"
+"                                Une fois que vous déployez votre plateforme, "
+"vous pouvez immédiatement recevoir une facture par mail. \n"
+"\t\t\t\tVous pouvez voir la facture et payer en ligne par MTN MoMo. \n"
+"\t\t\t\tDès que vous avez effectué le paiement, votre service est activé "
+"pour fonctionner pendant 3 mois. \n"
+"\t\t\t\tVous pouvez imprimer la facture générée pour votre comptabilité.\n"
+"\t\t\t\t"
+
+#: website/templates/website/kakocase_faq.html:99
+#: website/templates/website/kakocase_faq.html:195
+msgid "Do I pay once for all ? What happens after the 3 months ?"
+msgstr "Dois-je payer une fois pour toute ? Que se passe t-il après 3 mois ?"
+
+#: website/templates/website/kakocase_faq.html:101
+#: website/templates/website/kakocase_faq.html:197
+msgid ""
+"\n"
+"                                    Payment covers the first three months of "
+"service. For your service to continue after those 3 months,\n"
+"                                    you will have to pay for renewal fees "
+"that are always much lower than setup fees that cover another 3 months.\n"
+"                                "
+msgstr ""
+"\n"
+"\t\t\t\tLe paiement couvre le premier trimestre de service. Pour que votre "
+"service puisse continuer après cette période,\n"
+"\t\t\t \tvous devez payer pour les frais de recharge qui sont toujours plus "
+"bas que les frais d’acquisition qui couvrent encore un autre trimestre.\n"
+"\t\t\t\t"
+
+#: website/templates/website/kakocase_faq.html:110
+#: website/templates/website/kakocase_faq.html:206
+msgid "What if I don’t pay at the end of the period, are my data deleted ?"
+msgstr ""
+"Que se passe t-il si je ne paye pas à la fin de la période, est-ce que mes "
+"données seront supprimées ?"
+
+#: website/templates/website/kakocase_faq.html:112
+#: website/templates/website/kakocase_faq.html:208
+msgid ""
+"\n"
+"                                    When the end of the period is "
+"approaching, you receive at least 3 reminders with the new invoice to pay.\n"
+"                                    If you do not pay on time, you are given "
+"a consistent amount of extra time to do the payment.\n"
+"                                    After that period, your platform is "
+"shutdown, but all your data are kept.\n"
+"                                    Everything will be put back in place "
+"when you pay your invoice.\n"
+"                                    Your data are completely deleted after 3 "
+"months of inactivity.\n"
+"                                "
+msgstr ""
+"\n"
+"\t\t\t\tÀ l’approche de la date limite, vous recevez au moins 3 rappels avec "
+"la nouvelle facture à payer. \n"
+"\t\t\t\tEt si vous ne payer pas à temps, vous disposez d’un temps "
+"supplémentaire raisonnable pour payer. \n"
+"\t\t\t\tCe temps écoulé, votre plateforme sera indisponible, mais vos "
+"données seront sauvegardées. \n"
+"\t\t\t\tTout sera remis en place quand vous payerez votre facture. \n"
+"\t\t\t\tVos données seront complètement supprimées après 3 mois "
+"d’inactivité.\n"
+"\t\t\t\t"
+
+#: website/templates/website/kakocase_faq.html:122
+#: website/templates/website/kakocase_faq.html:218
+msgid "Can I pay for a year ?"
+msgstr "Pourrais-je payer pour un an ?"
+
+#: website/templates/website/kakocase_faq.html:124
+#: website/templates/website/kakocase_faq.html:220
+msgid ""
+"\n"
+"                                    Yes you can. You are highly encouraged "
+"to pay for a year as you will benefit a discount.\n"
+"                                    Switch to annual payment view to see how "
+"much it costs and get your platform for a year.\n"
+"                                "
+msgstr ""
+"\n"
+"\t\t\t\tOui, vous pouvez. Vous êtes vivement encouragé à payer pour un an "
+"afin que vous bénéficierez d’un retrait. \n"
+"\t\t\t\tPassez à la vue paiement annuel en haut de page pour voir combien ça "
+"coûte, et obtenez votre plateforme pour un an.\n"
+"\t\t\t\t"
+
+#: website/templates/website/kakocase_faq.html:232
+#, fuzzy
+msgid "Deploy now !"
+msgstr "Déployez "
+
+#: website/templates/website/kakocase_faq.html:247
+msgid ""
+"Please read this following tutorial before deploying your <strong>e-"
+"commerce</strong> website<br><br>"
+msgstr ""
 
 #: website/templates/website/support_bundle.html:38
 msgid "Do you need some technical support ?"
@@ -2250,88 +2468,286 @@ msgstr "Besoin d'aide ?"
 msgid "Contact us"
 msgstr "Contactez-nous"
 
-#: website/templates/website/apps/kakocase.html:10
-#: website/templates/website/apps/kakocase.html:11
-msgid ""
-"Kakocase lets you create an e-commerce website in a few clicks. Your website "
-"accepts Mobile Money payments right out of the box. PayPal is also supported "
-"to handle payments with Credit/Debit cards. With our integrated Facebook "
-"communication module, launch your marketing campaign and drive thousands of "
-"visitors and buyers to your website."
-msgstr ""
-"Kakocase vous permet de créer un site Web de e-commerce en quelques clics. "
-"Votre site Web intègre les paiements Mobile Money . PayPal est également "
-"pris en charge pour gérer les paiements avec les cartes de crédit / débit. "
-"Avec notre module de communication Facebook intégré, lancez votre campagne "
-"marketing et conduisez des milliers de visiteurs et d'acheteurs sur votre "
-"site web."
-
-#: website/templates/website/apps/kakocase.html:106
-msgid "Build your customers community and sell online"
+#: website/templates/website/apps/kakocase.html:16
+#, fuzzy
+msgid "Kakocase - Build your customers community and sell online"
 msgstr "Fidélisez votre clientèle et vendez en ligne"
 
-#: website/templates/website/apps/kakocase.html:112
-#: website/templates/website/apps/webnode.html:109
-msgid "Features"
-msgstr "Fonctionnalités"
+#: website/templates/website/apps/kakocase.html:43
+msgid ""
+"Effective implementation of your Commercial Policy and securing of all your "
+"recipes"
+msgstr ""
 
-#: website/templates/website/apps/kakocase.html:116
+#: website/templates/website/apps/kakocase.html:48
+#: website/templates/website/apps/kakocase.html:49
+#, fuzzy
+msgid "Deploy your e-commerce platform in 5 minutes"
+msgstr "Déployez votre site web"
+
+#: website/templates/website/apps/kakocase.html:74
+#, fuzzy
+msgid ""
+"\n"
+"                                <strong>Kakocase</strong>, ensures that you "
+"no longer lose any opportunity to sell, by making your products directly "
+"available online, on all platforms, 24/7. Yes, you have your own e-commerce "
+"web/mobile site. Customers can order immediately after receiving your\n"
+"                                messages and pay online using MTN Mobile "
+"Money and Orange Money."
+msgstr ""
+"Tsunami s’assure que vous ne perdrez plus aucune occasion de vente en "
+"rendant vos produits directement accessibles en ligne sur toutes les "
+"plateformes connectées 24H/24 et 7j/7. Oui, vous disposez de votre propre "
+"site web/mobile de vente. Les clients peuvent commander immédiatement après "
+"avoir reçu vos messages et payer directement en ligne par MTN Mobile Money "
+"et Orange Money."
+
+#: website/templates/website/apps/kakocase.html:86
+#, fuzzy
+msgid ""
+"\n"
+"                                    <strong>Kakocase</strong>, ensures that "
+"you no longer lose any opportunity to sell, by making your products directly "
+"available online, on all platforms, 24/7. Yes, you have your own e-commerce "
+"web/mobile site. Customers can order immediately after receiving\n"
+"                                your messages and pay online using MTN "
+"Mobile Money and Orange Money."
+msgstr ""
+"Tsunami s’assure que vous ne perdrez plus aucune occasion de vente en "
+"rendant vos produits directement accessibles en ligne sur toutes les "
+"plateformes connectées 24H/24 et 7j/7. Oui, vous disposez de votre propre "
+"site web/mobile de vente. Les clients peuvent commander immédiatement après "
+"avoir reçu vos messages et payer directement en ligne par MTN Mobile Money "
+"et Orange Money."
+
+#: website/templates/website/apps/kakocase.html:105
 #: website/templates/website/apps/kakocase.html:120
-#: website/templates/website/apps/webnode.html:114
-#: website/templates/website/apps/webnode.html:118
-msgid "Easy setup"
-msgstr "Mise sur pied facile"
+#, fuzzy
+msgid "Online payment"
+msgstr "Paiement(s) en attente"
+
+#: website/templates/website/apps/kakocase.html:107
+msgid "\"Your money is like oil...\""
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:108
+msgid ""
+"\n"
+"                                So said, some of it stays on the hands of "
+"anyone who handles it...\n"
+"                                For a Security of all your Receipts, go to "
+"the online payment with history of all\n"
+"                                transactions your money is in place on and "
+"on your control."
+msgstr ""
 
 #: website/templates/website/apps/kakocase.html:122
 msgid ""
-"You create your website by filling a simple form, then choosing the template "
-"that suits your brand and voilà ! Your business is online."
+"\n"
+"                                <h4 class=\"text-left\" style=\"margin-"
+"bottom: 0\">\"Your money is like oil...\"</h4>\n"
+"                                So said, some of it stays on the hands of "
+"anyone who handles it...\n"
+"                                For a Security of all your Receipts, go to "
+"the online payment with history of all\n"
+"                                transactions your money is in place on and "
+"on your control."
 msgstr ""
-"Vous créez votre site web en remplissant un simple formulaire, puis en "
-"choisissant le modèle qui correspond à votre marque et voilà! Votre "
-"entreprise est en ligne."
 
-#: website/templates/website/apps/kakocase.html:128
-#: website/templates/website/apps/kakocase.html:133
-msgid "Mobile Money"
-msgstr "Mobile Money"
-
-#: website/templates/website/apps/kakocase.html:135
-msgid ""
-"Your website accepts online payment from MTN Mobile Money and Orange Money. "
-"You have detailed report of transactions on your website."
-msgstr ""
-"Votre site Web intègre les paiements en ligne de MTN Mobile Money et Orange "
-"Money. Vous avez un rapport détaillé des transactions sur votre site Web."
-
-#: website/templates/website/apps/kakocase.html:141
 #: website/templates/website/apps/kakocase.html:145
-msgid "Integrated Communication"
-msgstr "Communication intégrée"
-
-#: website/templates/website/apps/kakocase.html:147
+#: website/templates/website/apps/kakocase.html:156
+#, fuzzy
 msgid ""
-"You can advert your website on Facebook with the plan that matches your "
-"goal. Drive thousands of visitors and buyers to your website with a few "
-"clicks."
+"You will now keep the contacts of your customers in a modern and useful way. "
+"Tsunami will be able to use this directory on his own to bring you even more "
+"customers and encourage them into repeated purchases.\n"
+"                                No more old paper phone books that get dusty "
+"at the bottom of the drawer."
 msgstr ""
-"Vous pouvez lancer des PUB de votre site Web sur Facebook avec des plans "
-"correspondant à vos objectifs. Conduisez des milliers de visiteurs et "
-"d'acheteurs sur votre site web en quelques clics."
+"Vous prendrez désormais les contacts de vos clients d’une façon moderne et "
+"utile. Tsunami saura exploiter de façon autonome ce répertoire pour vous "
+"apporter encore plus de clients et les inciter à des achats répétitifs. Fini "
+"les vieux registres des numéros de téléphones qui ne vous servent finalement "
+"à rien."
 
-#: website/templates/website/apps/kakocase.html:157
-msgid "Take your business online today."
-msgstr "Allez en ligne dès maintenant."
-
+#: website/templates/website/apps/kakocase.html:148
 #: website/templates/website/apps/kakocase.html:159
-msgid ""
-"There are more than 4.2 billion people out there on internet. Go to them "
-"with the right e-commerce website and communication campaign. Access a whole "
-"new market by starting today."
+#: website/templates/website/apps/kakocase.html:217
+#: website/templates/website/apps/kakocase.html:228
+#, fuzzy
+msgid "Discover Cloud Customer Manager."
+msgstr "Découvrez Cloud Customer Manager"
+
+#: website/templates/website/apps/kakocase.html:173
+#: website/templates/website/apps/kakocase.html:187
+msgid "Kakocase at your fingertips..."
 msgstr ""
-"Il y a plus de 4,2 milliards de personnes sur Internet. Allez vers eux avec "
-"le bons site de e-commerce et la bonne  campagne de communication. Accédez à "
-"un tout nouveau marché en commençant aujourd'hui."
+
+#: website/templates/website/apps/kakocase.html:176
+#, fuzzy
+msgid ""
+"Take all Kakocase in your pocket!\n"
+"                                    Through our mobile application, you can "
+"access all our services in one click.\n"
+"                                    Stay close to your customers through "
+"your icon installed on their smartphone screen.\n"
+"                                    They can effortlessly access your online "
+"store with a simple press on their home\n"
+"                                    screen. Kakocase redefines the customer "
+"contact for you\n"
+"                                "
+msgstr ""
+"\n"
+"                                Une fois que vous déployez votre plateforme, "
+"vous pouvez immédiatement recevoir une facture par mail. \n"
+"\t\t\t\tVous pouvez voir la facture et payer en ligne par MTN MoMo. \n"
+"\t\t\t\tDès que vous avez effectué le paiement, votre service est activé "
+"pour fonctionner pendant 3 mois. \n"
+"\t\t\t\tVous pouvez imprimer la facture générée pour votre comptabilité.\n"
+"\t\t\t\t"
+
+#: website/templates/website/apps/kakocase.html:190
+#, fuzzy
+msgid ""
+"Take all Kakocase in your pocket!\n"
+"                                   Through to our mobile application, you "
+"can access all our services in one click.\n"
+"                                    Stay close to your customers through "
+"your icon installed on their smartphone screen.\n"
+"                                    They can effortlessly access your online "
+"store with a simple press on their home\n"
+"                                    screen. Kakocase redefines the customer "
+"contact for you\n"
+"                                "
+msgstr ""
+"\n"
+"                                Une fois que vous déployez votre plateforme, "
+"vous pouvez immédiatement recevoir une facture par mail. \n"
+"\t\t\t\tVous pouvez voir la facture et payer en ligne par MTN MoMo. \n"
+"\t\t\t\tDès que vous avez effectué le paiement, votre service est activé "
+"pour fonctionner pendant 3 mois. \n"
+"\t\t\t\tVous pouvez imprimer la facture générée pour votre comptabilité.\n"
+"\t\t\t\t"
+
+#: website/templates/website/apps/kakocase.html:212
+#: website/templates/website/apps/kakocase.html:224
+#, fuzzy
+msgid ""
+"\n"
+"                                <strong>Kakocase</strong> has a powerful "
+"marketing tool that can strategically offers\n"
+"                                rewards to all your prospects without you "
+"spending a single penny."
+msgstr ""
+"Tsunami dispose d’un puissant outil marketing qui pourra offrir des "
+"récompenses à tous vos prospects sans que vous dépensiez un sou."
+
+#: website/templates/website/apps/kakocase.html:243
+#: website/templates/website/apps/kakocase.html:255
+msgid "Monitor and leverage your business"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:245
+#: website/templates/website/apps/kakocase.html:257
+#, fuzzy
+msgid ""
+"\n"
+"                                <strong>Pinsview</strong> lets you follow "
+"your assets on the field in real-time.\n"
+"                                Your agents pinpoint and describe your "
+"interests when they are out for a campaign or\n"
+"                                intervention. The history module lets you "
+"set events on elements on your map.\n"
+"                                Gone are the days where you were wondering "
+"what is going on out."
+msgstr ""
+"PinsView vous permet de faire un suivi géographique de vos bien sur le "
+"terrain en temps réel. Les agents pointent et décrivent vos intérêts "
+"lorsqu'ils sont en campagne ou en intervention. Le module d'historique "
+"permet d'associer une suite d'événements à chaque élément positionné. Vous "
+"ne vous poserez plus jamais la question de savoir ce qu'il se passe dehors"
+
+#: website/templates/website/apps/kakocase.html:276
+#: website/templates/website/apps/kakocase.html:287
+msgid "Increase your productivity and efficiency"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:305
+#: website/templates/website/apps/kakocase.html:312
+#, fuzzy
+msgid "Marketing Campaign"
+msgstr "Campagne Mail"
+
+#: website/templates/website/apps/kakocase.html:307
+#: website/templates/website/apps/kakocase.html:314
+msgid ""
+"Endless sales opportunities with Kakocase, a powerful Marketing tool that\n"
+"                                builds for you a persistent customer base "
+"and offers your products to this community..."
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:326
+msgid "Why use Kakocase ?"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:327
+msgid ""
+"\n"
+"                            Kakocase is your company's digitalization "
+"solution which has been designed to allow\n"
+"                            you to efficiently manage your e-commerce, your "
+"agencies or your money collection points...\n"
+"                        "
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:339
+msgid "Securing all your recipes"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:341
+msgid ""
+"Accurate accounting and real-time transaction history. And this makes "
+"Kakocase a true compendium of Cloud-oriented web technology that provides "
+"the tools your company needs to exceed its objectives."
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:358
+msgid "Several companies are using Kakocase"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:359
+msgid ""
+"\n"
+"                            We have been on the field for many years, "
+"building and maintaining great cloud apps that address\n"
+"                            business-critical issues for some major IT "
+"companies in Cameroon.\n"
+"                            Join those organizations with confidence.\n"
+"                        "
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:397
+msgid "Choose a Plan and Get started"
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:399
+#, python-format
+msgid ""
+"\n"
+"                            On the rate side, we have prepared you, (03) "
+"three options that are just waiting for your decision. Take a step ahead and "
+"make the Choice!\n"
+"                            Get started now and get 1 month free on your 1st "
+"year!\n"
+"                            15%% discount on the following subscription\n"
+"                            20%% discount on the 3rd year subscription.\n"
+"                        "
+msgstr ""
+
+#: website/templates/website/apps/kakocase.html:406
+msgid "Deploy now"
+msgstr "Déployez "
 
 #: website/templates/website/apps/pinsview.html:10
 #: website/templates/website/apps/pinsview.html:11
@@ -2527,17 +2943,80 @@ msgstr ""
 "vous avez maintenant une identité numérique de qualité professionnelle en 5 "
 "minutes chrono"
 
+#~ msgid "Dashboard"
+#~ msgstr "Tableau de bord"
+
+#~ msgid "Apps"
+#~ msgstr "Apps"
+
+#~ msgid "Services"
+#~ msgstr "Services"
+
+#, fuzzy
+#~ msgid "Products"
+#~ msgstr "Gestion des produits"
+
+#~ msgid "Subscriptions"
+#~ msgstr "Abonnements"
+
+#~ msgid "Invoices"
+#~ msgstr "Factures"
+
+#~ msgid "Invoice Admin"
+#~ msgstr "Admin Factures"
+
+#, fuzzy
+#~ msgid "Payments"
+#~ msgstr "Commentaires"
+
+#~ msgid "Homepage"
+#~ msgstr "Accueil"
+
+#~ msgid "Menus"
+#~ msgstr "Menus"
+
+#, fuzzy
+#~ msgid "Blog categories"
+#~ msgstr "Gestion des catégories"
+
+#~ msgid "Posts"
+#~ msgstr "Posts"
+
+#~ msgid "Comments"
+#~ msgstr "Commentaires"
+
+#~ msgid "3 months"
+#~ msgstr "3 mois"
+
+#~ msgid "Cloud tools"
+#~ msgstr "Outils Cloud"
+
+#~ msgid "eCommerce website"
+#~ msgstr "Site de e-commerce"
+
+#~ msgid "2 weeks of phone support"
+#~ msgstr "2 semaines de support téléphonique"
+
+#~ msgid "2 x 2 hours of coaching onsite"
+#~ msgstr "2 x 2 heures de coaching sur place"
+
+#~ msgid "6 months"
+#~ msgstr "6 mois"
+
+#~ msgid "1 month of phone support"
+#~ msgstr "1 Mois de support téléphonique"
+
+#~ msgid "4 x 2 hours of coaching onsite"
+#~ msgstr "4 x 2 heures de coaching sur place"
+
+#~ msgid "12 months"
+#~ msgstr "12 mois"
+
+#~ msgid "eCommerce website  and domain name"
+#~ msgstr "Site de eCommerce et nom de domaine"
+
 #~ msgid "Connect to your childreen's school career."
 #~ msgstr "Connectez-vous au parcours scolaire de vos enfants."
-
-#~ msgid "WHAT DO YOU WANT "
-#~ msgstr "QUE VOULEZ-VOUS "
-
-#~ msgid "A website"
-#~ msgstr "Un site web"
-
-#~ msgid "More customers"
-#~ msgstr "Plus de clients"
 
 #~ msgid "Welcome "
 #~ msgstr "Bienvennue"
@@ -2611,9 +3090,6 @@ msgstr ""
 #~ msgid "Show Help"
 #~ msgstr "Aide"
 
-#~ msgid "Email campaign"
-#~ msgstr "Campagne Mail"
-
 #~ msgid "Remaining mail : "
 #~ msgstr "Mail restant : "
 
@@ -2668,9 +3144,6 @@ msgstr ""
 
 #~ msgid "More info "
 #~ msgstr "Plus d'infos "
-
-#~ msgid "Pending payment"
-#~ msgstr "Paiement(s) en attente"
 
 #~ msgid "No pending payments to display"
 #~ msgstr "Aucun paiement en attente"
@@ -2832,9 +3305,6 @@ msgstr ""
 #~ msgid "See it in action on"
 #~ msgstr "Quelques exemples"
 
-#~ msgid "Deploy your e-commerce"
-#~ msgstr "Déployez votre site web"
-
 #~ msgid ""
 #~ "Create a Corporate, Personal or Business Website. Extend capabilities "
 #~ "with pluggable modules (Blog, Subscriptions ...)"
@@ -2959,9 +3429,6 @@ msgstr ""
 
 #~ msgid "BUY NOW"
 #~ msgstr "JE VEUX"
-
-#~ msgid "Deploy now"
-#~ msgstr "Déployez "
 
 #~ msgid "Your brand name"
 #~ msgstr "Votre marque"

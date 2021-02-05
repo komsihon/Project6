@@ -5,7 +5,7 @@ from ikwen.core.views import Offline
 
 from ikwen_foulassi.foulassi.views import Home as MyKids, HomeSaaS as ScolarFleet
 
-from website.views import Home, About, Webnode, Kakocase, Shavida, PinsView, Terms, Bundle, ServiceIndexes
+from website.views import Home, About, Webnode, Kakocase, KakocaseFaq, Shavida, PinsView, Terms, Bundle, ServiceIndexes
 
 admin.autodiscover()
 
@@ -21,6 +21,7 @@ urlpatterns = patterns(
     url(r'^serviceIndexes/(?P<start>[\d]+)/$', ServiceIndexes.as_view(), name='service_indexes'),
     url(r'^webnode/$', Webnode.as_view(), name='webnode'),
     url(r'^kakocase/$', Kakocase.as_view(), name='kakocase'),
+    url(r'^kakocase/faq$', KakocaseFaq.as_view(), name='kakocase_faq'),
     # url(r'^shavida/$', Shavida.as_view(), name='shavida'),
     url(r'^pinsview/$', PinsView.as_view(), name='pinsview'),
     url(r'^tsunami/', include('tsunami.urls', namespace='tsunami')),

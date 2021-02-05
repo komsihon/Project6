@@ -1,167 +1,474 @@
-{% extends "website/base.html" %}
-{% load i18n humanize static auth_tokens  %}
-{% block page_title %}<title>Kakocase - {% trans 'Get started' %} </title>{% endblock %}
+{% extends 'com/base.html' %}
+{% load i18n static webdesign %}
 
 {% block meta %}
     {{ block.super }}
     {% include 'website/snippets/kakocase/color_and_icons.html' %}
     <meta property="og:title" content="Kakocase" />
-    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />
+{#    <meta property="og:image" content="{{ settings.IKWEN_MEDIA_URL }}{{ config.logo.name }}" />#}
+    <meta property="og:image" content="{% static 'website/img/kakocase-logo.png' %}" />
     <meta property="og:description" content="{% trans "Kakocase lets you create an e-commerce website in a few clicks. Your website accepts Mobile Money payments right out of the box. PayPal is also supported to handle payments with Credit/Debit cards. With our integrated Facebook communication module, launch your marketing campaign and drive thousands of visitors and buyers to your website." %}" />
     <meta property="description" content="{% trans "Kakocase lets you create an e-commerce website in a few clicks. Your website accepts Mobile Money payments right out of the box. PayPal is also supported to handle payments with Credit/Debit cards. With our integrated Facebook communication module, launch your marketing campaign and drive thousands of visitors and buyers to your website." %}" />
     <meta name="abstract" content="{% trans "Web Apps to empower your small or big business" %}"/>
 {% endblock %}
-{% block head_style %}
-    {{ block.super }}
-    <link rel='stylesheet' href="{% static 'website/css/apps.css' %}?V=31.10.19.19.09" />
-    <style type="text/css">
-        li.dropdown:hover > ul.dropdown-menu { background: rgba(255, 255, 255, 0.7) }
-        .dropdown-menu>li>a { color: #217DBB !important; }
-        .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {color: #FFF !important;background-color: #217DBB !important;}
-        .dropdown-menu .username { color: #233682 }
 
-        section.header {background: url("{% static 'website/img/bann_kakocase_web.jpg' %}"); background-size: cover;}
-        section.main-feat {background-image:url("{% static 'website/img/commarketing.jpg' %}");background-size: cover;}
-        section.address {float: left; margin-top: 0; height: 670px;}
-        section.address .cover {background-color: rgba(255, 255, 255, 0.83); color: #2f2f2f; font-weight: 400;}
-        section.address .cover h1 {color: #2d2d2d;}
-        section.address a {color: #2f2f2f;}
-        section.address .cover {height: 670px}
-        .white-text-has-shade {text-shadow: 1px 2px 2px rgba(255, 255, 255, 0.7)}
-
-        #bottom-menu .lang-switcher {margin: 0 0 0 50px;}
-        #bottom-menu .lang-switcher select {color: #203e96; font-size: 12px; width: 45px}
-        #bottom-menu li a {color: #203e96;}
-        .features h3 {font-weight: 400}
-        h2 {font-size: 36px; font-weight: 600}
-        div.footer, div.footer .company-name {color: #203e96;}
-
-        @media only screen
-        and (max-width : 768px){
-            .features {padding: 25px 0; margin-top: 50px}
-            .feat {margin-top: 20px}
-            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 120px;}
-            section.header h1 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px;}
-            div.cloud-deploy {bottom: inherit;margin-top: 225px; position: relative}
-            section.site.header {height: 510px; margin-top: 0;}
-            section.site {padding: 10px 0;}
-            section.site.main-feat {height: 700px;}
-            section.site .cover {height: 700px; margin-top: -11px;}
-            section.address {height: 500px}
-            section.address .cover {height: 500px}
-        }
-
-        @media only screen and (max-device-width : 425px) {
-            section.site.header{height: 410px; margin-top: 0;}
-            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 70px;}
-            section.header h1 {color: #000;font-size: 22px; font-weight: 400; line-height: 44px; }
-            .company .title {font-size: 35px }
-            .pricing-list > li {margin-top: 75px}
-            .lead {font-size: 22px}
-            .achievements .title {}
-            section.address {float: left; height: 670px}
-            section.address .cover {height: 670px}
-            #bottom-menu {margin-top: 70px; position: relative}
-            #bottom-menu li a {color: #fff; font-size: 22px}
-            div.cloud-deploy {bottom: inherit;margin-top: 75px; position: relative}
-            .features {padding: 0 0 25px; margin-top: 0}
-            .feat {margin-top: 100px}
-            .feat:first-child {margin-top: 0}
-            section.main-feat {height: 1000px}
-            section.main-feat .cover {height: 1000px}
-            .contact-img {margin-top: 35px}
-            section.site {margin-top: 20px;padding: 10px 0; font-size: 20px;}
-            section.site .cover {margin-top: -11px;line-height: 40px}
-            section.site.main-feat {height: 650px}
-            section.main-feat .cover {height: 650px}
-        }
-
-        @media only screen and (min-width : 992px) {
-            section.address {float: left; height: 560px; width: 100%}
-            section.address .cover {height: 560px}
-            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 130px;}
-            section.header h1 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px;}
-            section.header {height: 900px}
-        }
-
-        @media only screen and (min-width : 1200px) {
-            section.header .banner-title-cntr {background-color: rgba(255, 255, 255, 0.7); margin-top: 170px;}
-            section.header h1 {color: #000; font-size: 33px;font-weight: 400;  line-height: 94px;}
-            section.header {height: 1015px}
-        }
-    </style>
+{% block page_title %}
+    <title>{% trans "Kakocase - Build your customers community and sell online" %}</title>
 {% endblock %}
 
+{% block head_style %}
+    {{ block.super }}
+    <link rel='stylesheet' href="{% static 'website/css/website.css' %}?V=20.08.30.04.37" />
+    <link rel="stylesheet" type="text/css" href="{% static 'daraja/css/home.css' %}?V=20.03.04.14.31">
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/kakocase.css' %}?V=21.01.29-18.12">
+
+{% endblock %}
 
 {% block header_brand %}
-    <a class="navbar-brand hidden-xs" href="{{ service.url }}">
-        <img src="{% static "website/img/logo-ikwen_for-header.png" %}">
+    <a class="navbar-brand hidden-xs" style="display: block" href="{{ service.url }}">
+        <img src="{% static 'website/img/logo_ikwen_web_header.png' %}"/>
     </a>
     <strong class="navbar-brand visible-xs">{{ service.project_name }}</strong>
 {% endblock %}
 
-{% block page_content %}
-    <section class="header site">
-            <div class="banner-title-cntr">
-                <h1 class="white-text-has-shade">{% trans "Build your customers community and sell online" %}</h1>
-            </div>
-        <div class="cloud-deploy"><a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/kakocase/deployCloud/">{% trans "Get started" %}</a></div>
-    </section>
-    <section class="features site">
-        <div class="container">
-            <h2>{% trans "Features" %}</h2>
-            <div class="row features">
-                <div class="feat col-sm-4">
-                    <div class="col-sm-12">
-                        <h3 class="visible-xs">{% trans "Easy setup" %}</h3>
-                        <img class="img-responsive" src="{% static 'website/img/easy setup-01.png' %}">
+{% block content %}
+    {{ block.super }}
+    <div class="section-top">
+        <div class="section-inner-top">
+            <div id="section-header-general-view" class="container-fluid section-header playground-header" >
+                <div class="container">
+                    <div class="col-sm-6 col-xs-12">
+                        <h1 class="text-has-shade">{% blocktrans %}Build your customers community and sell online{% endblocktrans %}</h1>
+                        <p class="text-has-shade">
+                            {% trans "Effective implementation of your Commercial Policy and securing of all your recipes" %}
                     </div>
-                    <div class="col-sm-12">
-                        <h3 class="hidden-xs">{% trans "Easy setup" %}</h3>
-                        <div>
-                            <p>{% trans "You create your website by filling a simple form, then choosing the template that suits your brand and voilà ! Your business is online." %}</p>
+                    <div class="col-sm-5 col-sm-offset-1 col-xs-12 text-center">
+                        <div class="row">
+                            <div class=" container-fluid" style="margin-top: 30px;">
+                                <h2 class="text-has-shade hidden-xs" style="line-height: 60px">{% trans "Deploy your e-commerce platform in 5 minutes" %}</h2>
+                                <h2 class="visible-xs">{% trans "Deploy your e-commerce platform in 5 minutes" %}</h2>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div style="bottom: 100px; position: static" class="cloud-deploy"><a id="deploy" class="btn btn-sm animated pulse" href="{% url 'kakocase_faq' %}">{% trans "Get started" %}</a></div>
                         </div>
                     </div>
+{#                    <div class="anchor">#}
+{#                        <a class="js-scrollTo animated pulse" href="#banniere-bottom" style="text-decoration: none"><i class="fa fa-arrow-circle-down"></i></a>#}
+{#                    </div>#}
                 </div>
-                <div class="feat col-sm-4">
-                    <div class="col-sm-12">
-                        <h3 class="visible-xs">{% trans "Mobile Money" %}</h3>
-                        <img class="img-responsive hidden-xs" src="{% static 'website/img/mtn-OM.png' %}">
-                        <img class="img-responsive visible-xs" src="{% static 'website/img/mtn-OM-mob.png' %}">
-                    </div>
-                    <div class="col-sm-12">
-                        <h3 class="hidden-xs">{% trans "Mobile Money" %}</h3>
-                        <div>
-                            <p>{% trans "Your website accepts online payment from MTN Mobile Money and Orange Money. You have detailed report of transactions on your website." %}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="feat col-sm-4">
-                    <div class="col-sm-12">
-                        <h3 class="visible-xs">{% trans "Integrated Communication" %}</h3>
-                        <img class="img-responsive" src="{% static 'website/img/integrated-communication.png' %}">
-                    </div>
-                    <div class="col-sm-12">
-                        <h3 class="hidden-xs">{% trans "Integrated Communication" %}</h3>
-                        <div>
-                            <p>{% trans "You can advert your website on Facebook with the plan that matches your goal. Drive thousands of visitors and buyers to your website with a few clicks." %}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="main-feat site">
-        <div class="cover">
-            <div class="container">
-                <h2>{% trans "Take your business online today." %}.</h2>
-                <div>
-                    {% trans "There are more than 4.2 billion people out there on internet. Go to them with the right e-commerce website and communication campaign. Access a whole new market by starting today." %}
-                </div>
-                <a id="deploy" class="btn btn-sm" href="http://www.ikwen.com/kakocase/deployCloud/">{% trans "Get started" %}</a>
-            </div>
-        </div>
-    </section>
 
-{% include 'website/snippets/address_section.html' %}
+            </div>
+        </div>
+    </div>
+
+    <div id="container-general-view" class="features playground">
+        <section id="sell-online" class="features site" style="padding-top: 5vh; background-color: #ebebeb">
+            <div class="container">
+                <div class="row features">
+                    <div class="visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/sold_everywhere.png' %}">
+                    </div>
+                    <div class="col-sm-6 img" style="background-image: url({% static 'website/img/sold_everywhere.png' %})">
+                        <h2 class="hidden-xs" style="visibility: hidden; line-height: 40px">{% trans "Sell everywhere, sell everytime... Sell online" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <p>{% blocktrans %}
+                                <strong>Kakocase</strong>, ensures that you no longer lose any opportunity to sell, by making your products directly available online, on all platforms, 24/7. Yes, you have your own e-commerce web/mobile site. Customers can order immediately after receiving your
+                                messages and pay online using MTN Mobile Money and Orange Money.{% endblocktrans %}
+{#                                    <a class="discover-link" href="https://http://www.ikwen.com/kakocase/deployCloud/">#}
+{#                                        <i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>#}
+{#                                    </a>#}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Sell everywhere, sell everytime... Sell online" %}</h2>
+                        <div class="desc">
+                            <p>{% blocktrans %}
+                                    <strong>Kakocase</strong>, ensures that you no longer lose any opportunity to sell, by making your products directly available online, on all platforms, 24/7. Yes, you have your own e-commerce web/mobile site. Customers can order immediately after receiving
+                                your messages and pay online using MTN Mobile Money and Orange Money.{% endblocktrans %}
+                                <a class="discover-link" href="{% url 'kakocase_faq' %}">
+                                    Discover KAKOCASE<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="online-payment" class="features site" style="padding-top: 5vh; background-color: #fff">
+            <div class="container">
+                <div class="row features">
+                    <div class="col-sm-6 visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/online-payment.png' %}">
+                    </div>
+                    <div class="col-sm-6 img" style="background-image: url({% static 'website/img/online-payment.png' %})">
+                        <h2 class="hidden-xs" style="visibility: hidden; line-height: 40px">{% trans "Online payment" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <h4 class="text-left" style="margin-bottom: 0">{% blocktrans %}"Your money is like oil..."{% endblocktrans %}</h4>
+                            <p>{% blocktrans %}
+                                So said, some of it stays on the hands of anyone who handles it...
+                                For a Security of all your Receipts, go to the online payment with history of all
+                                transactions your money is in place on and on your control.{% endblocktrans %}
+{#                                    <a class="discover-link" href="https://http://www.ikwen.com/kakocase/deployCloud/">#}
+{#                                        <i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>#}
+{#                                    </a>#}
+                            </p>
+                        </div>
+                        {# End Force DIV height #}
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Online payment" %}</h2>
+                        <div class="desc">
+                            <p style="margin-top: 5px">{% blocktrans %}
+                                <h4 class="text-left" style="margin-bottom: 0">"Your money is like oil..."</h4>
+                                So said, some of it stays on the hands of anyone who handles it...
+                                For a Security of all your Receipts, go to the online payment with history of all
+                                transactions your money is in place on and on your control.{% endblocktrans %}
+{#                                <a class="discover-link" href="https://http://www.ikwen.com/kakocase/deployCloud/">#}
+{#                                    <i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>#}
+{#                                </a>#}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="invite-smbdy" class="features site" style="background-color: #ececec24">
+            <div class="container">
+                <div class="row features">
+                    <div class="visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/best_buddy_list_exploitation.png' %}">
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Efficient use of the customer directory" %}</h2>
+                        <div class="desc">
+                            <p>{% blocktrans %}You will now keep the contacts of your customers in a modern and useful way. Tsunami will be able to use this directory on his own to bring you even more customers and encourage them into repeated purchases.
+                                No more old paper phone books that get dusty at the bottom of the drawer.{% endblocktrans %}<br><br>
+                                <a class="discover-link" href="https://www.youtube.com/watch?v=o2VSuOrrttc" target="_blank">
+                                    {% trans "Discover Cloud Customer Manager." %}<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 img hidden-xs" style="background-image: url({% static 'website/img/best_buddy_list_exploitation.png' %})">
+                        <h2 class="hidden-xs" style="visibility: hidden">{% trans "Efficient use of the customer directory" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <p>{% blocktrans %}You will now keep the contacts of your customers in a modern and useful way. Tsunami will be able to use this directory on his own to bring you even more customers and encourage them into repeated purchases.
+                                No more old paper phone books that get dusty at the bottom of the drawer.{% endblocktrans %}<br><br>
+                                <a class="discover-link" href="https://www.youtube.com/watch?v=o2VSuOrrttc" target="_blank">
+                                    {% trans "Discover Cloud Customer Manager." %}<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mobile-availability" class="features site text-center" style="padding-top: 0; background-image: url({% static 'website/img/available-mobile.jpg' %}); background-size: cover; background-position: center; color: #ffffff">
+            <div>
+                <div class="container">
+                    <div class="row features">
+                        <div class="col-sm-6 img">
+                            {# Force DIV height by putting the same text and set visibility to hidden #}
+                            <h2 class="hidden-xs" style="visibility: hidden">{% trans "Kakocase at your fingertips..." %}</h2>
+{#                            <h2 class="hidden-xs" style="visibility: hidden">{% trans "Discover Kakocase on mobile..." %}</h2>#}
+                            <div class="desc hidden-xs" style="visibility: hidden">
+                                <p>{% blocktrans %}Take all Kakocase in your pocket!
+                                    Through our mobile application, you can access all our services in one click.
+                                    Stay close to your customers through your icon installed on their smartphone screen.
+                                    They can effortlessly access your online store with a simple press on their home
+                                    screen. Kakocase redefines the customer contact for you
+                                {% endblocktrans %}
+                                </p>
+                            </div>
+                            {# End Force DIV height #}
+                        </div>
+                        <div class="col-sm-6 description">
+                            <h2 class="text-has-shade" style="color: #fff">{% trans "Kakocase at your fingertips..." %}</h2>
+{#                            <h2 class="text-has-shade" style="color: #fff">{% trans "Discover Kakocase on mobile..." %}</h2>#}
+                            <div class="desc">
+                                <p>{% blocktrans %}Take all Kakocase in your pocket!
+                                   Through to our mobile application, you can access all our services in one click.
+                                    Stay close to your customers through your icon installed on their smartphone screen.
+                                    They can effortlessly access your online store with a simple press on their home
+                                    screen. Kakocase redefines the customer contact for you
+                                {% endblocktrans %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="customer-retention" class="features site">
+            <div class="container">
+                <div class="row features">
+                    <div class="col-sm-6 visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/customers_retention.png' %}">
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Customer retention made easy" %}</h2>
+                        <div class="desc">
+                            <p>{% blocktrans %}
+                                <strong>Kakocase</strong> has a powerful marketing tool that can strategically offers
+                                rewards to all your prospects without you spending a single penny.{% endblocktrans %}
+                            </p>
+                            <a class="discover-link" href="https://www.youtube.com/watch?v=o2VSuOrrttc" target="_blank">
+                                {% trans "Discover Cloud Customer Manager." %}<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 img hidden-xs" style="background-image: url({% static 'website/img/customers_retention.png' %});">
+                        <h2 class="hidden-xs" style="visibility: hidden">{% trans "Customer retention made easy" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <p>{% blocktrans %}
+                                <strong>Kakocase</strong> has a powerful marketing tool that can strategically offers
+                                rewards to all your prospects without you spending a single penny.{% endblocktrans %}
+                                <a class="discover-link" href="https://www.youtube.com/watch?v=o2VSuOrrttc" target="_blank">
+                                    {% trans "Discover Cloud Customer Manager." %}<i class="fa fa-arrow-circle-right animated infinite slideInLeft"></i>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="customer-retention" class="features site" style="background-color: #fff">
+            <div class="container">
+                <div class="row features">
+                    <div class="col-sm-6 visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/pinsview1.png' %}">
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Monitor and leverage your business" %}</h2>
+                        <div class="desc">
+                            <p>{% blocktrans %}
+                                <strong>Pinsview</strong> lets you follow your assets on the field in real-time.
+                                Your agents pinpoint and describe your interests when they are out for a campaign or
+                                intervention. The history module lets you set events on elements on your map.
+                                Gone are the days where you were wondering what is going on out.{% endblocktrans %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 img hidden-xs" style="background-image: url({% static 'website/img/pinsview1.png' %});">
+                        {# Force DIV height by putting the same text and set visibility to hidden #}
+                        <h2 class="hidden-xs" style="visibility: hidden">{% trans "Monitor and leverage your business" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <p>{% blocktrans %}
+                                <strong>Pinsview</strong> lets you follow your assets on the field in real-time.
+                                Your agents pinpoint and describe your interests when they are out for a campaign or
+                                intervention. The history module lets you set events on elements on your map.
+                                Gone are the days where you were wondering what is going on out.{% endblocktrans %}
+                            </p>
+                        </div>
+                        {# End Force DIV height #}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="customer-retention" class="features site">
+            <div class="container">
+                <div class="row features">
+                    <div class="col-sm-6 visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/dashboard.png' %}">
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Increase your productivity and efficiency" %}</h2>
+                        <div class="desc">
+                            <p>
+                                Now, visualize graphically and numerically your business through the real-time activity
+                                Progress Charts in the Progress Rate Calculation and also according to the Summary of
+                                all transactions over different periods of your choice.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 img hidden-xs" style="background-image: url({% static 'website/img/dashboard.png' %});">
+                        {# Force DIV height by putting the same text and set visibility to hidden #}
+                        <h2 class="hidden-xs" style="visibility: hidden">{% trans "Increase your productivity and efficiency" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <p>Now, visualize graphically and numerically your business through the real-time activity
+                                Progress Charts in the Progress Rate Calculation and also according to the Summary of
+                                all transactions over different periods of your choice.</p>
+                        </div>
+                        {# End Force DIV height #}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="customer-retention" class="features site" style="background-color: #fff">
+            <div class="container">
+                <div class="row features">
+                    <div class="col-sm-6 visible-xs img-xs">
+                        <img class="img-responsive" src="{% static 'website/img/marketing-campaign.jpg' %}">
+                    </div>
+                    <div class="col-sm-6 description">
+                        <h2>{% trans "Marketing Campaign" %}</h2>
+                        <div class="desc">
+                            <p>{% blocktrans %}Endless sales opportunities with Kakocase, a powerful Marketing tool that
+                                builds for you a persistent customer base and offers your products to this community...{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 img hidden-xs" style="background-image: url({% static 'website/img/marketing-campaign.jpg' %});">
+                        <h2 class="hidden-xs" style="visibility: hidden">{% trans "Marketing Campaign" %}</h2>
+                        <div class="desc hidden-xs" style="visibility: hidden">
+                            <p>{% blocktrans %}Endless sales opportunities with Kakocase, a powerful Marketing tool that
+                                builds for you a persistent customer base and offers your products to this community...{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="key-features" class="features site">
+            <div class="container">
+                <div class="row features">
+                    <aside class="container">
+                        <h1 class="text-center">{% trans 'Why use Kakocase ?' %}</h1>
+                        <p class="text-center">{% blocktrans %}
+                            Kakocase is your company's digitalization solution which has been designed to allow
+                            you to efficiently manage your e-commerce, your agencies or your money collection points...
+                        {% endblocktrans %}</p>
+                    </aside>
+                    <div class="col-sm-4 feature">
+                        <h3>{% trans "Easy setup" %}</h3>
+                        <div class="desc">
+                            <p>{% blocktrans %}You create your website by filling a simple form, then choosing the template that suits your brand and voilà ! Your business is online.{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 feature">
+                        <h3>{% trans "Securing all your recipes" %}</h3>
+                        <div class="desc">
+                            <p>{% blocktrans %}Accurate accounting and real-time transaction history. And this makes Kakocase a true compendium of Cloud-oriented web technology that provides the tools your company needs to exceed its objectives.{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 feature">
+                        <h3>{% trans "Integrated Communication" %}</h3>
+                        <div class="desc">
+                            <p>{% blocktrans %}You can advert your website on Facebook with the plan that matches your goal. Drive thousands of visitors and buyers to your website with a few clicks.{% endblocktrans %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="our-companies" class="features site text-center" style="padding-top: 100px; background-color: #fff">
+            <div class="container">
+                <div class="row features">
+                    <aside class="container">
+                        <h1>{% trans 'Several companies are using Kakocase' %}</h1>
+                        <p style="font-weight: 200">{% blocktrans %}
+                            We have been on the field for many years, building and maintaining great cloud apps that address
+                            business-critical issues for some major IT companies in Cameroon.
+                            Join those organizations with confidence.
+                        {% endblocktrans %}</p>
+                    </aside>
+                </div>
+                <div class="clearfix"></div>
+                <div style="margin-top: 30px">
+                    <div class="col-sm-4">
+                        <img class="img-responsive" src="{% static 'website/img/logo-gimipowa.png' %}">
+                        <h4>GimiPOWA</h4>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-responsive" src="{% static 'website/img/cissy-logo.png' %}">
+                        <h4>Cissy Beauty</h4>
+                    </div>
+                    <div class="col-sm-4">
+                        <img class="img-responsive" src="{% static 'website/img/mid-eats.png' %}">
+                        <h4>MidEats</h4>
+                    </div>
+{#                    <div class="col-sm-3">#}
+{#                        <img class="img-responsive" src="{% static 'website/img/times-fuming-logo.jpg' %}">#}
+{#                        <h4>TIME'SFUMING</h4>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </section>
+
+        <section id="banniere-bottom" class="features site text-center">
+            <div class="cube cube-left hidden-xs">
+                <img src="{% static 'website/img/cta-cubes-left-3.svg' %}">
+            </div>
+            <div class="cube cube-right hidden-xs">
+                <img src="{% static 'website/img/cta-cubes-right-3.svg' %}">
+            </div>
+            <div class="container">
+                <div class="row col-sm-10 features">
+                    <h1>{% trans 'Choose a Plan and Get started' %}</h1>
+                    <p class="text-center">
+                        {% blocktrans %}
+                            On the rate side, we have prepared you, (03) three options that are just waiting for your decision. Take a step ahead and make the Choice!
+                            Get started now and get 1 month free on your 1st year!
+                            15% discount on the following subscription
+                            20% discount on the 3rd year subscription.
+                        {% endblocktrans %}
+                    </p>
+                    <a id="deploy" class="btn btn-sm deploy-cloud-bottom animated pulse" href="{% url 'kakocase_faq' %}">{% trans "Deploy now" %}</a>
+                </div>
+            </div>
+        </section>
+        <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
+            <i class="fa fa-chevron-circle-up"></i>
+        </a>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+    <div class="clearfix"></div>
+    <footer class="footer" class="hidden-xs">
+        <div id="bottom-menu" >
+            <ul class="social-square" style="float: left">
+                <li><a href="https://www.youtube.com/channel/UCzhHrosFOA6RC2H9MqR9jxA" target="_blank" class="ico-youtube" title="YouTube"><i class="fab fa-youtube-square"></i></a></li>
+                <li><a href="{{ config.linkedin_link }}" target="_blank" class="ico-linkedin" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="{{ config.twitter_link }}" target="_blank" class="ico-twitter" title="Twitter"><i class="fab fa-twitter-square"></i></a></li>
+                <li><a href="{{ config.facebook_link }}" target="_blank" class="ico-facebook" title="Facebook"><i class="fab fa-facebook-square"></i></a></li>
+            </ul>
+            <ul>
+                {% include 'core/snippets/language_switcher.html' %}
+                <li><a href="{% url 'about' %}">{% trans 'About ikwen' %}</a> </li>
+                <li><a href="{% url 'terms_and_conditions' %}">{% trans 'Terms & conditions' %}</a> </li>
+                <li><a href="http://support.ikwen.com/kakocase">{% trans 'Support' %}</a> </li>
+                <li><a href="http://blog.ikwen.com">{% trans 'Blog' %}</a> </li>
+            </ul>
+            <span class="col-md-3 col-md-offset-3" >
+                &copy; {{ year }} <a class="company-name" href="{{ service.url }}"><strong>{{ config.company_name }}</strong></a>.
+                {% trans "All rights reserved." %}
+                {% if config.legal_mentions_url %}
+                - <a href="{{ config.legal_mentions_url }}" style="color: #666; text-decoration: none">{% trans "Legal mentions" %}</a>
+                {% endif %}
+            </span>
+        </div>
+        <a style="display: none" href="{% url 'service_indexes' 0 %}">Service Indexes</a>
+    </footer>
+{% endblock %}
+
+{% block js %}
+    {{ block.super }}
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
+    <script>
+        (() => {
+            $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'daraja:home' %}");
+
+            let scrollBreakPoint = 90;
+            $(window).scroll((event) => {
+                let scrollTop = $(this).scrollTop();
+                if (scrollTop > scrollBreakPoint){
+                    let opacity = Math.abs(scrollBreakPoint - scrollTop) / 100;
+                    $('#navbar').css("background-color", `rgba(35, 54, 130, ${opacity})`);
+                } else {
+                    $('#navbar').css("background-color", "transparent");
+                }
+                var docViewBottom = scrollTop + $(window).height();
+                $('section').each(function () {
+                    let elemTop = $(this).offset().top,
+                        elemBottom = elemTop + $(this).height();
+                    if ((scrollTop - elemTop) >= -500){
+                        $(this).addClass('visible');
+                    }
+                });
+            });
+        })()
+    </script>
 {% endblock %}

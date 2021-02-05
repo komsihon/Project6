@@ -10,18 +10,19 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.ikwen.com/tsunami/" />
     <meta property="og:image" content="{% static 'tsunami/img/customers_retention(og_image).jpg' %}" />
-    <meta property="og:title" content="{% trans "ikwen TSUNAMI, the cloud tools your business needs" %}"/>
-    <meta property="og:description" content="{% trans "Reach more customers and sell all your stocks with Tsunami" %}">
+    <meta property="og:title" content="{% trans "ikwen Kakocase, the cloud tools your business needs" %}"/>
+    <meta property="og:description" content="{% trans "Reach more customers and sell all your stocks with Kakocase" %}">
 {% endblock %}
 
 {% block page_title %}
-    <title> ikwen - Tsunami Bundles</title>
+    <title> ikwen - Kakocase Bundles</title>
 {% endblock %}
 
 {% block head_style %}
     {{ block.super }}
     <!-- Custom css -->
-    <link rel="stylesheet" type="text/css" href="{% static 'tsunami/css/tsunami_bundles.css' %}">
+{#    <link rel="stylesheet" type="text/css" href="{% static 'tsunami/css/tsunami_bundles.css' %}?v=29.01.2021">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'website/css/tsunami_bundles.css' %}?v=05.02.2021">
 {% endblock %}
 
 {% block header_brand %}
@@ -32,291 +33,326 @@
 {% endblock %}
 
 {% block content %}
-    <body style=" background: #f8f9fa url('{% static 'tsunami/img/Tsunami_bundle_entete.png' %}') center center;
-            -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; height: 100vh; background-repeat: no-repeat">
-        <div class="container" style="font-family: Lato; margin-bottom: 10vh; padding-top: 20vh;" id="section-header-general-view">
-            <div class="container-fluid text-center">
-                <h1 class="heading-title"> {% trans "Choose the bundles that best suits your needs and budget" %} </h1>
-                <p class="col-md-10 col-md-offset-1 text-center heading-subtitle">
-                    {% trans "You don’t have to pay immediately but you will have access to full functionalities of Tsunami. An invoice will be generated, keep in mind that early payments give you Mail and SMS bonus." %}
-                </p>
+    <body style=" background: #f8f9fa; height: 100vh">
+        <div style="font-family: Lato; margin-bottom: 10vh; padding-top: 10vh;" id="section-header-general-view">
+            <div class="bundles-bgd" style="background-image: url({% static 'website/img/bg-pricing-kakocase.jpg' %});">
+                <div class="container text-center">
+                    <h1 class="heading-title text-has-shade">{% trans "Choose the bundles that best suits your needs and budget" %}</h1>
+                    <p class="col-md-10 col-md-offset-1 text-center heading-subtitle">
+                        {% trans "You don’t have to pay immediately but you will have access to full functionalities of Kakocase. An invoice will be generated, keep in mind that early payments give you Mail and SMS bonus." %}
+                    </p>
+                </div>
             </div>
-            <section class="bundle-list">
-                <div class="row">
-                {% for bundle in bundle_list %}
-                    <div class="col-md-4 col-sm-6">
-                    {% if forloop.counter == 1 %}
-                        <div class="pricingTable green subtle-shade">
-                            <div class="pricingTable-header">
-                                <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
-                                <h3 class="title">{{ bundle.name }}</h3>
-                                <span class="billing-cycle">{% trans '3 months' %}</span>
-                            </div>
-                            <ul class="pricing-content">
-                            <hr class="features-separator">
-                                <span class="subtitle">{% trans 'Cloud tools' %}</span>
-                                {{ bundle.content | safe }}
-                                <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
-{#                            <hr class="features-separator">#}
-{#                                <span class="subtitle">{% trans 'For your revivals' %}</span>#}
-{#                                <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>#}
-{#                                <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>#}
-                            <hr class="features-separator">
-                                <span class="subtitle">{% trans 'Support' %}</span>
-                                <li><strong>{% trans '2 weeks of phone support' %}</strong></li>
-                                <li><strong>{% trans '2 x 2 hours of coaching onsite' %}</strong></li>
-                            </ul>
-                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}%3Fbundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
-                        </div>
-                    {% elif forloop.counter == 2 %}
-                        <div class="pricingTable orange has-shade">
-                            <div class="pricingTable-header">
-                                <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
-                                <h3 class="title">{{ bundle.name }}</h3>
-                                <span class="billing-cycle">{% trans '6 months' %}</span>
-                            </div>
-                            <ul class="pricing-content">
-                            <hr class="features-separator">
-                                <span class="subtitle">{% trans 'Cloud tools' %}</span>
-                                {{ bundle.content | safe }}
-                                <li><strong>+1 {% trans 'eCommerce website' %}</strong></li>
-{#                            <hr class="features-separator">#}
-{#                                <span class="subtitle">{% trans 'For your revivals' %}</span>#}
-{#                                <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>#}
-{#                                <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>#}
-                            <hr class="features-separator">
-                                <span class="subtitle">{% trans 'Support' %}</span>
-                                <li><strong>{% trans '1 month of phone support' %}</strong></li>
-                                <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
-                            </ul>
-                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}%3Fbundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
-                        </div>
-                    {% else %}
-                        <div class="pricingTable purple subtle-shade">
-                            <div class="pricingTable-header">
-                                <span class="price-value"><span class="currency">XAF</span>{{ bundle.cost | intcomma }}</span>
-                                <h3 class="title">{{ bundle.name }}</h3>
-                                <span class="billing-cycle">{% trans '12 months' %}</span>
-                            </div>
-                            <ul class="pricing-content">
-                            <hr class="features-separator">
-                                <span class="subtitle">{% trans 'Cloud tools' %}</span>
-                                {{ bundle.content | safe }}
-                                <li><strong>+1 {% trans 'eCommerce website  and domain name' %} </strong></li>
-{#                            <hr class="features-separator">#}
-{#                                <span class="subtitle">{% trans 'For your revivals' %}</span>#}
-{#                                <li><strong>{{ bundle.mail_count | intcomma }} Emails</strong></li>#}
-{#                                <li><strong>{{ bundle.sms_count | intcomma }} SMS.</strong></li>#}
-                            <hr class="features-separator">
-                                <span class="subtitle">{% trans 'Support' %}</span>
-                                <li><strong>{% trans '1 month of phone support' %}</strong></li>
-                                <li><strong>{% trans '4 x 2 hours of coaching onsite' %}</strong></li>
-                            </ul>
-                            <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}%3Fbundle_id={{ bundle.id }}" class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
-                        </div>
-                    {% endif %}
-                    </div>
-                {% endfor %}
-                </div>
-            </section>
-
-            <section class="faq faq-general-view" style="padding: 5vh 0;">
-                <div class="row">
-                    <div style="border-top: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
-                    <div class="text-center">
-                        <h1 class="col-md-2 col-md-offset-5 faq-title">F.A.Q</h1>
-                    </div>
-                    <div style=" float: left; width: 100%;">
-                        <div class="col-md-5 faq-item">
-                            <h4 class="faq-question">{% trans 'What is “Deploy” ? What do I get from Deploying ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Deploy simply means create your own online platform. What you get is the Tsunami suite under the name of your company.
-                                    From then, you can start adding contacts in your Cloud Customer Manager, and set all kinds of revivals.
-                                    You can publish your products on the platform and get customers to visit and buy online.
-                                    Your platform is immediately accessible with the link <cite title="Your online platform generated link takes the name of your company">http://go.ikwen.com/yourcompany</cite>.
-                                    You can further move to yourcompany.com or yourcompany.cm when you buy your own domain name.
-                                    See how to buy and configure domain name to discover how to do it.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                        <div class="col-md-5 col-md-offset-2 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'What I am paying for exactly ?' %}</h4>
-                            <div class="faq-answer">
-                                {% blocktrans %}
-                                    When you deploy your Tsunami platform, you get many business-effective online tools including :
-                                    <ul style="color: #828282; list-style-type: square;">
-                                        <li>
-                                            An e-commerce website with online payments.
-                                        </li>
-                                        <li>
-                                            An automated system to store your customer’s contacts and revive them by targeted Mail and SMS.
-                                        </li>
-                                        <li>
-                                            SMS and Email Packs to deliver SMS and mails to your customers.
-                                        </li>
-                                        <li>
-                                            A hosting package to get all that running.
-                                        </li>
-                                        <li>
-                                            Continuous Maintenance, Software updates, Data security, Backups and more...
-                                        </li>
-                                    </ul>
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                    </div>
-                    <div style=" float: left; width: 100%;">
-                        <div class="col-md-5 faq-item">
-                            <h4 class="faq-question">{% trans 'How do I pay ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Once you deploy your platform, you immediately receive an invoice by mail.
-                                    You can view the invoice and pay by MTN MoMo online. Once you have done the payment.
-                                    Your service is activated to run for 3 months.
-                                    You can print the generated for your accounting.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                        <div class="col-md-5 col-md-offset-2 faq-item">
-                            <h4 class="faq-question">{% trans 'Do I pay once for all ? What happens after the 3 months ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Payment covers the first three months of service. For your service to continue after those 3 months,
-                                    you will have to pay for renewal fees that are always much lower than setup fees that cover another 3 months.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                    </div>
-                    <div style=" float: left; width: 100%;">
-                       <div class="col-md-5 faq-item">
-                            <h4 class="faq-question">{% trans 'What if I don’t pay at the end of the period, are my data deleted ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    When the end of the period is approaching, you receive at least 3 reminders with the new invoice to pay.
-                                    If you do not pay on time, you are given a consistent amount of extra time to do the payment.
-                                    After that period, your platform is shutdown, but all your data are kept.
-                                    Everything will be put back in place when you pay your invoice.
-                                    Your data are completely deleted after 3 months of inactivity.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                        <div class="col-md-5 col-md-offset-2 faq-item">
-                            <h4 class="faq-question">{% trans 'Can I pay for a year ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Yes you can. You are highly encouraged to pay for a year as you will benefit a discount.
-                                    Switch to annual payment view to see how much it costs and get your platform for a year.
-                                {% endblocktrans %}
-                            </p>
+            <section class="bundle-list container">
+                <div class="feature bundle-title">
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-8 col-xs-12">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3 basic hidden-xs text-center"><h3>BASIC</h3></div>
+                        <div class="col-sm-3 standard hidden-xs text-center" style="overflow: hidden"><h3>STANDARD</h3></div>
+                        <div class="col-sm-3 360-dg hidden-xs text-center"><h3>360&deg;</h3></div>
+                        <div class="visible-xs">
+                            <div class="col-sm-3 basic radio"><h3><input id="basic-option" name="bundles" type="radio" class="col-xs-2 visible-xs">BASIC</h3></div>
+                            <div class="col-sm-3 standard radio"><h3><input id="standard-option" name="bundles" type="radio" class="col-xs-2 visible-xs"> STANDARD</h3></div>
+                            <div class="col-sm-3 360-dg radio"><h3><input id="360-dg-option" name="bundles" type="radio" class="col-xs-2 visible-xs">360&deg;</h3></div>
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <div style="border-bottom: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
                 </div>
-            </section>
-
-            <section class="faq faq-ipadPro-view" style=" display: none; padding: 5vh 0;">
-                <div class="row">
-                    <div style="border-top: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
-                    <div class="text-center">
-                        <h1 class="faq-title">F.A.Q</h1>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Website + Online Store</h4>
+                            Website, presentation of products to the customer, shopping cart, purchasing process
+                        {% endblocktrans %}
                     </div>
-                    <div style=" float: left; width: 100%;">
-                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'What is “Deploy” ? What do I get from Deploying ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Deploy simply means create your own online platform. What you get is the Tsunami suite under the name of your company.
-                                    From then, you can start adding contacts in your Cloud Customer Manager, and set all kinds of revivals.
-                                    You can publish your products on the platform and get customers to visit and buy online.
-                                    Your platform is immediately accessible with the link <cite title="Your online platform generated link takes the name of your company">http://go.ikwen.com/yourcompany</cite>.
-                                    You can further move to yourcompany.com or yourcompany.cm when you buy your own domain name.
-                                    See how to buy and configure domain name to discover how to do it.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'What I am paying for exactly ?' %}</h4>
-                            <div class="faq-answer">
-                                {% blocktrans %}
-                                    When you deploy your Tsunami platform, you get many business-effective online tools including :
-                                    <ul style="color: #828282; list-style-type: square;">
-                                        <li>
-                                            An e-commerce website with online payments.
-                                        </li>
-                                        <li>
-                                            An automated system to store your customer’s contacts and revive them by targeted Mail and SMS.
-                                        </li>
-                                        <li>
-                                            SMS and Email Packs to deliver SMS and mails to your customers.
-                                        </li>
-                                        <li>
-                                            A hosting package to get all that running.
-                                        </li>
-                                        <li>
-                                            Continuous Maintenance, Software updates, Data security, Backups and more...
-                                        </li>
-                                    </ul>
-                                {% endblocktrans %}
-                            </p>
-                        </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">39, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
                     </div>
-                    <div style=" float: left; width: 100%;">
-                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'How do I pay ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Once you deploy your platform, you immediately receive an invoice by mail.
-                                    You can view the invoice and pay by MTN MoMo online. Once you have done the payment.
-                                    Your service is activated to run for 3 months.
-                                    You can print the generated for your accounting.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
-                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'Do I pay once for all ? What happens after the 3 months ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Payment covers the first three months of service. For your service to continue after those 3 months,
-                                    you will have to pay for renewal fees that are always much lower than setup fees that cover another 3 months.
-                                {% endblocktrans %}
-                            </p>
-                        </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Online payment</h4>
+                            Integrate the possibility of secure payment on the site by MTN MoMo and Orange Money
+                        {% endblocktrans %}
                     </div>
-                    <div style=" float: left; width: 100%;">
-                       <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'What if I don’t pay at the end of the period, are my data deleted ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    When the end of the period is approaching, you receive at least 3 reminders with the new invoice to pay.
-                                    If you do not pay on time, you are given a consistent amount of extra time to do the payment.
-                                    After that period, your platform is shutdown, but all your data are kept.
-                                    Everything will be put back in place when you pay your invoice.
-                                    Your data are completely deleted after 3 months of inactivity.
-                                {% endblocktrans %}
-                            </p>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">4%</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Pinsview</h4>
+                            Geographical visualization of your agencies, clients, prospects with photos, details, history and smart coloring
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">19, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7">
+                        {% blocktrans %}
+                            <h4>Administration of Digital Assets</h4>
+                            On the administration panel you have activity reports, database and customer movements, transaction details, etc. with visualization in the form of tables and graphs.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">29, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Security SSL Certificate</h4>
+                            Encryption of data between the site and users to prevent hacking of any kind
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">7, 500</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Android Mobile Application</h4>
+                            Application downloadable by your customers from the site and able to send notifications
+                            with images
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">24, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Pack of 4,000 emails</h4>
+                            Emails used for any confirmation sent from your website with your brand:
+                            Ex: Confirmation of registration, purchase, etc...
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">5, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Notifications (4,000)</h4>
+                            Notifications sent to customers for various transactions. Promo, New product, etc.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">6, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Promotion Module</h4>
+                            Allows you to set up percentage promotions on your site. The prices are automatically recalculated and the old price is shown crossed out.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">14, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Customer Retention Module</h4>
+                            A system for distributing gift coupons to your customers according to their actions
+                            (purchase, recommendations, etc.).
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">9, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Payment on credit</h4>
+                            A module that allows you to grant purchase credits to your best customers
+                            so that they buy online using this credit.
+                            They are reminded when due and pay their debt by cell phone.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">15, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-times"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Online training (04 x 1H)</h4>
+                            Training of a staff dedicated to website administration techniques,
+                            provision of online documentation and various resources to carry out the assigned tasks.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost neutral">included</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Online support 02 months (02h per week)</h4>
+                            An agent will answer you for any difficulty encountered,
+                            a cumulative of 2 hours per week online.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost">15, 000</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria">
+                        {% blocktrans %}
+                            <h4>Troubleshooting</h4>
+                            Fix of all bugs encountered on the site.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3 cost neutral">included</div>
+                        <div class="col-sm-3 basic"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 standard"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3 360-dg"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature total-month-cost">
+                    <div class="col-sm-4 col-xs-5 criteria"><h4 class="visible-xs period">{% trans 'Monthly' %}</h4></div>
+                    <div class="col-sm-8 col-xs-7 text-center">
+                        <div class="col-sm-3"><h4 class="period">{% trans 'Monthly' %}</h4></div>
+                        <div class="col-sm-3 basic"><h4>94, 500</h4></div>
+                        <div class="col-sm-3 standard"><h4>152, 500</h4></div>
+                        <div class="col-sm-3 360-dg"><h4>167, 500</h4></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature total-year-cost">
+                    <div class="col-sm-4 col-xs-5 criteria"><h4 class="visible-xs period">{% trans 'Yearly' %}</h4></div>
+                    <div class="col-sm-8 col-xs-7 text-center">
+                        <div class="col-sm-3"><h4 class="period">{% trans 'Yearly' %}</h4></div>
+                        <div class="col-sm-3 basic"><h4>1, 134, 000</h4></div>
+                        <div class="col-sm-3 standard"><h4>1, 830, 000</h4></div>
+                        <div class="col-sm-3 360-dg"><h4>2, 010, 000</h4></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="feature">
+                    <div class="col-sm-4 col-xs-7 criteria"></div>
+                    <div class="col-sm-8 col-xs-5 text-center">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3">
+                            <div class="pricingTable green">
+                                <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}%3Fbundle_id={{ basic_bundle.pk }}"
+                                   class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            </div>
                         </div>
-                        <div class="col-md-10 col-md-offset-1 faq-item" style="padding-bottom: 5vh;">
-                            <h4 class="faq-question">{% trans 'Can I pay for a year ?' %}</h4>
-                            <p class="faq-answer">
-                                {% blocktrans %}
-                                    Yes you can. You are highly encouraged to pay for a year as you will benefit a discount.
-                                    Switch to annual payment view to see how much it costs and get your platform for a year.
-                                {% endblocktrans %}
-                            </p>
+                        <div class="col-sm-3">
+                            <div class="pricingTable orange">
+                                <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}%3Fbundle_id={{ standard_bundle.pk }}"
+                                   class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="pricingTable purple">
+                                <a href="{% url 'ikwen:sign_in' %}?next={% url 'kakocase:go' %}%3Fbundle_id={{ 360_bundle.pk }}"
+                                   class="pricingTable-signup animated infinite pulse">{% trans 'I Want' %}</a>
+                            </div>
                         </div>
                     </div>
                     <div class="clearfix"></div>
-                    <div style="border-bottom: 2px solid #65ccfa; border-radius: 30px; margin-top: 4vh; padding-top: 6vh;"></div>
+                </div>
+                <div class="feature tpl">
+                    <div class="col-xs-6 col-xs-6 criteria">
+                        {% blocktrans %}
+                            <h4>Online training (04 x 1H)</h4>
+                            Training of a staff dedicated to website administration techniques,
+                            provision of online documentation and various resources to carry out the assigned tasks.
+                        {% endblocktrans %}
+                    </div>
+                    <div class="col-sm-8 col-xs-6 text-right">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3"><i class="fas fa-check"></i></div>
+                        <div class="col-sm-3"><i class="fas fa-check"></i></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="text-center" style="margin-top: 20vh">
+                    <h2>{% trans 'You are in good hands !!!' %}</h2>
+                    <p style="line-height: 40px; font-size: 1.5em; font-weight: 200">
+                        {% blocktrans %}
+                            We have a solid experience built up year after year. Today we have excellent applications,
+                            each of which provides answers to problems in both B2B and B2C.
+                            Join these organizations with peace of mind.
+                        {% endblocktrans %}
+                    </p>
                 </div>
             </section>
-
-
             <a class="js-scrollTo back-to-top hiding" href="#section-header-general-view" style="text-decoration: none; color: #3F3F3F">
                 <i class="fa fa-chevron-circle-up"></i>
             </a>
         </div>
+    </body>
 
 {% endblock %}
 
@@ -325,6 +361,44 @@
     <script>
         (function () {
             $('#site-menu a.cta').attr('href', "{% url 'ikwen:sign_in' %}?next={% url 'tsunami:bundles' %}");
+        })()
+    </script>
+    <script>
+        (() => {
+            let scrollBreakPoint = 400;
+            $(window).scroll((event) => {
+                let scrollTop = $(this).scrollTop();
+                if (scrollTop >= scrollBreakPoint){
+                    if (!$('.bundle-title').hasClass('fixed')) $('.bundle-title').addClass('fixed');
+                } else {
+                    $('.bundle-title').removeClass('fixed')
+                }
+            });
+            adaptDisplay();
+            /*
+            $(window).resize(function(){
+                adaptDisplay();
+            });*/
+            function adaptDisplay(){
+                if ($(window).width() < 768) {
+                    function displayBundle(bundle) {
+                        $(`.bundle-list .feature:not(.bundle-title)  > :nth-last-child(2) > :not(.${bundle})`).hide();
+                        $(`.bundle-list .feature:not(.bundle-title)  > :nth-last-child(2) > .${bundle}`).show();
+                    }
+                    displayBundle('cost');
+                    $(".bundle-list .feature.bundle-title input").click(function () {
+                        if ($(this).parents('.radio').hasClass('basic')){
+                            displayBundle('basic');
+                        }
+                        if ($(this).parents('.radio').hasClass('standard')){
+                            displayBundle('standard');
+                        }
+                        if ($(this).parents('.radio').hasClass('360-dg')){
+                            displayBundle('360-dg');
+                        }
+                    })
+                }
+            }
         })()
     </script>
 {% endblock %}

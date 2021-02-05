@@ -76,6 +76,9 @@ class BundlesList(TemplateView):
         context = super(BundlesList, self).get_context_data(**kwargs)
         bundle_list = TsunamiBundle.objects.filter(is_active=True)
         context['bundle_list'] = bundle_list
+        context['basic_bundle'] = TsunamiBundle.objects.filter(name__icontains='basic')
+        context['standard_bundle'] = TsunamiBundle.objects.filter(name__icontains='standard')
+        context['360_bundle'] = TsunamiBundle.objects.filter(name__icontains='360')
         return context
 
     def get(self, request, *args, **kwargs):
